@@ -43,7 +43,6 @@
     padding: var(--sp-56) var(--sp-40) 0 var(--sp-40);
   }
 }
-
 @media (max-width: 600px) {
   .header-spacing {
     padding: var(--sp-10) var(--sp-25);

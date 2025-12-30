@@ -26,9 +26,8 @@
 
 /* Steps Section */
 .steps-section {
-  background: #1f0808;
+  background: var(--color-background-3);
   width: 100%;
-  padding: 114px 150px;
   color: white;
 }
 
@@ -64,9 +63,7 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .steps-section {
-    padding: var(--sp-80) var(--sp-50);
-  }
+ 
   .step-content-container {
     width: 100%;
     padding: var(--sp-33) 0;

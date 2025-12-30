@@ -1,9 +1,17 @@
 /* =========================================================
-   FLUID TYPOGRAPHY HELPER
-   Usage: font-size: fluid(16px, 24px);
+   FLUID TYPOGRAPHY HELPERS
    ========================================================= */
 
 @function fluid($min, $max, $minViewport: 390px, $maxViewport: 1440px) {
+  $difference: $max - $min;
+
+  @return calc(
+    #{$min} + #{$difference} *
+      ((100vw - #{$minViewport}) / (#{$maxViewport - $minViewport}))
+  );
+}
+
+@function fluid-space($min, $max, $minViewport: 390px, $maxViewport: 1440px) {
   $difference: $max - $min;
 
   @return calc(
@@ -22,7 +30,7 @@
   font-size: fluid(48px, 120px);
   font-weight: 400;
   line-height: 95%;
-  letter-spacing: -3.6px;
+  letter-spacing: fluid-space(-1.2px, -3.6px);
 }
 
 .display-1 {
@@ -31,7 +39,7 @@
   font-size: fluid(120px, 300px);
   font-weight: 400;
   line-height: 109%;
-  letter-spacing: -15px;
+  letter-spacing: fluid-space(-6px, -15px);
 }
 
 .display-2 {
@@ -40,7 +48,7 @@
   font-size: fluid(64px, 120px);
   font-weight: 400;
   line-height: 95%;
-  letter-spacing: -3.6px;
+  letter-spacing: fluid-space(-2px, -3.6px);
 }
 
 .display-3 {
@@ -49,7 +57,7 @@
   font-size: fluid(36px, 76px);
   font-weight: 400;
   line-height: 95%;
-  letter-spacing: -4.56px;
+  letter-spacing: fluid-space(-2px, -4.56px);
   text-transform: capitalize;
 }
 
@@ -63,7 +71,7 @@
   font-size: fluid(22px, 32px);
   font-weight: 400;
   line-height: 109%;
-  letter-spacing: -1.6px;
+  letter-spacing: fluid-space(-0.8px, -1.6px);
 }
 
 .header-2 {
@@ -72,7 +80,7 @@
   font-size: fluid(20px, 28px);
   font-weight: 400;
   line-height: 109%;
-  letter-spacing: -1.2px;
+  letter-spacing: fluid-space(-0.6px, -1.2px);
 }
 
 .header-3 {
@@ -81,7 +89,7 @@
   font-size: fluid(16px, 18px);
   font-weight: 400;
   line-height: 135%;
-  letter-spacing: -0.36px;
+  letter-spacing: fluid-space(-0.2px, -0.36px);
 }
 
 /* =========================================================
@@ -94,7 +102,7 @@
   font-size: fluid(18px, 32px);
   font-weight: 400;
   line-height: 109%;
-  letter-spacing: -1.6px;
+  letter-spacing: fluid-space(-0.8px, -1.6px);
 }
 
 .para-2 {
@@ -103,7 +111,7 @@
   font-size: fluid(14px, 18px);
   font-weight: 400;
   line-height: 135%;
-  letter-spacing: -0.36px;
+  letter-spacing: fluid-space(-0.2px, -0.36px);
 }
 
 .para-3 {
@@ -112,6 +120,7 @@
   font-size: fluid(12px, 14px);
   font-weight: 400;
   line-height: 140%;
+  letter-spacing: fluid-space(-0.1px, -0.2px);
 }
 
 /* =========================================================
@@ -125,7 +134,7 @@
   font-size: fluid(14px, 18px);
   font-weight: 400;
   line-height: 120%;
-  letter-spacing: -0.36px;
+  letter-spacing: fluid-space(-0.2px, -0.36px);
 }
 
 .linkText {
@@ -134,5 +143,5 @@
   font-size: fluid(11px, 13px);
   font-weight: 400;
   line-height: 95%;
-  letter-spacing: -0.39px;
+  letter-spacing: fluid-space(-0.15px, -0.39px);
 }

@@ -3,7 +3,8 @@ import Image from "next/image";
 import Typography from "@/components/ui-kit/typography";
 import Button from "@/components/ui-kit/button";
 import Header from "@/components/ui-kit/header";
-
+import { Container } from "@/components/ui-kit/spacing";
+import Footer from "@/components/ui-kit/footer";
 
 export default function Page() {
   const steps = [
@@ -29,7 +30,7 @@ export default function Page() {
 
   return (
     <>
-    <Header/>
+      <Header />
       <section className="hero-section">
         <Image
           src="https://ik.imagekit.io/a9uxeuyhx/6214ca8bc0a8c870a67c8469f213760e7acc34ff.jpg"
@@ -48,37 +49,43 @@ export default function Page() {
       </section>
 
       <section className="steps-section">
-        <Typography variant="header-1" colorVariant="white">
-          Ready to Take the Next Step? <br /> Let's Discuss
-        </Typography>
+        <Container variant="sectionSp1">
+          <Typography variant="header-1" colorVariant="white">
+            Ready to Take the Next Step? <br /> Let's Discuss
+          </Typography>
 
-        <div className="steps-list">
-          {steps.map((step) => (
-            <div key={step.number} className="step-item">
-              <Typography variant="display-1" colorVariant="white">
-                {step.number}.
-              </Typography>
+          <div className="steps-list">
+            {steps.map((step) => (
+              <div key={step.number} className="step-item">
+                <Typography variant="display-1" colorVariant="white">
+                  {step.number}.
+                </Typography>
 
-              <div className="step-content-container">
-                <div className="step-content">
-                  <Typography variant="header-3" colorVariant="white">
-                    {step.title}
-                  </Typography>
+                <div className="step-content-container">
+                  <div className="step-content">
+                    <Typography variant="header-3" colorVariant="white">
+                      {step.title}
+                    </Typography>
 
-                  <Typography variant="para-2" colorVariant="white">
-                    {step.description}
-                  </Typography>
+                    <Typography variant="para-2" colorVariant="white">
+                      {step.description}
+                    </Typography>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="flex flex-row justify-between">
-          <Typography variant="para-1" colorVariant="white">Discover how we can help</Typography>
-          <Button variant="white">Schedule a Consult</Button>
-        </div>
+            ))}
+          </div>
+        </Container>
+        <Container variant="sectionSp1">
+          <div className="flex flex-row justify-between">
+            <Typography variant="para-1" colorVariant="white">
+              Discover how we can help
+            </Typography>
+            <Button variant="white">Schedule a Consult</Button>
+          </div>
+        </Container>
       </section>
+      <Footer/>
     </>
   );
 }

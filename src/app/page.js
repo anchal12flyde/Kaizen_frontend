@@ -7,12 +7,13 @@ import { useRef, useState } from "react";
 import Slider from "react-slick";
 import Button from "@/components/ui-kit/button";
 import TransactionCard from "@/components/ui-kit/transactionCard";
+import Footer from "@/components/ui-kit/footer";
 
 export default function Home() {
  
 
   return (
-    <div className=" flex flex-col gap-[50px] p-[50px] ">
+    <div className=" flex flex-col gap-[50px] p-[20px] ">
       <Typography variant="hero-display">Hero Display Text</Typography>
 
 
@@ -57,6 +58,7 @@ export default function Home() {
       <Button variant="primary">Schedule a Consult</Button>
       <Button variant="white">Schedule a Consult</Button>
       <TransactionCard />
+      <Footer />
     </div>
   );
 }
