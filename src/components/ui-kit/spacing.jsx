@@ -17,7 +17,8 @@ export const Container = ({ children, variant = "primary", className }) => {
     bottomSpacing : "bottom-spacing",
     blockSpacing : "block-spacing",
     inlineSpacing : "inline-spacing",
-    blogSpacing : "blog-spacing"
+    blogSpacing : "blog-spacing",
+    footerSpacing : "footer-spacing"
   };
 
   return (
