@@ -12,7 +12,7 @@ import Header from "@/components/ui-kit/header";
 
 export default function Home() {
   return (
-    <div className=" flex flex-col gap-[50px] p-[20px] ">
+    <div className=" flex flex-col gap-[50px]  ">
       <Header />
       <Typography variant="hero-display">Hero Display Text</Typography>
 
