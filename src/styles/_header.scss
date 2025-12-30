@@ -13,7 +13,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: var(--color-white);
+  // background: var(--color-white);
   z-index: 1000;
   padding: 0;
   transform: translateY(-100%);
@@ -48,6 +48,10 @@
   }
 }
 
+.hamburger-menu{
+  display: none;
+}
+
 /* Slide up animation */
 @keyframes slideUp {
   0% {
@@ -75,7 +79,7 @@
 
 .nav-link-container {
   display: flex;
-  gap: var(--sp-80);
+  gap: var(--sp-37);
 }
 
 .header-logo {
@@ -116,6 +120,9 @@
   .nav-link-container {
     display: none;
   }
+  .hamburger-menu{
+    display: flex;
+  }
 
   .header-fixed-content {
     padding: var(--sp-12) var(--sp-16) var(--sp-12) var(--sp-16);
@@ -124,7 +131,7 @@
 
 /* STATIC NAVBAR VARIANT (route-based changes allowed) */
 .static-nav-link {
-  color: var(--color-black-400);
+  // color: var(--color-black-400);
   transition: all 0.2s ease-in-out;
 }
 
