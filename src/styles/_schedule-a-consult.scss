@@ -1,0 +1,76 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero-background {
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: absolute;
+  left: 50px;
+  bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Steps Section */
+.steps-section {
+  background: #1f0808;
+  width: 100%;
+  padding: 114px 150px;
+  color: white;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.step-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.step-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 87px 0;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .steps-section {
+    padding: 80px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .step-item {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-content {
+    left: 20px;
+  }
+}
