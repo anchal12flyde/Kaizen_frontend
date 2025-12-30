@@ -1,48 +1,39 @@
-"use client"
+"use client";
 import clsx from "clsx";
 
 const Button = ({
   children,
-  variant = "primary",
-  size = "md",
+  variant = "primary", // default variant
   icon,
   iconPosition = "right",
-  showIcon,
+  showIcon = true,
   className,
   as,
   disabled,
-  transparent = false,
   ...props
 }) => {
-  // Default showIcon based on variant
-  const shouldShowIcon =
-    showIcon !== undefined ? showIcon : variant === "primary";
   const Tag = as || "button";
 
-  return ( 
+  return (
     <Tag
       disabled={disabled}
       className={clsx(
         "btn",
-        `btn--${variant}`,
-        `btn--${size}`, 
+        `btn--${variant}`, // apply variant automatically
         disabled && "btn--disabled",
-        icon && shouldShowIcon && "btn--with-icon",
-        transparent && "btn--transparent",
+        icon && showIcon && "btn--with-icon",
         className
       )}
       {...props}
     >
-      {/* icon left */}
-      {icon && shouldShowIcon && iconPosition === "left" && (
-        <span className={` ${variant === 'white' ? 'btn-icon-white' : 'btn-icon'}`}>{icon}</span>
+      {icon && showIcon && iconPosition === "left" && (
+        <span className="btn-icon">{icon}</span>
       )}
 
       {children}
 
-      {/* icon right */}
-      {icon && shouldShowIcon && iconPosition === "right" && (
-        <span className={` ${variant === 'white' ? 'btn-icon-white' : 'btn-icon'}`}>{icon}</span>
+      {icon && showIcon && iconPosition === "right" && (
+        <span className="btn-icon">{icon}</span>
       )}
     </Tag>
   );

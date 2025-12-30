@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  images: {
+    domains: ["images.pexels.com", "ik.imagekit.io", "images.unsplash.com"],
+  },
 };
 
 export default nextConfig;
