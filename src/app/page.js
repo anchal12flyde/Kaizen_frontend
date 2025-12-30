@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import Slider from "react-slick";
 import Button from "@/components/ui-kit/button";
+import TransactionCard from "@/components/ui-kit/transactionCard";
 
 export default function Home() {
  
@@ -55,6 +56,7 @@ export default function Home() {
       <Testimonials />
       <Button variant="primary">Schedule a Consult</Button>
       <Button variant="white">Schedule a Consult</Button>
+      <TransactionCard />
     </div>
   );
 }

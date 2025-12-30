@@ -12,7 +12,7 @@
   --sp-10: 10px;
   --sp-12: 12px;
   --sp-14: 14px;
-  --sp-16: 16px;
+  --sp-18: 18px;
   --sp-20: 20px;
   --sp-22: 22px;
   --sp-24: 24px;
@@ -24,16 +24,20 @@
   --sp-48: 48px;
   --sp-50: 50px;
   --sp-56: 56px;
+  --sp-64: 64px;
+  --sp-68: 68px;
+  --sp-70: 70px;
   --sp-80: 80px;
   --sp-83: 83px;
   --sp-96: 96px;
+  --sp-126: 126px;
   --sp-128: 128px;
   --sp-136: 136px;
   --sp-176: 176px;
   --radius-xs: 16px;
   --radius-md: 24px;
   --radius-lg: 32px;
-  --radius-xl: 48px;
+  --radius-xl: 500px;
   --layout-max-width: 1520px;
 }
 
@@ -103,7 +107,7 @@
 }
 
 .text-accent {
-  color: var(--color-accent);
+  color: var(--color-accent) !important;
 }
 
 .bg-accent {

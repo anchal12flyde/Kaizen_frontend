@@ -1,7 +1,7 @@
 :root {
   --color-background-1: #f7f4eb;
   --color-background-2: #0a193a;
-  --color-background-3: #1f0808;
+  --color-background-3: #1f0808; 
   --color-para-1: #000;
   --color-para-2: #fff;
   --color-accent: #b6996a;
@@ -115,7 +115,7 @@
 }
 
 .text-accent {
-  color: var(--color-accent);
+  color: var(--color-accent) !important ;
 }
 
 .bg-accent {
