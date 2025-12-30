@@ -4,15 +4,49 @@ import Typography from "./typography";
 
 export default function Footer() {
   return (
-    <Container variant="footerSpacing" className="bg-bg-1" >
-      <div className="flex flex-col gap-[84px]" >
+    <Container variant="footerSpacing" className="bg-bg-1">
+      <div className="flex flex-col gap-[84px]">
         <div className="flex flex-wrap items-center justify-between">
-          <Image
-            src="https://ik.imagekit.io/flyde/Group%201.png"
-            width={50}
-            height={50}
-            alt="logo"
-          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="39"
+            viewBox="0 0 35 39"
+            fill="none"
+          >
+            <path
+              d="M1.57843 27.9739C0.544772 25.6924 0 23.2107 0 20.7383V0H33.2121L9.28895 21.0782L9.24704 21.1155L8.23201 22.0095L8.28788 7.44978H11.1374L11.0722 15.6958L25.6412 2.85885H2.85886V20.7383C2.85886 22.5216 3.18477 24.277 3.83197 25.9578L1.57843 27.9739Z"
+              fill="url(#paint0_linear_1_729)"
+            />
+            <path
+              d="M17.493 38.2358C13.6471 38.2358 9.85234 36.9461 6.8119 34.5994C6.40682 34.2875 6.0157 33.9569 5.64787 33.6123C4.91221 32.9372 4.23706 32.1922 3.62711 31.3913L18.1542 18.5917L25.8554 26.0322C24.9381 27.1496 24.7193 27.415 24.0302 28.2345L18.1169 22.433L7.68725 31.6241L8.26927 32.1037C8.36704 32.1829 8.46016 32.2574 8.55794 32.3319C11.1048 34.2968 14.2757 35.377 17.4977 35.377C20.7197 35.377 23.8905 34.2968 26.4374 32.3365C26.6842 32.1456 26.9263 31.9454 27.1591 31.7406C28.2487 30.7814 29.1892 29.6639 29.9528 28.4161C30.1949 28.025 30.4184 27.6152 30.6279 27.1962C31.615 25.1847 32.1411 22.9498 32.1411 20.7382V6.44854L35 3.95752V20.7382C35 26.1299 32.4531 31.3075 28.1834 34.5994C26.633 35.7914 24.9149 36.7086 23.0757 37.3279C21.2784 37.9332 19.402 38.2405 17.4977 38.2405L17.493 38.2358Z"
+              fill="url(#paint1_linear_1_729)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_1_729"
+                x1="-0.00465611"
+                y1="13.987"
+                x2="33.2074"
+                y2="13.987"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#B6996A" />
+                <stop offset="1" stop-color="#C3A771" />
+              </linearGradient>
+              <linearGradient
+                id="paint1_linear_1_729"
+                x1="3.62245"
+                y1="21.0967"
+                x2="34.9953"
+                y2="21.0967"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#B6996A" />
+                <stop offset="1" stop-color="#C3A771" />
+              </linearGradient>
+            </defs>
+          </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="146"

@@ -14,23 +14,26 @@
   padding: var(--sp-114) var(--sp-150);
 }
 
+.footer-spacing {
+  padding: var(--sp-68) var(--sp-150);
+}
+
 .section-sp-top {
-    padding: var(--sp-126) 0 0 0;
-  }
-   
-  .section-sp-bottom {
-    padding: 0 0 var(--sp-126) 0;
-  }
+  padding: var(--sp-126) 0 0 0;
+}
+
+.section-sp-bottom {
+  padding: 0 0 var(--sp-126) 0;
+}
 
 @media (max-width: 834px) {
-
   .header-spacing {
     padding: var(--sp-24) var(--sp-40);
   }
 
   .section-sp-1 {
-  padding: var(--sp-126) var(--sp-64);
-}
+    padding: var(--sp-126) var(--sp-64);
+  }
 
   .footer-spacing {
     padding: var(--sp-68) var(--sp-50);
@@ -42,7 +45,6 @@
 }
 
 @media (max-width: 600px) {
-
   .header-spacing {
     padding: var(--sp-10) var(--sp-25);
   }
