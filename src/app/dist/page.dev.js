@@ -6,7 +6,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = Home;
 
+var _testimonials = _interopRequireDefault(require("@/components/ui-kit/testimonials"));
+
 var _typography = _interopRequireDefault(require("@/components/ui-kit/typography"));
+
+var _image = _interopRequireDefault(require("next/image"));
 
 var _react = require("react");
 
@@ -31,32 +35,32 @@ function Home() {
       setCurrentIndex = _useState2[1];
 
   var testimonials = [{
-    text: "JR Airlines kept our campaign on schedule with flawless helicopter transfers across multiple constituencies in a single day. Punctual, professional, safe.",
-    author: "– Campaign Coordinator, National Political Party"
+    text: "Jones & Brown Legal handled my estate planning with such care and professionalism. They listened to my concerns and made the process clear and straightforward. I now have complete peace of mind knowing my family's future is secure.",
+    author: "– David L., Business Owner"
   }, {
-    text: "Flying with JR Airlines is always smooth and reliable. They understand time-critical operations perfectly.",
-    author: "– Event Manager"
+    text: "Their expertise and courtroom presence were truly impressive. They turned a stressful situation into a successful outcome.",
+    author: "– Sarah M., Small Business Owner"
   }, {
-    text: "The safety and professionalism of their crew gave us full confidence throughout our journey.",
-    author: "– Corporate Client"
+    text: "I was very impressed with the responsiveness and knowledge of everyone at Jones & Brown Legal. I felt like they really cared about my case, and they fought hard to get me a great result.",
+    author: "– Thomas P., Individual Client"
   }];
   var settings = {
     dots: false,
     infinite: true,
     speed: 600,
-    fade: true,
-    autoplay: false,
-    autoplaySpeed: 3000,
+    fade: false,
+    // ❌ no fade
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: false,
-    // 👈 IMPORTANT
-    swipe: false,
-    // optional (recommended with fade)
+    swipe: true,
+    arrows: false,
+    autoplay: false,
+    cssEase: "ease-in-out",
+    adaptiveHeight: false,
+    useTransform: true,
     beforeChange: function beforeChange(_, next) {
       return setCurrentIndex(next % testimonials.length);
-    },
-    arrows: false
+    }
   };
-  return div;
+  return;
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Testimonials from "@/components/ui-kit/testimonials";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 import { useRef, useState } from "react";
@@ -39,98 +40,49 @@ export default function Home() {
     useTransform: true,
     beforeChange: (_, next) => setCurrentIndex(next % testimonials.length),
   };
-  
 
   return (
-    <div className="flex  items-center w-full h-screen justify-center ">
-      <div className="w-fit flex flex-col gap-[80px] bg-[#f7f7f7] ">
-        <Slider
-          ref={sliderRef}
-          {...settings}
-          className="flex w-[738px]  px-[50px] pt-[30px] flex !items-center "
-        >
-          {testimonials.map((t, idx) => (
-            <div key={idx} className=" text-center !w-[638px]     ">
-              <div className="!mb-[32px]">
-                <Typography variant="header-1">"{t.text}"</Typography>
-              </div>
+    <div className=" flex flex-col gap-[50px] ">
+      <Typography variant="hero-display">Hero Display Text</Typography>
 
-              <div>
-                <Typography variant="header-1" className="  ">
-                  {t.author}
-                </Typography>
-              </div>
-            </div>
-          ))}
-        </Slider>
+      {/* DISPLAYS */}
+      <Typography variant="display-1">Display 1 Text</Typography>
 
-        {/* CONTROLS */}
-        <div className="flex items-center justify-center gap-[20px] px-[50px] pb-[30px] ">
-          <Image
-            src="https://ik.imagekit.io/flyde/Left%20arrow.png"
-            width={100}
-            height={100}
-            alt="left image"
-            onClick={() => sliderRef.current?.slickPrev()}
-            className="arrowImg"
-          />
+      <Typography variant="display-2">Display 2 Text</Typography>
 
-          {/* DOTS */}
-          <div className="flex gap-[10px]">
-            {testimonials.map((_, i) =>
-              // <button
-              //   key={i}
-              //   onClick={() => sliderRef.current?.slickGoTo(i)}
-              //   className={`h-[8px] w-[8px] rounded-full ${
-              //     currentIndex === i ? "bg-black" : "bg-gray-300"
-              //   }`}
-              // />
+      <Typography variant="display-3">Display 3 Text</Typography>
 
-              currentIndex == i ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="11"
-                  height="11"
-                  viewBox="0 0 11 11"
-                  fill="none"
-                >
-                  <circle
-                    cx="5.11111"
-                    cy="5.11111"
-                    r="5.11111"
-                    fill="#31110F"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="11"
-                  height="11"
-                  viewBox="0 0 11 11"
-                  fill="none"
-                >
-                  <circle
-                    cx="5.11111"
-                    cy="5.11111"
-                    r="5.11111"
-                    fill="black"
-                    fill-opacity="0.25"
-                  />
-                </svg>
-              )
-            )}
-          </div>
+      {/* HEADERS */}
+      <Typography variant="header-1">Header 1 Text</Typography>
 
-          <Image
-            src="https://ik.imagekit.io/flyde/Right%20arrow.png"
-            width={100}
-            height={100}
-            alt="right image"
-            onClick={() => sliderRef.current?.slickNext()}
-            className="arrowImg"
-          />
-        </div>
-      </div>
+      <Typography variant="header-2">Header 2 Text</Typography>
+
+      <Typography variant="header-3">Header 3 Text</Typography>
+
+      {/* PARAGRAPHS */}
+      <Typography variant="para-1">
+        This is paragraph 1 text. New line supported using pre-line.
+      </Typography>
+
+      <Typography variant="para-2" >
+        This is paragraph 2 with gray color.
+      </Typography>
+
+      <Typography variant="para-3" >
+        This is paragraph 3 with secondary color.
+      </Typography>
+
+      {/* BUTTON TEXT */}
+      <Typography variant="buttonText">Button Label Text</Typography>
+
+      {/* LINK TEXT */}
+      <Typography variant="linkText">Link Text Example</Typography>
+
+      {/* CUSTOM TAG OVERRIDE */}
+      <Typography variant="header-2" as="h1">
+        Header 2 styling but rendered as H1
+      </Typography>
+      <Testimonials />
     </div>
   );
 }
