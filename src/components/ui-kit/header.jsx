@@ -7,9 +7,23 @@
 // import { Container } from "./spacing";
 // import { usePathname, useRouter } from "next/navigation";
 
+// /* 🔹 LOCAL HEADER DATA (API replacement) */
+// const HEADER_DATA = {
+//   logo: "https://ik.imagekit.io/75zj3bigp/LogoLight.png",
+//   navLinks: [
+//     { name: "Home", href: "/" },
+//     { name: "About Kaizen", href: "/About" },
+//     { name: "Practice Areas", href: "/Practiceareas" },
+//     { name: "Sectors", href: "/Sectors" },
+//     { name: "Transaction Footprint", href: "/transactionfootprint" },
+//   ],
+//   ctaText: "Get Started",
+//   ctaLink: "/contact",
+// };
+
 // export default function Header() {
 //   const [activeLink, setActiveLink] = useState("");
-//   const [header, setHeader] = useState(null);
+//   const [header] = useState(HEADER_DATA); // ✅ API removed
 //   const [isScrolled, setIsScrolled] = useState(false);
 //   const [isHiding, setIsHiding] = useState(false);
 
@@ -19,24 +33,13 @@
 //   /* ROUTES jinke upar FIXED NAVBAR black hoga */
 //   const darkRoutes = ["/services", "/SingleSuccessStory"];
 
-//   /* true when current route is inside darkRoutes list */
-//   const isBlackRoute = darkRoutes.some((route) => pathname.startsWith(route));
+//   const isBlackRoute = darkRoutes.some((route) =>
+//     pathname.startsWith(route)
+//   );
 
-//   const darkLogo =
-//     "https://ik.imagekit.io/75zj3bigp/Logo12.png?updatedAt=1764157054343";
+//   // const darkLogo = "https://ik.imagekit.io/75zj3bigp/Logo12.png?updatedAt=1764157054343";
 
-//   const lightLogo = header?.logo;
-
-//   useEffect(() => {
-//     (async () => {
-//       try {
-//         const res = await api.get("/header-section");
-//         setHeader(res.data?.section || {});
-//       } catch (err) {
-//         console.log("Failed to load header");
-//       }
-//     })();
-//   }, []);
+//   const lightLogo = "https://ik.imagekit.io/75zj3bigp/Group%20logo.png";
 
 //   useEffect(() => {
 //     let lastScrollY = window.scrollY;
@@ -60,7 +63,6 @@
 
 //   useEffect(() => {
 //     if (header?.navLinks) {
-//       0;
 //       const currentLink = header.navLinks.find((link) => {
 //         return (
 //           pathname === link.href ||
@@ -80,14 +82,12 @@
 //     router.push(href);
 //   };
 
-//   if (!header) return null;
-
 //   const NavbarContent = ({ isFixed }) => {
-//     // const showDark = isFixed && isBlackRoute;
 //     const showDark = !isFixed && isBlackRoute;
 
 //     return (
 //       <>
+//       {/* // <Container variant="header"> */}
 //         {/* Logo */}
 //         <Link
 //           href="/"
@@ -99,18 +99,17 @@
 //           }}
 //         >
 //           <Image
-//             // src={showDark ? darkLogo : lightLogo}
-//             src={!isFixed && showDark ? darkLogo : lightLogo}
+//             src={lightLogo}
 //             alt="Hirezy"
-//             width={140.3}
-//             height={37}
+//             width={146.23}
+//             height={31.11}
 //             className="header-logo"
 //           />
 //         </Link>
 
 //         {/* Desktop Navigation */}
 //         <nav className="nav-link-container">
-//           {header.navLinks?.map((link, i) => (
+//           {header.navLinks.map((link, i) => (
 //             <Link
 //               key={i}
 //               href={link.href}
@@ -122,23 +121,23 @@
 //                     : ""
 //                   : showDark
 //                   ? activeLink === link.name
-//                     ? "static-active" // white wala variant
+//                     ? "static-active"
 //                     : ""
 //                   : activeLink === link.name
-//                   ? "static-black-active" // ← yeh new black active state
+//                   ? "static-black-active"
 //                   : ""
 //               }`}
 //             >
 //               <Typography
-//                 className={`transition-colors ${
+//                 className={`!text-[var(--color-para-2)] transition-colors ${
 //                   !isFixed
 //                     ? showDark
 //                       ? "static-nav-link-white"
 //                       : "static-nav-link"
 //                     : "fixed-nav-link"
 //                 }`}
-//                 variant="body-4"
-//                 style={{ lineHeight: "150%", fontSize: "16px" }}
+//                 variant="linkText"
+//                 style={{ lineHeight: "150%"}}
 //               >
 //                 {link.name}
 //               </Typography>
@@ -147,21 +146,22 @@
 //         </nav>
 
 //         {/* CTA */}
-//         <div className="flex items-center">
+//         {/* <div className="flex items-center">
 //           <Link href={header.ctaLink}>
 //             <Button variant="primary" size="xl" showIcon={false}>
 //               {header.ctaText}
 //             </Button>
 //           </Link>
-//         </div>
+//         </div> */}
+//       {/* </Container> */}
 //       </>
 //     );
 //   };
 
 //   return (
 //     <>
-//       {/* STATIC NAVBAR — always light */}
-//       <div className="max-w-[var(--layout-max-width)] mx-auto w-full">
+//       {/* STATIC NAVBAR */}
+//       <div className="max-w-[var(--layout-max-width)] mx-auto w-full bg-[var(--color-background-2)]">
 //         <Container variant="header">
 //           <header className="header-container-static flex items-center justify-between">
 //             <NavbarContent isFixed={false} />
@@ -169,9 +169,9 @@
 //         </Container>
 //       </div>
 
-//       {/* FIXED NAVBAR — route based */}
+//       {/* FIXED NAVBAR */}
 //       <header
-//         className={`header-container-fixed ${isHiding ? "header-hiding" : ""} ${
+//         className={`header-container-fixed bg-[var(--color-background-2)] ${isHiding ? "header-hiding" : ""} ${
 //           isScrolled ? "header-scrolled" : ""
 //         }`}
 //       >
@@ -201,10 +201,10 @@ const HEADER_DATA = {
   logo: "https://ik.imagekit.io/75zj3bigp/LogoLight.png",
   navLinks: [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Work", href: "/work" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "About Kaizen", href: "/About" },
+    { name: "Practice Areas", href: "/Practiceareas" },
+    { name: "Sectors", href: "/Sectors" },
+    { name: "Transaction Footprint", href: "/transactionfootprint" },
   ],
   ctaText: "Get Started",
   ctaLink: "/contact",
@@ -212,21 +212,18 @@ const HEADER_DATA = {
 
 export default function Header() {
   const [activeLink, setActiveLink] = useState("");
-  const [header] = useState(HEADER_DATA); // ✅ API removed
+  const [header] = useState(HEADER_DATA);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHiding, setIsHiding] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // ✅ added
 
   const pathname = usePathname();
   const router = useRouter();
 
-  /* ROUTES jinke upar FIXED NAVBAR black hoga */
   const darkRoutes = ["/services", "/SingleSuccessStory"];
-
   const isBlackRoute = darkRoutes.some((route) =>
     pathname.startsWith(route)
   );
-
-  // const darkLogo = "https://ik.imagekit.io/75zj3bigp/Logo12.png?updatedAt=1764157054343";
 
   const lightLogo = "https://ik.imagekit.io/75zj3bigp/Group%20logo.png";
 
@@ -244,10 +241,7 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -263,11 +257,13 @@ export default function Header() {
       else if (pathname === "/") setActiveLink("Home");
       else setActiveLink("");
     }
+    setIsMenuOpen(false); // ✅ close menu on route change
   }, [pathname, header]);
 
   const handleLinkClick = (linkName, href, e) => {
     e.preventDefault();
     setActiveLink(linkName);
+    setIsMenuOpen(false);
     router.push(href);
   };
 
@@ -276,7 +272,6 @@ export default function Header() {
 
     return (
       <>
-      {/* // <Container variant="header"> */}
         {/* Logo */}
         <Link
           href="/"
@@ -284,20 +279,21 @@ export default function Header() {
           onClick={(e) => {
             e.preventDefault();
             setActiveLink("Home");
+            setIsMenuOpen(false);
             router.push("/");
           }}
         >
           <Image
             src={lightLogo}
             alt="Hirezy"
-            width={140.3}
-            height={37}
+            width={146.23}
+            height={31.11}
             className="header-logo"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="nav-link-container">
+        <nav className="nav-link-container hidden md:flex">
           {header.navLinks.map((link, i) => (
             <Link
               key={i}
@@ -318,15 +314,15 @@ export default function Header() {
               }`}
             >
               <Typography
-                className={`transition-colors ${
+                className={`!text-[var(--color-para-2)] transition-colors ${
                   !isFixed
                     ? showDark
                       ? "static-nav-link-white"
                       : "static-nav-link"
                     : "fixed-nav-link"
                 }`}
-                variant="body-4"
-                style={{ lineHeight: "150%", fontSize: "16px" }}
+                variant="linkText"
+                style={{ lineHeight: "150%" }}
               >
                 {link.name}
               </Typography>
@@ -334,15 +330,16 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA */}
-        {/* <div className="flex items-center">
-          <Link href={header.ctaLink}>
-            <Button variant="primary" size="xl" showIcon={false}>
-              {header.ctaText}
-            </Button>
-          </Link>
-        </div> */}
-      {/* </Container> */}
+        {/* Hamburger (mobile only) */}
+        <button
+          className=" hamburger-menu flex flex-col gap-[4px]"
+          // onClick={() => setIsMenuOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          <span className="w-6 h-[2px] bg-white" />
+          <span className="w-6 h-[2px] bg-white" />
+          {/* <span className="w-6 h-[2px] bg-white" /> */}
+        </button>
       </>
     );
   };
@@ -356,13 +353,31 @@ export default function Header() {
             <NavbarContent isFixed={false} />
           </header>
         </Container>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden px-6 py-4">
+            {header.navLinks.map((link, i) => (
+              <Link
+                key={i}
+                href={link.href}
+                onClick={(e) => handleLinkClick(link.name, link.href, e)}
+                className="block py-3"
+              >
+                <Typography variant="linkText">
+                  {link.name}
+                </Typography>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* FIXED NAVBAR */}
       <header
-        className={`header-container-fixed ${isHiding ? "header-hiding" : ""} ${
-          isScrolled ? "header-scrolled" : ""
-        }`}
+        className={`header-container-fixed bg-[var(--color-background-2)] ${
+          isHiding ? "header-hiding" : ""
+        } ${isScrolled ? "header-scrolled" : ""}`}
       >
         <Container
           variant="header"
