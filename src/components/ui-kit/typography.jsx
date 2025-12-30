@@ -25,7 +25,7 @@ const Typography = ({
         whiteSpace: "pre-line",
         color: colorMap[colorVariant] || colorMap.black,
       }}
-      {...props}
+      {...props} 
     >
       {children}
     </Tag>
