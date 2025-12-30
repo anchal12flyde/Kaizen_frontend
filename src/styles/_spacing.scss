@@ -6,21 +6,25 @@
   padding: var(--sp-20) var(--sp-50);
 }
 
-.grid-spacing {
-  padding: var(--sp-126) var(--sp-64);
-}
-
 .hero-spacing {
-  padding: var(--sp-80) var(--sp-50) 0 var(--sp-50);
+  padding: 0 var(--sp-50) var(--sp-70) var(--sp-50);
 }
 
 .secondary-spacing {
   padding: 128px var(--sp-50) var(--sp-80) var(--sp-50);
 }
 
-.section-spacing {
-  padding: 128px var(--sp-50) 0 var(--sp-50);
+.section-sp-1 {
+  padding: var(--sp-126) var(--sp-64);
 }
+
+.section-sp-top {
+    padding: var(--sp-126) 0 0 0;
+  }
+  
+  .section-sp-bottom {
+    padding: 0 0 var(--sp-126) 0;
+  }
 
 .auth-spacing {
   padding: 0 0 0 var(--sp-80);
@@ -39,13 +43,13 @@
 }
 
 .block-spacing {
-    padding: var(--sp-80) 0px;
+  padding: var(--sp-80) 0px;
 }
 .inline-spacing {
   padding: 0px var(--sp-50);
 }
 .blog-spacing {
-    padding: var(--sp-56) var(--sp-50);
+  padding: var(--sp-56) var(--sp-50);
 }
 
 @media (max-width: 834px) {
@@ -57,17 +61,18 @@
     padding: var(--sp-24) var(--sp-40);
   }
 
-  
+  .footer-spacing {
+    padding: var(--sp-68) var(--sp-50);
+  }
 
-  
   .hero-spacing {
     padding: var(--sp-56) var(--sp-40) 0 var(--sp-40);
   }
-  
+
   .secondary-spacing {
     padding: 128px var(--sp-40) var(--sp-80) var(--sp-40);
   }
-  
+
   .section-spacing {
     padding: 128px var(--sp-40) 0 var(--sp-40);
   }
@@ -77,24 +82,35 @@
   .inline-spacing {
     padding: 0px var(--sp-40);
   }
-  
 }
 
 @media (max-width: 600px) {
   .primary-spacing {
     padding: var(--sp-40) var(--sp-16);
   }
-  
+
   .header-spacing {
     padding: var(--sp-24) var(--sp-16) 0 var(--sp-16);
   }
-  
-  .grid-spacing{
+
+  .footer-spacing {
+    padding: var(--sp-68) var(--sp-28);
+  }
+
+  .section-sp-1 {
     padding: var(--sp-64) var(--sp-28);
   }
 
+  .section-sp-top {
+    padding: var(--sp-64) 0 0 0;
+  }
+
+  .section-sp-bottom {
+    padding: 0 0 var(--sp-64) 0;
+  }
+
   .hero-spacing {
-    padding: var(--sp-44) var(--sp-16) 0 var(--sp-16);
+    padding: 0 var(--sp-24) var(--sp-70) var(--sp-24);
   }
 
   .secondary-spacing {
@@ -123,11 +139,11 @@
 
   .block-spacing {
     padding: var(--sp-40) 0px;
-}
+  }
 
-.blog-spacing {
+  .blog-spacing {
     padding: 0px var(--sp-16);
-}
+  }
 }
 
 @media (min-width: 1612px) {
