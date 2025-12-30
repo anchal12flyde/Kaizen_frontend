@@ -4,7 +4,6 @@ import Link from "next/link";
 import Typography from "@/components/ui-kit/typography";
 import { Container } from "@/components/ui-kit/spacing";
 import { useEffect, useState } from "react";
-import api from "@/lib/api";
 
 
 const Footer = () => {
