@@ -1,0 +1,89 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero-background {
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: absolute;
+  left: 50px;
+  bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Steps Section */
+.steps-section {
+  background: var(--color-background-3);
+  width: 100%;
+  color: white;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--sp-50);
+ 
+}
+
+.step-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 0.5px solid #FFFFFF;
+  border-bottom: 0.5px solid #FFFFFF;
+  padding: var(--sp-50) 0;
+}
+
+.step-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-87) 0;
+  width: 481px;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-56);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+ 
+  .step-content-container {
+    width: 100%;
+    padding: var(--sp-33) 0;
+   
+  }
+  .step-item{
+    gap: var(--sp-51);
+  }
+}
+
+@media (max-width: 768px) {
+  .step-item {
+    flex-direction: column;
+    gap: var(--sp-16);
+  }
+  .step-content-container {
+    width: 100%;
+    padding: 0;
+  }
+  .hero-content {
+    left: 20px;
+  }
+}
