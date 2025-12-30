@@ -1,13 +1,18 @@
+"use client";
+
+import Testimonials from "@/components/ui-kit/testimonials";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
+import { useRef, useState } from "react";
+import Slider from "react-slick";
 import Button from "@/components/ui-kit/button";
+import TransactionCard from "@/components/ui-kit/transactionCard";
 
 export default function Home() {
+ 
+
   return (
-    <div
-      style={{ padding: 40, display: "flex", flexDirection: "column", gap: 20 }}
-    >
-      {/* HERO */}
+    <div className=" flex flex-col gap-[50px] p-[50px] ">
       <Typography variant="hero-display">Hero Display Text</Typography>
 
 
@@ -42,16 +47,16 @@ export default function Home() {
       <Typography variant="buttonText">Button Label Text</Typography>
 
       {/* LINK TEXT */}
-      <Typography variant="linkText" as="a" href="#">
-        Link Text Example
-      </Typography>
+      <Typography variant="linkText">Link Text Example</Typography>
 
       {/* CUSTOM TAG OVERRIDE */}
       <Typography variant="header-2" as="h1">
         Header 2 styling but rendered as H1
       </Typography>
+      <Testimonials />
       <Button variant="primary">Schedule a Consult</Button>
       <Button variant="white">Schedule a Consult</Button>
+      <TransactionCard />
     </div>
   );
 }
