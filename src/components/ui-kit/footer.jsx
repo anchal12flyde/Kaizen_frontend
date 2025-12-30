@@ -4,7 +4,7 @@ import Typography from "./typography";
 
 export default function Footer() {
   return (
-    <Container variant="footerSpacing">
+    <Container variant="footerSpacing" className="bg-bg-1" >
       <div className="flex flex-col gap-[84px]" >
         <div className="flex flex-wrap items-center justify-between">
           <Image
