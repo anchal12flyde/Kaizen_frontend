@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Typography from "@/components/ui-kit/typography";
+import Button from "@/components/ui-kit/button";
+import Header from "@/components/ui-kit/header";
 
 
 export default function Page() {
@@ -27,6 +29,7 @@ export default function Page() {
 
   return (
     <>
+    <Header/>
       <section className="hero-section">
         <Image
           src="https://ik.imagekit.io/a9uxeuyhx/6214ca8bc0a8c870a67c8469f213760e7acc34ff.jpg"
@@ -69,6 +72,11 @@ export default function Page() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="flex flex-row justify-between">
+          <Typography variant="para-1" colorVariant="white">Discover how we can help</Typography>
+          <Button variant="white">Schedule a Consult</Button>
         </div>
       </section>
     </>
