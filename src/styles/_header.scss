@@ -83,8 +83,8 @@
 }
 
 .header-logo {
-  width: 140.3px;
-  height: 37px;
+  // width: 140.3px;
+  // height: 37px;
 }
 
 .nav-link-color {
@@ -115,7 +115,6 @@
 @media (max-width: 650px) {
   .header-logo {
     width: 107px;
-    height: 28px;
   }
   .nav-link-container {
     display: none;
