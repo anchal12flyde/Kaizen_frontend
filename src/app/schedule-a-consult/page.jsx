@@ -76,7 +76,7 @@ export default function Page() {
             ))}
           </div>
         </Container>
-        <Container variant="sectionSp1">
+        <Container variant="secondarySpacing">
           <div className="flex flex-row justify-between">
             <Typography variant="para-1" colorVariant="white">
               Discover how we can help
@@ -85,7 +85,7 @@ export default function Page() {
           </div>
         </Container>
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
 }
