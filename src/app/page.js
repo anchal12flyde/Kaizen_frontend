@@ -1,60 +1,57 @@
-import Typography from "@/components/ui-kit/typography";
-import Image from "next/image";
+"use client";
+
+import Header from "@/components/ui-kit/header";
+import Footer from "@/components/ui-kit/footer";
+import Typogrphy from "@/components/ui-kit/typography";
+import { Container } from "@/components/ui-kit/spacing";
 
 export default function Home() {
   return (
-    <div
-      style={{ padding: 40, display: "flex", flexDirection: "column", gap: 20 }}
-    >
-      {/* HERO */}
-      <Typography variant="hero-display">Hero Display Text</Typography>
+    <div>
+      <Header />
+      <div className="relative h-screen bg-[url('https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg')] bg-cover bg-center">
+        {/* Black overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* DISPLAYS */}
-      <Typography variant="display-1">Display 1 Text</Typography>
+        {/* Content */}
+        <div className="relative flex items-end h-full">
+          <Container className="flex flex-col w-full" variant="heroSpacing">
+            <Typogrphy
+              variant="display-2"
+              className="text-[var(--color-para-2)]!"
+            >
+              Legal Advisory
+            </Typogrphy>
 
-      <Typography variant="display-2">Display 2 Text</Typography>
+            <div className="flex justify-between mt-[var(--sp-42)]">
+              <Typogrphy
+                className="text-[var(--color-para-2)]!"
+                variant="header-hero"
+              >
+                For Complex Deals <br /> and Critical Decisions
+              </Typogrphy>
 
-      <Typography variant="display-3">Display 3 Text</Typography>
+              <Typogrphy
+                className="text-[var(--color-para-2)]! w-[370px]"
+                variant="header-3"
+              >
+                Kaizen Law is a corporate and transaction-focused law firm
+                advising businesses, founders, and investors across M&A, private
+                equity, capital markets, and general counsel mandates.
+              </Typogrphy>
+            </div>
+          </Container>
+        </div>
+      </div>
 
-      {/* HEADERS */}
-      <Typography variant="header-1">Header 1 Text</Typography>
+      <Container variant="">
+        <div className="">
+          <Typogrphy variant="header-1">More content here</Typogrphy>
+        </div>
+      </Container>
 
-      <Typography variant="header-2">Header 2 Text</Typography>
-
-      <Typography variant="header-3">Header 3 Text</Typography>
-
-      {/* PARAGRAPHS */}
-      <Typography variant="para-1">
-        This is paragraph 1 text. New line supported using pre-line.
-      </Typography>
-
-      <Typography variant="para-2" >
-        This is paragraph 2 with gray color.
-      </Typography>
-
-      <Typography variant="para-3" >
-        This is paragraph 3 with secondary color.
-      </Typography>
-
-      {/* BUTTON TEXT */}
-      <Typography variant="buttonText" >
-        Button Label Text
-      </Typography>
-
-      {/* LINK TEXT */}
-      <Typography
-        variant="linkText"
-        as="a"
-        href="#"
-       
-      >
-        Link Text Example
-      </Typography>
-
-      {/* CUSTOM TAG OVERRIDE */}
-      <Typography variant="header-2" as="h1">
-        Header 2 styling but rendered as H1
-      </Typography>
+      <div className="h-[200vh]"></div>
+      <Footer />
     </div>
   );
 }
