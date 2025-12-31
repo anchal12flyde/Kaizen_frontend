@@ -27,8 +27,8 @@ export default function page() {
               </Typography>
             </div>
 
-            <div>
-              <Typography variant="header-hero">
+            <div className="flex flex-row justify-between">
+              <Typography variant="header-hero"  colorVariant="white">
                 Complex, high-value transactions across sectors, stages, and
                 transaction types
               </Typography>
