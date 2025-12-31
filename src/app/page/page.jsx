@@ -117,14 +117,14 @@ export default function page() {
        
         <Container variant="sectionSp1">
           {/* Heading */}
-          <div className="mb-12">
+          <div className="mb-12 flex flex-col gap-[18px]" >
             <Typography variant="header-1" colorVariant="white">
               Representative Mandates
             </Typography>
             <Typography
               variant="para-2"
               colorVariant="white"
-              className="mt-3 max-w-[700px]"
+              className="mt-3 "
             >
               A curated selection of transactions that reflect the complexity,
               scale, and diversity of our transactional experience. Details are
