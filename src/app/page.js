@@ -4,6 +4,7 @@ import Header from "@/components/ui-kit/header";
 import Footer from "@/components/ui-kit/footer";
 import Typogrphy from "@/components/ui-kit/typography";
 import { Container } from "@/components/ui-kit/spacing";
+import Button from "@/components/ui-kit/button";
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
               Legal Advisory
             </Typogrphy>
 
-            <div className="flex justify-between mt-[var(--sp-42)]">
+            <div className="flex justify-between heroTextRsp mt-[var(--sp-42)]">
               <Typogrphy
                 className="text-[var(--color-para-2)]!"
                 variant="header-hero"
@@ -32,7 +33,7 @@ export default function Home() {
               </Typogrphy>
 
               <Typogrphy
-                className="text-[var(--color-para-2)]! w-[370px]"
+                className="text-[var(--color-para-2)]! max-w-[370px]"
                 variant="header-3"
               >
                 Kaizen Law is a corporate and transaction-focused law firm
@@ -44,9 +45,21 @@ export default function Home() {
         </div>
       </div>
 
-      <Container variant="">
-        <div className="">
-          <Typogrphy variant="header-1">More content here</Typogrphy>
+      {/* Second Section */}
+      <Container className="bg-[var(--color-background-1)]" variant="sectionSp1">
+        <div>
+          <Typogrphy variant="header-1">Built on the Principle of Continuous Improvement</Typogrphy>
+          <div className="mt-[var(--sp-60)] inprovementSection flex gap-[var(--sp-48)]">
+            <Typogrphy className="max-w-[447px]" variant="para-2">
+              Kaizen is not about dramatic change. It is about deliberate progress : refining structures, strengthening positions, and anticipating what lies ahead. This philosophy defines how we approach every mandate, from early-stage advisory to complex, multi-party transactions.
+            </Typogrphy>
+            <Typogrphy className="max-w-[447px]" variant="para-2">
+              In mergers and acquisitions, value is rarely created by a single decisive moment. It is built through disciplined preparation, careful structuring, informed negotiation, and precise execution. Our Kaizen approach reflects this reality. We focus on incremental advantage at every stage of a transaction — identifying risk early, refining deal terms continuously, and aligning legal strategy with commercial objectives. The result is not just deal completion, but durable outcomes that withstand scrutiny and time.
+            </Typogrphy>
+          </div>
+          <Button className="mt-[var(--sp-50)] inprovementSectionBtn">
+            <Typogrphy colorVariant="white" variant="para-2">More About Kaizen</Typogrphy>
+          </Button>
         </div>
       </Container>
 
