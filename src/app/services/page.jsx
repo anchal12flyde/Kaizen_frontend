@@ -64,12 +64,12 @@ export default function Services() {
         <Typography variant="para-1" className="!text-white">
           Navigating Complex Legal Landscapes? We <br /> Can Help.
         </Typography>
-        <div>
-          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff]  ">
+        <div className="md:grid md:grid-cols-2 md:justify-between col-gap-[24px] " >
+          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
             <Typography variant="header-3" className="!text-white">
               Business and Corporate Law
             </Typography>
-            <div className="!w-[420px]">
+            <div className="w-[420px] md:w-auto">
               <Typography variant="para-2" className="!text-white  ">
                 Business formation (LLCs, corporations, partnerships) <br />{" "}
                 Contract drafting and review <br /> Mergers and acquisitions{" "}
@@ -79,11 +79,11 @@ export default function Services() {
               </Typography>
             </div>
           </div>
-          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff]  ">
+          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
             <Typography variant="header-3" className="!text-white">
               Business and Corporate Law
             </Typography>
-            <div className="!w-[420px]">
+            <div className="w-[420px] md:w-auto">
               <Typography variant="para-2" className="!text-white  ">
                 Business formation (LLCs, corporations, partnerships) <br />{" "}
                 Contract drafting and review <br /> Mergers and acquisitions{" "}
@@ -93,11 +93,11 @@ export default function Services() {
               </Typography>
             </div>
           </div>
-          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff]  ">
+          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
             <Typography variant="header-3" className="!text-white">
               Business and Corporate Law
             </Typography>
-            <div className="!w-[420px]">
+            <div className="w-[420px] md:w-auto">
               <Typography variant="para-2" className="!text-white  ">
                 Business formation (LLCs, corporations, partnerships) <br />{" "}
                 Contract drafting and review <br /> Mergers and acquisitions{" "}
@@ -107,11 +107,11 @@ export default function Services() {
               </Typography>
             </div>
           </div>
-          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff]  ">
+          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
             <Typography variant="header-3" className="!text-white">
               Business and Corporate Law
             </Typography>
-            <div className="!w-[420px]">
+            <div className="w-[420px] md:w-auto">
               <Typography variant="para-2" className="!text-white  ">
                 Business formation (LLCs, corporations, partnerships) <br />{" "}
                 Contract drafting and review <br /> Mergers and acquisitions{" "}
@@ -121,11 +121,25 @@ export default function Services() {
               </Typography>
             </div>
           </div>
-          <div className=" flex items-start justify-between py-[20px] border-y-[.5px] border-[#fff]  ">
+          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
             <Typography variant="header-3" className="!text-white">
               Business and Corporate Law
             </Typography>
-            <div className="!w-[420px]">
+            <div className="w-[420px] md:w-auto">
+              <Typography variant="para-2" className="!text-white  ">
+                Business formation (LLCs, corporations, partnerships) <br />{" "}
+                Contract drafting and review <br /> Mergers and acquisitions{" "}
+                <br /> Intellectual property protection <br /> Employment law
+                and workplace policies <br />
+                Corporate governance <br /> Shareholder and partnership disputes
+              </Typography>
+            </div>
+          </div>
+          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
+            <Typography variant="header-3" className="!text-white">
+              Business and Corporate Law
+            </Typography>
+            <div className="w-[420px] md:w-auto">
               <Typography variant="para-2" className="!text-white  ">
                 Business formation (LLCs, corporations, partnerships) <br />{" "}
                 Contract drafting and review <br /> Mergers and acquisitions{" "}
