@@ -21,7 +21,6 @@ export default function page() {
         {/* Content */}
         <div className="hero-content">
           <div>
-            
             <div className="mb-[42px]">
               <Typography variant="hero-display" colorVariant="white">
                 Transaction Footprint
@@ -29,10 +28,10 @@ export default function page() {
             </div>
 
             <div>
-              <p className="text-[16px] md:text-[18px] opacity-90 leading-relaxed">
+              <Typography variant="header-hero">
                 Complex, high-value transactions across sectors, stages, and
                 transaction types
-              </p>
+              </Typography>
               <Typography variant="para-2" colorVariant="white">
                 Transactions are presented in an anonymised format in accordance
                 with applicable confidentiality and regulatory considerations.
