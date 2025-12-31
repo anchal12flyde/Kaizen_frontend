@@ -108,13 +108,13 @@
   }
 
   .header-fixed-content {
-    padding: var(--sp-24) var(--sp-40);
+    // padding: var(--sp-24) var(--sp-40);
   }
 }
 
 @media (max-width: 650px) {
   .header-logo {
-    width: 107px;
+    // width: 107px;
   }
   .nav-link-container {
     display: none;
@@ -124,7 +124,7 @@
   }
 
   .header-fixed-content {
-    padding: var(--sp-12) var(--sp-16) var(--sp-12) var(--sp-16);
+    // padding: var(--sp-12) var(--sp-16) var(--sp-12) var(--sp-16);
   }
 }
 

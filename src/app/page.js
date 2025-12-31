@@ -5,6 +5,7 @@ import Footer from "@/components/ui-kit/footer";
 import Typogrphy from "@/components/ui-kit/typography";
 import { Container } from "@/components/ui-kit/spacing";
 import Button from "@/components/ui-kit/button";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -63,7 +64,16 @@ export default function Home() {
         </div>
       </Container>
 
-      <div className="h-[200vh]"></div>
+      {/* Third Section */}
+          <div>
+           <Image className="thiredSectionImageRsp" width={704} height={500} src="https://ik.imagekit.io/75zj3bigp/7d11d9363b24d18bf891f3cb0eaa9eb909fbb467.png" />
+          </div>
+      <Container className="" variant="sectionSp1">
+        <div>
+        </div>
+      </Container>
+
+      {/* <div className="h-[200vh]"></div> */}
       <Footer />
     </div>
   );
