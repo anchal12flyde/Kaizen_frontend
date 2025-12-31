@@ -47,31 +47,80 @@ export default function Home() {
       </div>
 
       {/* Second Section */}
-      <Container className="bg-[var(--color-background-1)]" variant="sectionSp1">
+      <Container
+        className="bg-[var(--color-background-1)]"
+        variant="sectionSp1"
+      >
         <div>
-          <Typogrphy variant="header-1">Built on the Principle of Continuous Improvement</Typogrphy>
+          <Typogrphy variant="header-1">
+            Built on the Principle of Continuous Improvement
+          </Typogrphy>
           <div className="mt-[var(--sp-60)] inprovementSection flex gap-[var(--sp-48)]">
             <Typogrphy className="max-w-[447px]" variant="para-2">
-              Kaizen is not about dramatic change. It is about deliberate progress : refining structures, strengthening positions, and anticipating what lies ahead. This philosophy defines how we approach every mandate, from early-stage advisory to complex, multi-party transactions.
+              Kaizen is not about dramatic change. It is about deliberate
+              progress : refining structures, strengthening positions, and
+              anticipating what lies ahead. This philosophy defines how we
+              approach every mandate, from early-stage advisory to complex,
+              multi-party transactions.
             </Typogrphy>
             <Typogrphy className="max-w-[447px]" variant="para-2">
-              In mergers and acquisitions, value is rarely created by a single decisive moment. It is built through disciplined preparation, careful structuring, informed negotiation, and precise execution. Our Kaizen approach reflects this reality. We focus on incremental advantage at every stage of a transaction — identifying risk early, refining deal terms continuously, and aligning legal strategy with commercial objectives. The result is not just deal completion, but durable outcomes that withstand scrutiny and time.
+              In mergers and acquisitions, value is rarely created by a single
+              decisive moment. It is built through disciplined preparation,
+              careful structuring, informed negotiation, and precise execution.
+              Our Kaizen approach reflects this reality. We focus on incremental
+              advantage at every stage of a transaction — identifying risk
+              early, refining deal terms continuously, and aligning legal
+              strategy with commercial objectives. The result is not just deal
+              completion, but durable outcomes that withstand scrutiny and time.
             </Typogrphy>
           </div>
           <Button className="mt-[var(--sp-50)] inprovementSectionBtn">
-            <Typogrphy colorVariant="white" variant="para-2">More About Kaizen</Typogrphy>
+            <Typogrphy colorVariant="white" variant="para-2">
+              More About Kaizen
+            </Typogrphy>
           </Button>
         </div>
       </Container>
 
       {/* Third Section */}
+      <div>
+        <Image
+          className="thiredSectionImageRsp"
+          width={704}
+          height={500}
+          src="https://ik.imagekit.io/75zj3bigp/7d11d9363b24d18bf891f3cb0eaa9eb909fbb467.png"
+        />
+      </div>
+      <div className="thiredSectionBgColor">
+        <Container className="flex gap-[var(--sp-63)]" variant="sectionSp1">
           <div>
-           <Image className="thiredSectionImageRsp" width={704} height={500} src="https://ik.imagekit.io/75zj3bigp/7d11d9363b24d18bf891f3cb0eaa9eb909fbb467.png" />
+            <Typogrphy colorVariant="white" variant="header-1">
+              Advising Across <br /> the Full Deal Lifecycle
+            </Typogrphy>
           </div>
-      <Container className="" variant="sectionSp1">
-        <div>
-        </div>
-      </Container>
+          <div className="flex flex-col">
+            <Typogrphy colorVariant="white" variant="display-3">
+              Strategic Evaluation <br />
+              Structuring & Planning <br />
+              Due Diligence <br />
+              Negotiation <br />
+              Documentation & Execution <br />
+              Closing & Completion
+            </Typogrphy>
+            <Typogrphy colorVariant="white" variant="para-2">
+              +Post-Transaction Integration & Compliance
+            </Typogrphy>
+            <Button
+              className="mt-[var(--sp-50)] inprovementSectionBtn"
+              variant="white"
+            >
+              <Typogrphy colorVariant="black" variant="para-2">
+                Explore Capabilities
+              </Typogrphy>
+            </Button>
+          </div>
+        </Container>
+      </div>
 
       {/* <div className="h-[200vh]"></div> */}
       <Footer />

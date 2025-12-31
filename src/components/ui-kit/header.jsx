@@ -32,9 +32,7 @@ export default function Header() {
   const router = useRouter();
 
   const darkRoutes = ["/services", "/SingleSuccessStory"];
-  const isBlackRoute = darkRoutes.some((route) =>
-    pathname.startsWith(route)
-  );
+  const isBlackRoute = darkRoutes.some((route) => pathname.startsWith(route));
 
   const lightLogo = "https://ik.imagekit.io/75zj3bigp/Group%20logo.png";
 
@@ -158,30 +156,30 @@ export default function Header() {
   return (
     <>
       {/* STATIC NAVBAR */}
-      <div className="max-w-[var(--layout-max-width)] mx-auto w-full bg-[var(--color-background-2)]">
-        <Container variant="header">
-          <header className="header-container-static flex items-center justify-between">
-            <NavbarContent isFixed={false} />
-          </header>
-        </Container>
+      <div className="bg-[var(--color-background-2)]">
+        <div className="max-w-[var(--layout-max-width)] mx-auto w-full">
+          <Container variant="header">
+            <header className="header-container-static flex items-center justify-between">
+              <NavbarContent isFixed={false} />
+            </header>
+          </Container>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden px-6 py-4">
-            {header.navLinks.map((link, i) => (
-              <Link
-                key={i}
-                href={link.href}
-                onClick={(e) => handleLinkClick(link.name, link.href, e)}
-                className="block py-3"
-              >
-                <Typography variant="linkText">
-                  {link.name}
-                </Typography>
-              </Link>
-            ))}
-          </div>
-        )}
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="md:hidden px-6 py-4">
+              {header.navLinks.map((link, i) => (
+                <Link
+                  key={i}
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(link.name, link.href, e)}
+                  className="block py-3"
+                >
+                  <Typography variant="linkText">{link.name}</Typography>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* FIXED NAVBAR */}
