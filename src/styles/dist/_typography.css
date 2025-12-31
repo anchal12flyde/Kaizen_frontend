@@ -57,9 +57,20 @@
   color: var(--Paragraph-Paragraph-1, #000);
   font-family: "Times New Roman";
   font-size: calc( 20px + 8px * ((100vw - 390px) / (1050px)) );
-  font-weight: 400;
+  font-weight: 400 !important;
   line-height: 109%;
   letter-spacing: calc( -0.6px + -0.6px * ((100vw - 390px) / (1050px)) );
+}
+
+.header-hero {
+  color: var(--Paragraph-Paragraph-1, #000);
+  /* Header/Header Hero */
+  font-family: "Times New Roman";
+  font-size: calc( 30px + 10px * ((100vw - 390px) / (1050px)) );
+  font-style: normal;
+  font-weight: 400;
+  line-height: 109%;
+  letter-spacing: calc( -1.5px + -0.5px * ((100vw - 390px) / (1050px)) );
 }
 
 .header-3 {

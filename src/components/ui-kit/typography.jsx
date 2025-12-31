@@ -35,6 +35,7 @@ const Typography = ({
 function getDefaultTag(variant) {
   const map = {
     "hero-display": "hero-display",
+    "header-hero":"header-hero",
     "display-1": "display-1",
     "display-2": "display-2",
     "display-3": "display-3",
