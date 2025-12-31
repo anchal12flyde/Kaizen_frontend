@@ -9,6 +9,7 @@ export const Container = ({ children, variant = "primary", className }) => {
     sectionSpTop: "section-sp-top",
     sectionSpBottom: "section-sp-bottom",
     footerSpacing: "footer-spacing",
+    metricSpacing: "metric-spacing",
   }; 
 
   return (

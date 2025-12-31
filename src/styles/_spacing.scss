@@ -25,8 +25,10 @@
 .section-sp-bottom {
   padding: 0 0 var(--sp-126) 0;
 }
-
-@media (max-width: 834px) {
+.metric-spacing{
+  padding: var(--sp-96) var(--sp-160);
+}
+@media (max-width: 850px) {
   .header-spacing {
     padding: var(--sp-24) var(--sp-40);
   }
@@ -41,6 +43,12 @@
 
   .hero-spacing {
     padding: var(--sp-56) var(--sp-40) 0 var(--sp-40);
+  }
+  .secondary-spacing {
+    padding: 0 var(--sp-64) var(--sp-114) var(--sp-64);
+  }
+  .metric-spacing{
+    padding: var(--sp-96) var(--sp-64);
   }
 }
 
@@ -67,5 +75,11 @@
 
   .hero-spacing {
     padding: 0 var(--sp-24) var(--sp-70) var(--sp-24);
+  }
+  .secondary-spacing {
+    padding: 0 var(--sp-28) var(--sp-64) var(--sp-28);
+  }
+  .metric-spacing{
+    padding: var(--sp-48) var(--sp-28);
   }
 }

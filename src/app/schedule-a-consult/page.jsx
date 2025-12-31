@@ -77,7 +77,7 @@ export default function Page() {
           </div>
         </Container>
         <Container variant="secondarySpacing">
-          <div className="flex flex-row justify-between">
+          <div className="flex md:flex-row flex-col md:justify-between gap-[56px]">
             <Typography variant="para-1" colorVariant="white">
               Discover how we can help
             </Typography>

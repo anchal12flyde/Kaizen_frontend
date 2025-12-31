@@ -3,9 +3,9 @@ import clsx from "clsx";
 const colorMap = {
   black: "#000000",
   white: "#FFFFFF",
-  gray: "#636363",
-  primary: "#CCEF55",
-  secondary: "#AAAAAA",
+  background2: "#0a193a",
+  accent: "#B6996A",
+  background3: "#1F0808",
 };
 
 const Typography = ({
