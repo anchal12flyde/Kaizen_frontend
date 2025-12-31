@@ -150,3 +150,50 @@ body {
 
   
 }
+
+//services css
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-top: 0.5px solid #fff;
+ 
+}
+
+.service-desc {
+  width: 420px;
+  text-align: left;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-item {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .service-desc {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-desc {
+    width: 100%;
+  }
+}

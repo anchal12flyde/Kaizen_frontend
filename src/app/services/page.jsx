@@ -5,152 +5,165 @@ import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 
 export default function Services() {
+  const stats = [
+    {
+      number: "30+",
+      label: "years of experience",
+    },
+    {
+      number: "98%",
+      label: "success rate in court",
+    },
+    {
+      number: "120+",
+      label: "attorneys at hand",
+    },
+  ];
+  
+  const services = [
+    {
+      title: "Business and Corporate Law",
+      description: [
+        "Business formation (LLCs, corporations, partnerships)",
+        "Contract drafting and review",
+        "Mergers and acquisitions",
+        "Intellectual property protection",
+        "Employment law and workplace policies",
+        "Corporate governance",
+        "Shareholder and partnership disputes",
+      ],
+    },
+
+    {
+      title: "Litigation and Dispute Resolution",
+      description: [
+        "Civil litigation",
+        "Commercial litigation",
+        "Arbitration and mediation",
+        "Class action lawsuits",
+        "Personal injury claims",
+        "Product liability cases",
+      ],
+    },
+    {
+      title: "Family Law",
+      description: [
+        "Divorce and separation",
+        "Child custody and support",
+        "Prenuptial and postnuptial agreements",
+        "Adoption and surrogacy",
+        "Domestic violence protection",
+      ],
+    },
+    {
+      title: "Criminal Defense",
+      description: [
+        "DUI and traffic offenses",
+        "White-collar crime defense",
+        "Drug charges",
+        "Assault and battery cases",
+        "Expungements and record sealing",
+      ],
+    },
+    {
+      title: "Real Estate Law",
+      description: [
+        "Property transactions (buying, selling, leasing)",
+        "Landlord-tenant disputes",
+        "Zoning and land use",
+        "Construction law",
+        "Real estate development",
+      ],
+    },
+    {
+      title: "Immigration Law",
+      description: [
+        "Visa applications",
+        "Green cards and citizenship",
+        "Deportation defense",
+        "Employment-based immigration",
+       
+      ],
+    },
+  ];
   return (
     <div>
       <Header />
-      <div className="relative h-screen bg-[url('https://ik.imagekit.io/flyde/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg')] bg-cover bg-center">
-        {/* Black overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
 
-        {/* Content */}
-        <div className="relative flex items-end h-full">
-          <Container className="flex flex-col w-full" variant="heroSpacing">
-            <div className="flex justify-between mt-[var(--sp-42)]">
+      <section className="hero-section">
+        <Image
+          src="https://ik.imagekit.io/flyde/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg"
+          alt="Hero Background"
+          fill
+          className="hero-background"
+          priority
+        />
+        <div className="hero-overlay"></div>
+
+        <div className="hero-content lg:w-[734px] w-auto  right-[24px]">
+          <Typography variant="header-1" colorVariant="white">
+            At Jones & Brown Legal, we are committed to exceptional service and
+            successful outcomes with:
+          </Typography>
+        </div>
+      </section>
+
+      <Container variant="metricSpacing">
+        <div className="stats-section">
+          {stats.map((item, index) => (
+            <div key={index} className="stats-card">
+              <Typography variant="display-2" colorVariant="accent">
+                {item.number}
+              </Typography>
+
               <Typography
-                className="text-[var(--color-para-2)]!"
-                variant="header-1"
+                variant="header-2"
+                colorVariant="accent"
+                className="stats-card-text"
               >
-                At Jones & Brown Legal, we are committed to exceptional <br />
-                service and successful outcomes with:
+                {item.label}
               </Typography>
             </div>
-          </Container>
-        </div>
-      </div>
-
-      <div>
-        <div className="p-[48px_28px] md:p-[96px_64px]  lg:p-[96px_160px] flex flex-wrap items-center justify-between bg-bg-1 ">
-          <div className="flex flex-col items-start gap-[56px] ">
-            <Typography variant="display-2" className="text-accent">
-              30+
-            </Typography>
-            <Typography variant="header-2" className="text-accent">
-              years of experience
-            </Typography>
-          </div>
-          <div className="flex flex-col items-start gap-[56px] ">
-            <Typography variant="display-2" className="text-accent">
-              98%
-            </Typography>
-            <Typography variant="header-2" className="text-accent">
-              success rate in court
-            </Typography>
-          </div>
-          <div className="flex flex-col items-start gap-[56px] ">
-            <Typography variant="display-2" className="text-accent">
-              120+
-            </Typography>
-            <Typography variant="header-2" className="text-accent">
-              attorneys at hand
-            </Typography>
-          </div>
-        </div>
-      </div>
-
-      <Container
-        variant="sectionSp1"
-        className="bg-bg-2 flex flex-col  gap-[170px] !w-full "
-      >
-        <Typography variant="para-1" className="!text-white">
-          Navigating Complex Legal Landscapes? We <br /> Can Help.
-        </Typography>
-        <div className="md:grid md:grid-cols-2 md:justify-between col-gap-[24px] " >
-          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
-            <Typography variant="header-3" className="!text-white">
-              Business and Corporate Law
-            </Typography>
-            <div className="w-[420px] md:w-auto">
-              <Typography variant="para-2" className="!text-white  ">
-                Business formation (LLCs, corporations, partnerships) <br />{" "}
-                Contract drafting and review <br /> Mergers and acquisitions{" "}
-                <br /> Intellectual property protection <br /> Employment law
-                and workplace policies <br />
-                Corporate governance <br /> Shareholder and partnership disputes
-              </Typography>
-            </div>
-          </div>
-          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
-            <Typography variant="header-3" className="!text-white">
-              Business and Corporate Law
-            </Typography>
-            <div className="w-[420px] md:w-auto">
-              <Typography variant="para-2" className="!text-white  ">
-                Business formation (LLCs, corporations, partnerships) <br />{" "}
-                Contract drafting and review <br /> Mergers and acquisitions{" "}
-                <br /> Intellectual property protection <br /> Employment law
-                and workplace policies <br />
-                Corporate governance <br /> Shareholder and partnership disputes
-              </Typography>
-            </div>
-          </div>
-          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
-            <Typography variant="header-3" className="!text-white">
-              Business and Corporate Law
-            </Typography>
-            <div className="w-[420px] md:w-auto">
-              <Typography variant="para-2" className="!text-white  ">
-                Business formation (LLCs, corporations, partnerships) <br />{" "}
-                Contract drafting and review <br /> Mergers and acquisitions{" "}
-                <br /> Intellectual property protection <br /> Employment law
-                and workplace policies <br />
-                Corporate governance <br /> Shareholder and partnership disputes
-              </Typography>
-            </div>
-          </div>
-          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
-            <Typography variant="header-3" className="!text-white">
-              Business and Corporate Law
-            </Typography>
-            <div className="w-[420px] md:w-auto">
-              <Typography variant="para-2" className="!text-white  ">
-                Business formation (LLCs, corporations, partnerships) <br />{" "}
-                Contract drafting and review <br /> Mergers and acquisitions{" "}
-                <br /> Intellectual property protection <br /> Employment law
-                and workplace policies <br />
-                Corporate governance <br /> Shareholder and partnership disputes
-              </Typography>
-            </div>
-          </div>
-          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
-            <Typography variant="header-3" className="!text-white">
-              Business and Corporate Law
-            </Typography>
-            <div className="w-[420px] md:w-auto">
-              <Typography variant="para-2" className="!text-white  ">
-                Business formation (LLCs, corporations, partnerships) <br />{" "}
-                Contract drafting and review <br /> Mergers and acquisitions{" "}
-                <br /> Intellectual property protection <br /> Employment law
-                and workplace policies <br />
-                Corporate governance <br /> Shareholder and partnership disputes
-              </Typography>
-            </div>
-          </div>
-          <div className=" flex items-start justify-between py-[20px] border-t-[.5px] border-[#fff] md:flex-col md:gap-[24px] md:w-fit  ">
-            <Typography variant="header-3" className="!text-white">
-              Business and Corporate Law
-            </Typography>
-            <div className="w-[420px] md:w-auto">
-              <Typography variant="para-2" className="!text-white  ">
-                Business formation (LLCs, corporations, partnerships) <br />{" "}
-                Contract drafting and review <br /> Mergers and acquisitions{" "}
-                <br /> Intellectual property protection <br /> Employment law
-                and workplace policies <br />
-                Corporate governance <br /> Shareholder and partnership disputes
-              </Typography>
-            </div>
-          </div>
+          ))}
         </div>
       </Container>
+
+      <section className="bg-[#0A193A] w-full flex justify-center">
+        <Container
+          variant="sectionSp1"
+          className=" flex flex-col  gap-[170px] w-full "
+        >
+          <Typography
+            variant="header-1"
+            colorVariant="white"
+            className="md:w-[548px] w-full"
+          >
+            Navigating Complex Legal Landscapes? We Can Help.
+          </Typography>
+          <div className="services-grid">
+            {services.map((item, index) => (
+              <div key={index} className="service-item">
+                <Typography variant="header-3" colorVariant="white">
+                  {item.title}
+                </Typography>
+
+                <Typography
+                  variant="para-2"
+                  colorVariant="white"
+                  className="service-desc"
+                >
+                  {item.description.map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+                </Typography>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       <div className="!w-full h-[625px]  ">
         <Image
