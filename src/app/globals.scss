@@ -152,7 +152,12 @@ body {
 }
 
 //services css
-
+.service-head{
+  display: flex;
+  flex-direction: column;
+  gap: 170px;
+  width: 100%;
+}
 .services-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -181,10 +186,14 @@ body {
   .service-item {
     flex-direction: column;
     gap: 24px;
+    justify-content: flex-start;
   }
 
   .service-desc {
     width: 100%;
+  }
+  .service-head{
+    gap:80px;
   }
 }
 
@@ -196,4 +205,8 @@ body {
   .service-desc {
     width: 100%;
   }
+  .service-head{
+    gap:64px;
+  }
+ 
 }

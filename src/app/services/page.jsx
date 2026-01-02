@@ -131,7 +131,7 @@ export default function Services() {
       <section className="bg-[#0A193A] w-full flex justify-center">
         <Container
           variant="sectionSp1"
-          className=" flex flex-col  gap-[170px] w-full "
+          className=" service-head"
         >
           <Typography
             variant="header-1"
