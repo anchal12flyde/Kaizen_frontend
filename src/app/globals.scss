@@ -7,8 +7,9 @@
 
 body {
   font-family: "Times New Roman", Times, serif;
+  max-width: 1550px;
+  margin: 0 auto;   /* center */
 }
-
 
 
 .arrowImg {
@@ -209,4 +210,27 @@ body {
     gap:64px;
   }
  
+}
+
+.thiredSectionImageRsp{
+  width: 100%;
+}
+.thiredSectionBgColor{
+  background-color: var(--color-background-2);
+}
+
+@media screen and (max-width: 850px) {
+.heroTextRsp{
+    flex-direction: column;
+    gap: var(--sp-16);
+  }
+  .inprovementSection{
+    flex-direction: column;
+    gap: var(--sp-24);
+    margin-top: var(--sp-40);
+  }
+  .inprovementSectionBtn{
+    width: 100%;
+    text-align: center
+  }
 }

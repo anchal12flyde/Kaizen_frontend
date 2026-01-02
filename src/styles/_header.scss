@@ -1,6 +1,5 @@
 /* Static Navbar - Uses global spacing from Container */
 .header-container-static {
-  font-family: var(--font-jakarta);
   position: relative;
   // background: var(--color-white);
   z-index: 999;
@@ -8,7 +7,6 @@
 
 /* Fixed Navbar - Hidden by default, shows on scroll */
 .header-container-fixed {
-  font-family: var(--font-jakarta);
   position: fixed;
   top: 0;
   left: 0;
@@ -108,13 +106,13 @@
   }
 
   .header-fixed-content {
-    padding: var(--sp-24) var(--sp-40);
+    // padding: var(--sp-24) var(--sp-40);
   }
 }
 
 @media (max-width: 650px) {
   .header-logo {
-    width: 107px;
+    // width: 107px;
   }
   .nav-link-container {
     display: none;
@@ -124,7 +122,7 @@
   }
 
   .header-fixed-content {
-    padding: var(--sp-12) var(--sp-16) var(--sp-12) var(--sp-16);
+    // padding: var(--sp-12) var(--sp-16) var(--sp-12) var(--sp-16);
   }
 }
 

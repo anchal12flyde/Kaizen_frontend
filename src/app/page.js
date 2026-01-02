@@ -2,55 +2,148 @@
 
 import Header from "@/components/ui-kit/header";
 import Footer from "@/components/ui-kit/footer";
-import Typogrphy from "@/components/ui-kit/typography";
+import Typography from "@/components/ui-kit/typography";
 import { Container } from "@/components/ui-kit/spacing";
+import Button from "@/components/ui-kit/button";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <div className="relative h-screen bg-[url('https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg')] bg-cover bg-center">
-        {/* Black overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+      <section className="hero-section">
+        {/* Background Image */}
+        <Image
+          src="https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
+          alt="Kaizen Hero"
+          fill
+          className="hero-background"
+          priority
+        />
+
+        {/* Overlay */}
+        <div className="hero-overlay"></div>
 
         {/* Content */}
-        <div className="relative flex items-end h-full">
-          <Container className="flex flex-col w-full" variant="heroSpacing">
-            <Typogrphy
-              variant="display-2"
-              className="text-[var(--color-para-2)]!"
-            >
-              Legal Advisory
-            </Typogrphy>
+        <div className="hero-content right-[50px]">
+          <div>
+            <div className="mb-[42px]">
+              <Typography variant="hero-display" colorVariant="white">
+                Legal Advisory
+              </Typography>
+            </div>
 
-            <div className="flex justify-between mt-[var(--sp-42)]">
-              <Typogrphy
-                className="text-[var(--color-para-2)]!"
+            <div className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]">
+              <Typography
                 variant="header-hero"
+                colorVariant="white"
+                className="lg:w-[623px] w-full flex-shrink-0"
               >
                 For Complex Deals <br /> and Critical Decisions
-              </Typogrphy>
+              </Typography>
 
-              <Typogrphy
-                className="text-[var(--color-para-2)]! w-[370px]"
-                variant="header-3"
+              <Typography
+                variant="para-2"
+                colorVariant="white"
+                className="lg:w-[370px] w-full flex-shrink-0 "
               >
                 Kaizen Law is a corporate and transaction-focused law firm
                 advising businesses, founders, and investors across M&A, private
                 equity, capital markets, and general counsel mandates.
-              </Typogrphy>
+              </Typography>
             </div>
-          </Container>
+          </div>
         </div>
-      </div>
-
-      <Container variant="">
-        <div className="">
-          <Typogrphy variant="header-1">More content here</Typogrphy>
+      </section>
+      {/* Second Section */}
+      <Container
+        className="bg-[var(--color-background-1)]"
+        variant="sectionSp1"
+      >
+        <div>
+          <Typography variant="header-1">
+            Built on the Principle of Continuous Improvement
+          </Typography>
+          <div className="mt-[var(--sp-60)] inprovementSection flex justify-between">
+            <Typography className="max-w-[447px]" variant="para-2">
+              Kaizen is not about dramatic change. It is about deliberate
+              progress : refining structures, strengthening positions, and
+              anticipating what lies ahead. This philosophy defines how we
+              approach every mandate, from early-stage advisory to complex,
+              multi-party transactions.
+            </Typography>
+            <Typography className="max-w-[447px]" variant="para-2">
+              In mergers and acquisitions, value is rarely created by a single
+              decisive moment. It is built through disciplined preparation,
+              careful structuring, informed negotiation, and precise execution.
+              Our Kaizen approach reflects this reality. We focus on incremental
+              advantage at every stage of a transaction — identifying risk
+              early, refining deal terms continuously, and aligning legal
+              strategy with commercial objectives. The result is not just deal
+              completion, but durable outcomes that withstand scrutiny and time.
+            </Typography>
+          </div>
+          <Button className="mt-[var(--sp-50)] inprovementSectionBtn">
+            <Typography colorVariant="white" variant="para-2">
+              More About Kaizen
+            </Typography>
+          </Button>
         </div>
       </Container>
 
-      <div className="h-[200vh]"></div>
+      {/* Third Section */}
+      <div>
+        <Image
+          className="thiredSectionImageRsp"
+          width={704}
+          height={500}
+          src="https://ik.imagekit.io/75zj3bigp/7d11d9363b24d18bf891f3cb0eaa9eb909fbb467.png"
+        />
+      </div>
+      <div className="thiredSectionBgColor">
+        <Container className="flex gap-[var(--sp-63)]" variant="sectionSp1">
+          <div>
+            <Typography colorVariant="white" variant="header-1">
+              Advising Across <br /> the Full Deal Lifecycle
+            </Typography>
+          </div>
+          <div className="flex flex-col">
+            <Typography colorVariant="white" variant="display-3">
+              Strategic Evaluation <br />
+              Structuring & Planning <br />
+              Due Diligence <br />
+              Negotiation <br />
+              Documentation & Execution <br />
+              Closing & Completion
+            </Typography>
+            <Typography colorVariant="white" variant="para-2">
+              +Post-Transaction Integration & Compliance
+            </Typography>
+            <Button
+              className="mt-[var(--sp-50)] inprovementSectionBtn"
+              variant="white"
+            >
+              <Typography colorVariant="black" variant="para-2">
+                Explore Capabilities
+              </Typography>
+            </Button>
+          </div>
+        </Container>
+      </div>
+
+      <div className="relative w-full h-full">
+        <Image
+          src="https://ik.imagekit.io/a9uxeuyhx/c187c8de4a3719b0bf6fce2d5297411e54a28f20.png"
+          width={1200}
+          height={800}
+          className="object-cover w-full h-full"
+          alt=""
+        />
+
+        {/* overlay */}
+        <div className="absolute inset-0 bg-black/5"></div>
+      </div>
+
       <Footer />
     </div>
   );

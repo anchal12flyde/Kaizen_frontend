@@ -165,7 +165,7 @@ export default function Services() {
         </Container>
       </section>
 
-      <div className="!w-full h-[625px]  ">
+      <div className="w-full h-full  ">
         <Image
           src="https://ik.imagekit.io/flyde/croissant-m3kOyzCIQvE-unsplash.jpg"
           width={1200}
