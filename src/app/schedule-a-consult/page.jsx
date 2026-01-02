@@ -55,6 +55,7 @@ export default function Page() {
           </Typography>
 
           <div className="steps-list">
+            <div className="top-border"></div>
             {steps.map((step) => (
               <div key={step.number} className="step-item">
                 <Typography variant="display-1" colorVariant="white">

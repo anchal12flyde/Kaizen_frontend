@@ -6,8 +6,26 @@ import Typography from "@/components/ui-kit/typography";
 import { Container } from "@/components/ui-kit/spacing";
 import Button from "@/components/ui-kit/button";
 import Image from "next/image";
+import Testimonials from "@/components/ui-kit/testimonials";
+import { motion } from "framer-motion";
+
 
 export default function Home() {
+  const fadeInUp = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+  
   return (
     <div>
       <Header />
@@ -25,15 +43,28 @@ export default function Home() {
         <div className="hero-overlay"></div>
 
         {/* Content */}
-        <div className="hero-content right-[50px]">
+        <motion.div
+          className="hero-content right-[50px]"
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+        >
           <div>
-            <div className="mb-[42px]">
+            <motion.div
+              className="mb-[42px]"
+              variants={fadeInUp}
+              transition={{ delay: 0.1 }}
+            >
               <Typography variant="hero-display" colorVariant="white">
                 Legal Advisory
               </Typography>
-            </div>
+            </motion.div>
 
-            <div className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]">
+            <motion.div
+              className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]"
+              variants={fadeInUp}
+              transition={{ delay: 0.25 }}
+            >
               <Typography
                 variant="header-hero"
                 colorVariant="white"
@@ -45,34 +76,33 @@ export default function Home() {
               <Typography
                 variant="para-2"
                 colorVariant="white"
-                className="lg:w-[370px] w-full flex-shrink-0 "
+                className="lg:w-[370px] w-full flex-shrink-0"
               >
                 Kaizen Law is a corporate and transaction-focused law firm
                 advising businesses, founders, and investors across M&A, private
                 equity, capital markets, and general counsel mandates.
               </Typography>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
       {/* Second Section */}
-      <Container
-        className="bg-[var(--color-background-1)]"
-        variant="sectionSp1"
-      >
+      <Container className="section-bg" variant="sectionSp1">
         <div>
           <Typography variant="header-1">
             Built on the Principle of Continuous Improvement
           </Typography>
-          <div className="mt-[var(--sp-60)] inprovementSection flex justify-between">
-            <Typography className="max-w-[447px]" variant="para-2">
+
+          <div className="inprovementSection">
+            <Typography className="text-block" variant="para-2">
               Kaizen is not about dramatic change. It is about deliberate
               progress : refining structures, strengthening positions, and
               anticipating what lies ahead. This philosophy defines how we
               approach every mandate, from early-stage advisory to complex,
               multi-party transactions.
             </Typography>
-            <Typography className="max-w-[447px]" variant="para-2">
+
+            <Typography className="text-block" variant="para-2">
               In mergers and acquisitions, value is rarely created by a single
               decisive moment. It is built through disciplined preparation,
               careful structuring, informed negotiation, and precise execution.
@@ -83,31 +113,32 @@ export default function Home() {
               completion, but durable outcomes that withstand scrutiny and time.
             </Typography>
           </div>
-          <Button className="mt-[var(--sp-50)] inprovementSectionBtn">
+
+          <Button className="inprovementSectionBtn">
             <Typography colorVariant="white" variant="para-2">
               More About Kaizen
             </Typography>
           </Button>
         </div>
       </Container>
-
-      {/* Third Section */}
-      <div>
+      <div className="relative w-full h-full">
         <Image
-          className="thiredSectionImageRsp"
-          width={704}
-          height={500}
           src="https://ik.imagekit.io/75zj3bigp/7d11d9363b24d18bf891f3cb0eaa9eb909fbb467.png"
+          width={1200}
+          height={800}
+          className="object-cover w-full h-full"
+          alt=""
         />
       </div>
-      <div className="thiredSectionBgColor">
-        <Container className="flex gap-[var(--sp-63)]" variant="sectionSp1">
+
+      <div className="evaluation">
+        <Container className="evaluationSection" variant="sectionSp1">
           <div>
             <Typography colorVariant="white" variant="header-1">
               Advising Across <br /> the Full Deal Lifecycle
             </Typography>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col md:gap-0 gap-[8px]">
             <Typography colorVariant="white" variant="display-3">
               Strategic Evaluation <br />
               Structuring & Planning <br />
@@ -116,20 +147,50 @@ export default function Home() {
               Documentation & Execution <br />
               Closing & Completion
             </Typography>
-            <Typography colorVariant="white" variant="para-2">
+            <Typography variant="punctuation">
               +Post-Transaction Integration & Compliance
             </Typography>
-            <Button
-              className="mt-[var(--sp-50)] inprovementSectionBtn"
-              variant="white"
-            >
-              <Typography colorVariant="black" variant="para-2">
-                Explore Capabilities
-              </Typography>
+            <Button className="evaluationBtn" variant="white">
+              Explore Capabilities
             </Button>
           </div>
         </Container>
       </div>
+
+      <Container
+        variant="primarySpacing"
+        className="flex flex-col items-center overflow-hidden w-full"
+      >
+        <Typography variant="header-1">
+          Recognition & Market Feedback
+        </Typography>
+        <div className="flex flex-col gap-[56px] items-center text-center">
+          <Typography
+            variant="para-2"
+            className="mt-[32px] lg:w-[480px] w-full"
+          >
+            We believe that our clients' experiences speak volumes about the
+            quality of our legal services. Here's what some of them have to say:
+          </Typography>
+
+          <Testimonials />
+
+          <div className="flex flex-col gap-[74px]">
+            <Typography variant="para-2"> Asia Pacific 2026</Typography>
+            <div className="relative w-full h-full hidden md:block">
+              <Image
+                src="https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg"
+                width={183}
+                height={154}
+                className="object-cover w-full h-full"
+                alt=""
+              />
+            </div>
+
+            <Button variant="primary">View on Chambers and Partners</Button>
+          </div>
+        </div>
+      </Container>
 
       <div className="relative w-full h-full">
         <Image

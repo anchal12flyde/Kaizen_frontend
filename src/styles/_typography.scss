@@ -157,3 +157,21 @@
   line-height: 95%;
   letter-spacing: fluid-space(-0.15px, -0.39px);
 }
+.punctuation{
+  color: rgba(255, 240, 196, 0.5) !important;
+  font-family: "Times New Roman";
+  font-size:  47px;
+  font-weight: 400;
+  line-height: 95%;
+  letter-spacing: fluid-space(-0.6px, -0.6px);
+}
+@media (max-width: 1024px) {
+  .punctuation{
+    font-size: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .punctuation{
+    font-size: 7px;
+  }
+}

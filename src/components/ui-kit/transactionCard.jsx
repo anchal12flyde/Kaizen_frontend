@@ -8,15 +8,17 @@ export default function TransactionCard({
   transactionValue = "305cr INR",
 }) {
   return (
-    <div className="px-[32px] py-[16px] border border-gray-300 w-fit flex flex-col gap-[32px] max-w-[915px] ">
-      <div className=" p-[12px] bg-[#142244] !rounded-xl w-fit ">
-        <Typography variant="buttonText" className="!text-white ">
-          {labelText}
-        </Typography>
-      </div>
-      <Typography variant="header-1">{mainText}</Typography>
+    <div className="px-[32px] pt-[28px] pb-[40px] border-[0.67px] border-[#E5E5E5] w-fit flex flex-col gap-[32px]  bg-white w-full ">
       <div>
-        <div className="flex gap-6 " >
+        <div className="mb-[20px] p-[12px] bg-[#142244] !rounded-xl w-fit ">
+          <Typography variant="buttonText" className="!text-white ">
+            {labelText}
+          </Typography>
+        </div>
+        <Typography variant="header-1">{mainText}</Typography>
+      </div>
+      <div>
+        <div className="flex md:gap-6 md:flex-row flex-col gap-1">
           <Typography variant="para-2" className=" ">
             <span className="text-accent font-[700] ">Role :</span> {roleText}
           </Typography>

@@ -108,7 +108,7 @@ export default function Services() {
         </div>
       </section>
 
-      <Container variant="metricSpacing">
+      <Container variant="metricSpacing" className="section-bg">
         <div className="stats-section">
           {stats.map((item, index) => (
             <div key={index} className="stats-card">
@@ -129,10 +129,7 @@ export default function Services() {
       </Container>
 
       <section className="bg-[#0A193A] w-full flex justify-center">
-        <Container
-          variant="sectionSp1"
-          className=" service-head"
-        >
+        <Container variant="sectionSp1" className=" service-head">
           <Typography
             variant="header-1"
             colorVariant="white"
@@ -141,6 +138,7 @@ export default function Services() {
             Navigating Complex Legal Landscapes? We Can Help.
           </Typography>
           <div className="services-grid">
+            <div className="top-border"></div>
             {services.map((item, index) => (
               <div key={index} className="service-item">
                 <Typography variant="header-3" colorVariant="white">

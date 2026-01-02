@@ -12,9 +12,9 @@ const HEADER_DATA = {
   logo: "https://ik.imagekit.io/75zj3bigp/LogoLight.png",
   navLinks: [
     { name: "About Kaizen", href: "/About" },
-    { name: "Practice Areas", href: "/Practiceareas" },
-    { name: "Sectors", href: "/Sectors" },
-    { name: "Transaction Footprint", href: "/transactionfootprint" },
+    { name: "Services", href: "/services" },
+    { name: "Schedule", href: "/schedule-a-consult" },
+    { name: "Transaction Footprint", href: "/footprint" },
     { name: "Insights", href: "/insights" },
   ],
   ctaText: "Get Started",

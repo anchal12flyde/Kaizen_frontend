@@ -11,8 +11,8 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      text: "Jones & Brown Legal handled my estate planning with such care and professionalism. They listened to my concerns and made the process clear and straightforward. I now have complete peace of mind knowing my family's future is secure.",
-      author: "– David L., Business Owner",
+      text: "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
+      author: "Corporate/Mergers and Acquisitions",
     },
     {
       text: "Their expertise and courtroom presence were truly impressive. They turned a stressful situation into a successful outcome.",
@@ -42,14 +42,15 @@ export default function Testimonials() {
 
   return (
     <div className="flex  items-center ">
-      <div className="w-fit flex flex-col gap-[80px] bg-[#f7f7f7] ">
+      <div className="w-full flex flex-col gap-[80px] bg-[#f7f7f7] ">
         <Slider
           ref={sliderRef}
           {...settings}
-          className="flex w-[738px]  px-[50px] pt-[30px] flex !items-center "
+          className="flex  w-[319px] md:w-[632px] lg:w-[738px] px-[50px] md:pt-[84px] pt-[102px] items-center
+"
         >
           {testimonials.map((t, idx) => (
-            <div key={idx} className=" text-center !w-[638px]     ">
+            <div key={idx} className=" text-center w-full     ">
               <div className="!mb-[32px]">
                 <Typography variant="header-1">"{t.text}"</Typography>
               </div>
@@ -64,7 +65,7 @@ export default function Testimonials() {
         </Slider>
 
         {/* CONTROLS */}
-        <div className="flex items-center justify-center gap-[20px] px-[50px] pb-[30px] ">
+        <div className="flex items-center justify-center gap-[20px] px-[50px] md:pb-[84px] pb-[102px] ">
           <Image
             src="https://ik.imagekit.io/flyde/Left%20arrow.png"
             width={100}

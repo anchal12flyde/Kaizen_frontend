@@ -2,8 +2,8 @@
   padding: var(--sp-20) var(--sp-50);
 }
 
-.hero-spacing {
-  padding: 0 var(--sp-50) var(--sp-70) var(--sp-50);
+.primary-spacing {
+  padding: var(--sp-116) var(--sp-271);
 }
 
 .secondary-spacing {
@@ -47,18 +47,24 @@
   .secondary-spacing {
     padding: 0 var(--sp-64) var(--sp-114) var(--sp-64);
   }
+  .primary-spacing {
+    padding: var(--sp-116) var(--sp-84);
+  }
   .metric-spacing{
     padding: var(--sp-96) var(--sp-64);
   }
 }
 
 @media (max-width: 600px) {
+  .primary-spacing {
+    padding: var(--sp-64) var(--sp-28);
+  }
   .header-spacing {
     padding: var(--sp-16) var(--sp-24);
   }
 
   .footer-spacing {
-    padding: var(--sp-68) var(--sp-28);
+    padding: var(--sp-64) var(--sp-28);
   }
 
   .section-sp-1 {

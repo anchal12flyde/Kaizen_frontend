@@ -47,6 +47,7 @@ function getDefaultTag(variant) {
     "para-3": "para-3",
     "buttonText": "buttonText",
     "linkText": "linkText",
+    "punctuation":"punctuation",
   };
   return map[variant] || "p";
 }
