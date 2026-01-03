@@ -210,7 +210,10 @@ export default function page() {
             confidentiality and regulatory considerations.
           </Typography>
           <div>
-            <Button variant="primary">Filters</Button>
+            <Button variant="primary" delay={0.6}>
+              {" "}
+              Filters
+            </Button>
           </div>
           <div className="flex flex-col gap-[40px]">
             <TransactionCard

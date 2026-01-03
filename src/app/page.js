@@ -89,9 +89,9 @@ export default function Home() {
           </div>
 
           <Button className="inprovementSectionBtn">
-            <Typography colorVariant="white" variant="para-2">
+            
               More About Kaizen
-            </Typography>
+          
           </Button>
         </div>
       </Container>
@@ -124,7 +124,7 @@ export default function Home() {
             <Typography variant="punctuation" delay={0.6}>
               +Post-Transaction Integration & Compliance
             </Typography>
-            <Button className="evaluationBtn" variant="white">
+            <Button className="evaluationBtn" variant="white" delay={0.8}>
               Explore Capabilities
             </Button>
           </div>
@@ -165,7 +165,9 @@ export default function Home() {
               />
             </div>
 
-            <Button variant="primary">View on Chambers and Partners</Button>
+            <Button variant="primary" delay={0.4}>
+              View on Chambers and Partners
+            </Button>
           </div>
         </div>
       </Container>
