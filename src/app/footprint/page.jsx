@@ -104,6 +104,7 @@ export default function page() {
                 variant="header-hero"
                 colorVariant="white"
                 className="lg:w-[623px] w-full flex-shrink-0"
+                delay={0.4}
               >
                 Complex, high-value transactions across sectors, stages, and
                 transaction types
@@ -113,6 +114,7 @@ export default function page() {
                 variant="para-2"
                 colorVariant="white"
                 className="lg:w-[370px] w-full flex-shrink-0 "
+                delay={0.6}
               >
                 Transactions are presented in an anonymised format in accordance
                 with applicable confidentiality and regulatory considerations.
@@ -207,7 +209,7 @@ export default function page() {
             Kaizen Law, presented in an anonymised format and subject to
             confidentiality and regulatory considerations.
           </Typography>
-          <div >
+          <div>
             <Button variant="primary">Filters</Button>
           </div>
           <div className="flex flex-col gap-[40px]">

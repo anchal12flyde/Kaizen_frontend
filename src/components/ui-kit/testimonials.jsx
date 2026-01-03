@@ -4,6 +4,8 @@ import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import Slider from "react-slick";
+import { motion } from "framer-motion";
+
 
 export default function Testimonials() {
   const sliderRef = useRef(null);
@@ -40,8 +42,30 @@ export default function Testimonials() {
     beforeChange: (_, next) => setCurrentIndex(next % testimonials.length),
   };
 
+  const fadeInUp = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+  
   return (
-    <div className="flex  items-center ">
+    <motion.div
+    className="flex items-center"
+    variants={fadeInUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+  >
+  
       <div className="w-full flex flex-col gap-[80px] bg-[#f7f7f7] ">
         <Slider
           ref={sliderRef}
@@ -131,6 +155,6 @@ export default function Testimonials() {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

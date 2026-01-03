@@ -102,12 +102,12 @@ export default function Footer() {
             </Typography>
           </div>
           <div className=" ">
-            <Typography variant="para-3">
+            <Typography variant="para-3" delay={0.4}>
               123 Candyland Lane <br /> Suite 123 <br /> Los Angeles, CA 94117
             </Typography>
           </div>
           <div className=" ">
-            <Typography variant="para-3">
+            <Typography variant="para-3" delay={0.6}>
               Instagram <br /> Facebook <br /> Linkedin <br /> Bluesky
             </Typography>
           </div>

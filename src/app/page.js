@@ -7,25 +7,10 @@ import { Container } from "@/components/ui-kit/spacing";
 import Button from "@/components/ui-kit/button";
 import Image from "next/image";
 import Testimonials from "@/components/ui-kit/testimonials";
-import { motion } from "framer-motion";
 
 
 export default function Home() {
-  const fadeInUp = {
-    hidden: {
-      opacity: 0,
-      y: 40,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-  
+
   return (
     <div>
       <Header />
@@ -43,37 +28,26 @@ export default function Home() {
         <div className="hero-overlay"></div>
 
         {/* Content */}
-        <motion.div
-          className="hero-content right-[50px]"
-          variants={fadeInUp}
-          initial="hidden"
-          animate="visible"
-        >
+        <div className="hero-content right-[50px]">
           <div>
-            <motion.div
-              className="mb-[42px]"
-              variants={fadeInUp}
-              transition={{ delay: 0.1 }}
-            >
+            <div className="mb-[42px]">
               <Typography variant="hero-display" colorVariant="white">
                 Legal Advisory
               </Typography>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]"
-              variants={fadeInUp}
-              transition={{ delay: 0.25 }}
-            >
+            <div className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]">
               <Typography
+                delay={0.4}
                 variant="header-hero"
                 colorVariant="white"
-                className="lg:w-[623px] w-full flex-shrink-0"
+                className="lg:w-[623px] w-full flex-shrink-0 "
               >
                 For Complex Deals <br /> and Critical Decisions
               </Typography>
 
               <Typography
+                delay={0.6}
                 variant="para-2"
                 colorVariant="white"
                 className="lg:w-[370px] w-full flex-shrink-0"
@@ -82,9 +56,9 @@ export default function Home() {
                 advising businesses, founders, and investors across M&A, private
                 equity, capital markets, and general counsel mandates.
               </Typography>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </section>
       {/* Second Section */}
       <Container className="section-bg" variant="sectionSp1">
@@ -94,7 +68,7 @@ export default function Home() {
           </Typography>
 
           <div className="inprovementSection">
-            <Typography className="text-block" variant="para-2">
+            <Typography className="text-block" variant="para-2" delay={0.4}>
               Kaizen is not about dramatic change. It is about deliberate
               progress : refining structures, strengthening positions, and
               anticipating what lies ahead. This philosophy defines how we
@@ -102,7 +76,7 @@ export default function Home() {
               multi-party transactions.
             </Typography>
 
-            <Typography className="text-block" variant="para-2">
+            <Typography className="text-block" variant="para-2" delay={0.6}>
               In mergers and acquisitions, value is rarely created by a single
               decisive moment. It is built through disciplined preparation,
               careful structuring, informed negotiation, and precise execution.
@@ -139,7 +113,7 @@ export default function Home() {
             </Typography>
           </div>
           <div className="flex flex-col md:gap-0 gap-[8px]">
-            <Typography colorVariant="white" variant="display-3">
+            <Typography colorVariant="white" variant="display-3" delay={0.4}>
               Strategic Evaluation <br />
               Structuring & Planning <br />
               Due Diligence <br />
@@ -147,7 +121,7 @@ export default function Home() {
               Documentation & Execution <br />
               Closing & Completion
             </Typography>
-            <Typography variant="punctuation">
+            <Typography variant="punctuation" delay={0.6}>
               +Post-Transaction Integration & Compliance
             </Typography>
             <Button className="evaluationBtn" variant="white">
@@ -168,6 +142,7 @@ export default function Home() {
           <Typography
             variant="para-2"
             className="mt-[32px] lg:w-[480px] w-full"
+            delay={0.4}
           >
             We believe that our clients' experiences speak volumes about the
             quality of our legal services. Here's what some of them have to say:
@@ -176,7 +151,10 @@ export default function Home() {
           <Testimonials />
 
           <div className="flex flex-col gap-[74px]">
-            <Typography variant="para-2"> Asia Pacific 2026</Typography>
+            <Typography variant="para-2" delay={0.6}>
+              {" "}
+              Asia Pacific 2026
+            </Typography>
             <div className="relative w-full h-full hidden md:block">
               <Image
                 src="https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg"

@@ -183,7 +183,7 @@ export default function Header() {
       </div>
 
       {/* FIXED NAVBAR */}
-      
+
       <header
         className={`header-container-fixed bg-[var(--color-background-2)] ${
           isHiding ? "header-hiding" : ""
@@ -192,6 +192,7 @@ export default function Header() {
         <Container
           variant="header"
           className="header-fixed-content flex items-center justify-between"
+          animate={false}
         >
           <NavbarContent isFixed={true} />
         </Container>

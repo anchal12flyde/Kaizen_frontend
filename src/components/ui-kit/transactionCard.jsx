@@ -1,4 +1,5 @@
 import Typography from "./typography";
+import { motion } from "framer-motion";
 
 export default function TransactionCard({
   labelText = "Capital Markets",
@@ -7,8 +8,28 @@ export default function TransactionCard({
   sectorText = "Technology",
   transactionValue = "305cr INR",
 }) {
+  const fadeInUp = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
   return (
-    <div className="px-[32px] pt-[28px] pb-[40px] border-[0.67px] border-[#E5E5E5] w-fit flex flex-col gap-[32px]  bg-white w-full ">
+    <motion.div
+      className="px-[32px] pt-[28px] pb-[40px] border-[0.67px] border-[#E5E5E5] w-fit flex flex-col gap-[32px]  bg-white w-full "
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
       <div>
         <div className="mb-[20px] p-[12px] bg-[#142244] !rounded-xl w-fit ">
           <Typography variant="buttonText" className="!text-white ">
@@ -32,6 +53,6 @@ export default function TransactionCard({
           </Typography>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
