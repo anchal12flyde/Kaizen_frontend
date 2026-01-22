@@ -10,7 +10,6 @@ import Testimonials from "@/components/ui-kit/testimonials";
 
 
 export default function Home() {
-
   return (
     <div>
       <Header />
