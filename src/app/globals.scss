@@ -9,18 +9,32 @@ body {
   font-family: "Times New Roman", Times, serif;
   width: 100%;
   max-width: 1600px;
-  margin: 0 auto;  
+  margin: 0 auto;
 }
 
+::-webkit-scrollbar{
+  height: 0px;
+  width: 10px;
+}
+
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 .arrowImg {
   width: 24px;
   height: 24px;
   cursor: pointer;
 }
-  //Schedule a consult css
+//Schedule a consult css
 
-  /* Hero Section */
+/* Hero Section */
 .hero-section {
   position: relative;
   width: 100%;
@@ -61,7 +75,15 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 36px;
- 
+}
+
+.why-card {
+  border-right: 0.5px solid #31110f;
+  background: #f7f4eb;
+}
+
+.why-card:first-child{
+  border-left: 0.5px solid #31110f !important;
 }
 
 .step-item {
@@ -69,7 +91,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
 
-  border-bottom: 0.5px solid #FFFFFF;
+  border-bottom: 0.5px solid #ffffff;
   padding: var(--sp-50) 0;
 }
 
@@ -89,13 +111,11 @@ body {
 
 /* Responsive */
 @media (max-width: 1024px) {
- 
   .step-content-container {
     width: 100%;
     padding: var(--sp-33) 0;
-   
   }
-  .step-item{
+  .step-item {
     gap: var(--sp-51);
   }
 }
@@ -113,7 +133,6 @@ body {
     left: 20px;
   }
 }
-
 
 // footprint page css
 
@@ -191,7 +210,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  border-bottom: 0.5px solid #FFFFFF;
+  border-bottom: 0.5px solid #ffffff;
 
   padding: var(--sp-20) 0 var(--sp-40) 0;
 }
@@ -203,10 +222,9 @@ body {
   .desc-width {
     width: 100%;
   }
-  
 }
-.top-border{
-  border-top: 0.5px solid #FFFFFF;
+.top-border {
+  border-top: 0.5px solid #ffffff;
 }
 /* Mobile — upto 768px */
 @media (max-width: 768px) {
@@ -217,14 +235,11 @@ body {
 
   .stats-card {
     gap: 24px;
-    
   }
-
-  
 }
 
 //services page css
-.service-head{
+.service-head {
   display: flex;
   flex-direction: column;
   gap: 170px;
@@ -242,7 +257,6 @@ body {
   justify-content: space-between;
   padding: 20px 0;
   border-bottom: 0.5px solid #fff;
- 
 }
 
 .service-desc {
@@ -264,8 +278,8 @@ body {
   .service-desc {
     width: 100%;
   }
-  .service-head{
-    gap:80px;
+  .service-head {
+    gap: 80px;
   }
 }
 
@@ -277,10 +291,9 @@ body {
   .service-desc {
     width: 100%;
   }
-  .service-head{
-    gap:64px;
+  .service-head {
+    gap: 64px;
   }
- 
 }
 //Home Page CSS
 
@@ -288,17 +301,14 @@ body {
   background: var(--color-background-1);
 }
 
-
-
 .text-block {
   max-width: 447px;
 }
-  .inprovementSection {
+.inprovementSection {
   margin-top: var(--sp-60);
   display: flex;
   justify-content: space-between;
 }
-
 
 .inprovementSectionBtn {
   margin-top: var(--sp-50);
@@ -320,10 +330,10 @@ body {
   }
 }
 
-.evaluation{
+.evaluation {
   background: var(--color-background-2);
 }
-.evaluationBtn{
+.evaluationBtn {
   margin-top: var(--sp-64);
 }
 .evaluationSection {
