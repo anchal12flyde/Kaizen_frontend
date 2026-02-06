@@ -8,9 +8,7 @@ import Button from "@/components/ui-kit/button";
 import Image from "next/image";
 import Testimonials from "@/components/ui-kit/testimonials";
 
-
 export default function Home() {
-
   return (
     <div>
       <Header />
@@ -88,11 +86,7 @@ export default function Home() {
             </Typography>
           </div>
 
-          <Button className="inprovementSectionBtn">
-            
-              More About Kaizen
-          
-          </Button>
+          <Button className="inprovementSectionBtn">More About Kaizen</Button>
         </div>
       </Container>
       <div className="relative w-full h-full">

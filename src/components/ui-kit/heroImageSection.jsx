@@ -13,7 +13,7 @@ export default function HeroImageSection({
     <section
       className={clsx(
         "w-full flex justify-center imageSec pb-[50px]",
-        className
+        className,
       )}
     >
       <div className="relative w-full flex justify-center items-center">
