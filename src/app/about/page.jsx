@@ -1,15 +1,27 @@
+import AboutHeroSection from "@/components/abouthero";
+import GuidesSection from "@/components/guidesSection";
+import KaizenPhilosophySection from "@/components/KaizenPhilosphy";
+import LeadershipTeam from "@/components/leadershipTeam";
+import LetsConnectSection from "@/components/LetsConnectSection";
+import OurStorySection from "@/components/ourStorySectionAbout";
+import SectorExperience from "@/components/sectorExperiences";
+import Footer from "@/components/ui-kit/footer";
+import Header from "@/components/ui-kit/header";
 import WhyChooseSection from "@/components/whyChooseSection";
 
 export default function About() {
   return (
     <div>
-      <div className="!w-[100vh] h-[100vh] bg-white flex items-center justify-center   ">
-        <h1>
-            Scroll Down 
-        </h1>
-      </div>
+      <Header />
+      <AboutHeroSection />
+      <OurStorySection />
+      <KaizenPhilosophySection />
+      <GuidesSection />
       <WhyChooseSection />
-      <div className="w-[100vh] h-[100vh] bg-white "></div>
+      <SectorExperience />
+      <LeadershipTeam />
+      <LetsConnectSection />
+      <Footer />
     </div>
   );
 }

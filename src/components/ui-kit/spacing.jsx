@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 /* ---------------- SPACING VARIANTS ---------------- */
 
 const spacingVariants = {
-  header: "header-spacing",
+  header: "header-spacing", 
   heroSpacing: "hero-spacing",
   primarySpacing: "primary-spacing",
   secondarySpacing: "secondary-spacing",

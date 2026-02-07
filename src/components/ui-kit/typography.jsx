@@ -56,7 +56,7 @@ const Typography = ({
       color: colorMap[colorVariant] || colorMap.black,
     },
     ...props,
-  };
+  }; 
 
   /* ❌ No animation */
   if (!animate) {
@@ -81,7 +81,7 @@ const Typography = ({
 /* ---------------- TAG MAP ---------------- */
 
 function getDefaultTag(variant) {
-  const map = {
+  const map = { 
     "hero-display": "h1",
     "header-hero": "h1",
     "display-1": "h1",

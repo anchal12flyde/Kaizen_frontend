@@ -10,7 +10,7 @@ import Testimonials from "@/components/ui-kit/testimonials";
 
 export default function Home() {
   return (
-    <div>
+    <div> 
       <Header />
       <section className="hero-section">
         {/* Background Image */}

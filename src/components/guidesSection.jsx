@@ -1,0 +1,68 @@
+"use client";
+
+import { Container } from "./ui-kit/spacing";
+import Typography from "./ui-kit/typography";
+
+export default function GuidesSection() {
+  const items = [
+    {
+      title: "Execution Excellence",
+      desc: "Relentless focus on quality, timelines, and outcomes.",
+    },
+    {
+      title: "Senior Ownership",
+      desc: "Direct partner and senior lawyer involvement throughout every mandate.",
+    },
+    {
+      title: "Commercial Insight",
+      desc: "Advice grounded in business realities, not theoretical risk.",
+    },
+    {
+      title: "Integrity",
+      desc: "Independent judgment, discretion, and professional responsibility.",
+    },
+    {
+      title: "Client Partnership",
+      desc: "Long-term relationships over one-off transactions.",
+    },
+  ];
+
+  return (
+    <Container variant="sectionSp1" className=" bg-[#0A193A] ">
+      <div className=" flex flex-col gap-[96px]  ">
+        {/* Heading */}
+        <Typography variant="para-1" className=" !text-white ">
+          What Guides Our Work
+        </Typography>
+
+        {/* List */}
+        <div className="">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between border-t border-white py-[38px] "
+            >
+              <div className="flex flex-col gap-[12px]">
+                <Typography variant="header-2" className=" !text-white ">
+                  {item.title}
+                </Typography>
+                <Typography variant="para-2" className=" !text-white ">
+                  {item.desc}
+                </Typography>
+              </div>
+
+              {/* Right Circle Placeholder */}
+              <div className="w-10 h-10 border border-white rounded-full flex items-center justify-center">
+                {/* Placeholder Icon */}
+                <span className="text-white/60 text-sm">○</span>
+              </div>
+            </div>
+          ))}
+
+          {/* Bottom Border */}
+          <div className="border-t border-white/30 "></div>
+        </div>
+      </div>
+    </Container>
+  );
+}

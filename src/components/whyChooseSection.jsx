@@ -3,6 +3,7 @@
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Typography from "./ui-kit/typography";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -198,29 +199,29 @@ export default function WhyChooseSection() {
       ref={sectionRef}
       className="w-full !h-fit bg-[#f7f4eb] overflow-visible"
     >
+      <div className="h-[1.3cm] bg-transparent "></div>
       {/* TRACK */}
       <div ref={trackRef} className="!h-fit flex items-center gap-0 px-[160px]">
         {/* LEFT TEXT */}
-        <div className="min-w-[520px] max-w-[520px] pr-16 mr-[200px]">
-          <h2 className="text-4xl font-serif mb-6 leading-tight">
+        <div className="min-w-[520px] max-w-[520px] pr-16 mr-[200px] flex flex-col !gap-[96px] ">
+          <Typography variant="para-1">
             Why Clients Choose <br /> Kaizen Law
-          </h2>
+          </Typography>
 
-          <p className="text-gray-600 leading-relaxed">
+          <Typography variant="para-2">
             We deliver big-firm quality with boutique agility.
-          </p>
+          </Typography>
         </div>
 
         {/* CARDS */}
         {cardsData.map((card, i) => (
           <div
             key={i}
-            className="
+            className={`
               why-card
               w-[330px]
-              h-screen
+              h-[calc(100vh-1.3cm)]
               bg-white
-             
               p-[16px]
               flex
               flex-col
@@ -228,7 +229,7 @@ export default function WhyChooseSection() {
               origin-left
               overflow-hidden
               shadow-sm
-            "
+            `}
           >
             {/* TOP */}
             <div className="flex items-start gap-6">
@@ -241,9 +242,7 @@ export default function WhyChooseSection() {
             <div>
               {/* Title + Description */}
               <div className="flex items-start mb-[36px] justify-between">
-                <h3 className="text-[26px] max-w-[200px] leading-none font-medium">
-                  {card.title}
-                </h3>
+                <Typography variant="header-2">{card.title}</Typography>
 
                 <p className="card-desc text-sm text-gray-600 max-w-[260px] ml-4 leading-relaxed">
                   {card.desc}
