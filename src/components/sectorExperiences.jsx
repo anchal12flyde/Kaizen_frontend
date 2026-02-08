@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { Container } from "./ui-kit/spacing";
+import Typography from "./ui-kit/typography";
 
 const sectors = [
   {
@@ -41,39 +42,42 @@ const sectors = [
 ];
 
 export default function SectorExperience() {
-  const [activeIndex, setActiveIndex] = useState(null);
-
   return (
-    <section className="sector-section">
-      <h2>Sector Experience</h2>
+    <section className="">
+      <Container
+        variant="sectionSp1"
+        className="flex flex-col gap-[96px] bg-[#F7F4EB] "
+      >
+        <Typography variant="para-1" className="text-center">
+          Sector Experience
+        </Typography>
 
-      <div className="sector-list">
-        {sectors.map((item, index) => {
-          const isRight = index % 2 === 0;
+        <div className="  w-full">
+          {sectors.map((item, index) => {
+            const isRight = index % 2 === 0;
 
-          return (
-            <div
-              key={index}
-              className="sector-item"
-              onMouseEnter={() => setActiveIndex(index)}
-              onMouseLeave={() => setActiveIndex(null)}
-            >
-              <span>{item.title}</span>
-
-              {/* Tooltip */}
+            return (
               <div
-                className={`tooltip ${
-                  activeIndex === index ? "show" : ""
-                } ${isRight ? "right" : "left"}`}
+                key={index}
+                className={
+                  index == sectors.length - 1
+                    ? " border-t border-b border-[rgba(35, 31, 32, 0.30)] py-[20px] sector-item "
+                    : " border-t border-[rgba(35, 31, 32, 0.30)] py-[20px] sector-item "
+                }
               >
-                <img src={item.image} alt={item.title} />
+                <Typography variant="header-2" className="text-center">
+                  {item.title}{" "}
+                </Typography>
+                {/* Tooltip */}
+                <div className={`tooltip ${isRight ? "right" : "left"}`}>
+                  <img src={item.image} alt={item.title} />
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </Container>
 
-      {/* Styles */}
       <style jsx>{`
         .sector-section {
           background: #faf7f2;
@@ -93,12 +97,9 @@ export default function SectorExperience() {
           margin: auto;
         }
 
-        /* Row */
         .sector-item {
           position: relative;
-          padding: 26px 0;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-          font-size: 18px;
+
           cursor: pointer;
         }
 
@@ -123,12 +124,11 @@ export default function SectorExperience() {
           overflow: hidden;
           box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 
-          /* Hidden State */
           opacity: 0;
-          transform: translateY(-50%) scale(0.85);
           pointer-events: none;
 
-          /* Smooth Transition */
+          transform: translateY(-50%) scale(0.85);
+
           transition:
             opacity 0.3s ease,
             transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -140,16 +140,15 @@ export default function SectorExperience() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          filter: contrast(0.95) brightness(0.95);
         }
 
-        /* Show State */
-        .tooltip.show {
+        /* ✅ Show on hover (NO STATE) */
+        .sector-item:hover .tooltip {
           opacity: 1;
           transform: translateY(-50%) scale(1);
         }
 
-        /* Close gap */
+        /* Position */
         .tooltip.right {
           left: calc(65% + 12px);
         }
@@ -158,7 +157,7 @@ export default function SectorExperience() {
           right: calc(65% + 12px);
         }
 
-        /* Slight Slide Effect */
+        /* Slide effect */
         .tooltip.right {
           transform: translateY(-50%) translateX(-8px) scale(0.85);
         }
@@ -167,11 +166,11 @@ export default function SectorExperience() {
           transform: translateY(-50%) translateX(8px) scale(0.85);
         }
 
-        .tooltip.show.right {
+        .sector-item:hover .tooltip.right {
           transform: translateY(-50%) translateX(0) scale(1);
         }
 
-        .tooltip.show.left {
+        .sector-item:hover .tooltip.left {
           transform: translateY(-50%) translateX(0) scale(1);
         }
 
