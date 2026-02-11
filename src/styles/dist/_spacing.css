@@ -2,12 +2,12 @@
   padding: var(--sp-20) var(--sp-50);
 }
 
-.hero-spacing {
-  padding: 0 var(--sp-50) var(--sp-70) var(--sp-50);
+.primary-spacing {
+  padding: var(--sp-116) var(--sp-271);
 }
 
 .secondary-spacing {
-  padding: 128px var(--sp-50) var(--sp-80) var(--sp-50);
+  padding: var(--sp-106) var(--sp-150) var(--sp-220) var(--sp-150);
 }
 
 .section-sp-1 {
@@ -26,9 +26,13 @@
   padding: 0 0 var(--sp-126) 0;
 }
 
-@media (max-width: 834px) {
+.metric-spacing {
+  padding: var(--sp-96) var(--sp-160);
+}
+
+@media (max-width: 850px) {
   .header-spacing {
-    padding: var(--sp-24) var(--sp-40);
+    padding: var(--sp-20) var(--sp-40);
   }
 
   .section-sp-1 {
@@ -42,14 +46,30 @@
   .hero-spacing {
     padding: var(--sp-56) var(--sp-40) 0 var(--sp-40);
   }
+
+  .secondary-spacing {
+    padding: 0 var(--sp-64) var(--sp-114) var(--sp-64);
+  }
+
+  .primary-spacing {
+    padding: var(--sp-116) var(--sp-84);
+  }
+
+  .metric-spacing {
+    padding: var(--sp-96) var(--sp-64);
+  }
 }
 @media (max-width: 600px) {
+  .primary-spacing {
+    padding: var(--sp-64) var(--sp-28);
+  }
+
   .header-spacing {
-    padding: var(--sp-10) var(--sp-25);
+    padding: var(--sp-16) var(--sp-24);
   }
 
   .footer-spacing {
-    padding: var(--sp-68) var(--sp-28);
+    padding: var(--sp-64) var(--sp-28);
   }
 
   .section-sp-1 {
@@ -66,5 +86,13 @@
 
   .hero-spacing {
     padding: 0 var(--sp-24) var(--sp-70) var(--sp-24);
+  }
+
+  .secondary-spacing {
+    padding: 0 var(--sp-28) var(--sp-64) var(--sp-28);
+  }
+
+  .metric-spacing {
+    padding: var(--sp-48) var(--sp-28);
   }
 }

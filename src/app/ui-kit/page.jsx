@@ -1,3 +1,4 @@
+import Button from "@/components/ui-kit/button";
 import Typography from "@/components/ui-kit/typography";
 
 export default function Home() {
@@ -44,12 +45,28 @@ export default function Home() {
       </Typography>
 
       {/* CUSTOM TAG OVERRIDE */}
-      <Typography variant="header-2" >
+      <Typography variant="header-2">
         Header 2 styling but rendered as H1
       </Typography>
-      <Typography variant="header-hero" >
-        Header Hero Large Complex
-      </Typography>
+      <Typography variant="header-hero">Header Hero Large Complex</Typography>
+
+      <div className=" mt-[2cm] flex items-center gap-[.5cm] ">
+        <div className=" bg-[var(--color-background-1)] w-[4cm]  h-[4cm]  rounded-full "></div>
+        <div className=" bg-[var(--color-background-2)] w-[4cm]  h-[4cm]  rounded-full "></div>
+        <div className=" bg-[var(--color-background-3)] w-[4cm]  h-[4cm]  rounded-full "></div>
+      </div>
+
+      <div className=" mt-[2cm] flex items-center gap-[.5cm] ">
+        <div className=" bg-[var(--color-para-1)] w-[4cm]  h-[4cm]  rounded-full "></div>
+        <div className=" bg-[var(--color-para-2)] w-[4cm]  h-[4cm]  rounded-full "></div>
+        <div className=" bg-[var(--color-accent)] w-[4cm]  h-[4cm]  rounded-full "></div>
+        <div className=" bg-[var( --color-kaizan-gradient)] w-[4cm]  h-[4cm]  rounded-full "></div>
+      </div>
+
+      <div className=" mt-[2cm] flex items-center gap-[.5cm] ">
+        <Button variant="primary">Primary Button</Button>
+        <Button variant="secondary">Secondary Button</Button>
+      </div>
     </div>
   );
 }
