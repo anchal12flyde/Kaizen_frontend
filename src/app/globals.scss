@@ -12,7 +12,7 @@ body {
   margin: 0 auto;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   height: 0px;
   width: 0px;
 }
@@ -82,7 +82,7 @@ body {
   background: #f7f4eb;
 }
 
-.why-card:first-child{
+.why-card:first-child {
   border-left: 0.5px solid #31110f !important;
 }
 
@@ -111,7 +111,7 @@ body {
 
 .lets-section {
   height: 100vh;
-  background: #0A193A;
+  background: #0a193a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -211,7 +211,6 @@ body {
   white-space: nowrap;
 }
 
-
 /* ================= FORM ================= */
 
 .newsletter-form {
@@ -229,7 +228,7 @@ body {
 .side-text {
   font-size: 64px;
   font-weight: 300;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   white-space: nowrap;
   background: none;
   border: none;
@@ -243,13 +242,13 @@ body {
   border: none;
   outline: none;
   font-size: 48px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   text-align: center;
   width: 420px;
 }
 
 .newsletter-input::placeholder {
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 /* SUBMIT */
@@ -261,7 +260,6 @@ body {
 .submit-btn:hover {
   transform: translateX(6px);
 }
-
 
 /* THANK YOU */
 
@@ -276,7 +274,7 @@ body {
 }
 
 .newsletter-input {
-  pointer-events: auto;   /* VERY IMPORTANT */
+  pointer-events: auto; /* VERY IMPORTANT */
   cursor: text;
 }
 
@@ -284,13 +282,37 @@ body {
   color: white;
 }
 
-
 .newsletter-form {
   pointer-events: auto;
   z-index: 10;
 }
 
+.blogCardCatText,
+.blogCardTitle,
+.blogCardDate {
+  color: var(--color-accent) !important ;
+}
 
+.blogCard:hover {
+  background-color: var(--color-accent);
+  transition: all 0.3s ease-in-out;
+
+  .blogCardCat {
+    border: 1px solid white;
+  }
+
+  .blogCardCatText,
+  .blogCardTitle {
+    color: white !important;
+  }
+  .blogCardDate {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+}
+
+.dateHeroIn {
+  color: rgba(242, 242, 242, 0.6) !important;
+}
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -441,8 +463,6 @@ body {
   padding: 20px 0;
   border-bottom: 0.5px solid #fff;
 }
-
-
 
 .service-desc {
   width: 420px;

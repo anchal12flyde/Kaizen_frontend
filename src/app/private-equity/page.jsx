@@ -1,9 +1,11 @@
 import AdvisorySection from "@/components/advisorySection";
+import OurApproachSection from "@/components/ourApproachSection";
 import PEVCPracticeSection from "@/components/PEVCPractiseSection";
 import Footer from "@/components/ui-kit/footer";
 import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
+import WhyChooseSection from "@/components/whyChooseSection";
 import Image from "next/image";
 
 export default function PrivateEquity() {
@@ -71,6 +73,8 @@ export default function PrivateEquity() {
 
       <AdvisorySection />
       <PEVCPracticeSection />
+      <WhyChooseSection />
+       <OurApproachSection />
       <Footer />
     </div>
   );

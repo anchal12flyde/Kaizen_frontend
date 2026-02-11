@@ -56,7 +56,7 @@
 .header-2 {
   color: var(--Paragraph-Paragraph-1, #000);
   font-family: "Times New Roman";
-  font-size: calc( 20px + 8px * ((100vw - 390px) / (1050px)) );
+  font-size: calc( 20px + 4px * ((100vw - 390px) / (1050px)) );
   font-weight: 400 !important;
   line-height: 109%;
   letter-spacing: calc( -0.6px + -0.6px * ((100vw - 390px) / (1050px)) );
@@ -132,4 +132,24 @@
   font-weight: 400;
   line-height: 95%;
   letter-spacing: calc( -0.15px + -0.24px * ((100vw - 390px) / (1050px)) );
+}
+
+.punctuation {
+  color: rgba(255, 240, 196, 0.5) !important;
+  font-family: "Times New Roman";
+  font-size: 47px;
+  font-weight: 400;
+  line-height: 95%;
+  letter-spacing: calc( -0.6px + 0px * ((100vw - 390px) / (1050px)) );
+}
+
+@media (max-width: 1024px) {
+  .punctuation {
+    font-size: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .punctuation {
+    font-size: 7px;
+  }
 }

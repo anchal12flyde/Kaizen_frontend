@@ -84,7 +84,7 @@ export default function PEVCPracticeSection() {
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className=""
+              className=" px-[16px] py-[26px] "
             >
               {/* Icon Placeholder */}
               <div className="">

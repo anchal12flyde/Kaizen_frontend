@@ -1,5 +1,7 @@
 import BlogGridSection from "@/components/blogCardsGrid";
 import LetsConnectSection from "@/components/LetsConnectSection";
+import OurApproachSection from "@/components/ourApproachSection";
+import Button from "@/components/ui-kit/button";
 import Footer from "@/components/ui-kit/footer";
 import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
@@ -23,6 +25,25 @@ export default function Insights() {
         </Typography>
       </Container>
 
+      <Container
+        variant="sectionSp1"
+        className=" !py-[12px] flex items-center justify-between w-full "
+      >
+        <Button variant="primary" className=" !px-[36px] !py-[12px] ">
+          Filter
+        </Button>
+        <div className="!px-[36px] !py-[12px] border border-[var(--color-accent)] rounded-[500px] !w-[463px]  ">
+          <input
+            type="text"
+            className=" text-[var(--color-accent)] focus:outline-none text-center w-full   "
+            placeholder="Search"
+          />
+        </div>
+        <Button variant="primary" className=" !px-[36px] !py-[12px] ">
+          Filter
+        </Button>
+      </Container>
+
       <Container variant="sectionSp1" className=" !py-[20px] ">
         <section className="hero-section">
           {/* Background Image */}
@@ -39,34 +60,34 @@ export default function Insights() {
 
           {/* Content */}
           <div className="hero-content right-[50px]">
-            <div>
-              <div className="mb-[42px]">
-                <Typography variant="hero-display" colorVariant="white">
-                  Legal Advisory
+            <div className="flex flex-col gap-[16px]">
+              <div className=" px-[36px] py-[8px] border border-white !w-fit rounded-[500px]  ">
+                <Typography variant="para-3" className=" !text-white  ">
+                  Category
                 </Typography>
               </div>
 
-              <div className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]">
-                <Typography
-                  delay={0.4}
-                  variant="header-hero"
-                  colorVariant="white"
-                  className="lg:w-[623px] w-full flex-shrink-0 "
-                >
-                  For Complex Deals <br /> and Critical Decisions
-                </Typography>
+              <Typography variant="header-hero" colorVariant="white">
+                The word Kaizen means continuous improvement.
+              </Typography>
 
-                <Typography
-                  delay={0.6}
-                  variant="para-2"
-                  colorVariant="white"
-                  className="lg:w-[370px] w-full flex-shrink-0"
-                >
-                  Kaizen Law is a corporate and transaction-focused law firm
-                  advising businesses, founders, and investors across M&A,
-                  private equity, capital markets, and general counsel mandates.
-                </Typography>
-              </div>
+              <Typography
+                delay={0.6}
+                variant="para-2"
+                colorVariant="white"
+                className="lg:w-[370px] w-full flex-shrink-0"
+              >
+                Kaizen Law is a corporate and transaction-focused law firm
+                advising businesses, founders, and investors across M&A, private
+                equity, capital markets, and general counsel mandates.
+              </Typography>
+
+              <Typography
+                variant="button"
+                className=" dateHeroIn  "
+              >
+                4 min | 14/09/2024
+              </Typography>
             </div>
           </div>
         </section>
@@ -117,6 +138,7 @@ export default function Insights() {
         ]}
       />
       <LetsConnectSection />
+     
 
       <Footer />
     </div>
