@@ -93,7 +93,7 @@ export default function Insights() {
         </section>
       </Container>
 
-      <BlogGridSection
+      <BlogGridSection 
         posts={[
           {
             image: "https://ik.imagekit.io/demo/img/image1.jpg",

@@ -1,6 +1,8 @@
 import AdvisorySection from "@/components/advisorySection";
+import BlogGridSection from "@/components/blogCardsGrid";
 import OurApproachSection from "@/components/ourApproachSection";
 import PEVCPracticeSection from "@/components/PEVCPractiseSection";
+import StackedServicesSection from "@/components/stackedServices";
 import Footer from "@/components/ui-kit/footer";
 import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
@@ -9,6 +11,30 @@ import WhyChooseSection from "@/components/whyChooseSection";
 import Image from "next/image";
 
 export default function PrivateEquity() {
+  const services = [
+    {
+      title: "Early-Stage Fundraising",
+      description:
+        "Our practice covers the full lifecycle of investments including early-stage financings.",
+    },
+    {
+      title: "Growth-Stage & Late-Stage Investments",
+      description: "We advise on structured investments and sponsor-led exits.",
+    },
+    {
+      title: "Governance & Shareholder Frameworks",
+      description: "We help companies design governance models.",
+    },
+    {
+      title: "Follow-on Investments & Restructuring",
+      description: "Support for follow-on rounds and restructuring.",
+    },
+    {
+      title: "Secondary Transactions & Exits",
+      description: "Legal strategy aligned with commercial exits.",
+    },
+  ];
+
   return (
     <div>
       <Header />
@@ -73,8 +99,107 @@ export default function PrivateEquity() {
 
       <AdvisorySection />
       <PEVCPracticeSection />
+      <Container
+        variant="sectionSp1"
+        className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] "
+      >
+        <Typography variant="para-1">
+          Advising Across the Investment Lifecycle
+        </Typography>
+        <Typography variant="para-2">
+          We advise clients at each stage of the investment journey:
+        </Typography>
+      </Container>
+      <StackedServicesSection items={services} />
       <WhyChooseSection />
-       <OurApproachSection />
+      <OurApproachSection />
+
+      <Container
+        variant="sectionSp1"
+        className="hero-section privateEquityHeroCopy"
+      >
+        {/* Background Image */}
+        <Image
+          src="https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
+          alt="Kaizen Hero"
+          fill
+          className="hero-background"
+          priority
+        />
+
+        {/* Overlay */}
+        <div className="hero-overlay"></div>
+
+        {/* Content */}
+        <>
+          <Container
+            variant="sectionSp1"
+            className=" absolute inset-0  flex items-center justify-center  "
+          >
+            <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
+              <div className=" w-[500px] h-[459px] p-[36px] bg-[var(--color-accent)]  ">
+                <Typography
+                  variant="header-hero"
+                  className=" !text-white !text-[48px] "
+                >
+                  Representative Experience
+                </Typography>
+                <Typography
+                  variant="para-2"
+                  className=" !text-white mt-[26px] "
+                >
+                  We have advised investors and growth-stage companies across
+                  technology, consumer, financial services, healthcare,
+                  infrastructure, and energy sectors on investments, follow-on
+                  rounds, and exits.
+                </Typography>
+              </div>
+              <div></div>
+            </div>
+          </Container>
+        </>
+      </Container>
+
+      <Container
+        variant="sectionSp1"
+        className=" flex flex-col items-center gap-[16px] !pb-[20px] "
+      >
+        <Typography variant="para-1">Related Insights</Typography>
+        <Typography variant="para-2">
+          We advise clients at each stage of the investment journey:
+        </Typography>
+      </Container>
+
+      <BlogGridSection
+        posts={[
+          {
+            image: "https://ik.imagekit.io/demo/img/image1.jpg",
+            category: "Category",
+            title:
+              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            readTime: "4 min",
+            date: "14/09/2024",
+          },
+          {
+            image: "https://ik.imagekit.io/demo/img/image2.jpg",
+            category: "Category",
+            title:
+              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            readTime: "4 min",
+            date: "14/09/2024",
+          },
+          {
+            image: "https://ik.imagekit.io/demo/img/image3.jpg",
+            category: "Category",
+            title:
+              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            readTime: "4 min",
+            date: "14/09/2024",
+          },
+         
+        ]}
+      />
+
       <Footer />
     </div>
   );
