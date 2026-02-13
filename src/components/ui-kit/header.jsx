@@ -14,7 +14,8 @@ const HEADER_DATA = {
     { name: "About Kaizen", href: "/about" },
     { name: "Insights", href: "/insights" },
     { name: "Private Equity", href: "/private-equity" },
-    
+    { name: "Transaction Footprint", href: "/footprint" },
+    { name: "Contact", href: "/contact" },
   ],
   ctaText: "Get Started",
   ctaLink: "/contact",
