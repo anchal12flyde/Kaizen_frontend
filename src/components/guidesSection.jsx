@@ -10,7 +10,7 @@ export default function GuidesSection() {
       desc: "Relentless focus on quality, timelines, and outcomes.",
     },
     {
-      title: "Senior Ownership",
+      title: "Senior Ownership", 
       desc: "Direct partner and senior lawyer involvement throughout every mandate.",
     },
     {
@@ -40,7 +40,7 @@ export default function GuidesSection() {
           {items.map((item, index) => (
             <div
               key={index}
-              className="flex items-center justify-between border-t border-white py-[38px] "
+              className="flex items-center justify-between border-t border-white/30 py-[38px] "
             >
               <div className="flex flex-col gap-[12px]">
                 <Typography variant="header-2" className=" !text-white ">
@@ -52,7 +52,7 @@ export default function GuidesSection() {
               </div>
 
               {/* Right Circle Placeholder */}
-              <div className="w-10 h-10 border border-white rounded-full flex items-center justify-center">
+              <div className="w-15 h-15 border border-white rounded-full flex items-center justify-center">
                 {/* Placeholder Icon */}
                 <span className="text-white/60 text-sm">○</span>
               </div>

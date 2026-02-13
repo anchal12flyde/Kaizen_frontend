@@ -1,0 +1,25 @@
+.stack-section {
+  background: #f8f3ea;
+  position: relative;
+}
+
+/* This gives scroll space */
+/* Each card container */
+.stack-card-wrapper {
+  position: sticky;
+  top: 2cm;
+  display: flex;
+  justify-content: center;
+}
+
+/* Actual card */
+.stack-card {
+  width: 100%;
+  border-top: 1px solid #fff;
+  transition: all 0.3s ease;
+}
+
+/* Depth feel */
+.stack-card-wrapper:not(:first-child) .stack-card {
+  border-bottom: 1px solid #ffff;
+}

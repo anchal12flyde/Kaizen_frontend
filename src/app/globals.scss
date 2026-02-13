@@ -41,16 +41,13 @@ body {
   height: 100vh;
 }
 
-.privateEquityHeroCopy{
+.privateEquityHeroCopy {
   // height: fit-content;
 }
 
-
-.inputBorderContact{
-  border-bottom: 1px solid rgba(35, 31, 32, 0.30);
-  
+.inputBorderContact {
+  border-bottom: 1px solid rgba(35, 31, 32, 0.3);
 }
-
 
 @media (max-width: 640px) {
   .hero-section {
@@ -91,11 +88,24 @@ body {
 
 .why-card {
   border-right: 0.5px solid #31110f;
-  background: #f7f4eb;
+  background: var(--color-background-1);
 }
 
-.why-card:first-child {
-  border-left: 0.5px solid #31110f !important;
+.borderLeftCard {
+  border-left: 0.5px solid #31110f;
+}
+
+.borderBottomSec {
+  border-top: 0.5px solid rgba(35, 31, 32, 0.3);
+}
+
+.borderTopSec {
+  border-top: 0.5px solid rgba(35, 31, 32, 0.3);
+}
+
+.borderInsightFilter {
+  border-top: 1px solid rgba(182, 153, 106, 0.5);
+  border-bottom: 1px solid rgba(182, 153, 106, 0.5);
 }
 
 .step-item {

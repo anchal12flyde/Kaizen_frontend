@@ -59,13 +59,12 @@ export default function Testimonials() {
   
   return (
     <motion.div
-    className="flex items-center"
-    variants={fadeInUp}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
-  >
-  
+      className="flex items-center"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
       <div className="w-full flex flex-col gap-[80px] bg-[#f7f7f7] ">
         <Slider
           ref={sliderRef}
@@ -74,13 +73,21 @@ export default function Testimonials() {
 "
         >
           {testimonials.map((t, idx) => (
-            <div key={idx} className=" text-center w-full     ">
+            <div key={idx} className="text-center w-full">
               <div className="!mb-[32px]">
-                <Typography variant="header-1">"{t.text}"</Typography>
+                <Typography
+                  variant="header-1"
+                  animate={false} // ❌ No animation
+                >
+                  "{t.text}"
+                </Typography>
               </div>
 
               <div>
-                <Typography variant="header-1" className="  ">
+                <Typography
+                  variant="header-1"
+                  animate={false} // ❌ No animation
+                >
                   {t.author}
                 </Typography>
               </div>
@@ -141,7 +148,7 @@ export default function Testimonials() {
                     fill-opacity="0.25"
                   />
                 </svg>
-              )
+              ),
             )}
           </div>
 

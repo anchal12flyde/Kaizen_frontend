@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Typography from "./ui-kit/typography";
 
-
 const sections = [
   {
     id: 1,
@@ -29,16 +28,16 @@ const sections = [
   },
 ];
 
-const fadeVariant = (from) => ({
+const slideVariant = (from) => ({
   hidden: {
     opacity: 0,
-    x: from === "left" ? -80 : 80,
+    x: from === "left" ? -150 : 150,
   },
   show: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.8,
       ease: "easeOut",
     },
   },
@@ -46,22 +45,22 @@ const fadeVariant = (from) => ({
 
 export default function AdvisorySection() {
   return (
-    <section className="w-full overflow-hidden bg-[#F7F4EB] ">
-      {sections.map((item) => {
-        const direction = item.reverse ? "left" : "right";
+    <section className="w-full overflow-hidden bg-[var(--color-background-1)]">
+      {sections.map((item, index) => {
+        const direction = index % 2 === 0 ? "right" : "left";
 
         return (
-          <div
+          <motion.div
             key={item.id}
-            className="flex  h-full !w-full border-b border-[#31110F]  "
+            variants={slideVariant(direction)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            className={`flex h-full w-full ${index == 0 ? "border-t border-b border-[#31110F]" : "border-b border-[#31110F]"} `}
           >
             {/* Image */}
-            <motion.div
-              variants={fadeVariant(direction)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.3 }}
-              className={`relative w-[499px] h-[238px]  ${
+            <div
+              className={`relative w-[499px] h-[238px] ${
                 item.reverse ? "md:order-2" : ""
               }`}
             >
@@ -72,31 +71,21 @@ export default function AdvisorySection() {
                 className="object-cover grayscale"
                 priority={item.id === 1}
               />
-            </motion.div>
+            </div>
 
             {/* Content */}
-            <motion.div
-              variants={fadeVariant(direction === "left" ? "right" : "left")}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.3 }}
-              className={`flex items-center  flex-1 px-[80px_100px] py-[61px] ${
-                item.reverse ? "md:order-1 px-[100px_80px] " : ""
+            <div
+              className={`flex items-center flex-1 px-[80px_100px] py-[61px] ${
+                item.reverse ? "md:order-1 px-[100px_80px]" : ""
               }`}
             >
-              <div className=" flex flex-col gap-[16px] ">
-                {/* Title */}
-                <Typography variant="header-2" >
-                  {item.title}
-                </Typography>
+              <div className="flex flex-col gap-[16px]">
+                <Typography variant="header-2">{item.title}</Typography>
 
-                {/* Description */}
-                <Typography variant="para-2" >
-                  {item.desc}
-                </Typography>
+                <Typography variant="para-2">{item.desc}</Typography>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         );
       })}
     </section>

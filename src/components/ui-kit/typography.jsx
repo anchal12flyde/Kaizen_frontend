@@ -34,7 +34,7 @@ const textFadeUp = {
 /* ---------------- COMPONENT ---------------- */
 
 const Typography = ({
-  variant = "para-1",
+  variant = "para-1", 
   as,
   children,
   className,

@@ -61,15 +61,15 @@ export default function SectorExperience() {
                 key={index}
                 className={
                   index == sectors.length - 1
-                    ? " border-t border-b border-[rgba(35, 31, 32, 0.30)] py-[20px] sector-item "
-                    : " border-t border-[rgba(35, 31, 32, 0.30)] py-[20px] sector-item "
+                    ? " borderBottomSec py-[20px] sector-item "
+                    : " borderTopSec py-[20px] sector-item "
                 }
               >
                 <Typography variant="header-2" className="text-center">
                   {item.title}{" "}
                 </Typography>
                 {/* Tooltip */}
-                <div className={`tooltip ${isRight ? "right" : "left"}`}>
+                <div className={`tooltip ${isRight ? "right" : "left"} !rounded-none `}>
                   <img src={item.image} alt={item.title} />
                 </div>
               </div>

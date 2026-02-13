@@ -38,7 +38,7 @@ export default function AboutHeroSection() {
               big-firm quality advice <br /> through a partner-led, boutique
               model.
             </Typography>
-            <div className="mt-[26px] flex items-center gap-[6px] ">
+            <div className="mt-[26px] flex items-center gap-[16px] ">
               <Button variant="primary">Explore Our Practise</Button>
               <Button variant="white">Meet Our Team</Button>
             </div>

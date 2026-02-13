@@ -228,7 +228,9 @@ export default function WhyChooseSection() {
               justify-between
               origin-left
               overflow-hidden
-              shadow-sm
+
+              ${i == 0 ? "borderLeftCard" : ""}
+              
             `}
           >
             {/* TOP */}

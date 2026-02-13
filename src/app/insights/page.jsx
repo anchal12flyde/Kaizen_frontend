@@ -27,7 +27,7 @@ export default function Insights() {
 
       <Container
         variant="sectionSp1"
-        className=" !py-[12px] flex items-center justify-between w-full "
+        className=" !py-[12px] flex items-center justify-between w-full borderInsightFilter border  "
       >
         <Button variant="primary" className=" !px-[36px] !py-[12px] ">
           Filter
@@ -48,7 +48,7 @@ export default function Insights() {
         <section className="hero-section">
           {/* Background Image */}
           <Image
-            src="https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
+            src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
             alt="Kaizen Hero"
             fill
             className="hero-background"
@@ -82,10 +82,7 @@ export default function Insights() {
                 equity, capital markets, and general counsel mandates.
               </Typography>
 
-              <Typography
-                variant="button"
-                className=" dateHeroIn  "
-              >
+              <Typography variant="button" className=" dateHeroIn  ">
                 4 min | 14/09/2024
               </Typography>
             </div>
@@ -93,7 +90,7 @@ export default function Insights() {
         </section>
       </Container>
 
-      <BlogGridSection 
+      <BlogGridSection
         posts={[
           {
             image: "https://ik.imagekit.io/demo/img/image1.jpg",
@@ -138,7 +135,6 @@ export default function Insights() {
         ]}
       />
       <LetsConnectSection />
-     
 
       <Footer />
     </div>

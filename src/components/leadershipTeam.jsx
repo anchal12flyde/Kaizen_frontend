@@ -119,7 +119,7 @@ export default function LeadershipTeam() {
           <div key={index} className="team-card">
             <img src={item.img} alt={item.name} />
 
-            <div className="overlay flex flex-col !justify-between border border-white ">
+            <div className="overlay flex flex-col !justify-between ">
               <div className="flex flex-col items-start gap-[4px] ">
                 <Typography variant="header-2" className="!text-white">
                   {item.name}{" "}

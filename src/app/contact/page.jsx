@@ -1,3 +1,4 @@
+import Button from "@/components/ui-kit/button";
 import Footer from "@/components/ui-kit/footer";
 import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
@@ -179,8 +180,6 @@ export default function Contact() {
                     Nagar, Bengaluru, Karnataka – 560078
                   </Typography>
                 </div>
-
-                
               </div>
             </div>
           </div>
@@ -251,11 +250,13 @@ export default function Contact() {
 
       <Container
         variant="sectionSp1"
-        className=" !py-[60px] bg-[var(--color-background-2)] "
+        className=" !py-[60px] bg-[var(--color-background-2)] flex items-center justify-between "
       >
         <Typography variant="header-hero" className="!text-white">
           Ready to discuss your <br /> project with us?
         </Typography>
+
+        <Button variant="primary">Schedule a Consultation</Button>
       </Container>
 
       <Footer />

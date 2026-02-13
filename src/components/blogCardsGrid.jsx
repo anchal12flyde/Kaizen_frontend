@@ -3,27 +3,34 @@
 import Image from "next/image";
 import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
+import Button from "./ui-kit/button";
 
-export default function BlogGridSection({ posts = [] }) {
+export default function BlogGridSection({ posts = [], buttonShow = false }) {
   return (
-    <Container variant="sectionSp1" className="!py-[60px]" >
+    <Container variant="sectionSp1" className="!py-[60px]">
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
-          
         }}
       >
         {posts.map((item, index) => (
-          <BlogCard key={index} data={item} />
+          <BlogCard buttonShow={buttonShow} key={index} data={item} />
         ))}
       </div>
+      {buttonShow && (
+        <div className=" flex justify-center " >
+          <Button variant="primary" className="mt-[36px]">
+            View More
+          </Button>
+        </div>
+      )}
     </Container>
   );
 }
 
 /* Card Component */
-function BlogCard({ data }) {
+function BlogCard({ data, buttonShow }) {
   return (
     <div className=" px-[14px] py-[16px] cursor-pointer flex flex-col gap-[16px] border border-[#D7C7AB]  blogCard  ">
       {/* Image */}
@@ -52,18 +59,16 @@ function BlogCard({ data }) {
         {/* Title */}
         <Typography
           variant="header-2"
-          className="underline text-[var(--color-accent)] group-hover:text-white mt-[16px] blogCardTitle "
+          className=" text-[var(--color-accent)] group-hover:text-white hover:!underline mt-[16px] blogCardTitle "
         >
           {data.title}
         </Typography>
 
-        <Typography
-          variant="button"
-          className="mt-[36px] blogCardDate "
-        >
+        <Typography variant="button" className="mt-[36px] blogCardDate ">
           {data.readTime} | {data.date}
         </Typography>
       </div>
+      
     </div>
   );
 }

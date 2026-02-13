@@ -3,6 +3,7 @@ import BlogGridSection from "@/components/blogCardsGrid";
 import OurApproachSection from "@/components/ourApproachSection";
 import PEVCPracticeSection from "@/components/PEVCPractiseSection";
 import StackedServicesSection from "@/components/stackedServices";
+import Button from "@/components/ui-kit/button";
 import Footer from "@/components/ui-kit/footer";
 import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
@@ -15,23 +16,27 @@ export default function PrivateEquity() {
     {
       title: "Early-Stage Fundraising",
       description:
-        "Our practice covers the full lifecycle of investments including early-stage financings.",
+        "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
     },
     {
       title: "Growth-Stage & Late-Stage Investments",
-      description: "We advise on structured investments and sponsor-led exits.",
+      description:
+        "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
     },
     {
       title: "Governance & Shareholder Frameworks",
-      description: "We help companies design governance models.",
+      description:
+        "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
     },
     {
       title: "Follow-on Investments & Restructuring",
-      description: "Support for follow-on rounds and restructuring.",
+      description:
+        "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
     },
     {
       title: "Secondary Transactions & Exits",
-      description: "Legal strategy aligned with commercial exits.",
+      description:
+        "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
     },
   ];
 
@@ -120,7 +125,7 @@ export default function PrivateEquity() {
       >
         {/* Background Image */}
         <Image
-          src="https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
+          src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
           alt="Kaizen Hero"
           fill
           className="hero-background"
@@ -153,6 +158,9 @@ export default function PrivateEquity() {
                   infrastructure, and energy sectors on investments, follow-on
                   rounds, and exits.
                 </Typography>
+                <Button variant="white" className=" mt-[36px] ">
+                  View Representive Transactions
+                </Button>
               </div>
               <div></div>
             </div>
@@ -196,8 +204,8 @@ export default function PrivateEquity() {
             readTime: "4 min",
             date: "14/09/2024",
           },
-         
         ]}
+        buttonShow={true}
       />
 
       <Footer />
