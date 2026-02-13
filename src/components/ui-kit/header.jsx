@@ -11,11 +11,10 @@ import { usePathname, useRouter } from "next/navigation";
 const HEADER_DATA = {
   logo: "https://ik.imagekit.io/75zj3bigp/LogoLight.png",
   navLinks: [
-    { name: "About Kaizen", href: "/About" },
-    { name: "Services", href: "/services" },
-    { name: "Schedule", href: "/schedule-a-consult" },
-    { name: "Transaction Footprint", href: "/footprint" },
+    { name: "About Kaizen", href: "/about" },
     { name: "Insights", href: "/insights" },
+    { name: "Private Equity", href: "/private-equity" },
+    
   ],
   ctaText: "Get Started",
   ctaLink: "/contact",
