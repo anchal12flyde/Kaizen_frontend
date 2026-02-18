@@ -108,7 +108,7 @@ export default function PrivateEquity() {
         variant="sectionSp1"
         className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] "
       >
-        <Typography variant="para-1">
+        <Typography variant="para-1"> 
           Advising Across the Investment Lifecycle
         </Typography>
         <Typography variant="para-2">

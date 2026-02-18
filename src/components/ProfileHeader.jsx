@@ -2,22 +2,34 @@
 
 import Link from "next/link";
 import { Linkedin, Copyright } from "lucide-react";
+
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
+import useTypingText from "@/hooks/useTypingTesxt";
 
 export default function ProfileHeader() {
+  /* Typing Text */
+  const name = useTypingText("Harsh Kumar", 100);
+  const role = useTypingText("Founding Partner", 80);
+
   return (
-    <Container variant="sectionSp1" className= " !pb-0 ">
-      <div className="  flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <Container variant="sectionSp1" className="!pb-0" animate={false} >
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         {/* Left Section */}
         <div>
-          <Typography variant="display-3">Harsh Kumar </Typography>
+          {/* Name Typing */}
+          <Typography variant="display-3" animate={false}>
+            {name}
+            
+          </Typography>
 
+          {/* Role Typing */}
           <Typography
             variant="header-1"
-            className=" !text-[var(--color-accent)] mt-[16px] "
+            animate={false}
+            className="!text-[var(--color-accent)] mt-[16px]"
           >
-            Founding Partner
+            {role}
           </Typography>
         </div>
 
@@ -41,16 +53,23 @@ export default function ProfileHeader() {
             </Link>
           </div>
 
-          {/* Contact Info */}
-          <div className="text-sm text-right leading-relaxed flex flex-col gap-[10px] ">
+          {/* Contact */}
+          <div className="text-sm text-right leading-relaxed flex flex-col gap-[10px]">
             <Typography
               variant="para-2"
-              className=" !text-[var(--color-accent)] "
+              animate={false}
+              className="!text-[var(--color-accent)]"
             >
               +91-9999191620
             </Typography>
 
-            <Typography variant="para-2" className= " !text-[var(--color-accent)] " >harsh.kumar@kaizenlaw.in</Typography>
+            <Typography
+              variant="para-2"
+              animate={false}
+              className="!text-[var(--color-accent)]"
+            >
+              harsh.kumar@kaizenlaw.in
+            </Typography>
           </div>
         </div>
       </div>
