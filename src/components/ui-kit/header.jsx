@@ -126,6 +126,7 @@ export default function Header() {
                 }`}
                 variant="linkText"
                 style={{ lineHeight: "150%" }}
+                animate={false}
               >
                 {link.name}
               </Typography>
@@ -143,7 +144,7 @@ export default function Header() {
           <span className="w-6 h-[2px] bg-white" />
           <span className="w-6 h-[2px] bg-white" />
         </button>
-      </>
+      </> 
     );
   };
 
@@ -291,6 +292,7 @@ export default function Header() {
                 <Typography
                   variant="header-1"
                   className="!text-white transition-all"
+                  animate = {false}
                 >
                   {link.name}
                 </Typography>

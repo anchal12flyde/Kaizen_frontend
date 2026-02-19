@@ -110,4 +110,4 @@ export default function Sectors() {
       <Footer />
     </div>
   );
-}
+} 
