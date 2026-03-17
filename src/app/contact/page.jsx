@@ -29,18 +29,15 @@ export default function Contact() {
           variant="sectionSp1"
           className="relative z-10 flex items-center justify-center"
         >
-          <div className="w-full  p-[8px] bg-[var(--color-background-1)] ">
-            <div className="flex  bg-[var(--color-background-1)]">
+          <div className="w-full  md:p-[15px] p-[12px] bg-[var(--color-background-1)] overflow-hidden">
+            <div className="flex md:flex-row flex-col bg-[var(--color-background-1)] ">
               {/* Left Form Section */}
-              <div className="p-[46px] !bg-none  flex-1 ">
-                <Typography
-                  variant="header-hero"
-                  className="!text-[48px] mb-[76px] "
-                >
+              <div className="md:p-[46px] pb-[36px] !bg-none  flex-1 ">
+                <Typography variant="header-5" className=" mb-[76px] ">
                   Ready To Discuss Your Project With Us?
                 </Typography>
 
-                <div className="grid grid-cols-2 gap-y-[36px] ">
+                <div className="grid grid-cols-2 gap-y-[36px]  md:gap-x-[0] gap-x-[12px]">
                   {/* First Name */}
                   <div className="">
                     <div className="inputBorderContact flex flex-col">
@@ -114,84 +111,85 @@ export default function Contact() {
                   rows={3}
                 />
 
-                <button className="mt-[40px] px-[28px] py-[12px] border border-black flex items-center gap-2 hover:bg-black hover:text-white transition">
+                <button className="mt-[40px] md:px-[32px] px-[24px] md:py-[16px] py-[16px] border border-[#231F20] md:w-fit w-full  hover:bg-black hover:text-white transition">
                   View Representative Transactions →
                 </button>
               </div>
 
               {/* Right Location Section */}
-              <div className="p-[26px] bg-[var(--color-accent)] w-[390px]  text-white relative ">
+              <div className=" bg-[var(--color-accent)] md:w-[390px] w-full  text-white relative flex flex-col justify-between">
+                <div className="md:p-[26px] p-[12px]">
+                  <Typography variant="header-5" className=" !text-white">
+                    Where To Find Us
+                  </Typography>
+
+                  {/* Gurgaon */}
+                  <div className="flex flex-col gap-[8px]">
+                    <div className=" flex items-center gap-[12px]  mt-[28px] ">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                      >
+                        <path
+                          d="M9.9991 0C6.00516 0 2.75586 3.2493 2.75586 7.2432C2.75586 12.1998 9.23785 19.4763 9.51383 19.7836C9.77305 20.0723 10.2256 20.0718 10.4844 19.7836C10.7604 19.4763 17.2423 12.1998 17.2423 7.2432C17.2423 3.2493 13.993 0 9.9991 0ZM9.9991 10.8875C7.98965 10.8875 6.35488 9.25266 6.35488 7.2432C6.35488 5.23375 7.98969 3.59898 9.9991 3.59898C12.0085 3.59898 13.6433 5.23379 13.6433 7.24324C13.6433 9.2527 12.0085 10.8875 9.9991 10.8875Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <Typography variant="header-2" className=" !text-white  ">
+                        Gurgaon
+                      </Typography>
+                    </div>
+
+                    <Typography variant="para-2" className="!text-white  ">
+                      1st Floor, DLF Centre Court, Golf Course Road, DLF Phase
+                      5, Sector-42, Gurugram, Haryana – 122002
+                    </Typography>
+                  </div>
+
+                  <div className=" flex flex-col gap-[8px] ">
+                    <div className=" flex items-center gap-[12px]  mt-[28px] ">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                      >
+                        <path
+                          d="M9.9991 0C6.00516 0 2.75586 3.2493 2.75586 7.2432C2.75586 12.1998 9.23785 19.4763 9.51383 19.7836C9.77305 20.0723 10.2256 20.0718 10.4844 19.7836C10.7604 19.4763 17.2423 12.1998 17.2423 7.2432C17.2423 3.2493 13.993 0 9.9991 0ZM9.9991 10.8875C7.98965 10.8875 6.35488 9.25266 6.35488 7.2432C6.35488 5.23375 7.98969 3.59898 9.9991 3.59898C12.0085 3.59898 13.6433 5.23379 13.6433 7.24324C13.6433 9.2527 12.0085 10.8875 9.9991 10.8875Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <Typography variant="header-2" className=" !text-white  ">
+                        Bengaluru
+                      </Typography>
+                    </div>
+
+                    <Typography variant="para-2" className="!text-white  ">
+                      KustomWork, 1st Floor, No.129, 5th Main Rd, 3rd Phase,
+                      J.P. Nagar, Bengaluru, Karnataka – 560078
+                    </Typography>
+                  </div>
+                </div>
                 <Image
                   src="https://ik.imagekit.io/flyde/map.png"
                   width={200}
                   height={200}
-                  className=" absolute bottom-0 !right-0 left-0 w-full h-auto  "
+                  className=" relative w-full h-auto  "
                 />
-
-                <Typography variant="header-hero" className=" !text-white">
-                  Where To Find Us
-                </Typography>
-
-                {/* Gurgaon */}
-                <div className="flex flex-col gap-[8px]">
-                  <div className=" flex items-center gap-[12px]  mt-[28px] ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M9.9991 0C6.00516 0 2.75586 3.2493 2.75586 7.2432C2.75586 12.1998 9.23785 19.4763 9.51383 19.7836C9.77305 20.0723 10.2256 20.0718 10.4844 19.7836C10.7604 19.4763 17.2423 12.1998 17.2423 7.2432C17.2423 3.2493 13.993 0 9.9991 0ZM9.9991 10.8875C7.98965 10.8875 6.35488 9.25266 6.35488 7.2432C6.35488 5.23375 7.98969 3.59898 9.9991 3.59898C12.0085 3.59898 13.6433 5.23379 13.6433 7.24324C13.6433 9.2527 12.0085 10.8875 9.9991 10.8875Z"
-                        fill="white"
-                      />
-                    </svg>
-                    <Typography variant="header-2" className=" !text-white  ">
-                      Gurgaon
-                    </Typography>
-                  </div>
-
-                  <Typography variant="para-2" className="!text-white  ">
-                    1st Floor, DLF Centre Court, Golf Course Road, DLF Phase 5,
-                    Sector-42, Gurugram, Haryana – 122002
-                  </Typography>
-                </div>
-
-                <div className=" flex flex-col gap-[8px] ">
-                  <div className=" flex items-center gap-[12px]  mt-[28px] ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M9.9991 0C6.00516 0 2.75586 3.2493 2.75586 7.2432C2.75586 12.1998 9.23785 19.4763 9.51383 19.7836C9.77305 20.0723 10.2256 20.0718 10.4844 19.7836C10.7604 19.4763 17.2423 12.1998 17.2423 7.2432C17.2423 3.2493 13.993 0 9.9991 0ZM9.9991 10.8875C7.98965 10.8875 6.35488 9.25266 6.35488 7.2432C6.35488 5.23375 7.98969 3.59898 9.9991 3.59898C12.0085 3.59898 13.6433 5.23379 13.6433 7.24324C13.6433 9.2527 12.0085 10.8875 9.9991 10.8875Z"
-                        fill="white"
-                      />
-                    </svg>
-                    <Typography variant="header-2" className=" !text-white  ">
-                      Bengaluru
-                    </Typography>
-                  </div>
-
-                  <Typography variant="para-2" className="!text-white  ">
-                    KustomWork, 1st Floor, No.129, 5th Main Rd, 3rd Phase, J.P.
-                    Nagar, Bengaluru, Karnataka – 560078
-                  </Typography>
-                </div>
               </div>
             </div>
           </div>
         </Container>
       </div>
 
-      <div className=" grid grid-cols-2 bg-[var(--color-accent)]  ">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-[var(--color-accent)]">
         <Container
           variant="sectionSp1"
-          className=" !py-[58px] border-r border-white flex items-center justify-center gap-[16px] "
+          className=" border-b md:border-b-0 md:border-r border-white flex items-center justify-center gap-[16px]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -219,11 +217,8 @@ export default function Contact() {
 
         <Container
           variant="sectionSp1"
-          className=" !py-[58px] flex items-center justify-center gap-[16px]  "
+          className=" flex items-center justify-center gap-[16px]  "
         >
-          <Typography variant="header-2" className="!text-white">
-            contact@kaizenlaw.in
-          </Typography>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -247,18 +242,23 @@ export default function Contact() {
               </clipPath>
             </defs>
           </svg>
+          <Typography variant="header-2" className="!text-white">
+            contact@kaizenlaw.in
+          </Typography>
         </Container>
       </div>
 
       <Container
         variant="sectionSp1"
-        className=" !py-[60px] bg-[var(--color-background-2)] flex items-center justify-between "
+        className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between "
       >
-        <Typography variant="header-hero" className="!text-white">
+        <Typography variant="header-5" className="!text-white">
           Ready to discuss your <br /> project with us?
         </Typography>
 
-        <Button variant="primary">Schedule a Consultation</Button>
+        <button className=" md:px-[32px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[24px] text-[18px]">
+          Schedule A Consulation →
+        </button>
       </Container>
 
       <Footer />

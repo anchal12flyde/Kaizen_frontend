@@ -5,15 +5,18 @@ import Typography from "./ui-kit/typography";
 
 export default function KaizenPhilosophySection() {
   return (
-    <Container variant="sectionSp1" className="bg-[#B6996A]  flex items-start gap-[209px] ">
+    <Container
+      variant="primarySpacing"
+      className="bg-[#B6996A]  flex md:flex-row flex-col items-start md:gap-[209px] gap-[42px]"
+    >
       <div className="shrink-0">
-        <Typography variant="header-1" className="!text-white">
+        <Typography variant="header-6" className="!text-white">
           The Kaizen <br /> Philosohpy
         </Typography>
       </div>
 
       {/* Right Side */}
-      <div className="flex flex-col gap-[26px]" >
+      <div className="flex flex-col md:gap-[26px] gap-[16px]">
         <Typography variant="header-1" className="!text-white">
           The word Kaizen means continuous improvement.
         </Typography>

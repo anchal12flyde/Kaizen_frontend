@@ -6,160 +6,119 @@ import { useRef, useState } from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 
-
-export default function Testimonials() {
+export default function Testimonials({
+  data = [], // 🔥 dynamic testimonials
+  bg = "bg-[#f7f7f7]",
+  textColor = "text-[#31110F]",
+  dotActive = "#31110F",
+  dotInactive = "rgba(0,0,0,0.25)",
+  leftArrow = "https://ik.imagekit.io/flyde/Left%20arrow.png",
+  rightArrow = "https://ik.imagekit.io/flyde/Right%20arrow.png",
+}) {
   const sliderRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const testimonials = [
-    {
-      text: "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
-      author: "Corporate/Mergers and Acquisitions",
-    },
-    {
-      text: "Their expertise and courtroom presence were truly impressive. They turned a stressful situation into a successful outcome.",
-      author: "– Sarah M., Small Business Owner",
-    },
-    {
-      text: "I was very impressed with the responsiveness and knowledge of everyone at Jones & Brown Legal. I felt like they really cared about my case, and they fought hard to get me a great result.",
-      author: "– Thomas P., Individual Client",
-    },
-  ];
-
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: data.length > 1,
     speed: 600,
-    fade: false, // ❌ no fade
     slidesToShow: 1,
     slidesToScroll: 1,
     swipe: true,
     arrows: false,
     autoplay: false,
     cssEase: "ease-in-out",
-    adaptiveHeight: false,
-    useTransform: true,
-    beforeChange: (_, next) => setCurrentIndex(next % testimonials.length),
+    beforeChange: (_, next) => setCurrentIndex(next % data.length),
   };
 
   const fadeInUp = {
-    hidden: {
-      opacity: 0,
-      y: 40,
-    },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
-  
+
+  if (!data || data.length === 0) return null; // safety
+
   return (
     <motion.div
-      className="flex items-center"
+      className="flex items-center justify-center"
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="w-full flex flex-col gap-[80px] bg-[#f7f7f7] ">
+      <div className={`w-full flex flex-col gap-[80px] ${bg}`}>
+        {/* SLIDER */}
         <Slider
           ref={sliderRef}
           {...settings}
-          className="flex  w-[319px] md:w-[632px] lg:w-[738px] px-[50px] md:pt-[84px] pt-[102px] items-center
-"
+          className="w-full md:max-w-[738px] max-w-[319px] mx-auto px-[24px] md:px-[50px] pt-[80px] md:pt-[84px]"
         >
-          {testimonials.map((t, idx) => (
-            <div key={idx} className="text-center w-full">
-              <div className="!mb-[32px]">
+          {data.map((t, idx) => (
+            <div key={idx} className="text-center">
+              <div className="mb-[32px]">
                 <Typography
                   variant="header-1"
-                  animate={false} // ❌ No animation
+                  animate={false}
+                  className={textColor}
                 >
                   "{t.text}"
                 </Typography>
               </div>
 
-              <div>
-                <Typography
-                  variant="header-1"
-                  animate={false} // ❌ No animation
-                >
-                  {t.author}
-                </Typography>
-              </div>
+              <Typography
+                variant="header-1"
+                animate={false}
+                className={textColor}
+              >
+                {t.author}
+              </Typography>
             </div>
           ))}
         </Slider>
 
         {/* CONTROLS */}
-        <div className="flex items-center justify-center gap-[20px] px-[50px] md:pb-[84px] pb-[102px] ">
-          <Image
-            src="https://ik.imagekit.io/flyde/Left%20arrow.png"
-            width={100}
-            height={100}
-            alt="left image"
-            onClick={() => sliderRef.current?.slickPrev()}
-            className="arrowImg"
-          />
+        <div className="flex items-center justify-center gap-[20px] px-[24px] md:px-[50px] pb-[80px] md:pb-[84px]">
+          {/* LEFT */}
+          {data.length > 1 && (
+            <Image
+              src={leftArrow}
+              width={18}
+              height={18}
+              alt="left arrow"
+              onClick={() => sliderRef.current?.slickPrev()}
+              className="cursor-pointer"
+            />
+          )}
 
           {/* DOTS */}
           <div className="flex gap-[10px]">
-            {testimonials.map((_, i) =>
-              // <button
-              //   key={i}
-              //   onClick={() => sliderRef.current?.slickGoTo(i)}
-              //   className={`h-[8px] w-[8px] rounded-full ${
-              //     currentIndex === i ? "bg-black" : "bg-gray-300"
-              //   }`}
-              // />
-
-              currentIndex == i ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="11"
-                  height="11"
-                  viewBox="0 0 11 11"
-                  fill="none"
-                >
-                  <circle
-                    cx="5.11111"
-                    cy="5.11111"
-                    r="5.11111"
-                    fill="#31110F"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="11"
-                  height="11"
-                  viewBox="0 0 11 11"
-                  fill="none"
-                >
-                  <circle
-                    cx="5.11111"
-                    cy="5.11111"
-                    r="5.11111"
-                    fill="black"
-                    fill-opacity="0.25"
-                  />
-                </svg>
-              ),
-            )}
+            {data.map((_, i) => (
+              <svg key={i} width="11" height="11">
+                <circle
+                  cx="5.5"
+                  cy="5.5"
+                  r="5.5"
+                  fill={currentIndex === i ? dotActive : dotInactive}
+                />
+              </svg>
+            ))}
           </div>
 
-          <Image
-            src="https://ik.imagekit.io/flyde/Right%20arrow.png"
-            width={100}
-            height={100}
-            alt="right image"
-            onClick={() => sliderRef.current?.slickNext()}
-            className="arrowImg"
-          />
+          {/* RIGHT */}
+          {data.length > 1 && (
+            <Image
+              src={rightArrow}
+              width={18}
+              height={18}
+              alt="right arrow"
+              onClick={() => sliderRef.current?.slickNext()}
+              className="cursor-pointer"
+            />
+          )}
         </div>
       </div>
     </motion.div>

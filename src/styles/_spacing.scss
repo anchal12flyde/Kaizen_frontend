@@ -1,9 +1,9 @@
 .header-spacing {
-  padding: var(--sp-20) var(--sp-50);
+  padding: var(--sp-20) var(--sp-100);
 }
 
 .primary-spacing {
-  padding: var(--sp-116) var(--sp-271);
+  padding: var(--sp-100) var(--sp-100);
 }
 
 .secondary-spacing {
@@ -11,9 +11,14 @@
 }
  
 .section-sp-1 {
-  padding: var(--sp-114) var(--sp-150);
+  padding: var(--sp-60) var(--sp-152);
 }
-
+.section-sp-2{
+  padding: var(--sp-93) var(--sp-150) var(--sp-143) var(--sp-150);
+}
+.section-sp-3{
+  padding: var(--sp-100) var(--sp-100) var(--sp-60) var(--sp-100);
+}
 .footer-spacing {
   padding: var(--sp-68) var(--sp-150);
 }
@@ -33,12 +38,17 @@
     padding: var(--sp-20) var(--sp-40);
   }
 
+  .primary-spacing {
+    padding: var(--sp-116) var(--sp-84);
+  }
   .section-sp-1 {
     padding: var(--sp-126) var(--sp-64);
   }
-
+  .section-sp-2{
+    padding: var(--sp-97) var(--64) var(--sp-126) var(--sp-64);
+  }
   .footer-spacing {
-    padding: var(--sp-68) var(--sp-50);
+    padding: var(--sp-68) var(--sp-28);
   }
 
   .hero-spacing {
@@ -57,20 +67,25 @@
 
 @media (max-width: 600px) {
   .primary-spacing {
-    padding: var(--sp-64) var(--sp-28);
+    padding: var(--sp-64) var(--sp-24) var(--sp-64) var(--sp-24);
   }
   .header-spacing {
-    padding: var(--sp-16) var(--sp-24);
+    padding: var(--sp-20) var(--sp-24);
   }
 
   .footer-spacing {
-    padding: var(--sp-64) var(--sp-28);
+    padding: var(--sp-68) var(--sp-28);
   }
 
   .section-sp-1 {
     padding: var(--sp-64) var(--sp-28);
   }
-
+  .section-sp-2{
+    padding: var(--sp-64) var(--sp-24) var(--sp-126) var(--sp-28);
+  }
+  .section-sp-3{
+    padding: var(--sp-64) var(--sp-28) var(--sp-60) var(--sp-28);
+  }
   .section-sp-top {
     padding: var(--sp-64) 0 0 0;
   }

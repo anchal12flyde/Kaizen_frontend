@@ -56,11 +56,15 @@ export default function AdvisorySection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            className={`flex h-full w-full ${index == 0 ? "border-t border-b border-[#31110F]" : "border-b border-[#31110F]"} `}
+            className={`flex flex-col md:flex-row h-full w-full ${
+              index == 0
+                ? "border-t border-b border-[#31110F]"
+                : "border-b border-[#31110F]"
+            }`}
           >
             {/* Image */}
             <div
-              className={`relative w-[499px] h-[238px] ${
+              className={`relative w-full md:w-[499px] h-[250px] md:h-auto ${
                 item.reverse ? "md:order-2" : ""
               }`}
             >
@@ -75,13 +79,12 @@ export default function AdvisorySection() {
 
             {/* Content */}
             <div
-              className={`flex items-center flex-1 px-[80px_100px] py-[61px] ${
-                item.reverse ? "md:order-1 px-[100px_80px]" : ""
+              className={`flex items-center flex-1 px-[20px] md:px-[80px_100px] py-[30px] md:py-[61px] ${
+                item.reverse ? "md:order-1 md:px-[100px_80px]" : ""
               }`}
             >
               <div className="flex flex-col gap-[16px]">
-                <Typography variant="header-2">{item.title}</Typography>
-
+                <Typography variant="header-4">{item.title}</Typography>
                 <Typography variant="para-2">{item.desc}</Typography>
               </div>
             </div>

@@ -91,12 +91,12 @@ export default function LeadershipTeam() {
 
   return (
     <Container
-      variant="sectionSp1"
+      variant="primarySpacing"
       className="flex flex-col gap-[96px] bg-[#B6996A] "
     >
       {/* Header */}
-      <div className="flex items-center gap-[152px] ">
-        <Typography variant="header-1" className="!text-white">
+      <div className="flex md:flex-row flex-col  md:gap-[152px] gap-[42px]">
+        <Typography variant="header-6" className="!text-white">
           Leadership Team
         </Typography>
 
@@ -198,7 +198,7 @@ export default function LeadershipTeam() {
           position: relative;
 
           min-width: 280px;
-          height: 380px;
+          height: 400px;
 
           flex-shrink: 0;
 
@@ -273,7 +273,10 @@ export default function LeadershipTeam() {
 
           .team-card {
             min-width: 240px;
-            height: 320px;
+            height: 400px;
+          }
+          .team-track {
+          flex-direction:column;
           }
         }
       `}</style>

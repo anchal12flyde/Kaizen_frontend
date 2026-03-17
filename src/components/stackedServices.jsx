@@ -36,7 +36,7 @@ function ServiceCard({ item }) {
       variant="sectionSp1"
       className="stack-card bg-[var(--color-background-1)]   "
     >
-      <div className="flex gap-[120px] items-start">
+      <div className="flex md:flex-row flex-col md:gap-[120px] gap-[100px] items-start">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="154"

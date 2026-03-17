@@ -48,7 +48,7 @@ export default function SectorExperience() {
         variant="sectionSp1"
         className="flex flex-col gap-[96px] bg-[#F7F4EB] "
       >
-        <Typography variant="para-1" className="text-center">
+        <Typography variant="header-6" className="text-center">
           Sector Experience
         </Typography>
 

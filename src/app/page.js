@@ -10,10 +10,9 @@ import Testimonials from "@/components/ui-kit/testimonials";
 
 export default function Home() {
   return (
-    <div> 
+    <div>
       <Header />
       <section className="hero-section">
-        {/* Background Image */}
         <Image
           src="https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
           alt="Kaizen Hero"
@@ -22,10 +21,8 @@ export default function Home() {
           priority
         />
 
-        {/* Overlay */}
         <div className="hero-overlay"></div>
 
-        {/* Content */}
         <div className="hero-content right-[50px]">
           <div>
             <div className="mb-[42px]">
@@ -59,7 +56,7 @@ export default function Home() {
         </div>
       </section>
       {/* Second Section */}
-      <Container className="section-bg" variant="sectionSp1">
+      <Container className="section-bg" variant="primarySpacing">
         <div>
           <Typography variant="header-1">
             Built on the Principle of Continuous Improvement
@@ -89,7 +86,7 @@ export default function Home() {
           <Button className="inprovementSectionBtn">More About Kaizen</Button>
         </div>
       </Container>
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-[280px] md:h-full">
         <Image
           src="https://ik.imagekit.io/75zj3bigp/7d11d9363b24d18bf891f3cb0eaa9eb909fbb467.png"
           width={1200}
@@ -100,7 +97,7 @@ export default function Home() {
       </div>
 
       <div className="evaluation">
-        <Container className="evaluationSection" variant="sectionSp1">
+        <Container className="evaluationSection" variant="primarySpacing">
           <div>
             <Typography colorVariant="white" variant="header-1">
               Advising Across <br /> the Full Deal Lifecycle
@@ -142,7 +139,26 @@ export default function Home() {
             quality of our legal services. Here's what some of them have to say:
           </Typography>
 
-          <Testimonials />
+          <Testimonials
+            data={[
+              {
+                text: "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
+                author: "Corporate/Mergers and Acquisitions",
+              },
+              {
+                text: "Their expertise was impressive...",
+                author: "Startup Founder",
+              },
+              {
+                text: "Their expertise was impressive...",
+                author: "Startup Founder",
+              },
+              {
+                text: "Their expertise was impressive...",
+                author: "Startup Founder",
+              },
+            ]}
+          />
 
           <div className="flex flex-col gap-[74px]">
             <Typography variant="para-2" delay={0.6}>
@@ -166,7 +182,7 @@ export default function Home() {
         </div>
       </Container>
 
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-[280px] md:h-full">
         <Image
           src="https://ik.imagekit.io/a9uxeuyhx/c187c8de4a3719b0bf6fce2d5297411e54a28f20.png"
           width={1200}

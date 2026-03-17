@@ -5,8 +5,8 @@ import Typography from "./typography";
 export default function Footer() {
   return (
     <Container variant="footerSpacing" className="bg-bg-1">
-      <div className="flex flex-col gap-[84px]">
-        <div className="flex flex-wrap items-center justify-between">
+      <div className="flex flex-col md:gap-[84px] gap-[48px]">
+        <div className="flex flex-col md:flex-row  justify-between gap-[24px] md:gap-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="35"
@@ -31,8 +31,8 @@ export default function Footer() {
                 y2="13.987"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#B6996A" />
-                <stop offset="1" stop-color="#C3A771" />
+                <stop stopColor="#B6996A" />
+                <stop offset="1" stopColor="#C3A771" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear_1_729"
@@ -42,11 +42,12 @@ export default function Footer() {
                 y2="21.0967"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#B6996A" />
-                <stop offset="1" stop-color="#C3A771" />
+                <stop stopColor="#B6996A" />
+                <stop offset="1" stopColor="#C3A771" />
               </linearGradient>
             </defs>
           </svg>
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="146"
@@ -95,7 +96,7 @@ export default function Footer() {
         <Typography variant="para-2">
           Deep expertise, decisive courtroom presence
         </Typography>
-        <div className=" grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[45px] ">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[24px] md:gap-[45px]">
           <div className=" ">
             <Typography variant="para-3">
               connect@kaizenlaw.in <br /> (555) 123-4567

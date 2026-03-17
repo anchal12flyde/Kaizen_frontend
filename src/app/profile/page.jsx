@@ -13,86 +13,95 @@ import Image from "next/image";
 
 export default function ProfilePage() {
   return (
-    <div>
+    <div className="bg-[#F7F4EB]">
       <Header />
       <ProfileHeader />
       <ProfileAboutSection />
       <Container
-        variant="sectionSp1"
-        className=" w-full flex justify-center gap-[56px] flex-col items-center !pt-0 "
+        variant="primarySpacing"
+        className="flex flex-col items-center text-center overflow-hidden w-full"
       >
-        <div className="flex flex-col gap-[32px] justify-center flex-col items-center  ">
-          <Typography variant="header-1">
-            Recognition & Market Feedback
-          </Typography>
-
-          <Typography variant="para-2">
-            We believe that our clients' experiences speak volumes about the{" "}
-            <br />
+        <Typography variant="header-6">
+          Recognition & Market Feedback
+        </Typography>
+        <div className="flex flex-col gap-[56px] items-center text-center">
+          <Typography
+            variant="para-2"
+            className="mt-[32px] lg:w-[480px] w-full"
+            delay={0.4}
+          >
+            We believe that our clients' experiences speak volumes about the
             quality of our legal services. Here's what some of them have to say:
           </Typography>
-        </div>
 
-        <Testimonials />
-      </Container>
-      <Container
-        variant="sectionSp1"
-        className="hero-section privateEquityHeroCopy !pt-0 "
-      >
-        {/* Background Image */}
-        <Image
-          src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
-          alt="Kaizen Hero"
-          fill
-          className="hero-background"
-          priority
-        />
+          <Testimonials
+            bg="bg-[#B6996A]"
+            textColor="!text-white"
+            dotActive="#ffffff"
+            dotInactive="rgba(255,255,255,0.4)"
+            leftArrow="https://ik.imagekit.io/a9uxeuyhx/Vector%202.png"
+            rightArrow="https://ik.imagekit.io/a9uxeuyhx/Vector%202%20(1).png"
+            data={[
+              {
+                text: "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
+                author: "Corporate/Mergers and Acquisitions",
+              },
+              {
+                text: "Their expertise was impressive...",
+                author: "Startup Founder",
+              },
+              {
+                text: "Their expertise was impressive...",
+                author: "Startup Founder",
+              },
+              {
+                text: "Their expertise was impressive...",
+                author: "Startup Founder",
+              },
+            ]}
+          />
 
-        {/* Overlay */}
-        <div className="hero-overlay"></div>
-
-        {/* Content */}
-        <>
-          <Container
-            variant="sectionSp1"
-            className=" absolute inset-0  flex items-center justify-center  "
-          >
-            <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
-              <div className=" w-[500px] h-[459px] p-[36px] bg-[var(--color-accent)]  ">
-                <Typography
-                  variant="header-hero"
-                  className=" !text-white !text-[48px] "
-                >
-                  Representative Experience
-                </Typography>
-                <Typography
-                  variant="para-2"
-                  className=" !text-white mt-[26px] "
-                >
-                  We have advised investors and growth-stage companies across
-                  technology, consumer, financial services, healthcare,
-                  infrastructure, and energy sectors on investments, follow-on
-                  rounds, and exits.
-                </Typography>
-                <Button variant="white" className=" mt-[36px] ">
-                  View Representive Transactions
-                </Button>
-              </div>
-              <div></div>
+          <div className="flex flex-col gap-[74px]">
+            <Typography variant="para-2" delay={0.6}>
+              {" "}
+              Asia Pacific 2026
+            </Typography>
+            <div className="relative w-full h-full hidden md:block">
+              <Image
+                src="https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg"
+                width={183}
+                height={154}
+                className="object-cover w-full h-full"
+                alt=""
+              />
             </div>
-          </Container>
-        </>
+
+            <Button variant="primary" delay={0.4}>
+              View on Chambers and Partners
+            </Button>
+          </div>
+        </div>
       </Container>
 
       <Container
         variant="sectionSp1"
-        className=" !py-[60px] bg-[var(--color-background-2)] flex items-center justify-between "
+        className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between md:items-start"
       >
-        <Typography variant="header-hero" className="!text-white">
-          Ready to discuss your <br /> project with us?
-        </Typography>
-
-        <Button variant="primary">Schedule a Consultation</Button>
+        <div className="flex flex-col gap-[16px] md:gap-[12px]">
+          <Typography variant="header-5" className="!text-white">
+            Connect with Harsh Kumar
+          </Typography>
+          <Typography
+            variant="para-2"
+            className="!text-white w-full md:w-[486px]"
+          >
+            If you would like to discuss a transaction, investment, or strategic
+            legal matter, you may reach out directly or schedule a consultation.
+          </Typography>
+        </div>
+        <button className=" md:px-[36px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[24px] text-[18px]">
+          Schedule A Consulation →
+        </button>
       </Container>
       <Footer />
     </div>

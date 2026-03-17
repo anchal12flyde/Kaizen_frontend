@@ -42,7 +42,10 @@ body {
 }
 
 .privateEquityHeroCopy {
-  // height: fit-content;
+  position: relative;
+  width: 100%;
+  height: 665px;
+  max-height: 100%;
 }
 
 .inputBorderContact {
@@ -51,8 +54,9 @@ body {
 
 @media (max-width: 640px) {
   .hero-section {
-    height: 400px;
+    height: 763px;
   }
+ 
 }
 .hero-background {
   object-fit: cover;
@@ -66,7 +70,7 @@ body {
 
 .hero-content {
   position: absolute;
-  left: 50px;
+  left: 100px;
   bottom: 70px;
   display: flex;
   flex-direction: column;
@@ -141,21 +145,6 @@ body {
   overflow: hidden;
 }
 
-/* TEXT */
-
-.text-wrapper {
-  position: absolute;
-  display: flex;
-  gap: 40px;
-  z-index: 2;
-}
-
-.text-wrapper h1 {
-  font-size: 5rem;
-  color: white;
-  font-weight: 600;
-  white-space: nowrap;
-}
 
 /* FORM */
 
@@ -227,7 +216,7 @@ body {
 }
 
 .text-wrapper h1 {
-  font-size: 5rem;
+  font-size: 80px;
   color: white;
   font-weight: 500;
   white-space: nowrap;
@@ -372,7 +361,10 @@ body {
     padding: 0;
   }
   .hero-content {
-    left: 20px;
+    left: 24px;
+  }
+  .text-wrapper h1 {
+    font-size: 60px;
   }
 }
 
@@ -569,6 +561,9 @@ body {
     margin-top: var(--sp-40);
     flex-direction: column;
     gap: 24px;
+  }
+  .inprovementSectionBtn {
+    width: 100%;
   }
 }
 

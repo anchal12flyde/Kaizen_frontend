@@ -13,11 +13,11 @@ export default function Insights() {
     <div className=" bg-[var(--color-background-1)] ">
       <Header />
       <Container
-        variant="sectionSp1"
-        className="pt-[220px] flex items-start gap-[303px] "
+        variant="sectionSp3"
+        className="md:!pt-[156px] !pt-[160px] flex md:flex-row flex-col items-start gap-[16px] md:justify-between "
       >
         <Typography variant="display-3">Insights</Typography>
-        <Typography variant="para-2">
+        <Typography variant="para-2" className="w-full md:w-[533px]">
           Founded in August 2022, Kaizen Law was established with a clear
           purpose — to build a focused corporate and transaction advisory firm
           that combines technical excellence with agility and personal
@@ -44,8 +44,8 @@ export default function Insights() {
         </Button>
       </Container>
 
-      <Container variant="sectionSp1" className=" !py-[20px] ">
-        <section className="hero-section">
+      <Container variant="header" className=" !py-[20px] ">
+        <section className="hero-section md:h-[456px] h-[558px]">
           {/* Background Image */}
           <Image
             src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
@@ -135,7 +135,75 @@ export default function Insights() {
         ]}
       />
       <LetsConnectSection />
+      <Container variant="primarySpacing" className=" privateEquityHeroCopy">
+        {/* Background Image */}
+        <Image
+          src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
+          alt="Kaizen Hero"
+          fill
+          className="hero-background"
+          priority
+        />
 
+        {/* Overlay */}
+        <div className="hero-overlay"></div>
+
+        {/* Content */}
+        <>
+          <Container
+            variant="sectionSp1"
+            className=" absolute inset-0  flex items-center justify-center  "
+          >
+            <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
+              <div className="w-full md:w-[500px] h-[500px] p-[36px] bg-[var(--color-accent)]  flex flex-col">
+                <Typography variant="header-5" className=" !text-white ">
+                  Ready To Talk?
+                </Typography>
+                <Typography
+                  variant="para-2"
+                  className=" !text-white mt-[26px] "
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </Typography>
+
+                <div className="mt-[57px] mb-[32px] flex flex-col gap-[16px]">
+                  <Typography variant="header-4" className="!text-white">
+                    I want to talk to your experts in:
+                  </Typography>
+                  <div className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0">
+                    <Typography variant="para-2" className="!text-white">
+                      {" "}
+                      Select an Industry
+                    </Typography>
+
+                    {/* Arrow */}
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="text-white"
+                    >
+                      <path
+                        d="M6 9L12 15L18 9"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white md:text-[24px] text-[18px]">
+                  View Representative Transactions
+                </button>
+              </div>
+              <div></div>
+            </div>
+          </Container>
+        </>
+      </Container>
       <Footer />
     </div>
   );

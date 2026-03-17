@@ -7,7 +7,7 @@ import Typography from "./ui-kit/typography";
 
 export default function OurApproachSection() {
   return (
-    <Container variant="sectionSp1" className=" bg-[var(--color-background-1)] " >
+    <Container variant="primarySpacing" className=" bg-[var(--color-background-1)] " >
       <div
         style={{
           display: "flex",
@@ -21,10 +21,10 @@ export default function OurApproachSection() {
           }}
         >
           {/* Heading */}
-          <Typography variant="header-1">Our Approach</Typography>
+          <Typography variant="header-6">Our Approach</Typography>
 
           {/* Highlight Statement */}
-          <Typography variant="header-2" style={{ marginTop: "46px" }} className=" !text-[var(--color-accent)] " >
+          <Typography variant="header-4" style={{ marginTop: "46px" }} className=" !text-[var(--color-accent)] " >
             Our approach reflects the Kaizen philosophy — disciplined
             preparation, incremental refinement, and focused execution.
           </Typography>

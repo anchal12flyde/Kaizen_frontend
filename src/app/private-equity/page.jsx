@@ -10,6 +10,7 @@ import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import WhyChooseSection from "@/components/whyChooseSection";
 import Image from "next/image";
+import Recognization from "@/components/recognization";
 
 export default function PrivateEquity() {
   const services = [
@@ -59,7 +60,7 @@ export default function PrivateEquity() {
         {/* Content */}
         <div className="hero-content right-[50px]">
           <div>
-            <div className="mb-[26px]">
+            <div className="md:mb-[26px] mb-[42px]">
               <Typography variant="display-3" colorVariant="white">
                 Private Equity & Venture Capital
               </Typography>
@@ -92,11 +93,14 @@ export default function PrivateEquity() {
       </section>
 
       <Container
-        variant="sectionSp1"
-        className=" flex flex-col gap-[16px] items-center bg-[#F7F4EB]    "
+        variant="primarySpacing"
+        className=" flex flex-col md:gap-[16px] gap-[36px] items-center bg-[#F7F4EB]    "
       >
-        <Typography variant="para-1">Overview</Typography>
-        <Typography variant="para-2" className="w-[716px] text-center ">
+        <Typography variant="header-6">Overview</Typography>
+        <Typography
+          variant="para-2"
+          className="md:w-[716px] w-full text-center "
+        >
           Kaizen Law is a corporate and transaction advisory firm delivering
           big-firm quality advice through a partner-led, boutique model.
         </Typography>
@@ -105,10 +109,10 @@ export default function PrivateEquity() {
       <AdvisorySection />
       <PEVCPracticeSection />
       <Container
-        variant="sectionSp1"
+        variant="sectionSp3"
         className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] "
       >
-        <Typography variant="para-1"> 
+        <Typography variant="header-6">
           Advising Across the Investment Lifecycle
         </Typography>
         <Typography variant="para-2">
@@ -119,10 +123,7 @@ export default function PrivateEquity() {
       <WhyChooseSection />
       <OurApproachSection />
 
-      <Container
-        variant="sectionSp1"
-        className="hero-section privateEquityHeroCopy"
-      >
+      <Container variant="primarySpacing" className=" privateEquityHeroCopy">
         {/* Background Image */}
         <Image
           src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
@@ -142,11 +143,8 @@ export default function PrivateEquity() {
             className=" absolute inset-0  flex items-center justify-center  "
           >
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
-              <div className=" w-[500px] h-[459px] p-[36px] bg-[var(--color-accent)]  ">
-                <Typography
-                  variant="header-hero"
-                  className=" !text-white !text-[48px] "
-                >
+              <div className="w-full md:w-[500px] h-[500px] p-[36px] bg-[var(--color-accent)]  flex flex-col">
+                <Typography variant="header-5" className=" !text-white ">
                   Representative Experience
                 </Typography>
                 <Typography
@@ -158,21 +156,21 @@ export default function PrivateEquity() {
                   infrastructure, and energy sectors on investments, follow-on
                   rounds, and exits.
                 </Typography>
-                <Button variant="white" className=" mt-[36px] ">
-                  View Representive Transactions
-                </Button>
+                <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white md:text-[24px] text-[18px]">
+                  Schedule A Consulation →
+                </button>
               </div>
               <div></div>
             </div>
           </Container>
         </>
       </Container>
-
+      <Recognization />
       <Container
-        variant="sectionSp1"
+        variant="primarySpacing"
         className=" flex flex-col items-center gap-[16px] !pb-[20px] "
       >
-        <Typography variant="para-1">Related Insights</Typography>
+        <Typography variant="header-6">Related Insights</Typography>
         <Typography variant="para-2">
           We advise clients at each stage of the investment journey:
         </Typography>
@@ -207,7 +205,27 @@ export default function PrivateEquity() {
         ]}
         buttonShow={true}
       />
-
+      <Container
+        variant="sectionSp1"
+        className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between md:items-start"
+      >
+        <div className="flex flex-col gap-[16px] md:gap-[12px]">
+          <Typography variant="header-5" className="!text-white">
+            Speak With Our Team
+          </Typography>
+          <Typography
+            variant="para-2"
+            className="!text-white w-full md:w-[486px]"
+          >
+            If you are evaluating an investment, planning a fundraising round,
+            or considering an exit, we would be pleased to discuss how Kaizen
+            Law can support your objectives.
+          </Typography>
+        </div>
+        <button className=" md:px-[36px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[24px] text-[18px]">
+          Schedule A Consulation →
+        </button>
+      </Container>
       <Footer />
     </div>
   );

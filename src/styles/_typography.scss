@@ -1,64 +1,81 @@
-/* =========================================================
-   FLUID TYPOGRAPHY HELPERS
-   ========================================================= */
 
-@function fluid($min, $max, $minViewport: 390px, $maxViewport: 1440px) {
-  $difference: $max - $min;
+$mobile: 580px;
+$tablet: 1024px;
 
-  @return calc(
-    #{$min} + #{$difference} *
-      ((100vw - #{$minViewport}) / (#{$maxViewport - $minViewport}))
-  );
-}
 
-@function fluid-space($min, $max, $minViewport: 390px, $maxViewport: 1440px) {
-  $difference: $max - $min;
-
-  @return calc(
-    #{$min} + #{$difference} *
-      ((100vw - #{$minViewport}) / (#{$maxViewport - $minViewport}))
-  );
-}
-
-/* =========================================================
-   DISPLAY TYPOGRAPHY
-   ========================================================= */
 
 .hero-display {
   color: var(--Display-Display-4, #000);
   font-family: "Times New Roman";
-  font-size: fluid(48px, 120px);
+  font-size: 120px;
   font-weight: 400;
   line-height: 95%;
-  letter-spacing: fluid-space(-1.2px, -3.6px);
+  letter-spacing: -3%;
+
+  
+  @media (max-width: $tablet) {
+    font-size: 72px;
+    line-height: 95%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 36px;
+    line-height: 95%;
+  }
 }
 
 .display-1 {
   color: var(--Display-Display-4, #000);
   font-family: "Times New Roman";
-  font-size: fluid(120px, 300px);
+  font-size:300px;
   font-weight: 400;
-  line-height: 109%;
-  letter-spacing: fluid-space(-6px, -15px);
+  line-height: 109.00000000000001%;
+  letter-spacing: -5%;
+
+  @media (max-width: $tablet) {
+    font-size:200px;
+    line-height: 109.00000000000001%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 100px;
+    line-height: 109.00000000000001%;
+  }
 }
 
 .display-2 {
   color: var(--Display-Display-4, #000);
   font-family: "Times New Roman";
-  font-size: fluid(64px, 120px);
+  font-size: 120px;
   font-weight: 400;
   line-height: 95%;
-  letter-spacing: fluid-space(-2px, -3.6px);
+  letter-spacing: -3%;
+
+  @media (max-width: $tablet) {
+    font-size:84px;
+    line-height: 95%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 84px;
+    line-height: 95%;
+  }
 }
 
 .display-3 {
   color: var(--Display-Display-4, #000);
   font-family: "Times New Roman";
-  font-size: fluid(36px, 76px);
+  font-size: 76px;
   font-weight: 400;
   line-height: 95%;
-  letter-spacing: fluid-space(-2px, -4.56px);
+  letter-spacing: -6%;
   text-transform: capitalize;
+
+  @media (max-width: $tablet) {
+    font-size:64px;
+    line-height: 95%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 36px;
+    line-height: 95%;
+  }
 }
 
 /* =========================================================
@@ -68,42 +85,128 @@
 .header-1 {
   color: var(--Paragraph-Paragraph-1, #000);
   font-family: "Times New Roman";
-  font-size: fluid(22px, 32px);
+  font-size: 32px;
   font-weight: 400;
-  line-height: 109%;
-  letter-spacing: fluid-space(-0.8px, -1.6px);
+  line-height: 109.00000000000001%;
+  letter-spacing: -5%;
+
+  @media (max-width: $tablet) {
+    font-size:32px;
+    line-height: 109.00000000000001%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 22px;
+    line-height: 109.00000000000001%;
+  }
 }
 
 .header-2 {
   color: var(--Paragraph-Paragraph-1, #000);
   font-family: "Times New Roman";
-  font-size: fluid(20px, 24px);
+  font-size: 24px;
   font-weight: 400 !important ;
-  line-height: 109%;
-  letter-spacing: fluid-space(-0.6px, -1.2px);
+  line-height: 109.00000000000001%;
+  letter-spacing: -5%;
+
+  @media (max-width: $tablet) {
+    font-size:20px;
+    line-height: 109.00000000000001%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 20px;
+    line-height: 109.00000000000001%;
+  }
 } 
 
 .header-hero {
   color: var(--Paragraph-Paragraph-1, #000);
-
-  /* Header/Header Hero */
   font-family: "Times New Roman";
-  font-size: fluid(30px, 40px);
-  font-style: normal;
+  font-size: 40px;
   font-weight: 400; 
-  line-height: 109%; 
-  letter-spacing: fluid-space(-1.5px, -2px);
+  line-height: 109.00000000000001%; 
+  letter-spacing: -5%;
+  
+  @media (max-width: $tablet) {
+    font-size: 40px;
+    line-height: 109.00000000000001%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 30px;
+    line-height: 109.00000000000001%;
+  }
 }
 
 .header-3 {
   color: var(--Paragraph-Paragraph-1, #000);
   font-family: "Times New Roman";
-  font-size: fluid(16px, 18px);
+  font-size:  18px;
   font-weight: 400;
   line-height: 135%;
-  letter-spacing: fluid-space(-0.2px, -0.36px);
-}
+  letter-spacing: -2%;
 
+  @media (max-width: $tablet) {
+    font-size: 18px;
+    line-height: 135%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 18px;
+    line-height: 135%;
+  }
+}
+.header-4 {
+  color: var(--Paragraph-Paragraph-1, #000);
+  font-family: "Times New Roman";
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 109.00000000000001%;
+  letter-spacing: -5%;
+
+  @media (max-width: $tablet) {
+    font-size:22px;
+    line-height: 109.00000000000001%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 22px;
+    line-height: 109.00000000000001%;
+  }
+}
+.header-5 {
+  color: var(--Paragraph-Paragraph-1, #000);
+  font-family: "Times New Roman";
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 109.00000000000001%;
+  letter-spacing: -5%;
+
+  @media (max-width: $tablet) {
+    font-size:22px;
+    line-height: 109.00000000000001%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 36px;
+    line-height: 95%;
+    letter-spacing: -3%;
+  }
+}
+.header-6 {
+  color: var(--Paragraph-Paragraph-1, #000);
+  font-family: "Times New Roman";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 109.00000000000001%;
+  letter-spacing: -5%;
+
+  @media (max-width: $tablet) {
+    font-size:22px;
+    line-height: 109.00000000000001%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 36px;
+    line-height: 95%;
+    letter-spacing: -6%;
+   
+  }
+}
 /* =========================================================
    PARAGRAPHS
    ========================================================= */
@@ -111,28 +214,55 @@
 .para-1 {
   color: var(--Paragraph-Paragraph-1, #000);
   font-family: "Times New Roman";
-  font-size: fluid(18px, 32px);
+  font-size:  32px;
   font-weight: 400;
-  line-height: 109%;
-  letter-spacing: fluid-space(-0.8px, -1.6px);
+  line-height: 109.00000000000001%;
+  letter-spacing: -5%;
+
+  @media (max-width: $tablet) {
+    font-size:32px;
+    line-height: 109.00000000000001%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 22px;
+    line-height: 109.00000000000001%;
+  }
 }
 
 .para-2 {
   color: var(--Paragraph-Paragraph-1, #000);
   font-family: "Times New Roman";
-  font-size: fluid(14px, 18px);
+  font-size:18px;
   font-weight: 400;
   line-height: 135%;
-  letter-spacing: fluid-space(-0.2px, -0.36px);
+  letter-spacing: -2%;
+
+  @media (max-width: $tablet) {
+    font-size:18px;
+    line-height: 135%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 18px;
+    line-height: 135%;
+  }
 }
 
 .para-3 {
   color: var(--Paragraph-Paragraph-1, #000);
   font-family: "Times New Roman";
-  font-size: fluid(12px, 14px);
+  font-size: 14px;
   font-weight: 400;
   line-height: 140%;
-  letter-spacing: fluid-space(-0.1px, -0.2px);
+  letter-spacing: 0%;
+
+  @media (max-width: $tablet) {
+    font-size:14px;
+    line-height: 140%;
+  }
+  @media (max-width: $mobile) {
+    font-size:14px;
+    line-height: 140%;
+  }
 }
 
 /* =========================================================
@@ -143,10 +273,19 @@
   color: var(--Paragraph-Paragraph-1, #000);
   text-align: center;
   font-family: "Times New Roman";
-  font-size: fluid(14px, 18px);
+  font-size: 18px;
   font-weight: 400;
   line-height: 120%;
-  letter-spacing: fluid-space(-0.2px, -0.36px);
+  letter-spacing: -2%;
+
+  @media (max-width: $tablet) {
+    font-size:18px;
+    line-height: 120%;
+  }
+  @media (max-width: $mobile) {
+    font-size: 18px;
+    line-height: 120%;
+  }
 }
 
 .linkText {
@@ -163,15 +302,22 @@
   font-size:  47px;
   font-weight: 400;
   line-height: 95%;
-  letter-spacing: fluid-space(-0.6px, -0.6px);
+  letter-spacing: -6%;
+
+@media (max-width: $tablet) {
+  font-size:35px;
+  line-height: 95%;
 }
-@media (max-width: 1024px) {
-  .punctuation{
-    font-size: 35px;
-  }
+@media (max-width: $mobile) {
+  font-size: 18px;
+  line-height: 135%;
 }
-@media (max-width: 768px) {
-  .punctuation{
-    font-size: 7px;
-  }
+}
+.big-firm{
+  font-family: "Times New Roman";
+font-weight: 400;
+font-size: 26px;
+line-height: 109.00000000000001%;
+letter-spacing: -5%;
+
 }

@@ -3,8 +3,6 @@
 import clsx from "clsx";
 import { motion } from "framer-motion";
 
-/* ---------------- COLORS ---------------- */
-
 const colorMap = {
   black: "#000000",
   white: "#FFFFFF",
@@ -12,8 +10,6 @@ const colorMap = {
   accent: "#B6996A",
   background3: "#1F0808",
 };
-
-/* ---------------- ANIMATION VARIANT ---------------- */
 
 const textFadeUp = {
   hidden: {
@@ -26,28 +22,22 @@ const textFadeUp = {
     transition: {
       duration: 0.8,
       ease: "easeOut",
-      delay, // ✅ yahin hona chahiye
+      delay,
     },
   }),
 };
 
-/* ---------------- COMPONENT ---------------- */
-
 const Typography = ({
-  variant = "para-1", 
+  variant = "para-1",
   as,
   children,
   className,
   colorVariant = "black",
-
-  /* 🔥 Animation Controls */
   animate = true,
   delay = 0,
-
   ...props
 }) => {
   const Tag = as || getDefaultTag(variant);
-  const MotionTag = motion(Tag);
 
   const commonProps = {
     className: clsx(variant, className),
@@ -56,14 +46,15 @@ const Typography = ({
       color: colorMap[colorVariant] || colorMap.black,
     },
     ...props,
-  }; 
+  };
 
-  /* ❌ No animation */
+  // ✅ FIX: use motion.create
+  const MotionTag = motion[Tag] || motion.p;
+
   if (!animate) {
     return <Tag {...commonProps}>{children}</Tag>;
   }
 
-  /* ✅ Animated text */
   return (
     <MotionTag
       {...commonProps}
@@ -78,21 +69,23 @@ const Typography = ({
   );
 };
 
-/* ---------------- TAG MAP ---------------- */
-
 function getDefaultTag(variant) {
-  const map = { 
+  const map = {
     "hero-display": "h1",
-    "header-hero": "h1",
-    "display-1": "h1",
-    "display-2": "h2",
-    "display-3": "h3",
-    "header-1": "h1",
-    "header-2": "h2",
-    "header-3": "h3",
+    "header-hero": "h2",
+    "display-1": "h3",
+    "display-2": "h4",
+    "display-3": "h5",
+    "header-1": "p",
+    "header-2": "p",
+    "header-3": "p",
+    "header-4": "p",
+    "header-5": "p",
+    "header-6": "p",
     "para-1": "p",
     "para-2": "p",
     "para-3": "p",
+    "big-firm": "p",
     buttonText: "span",
     linkText: "span",
     punctuation: "span",

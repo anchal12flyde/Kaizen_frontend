@@ -14,6 +14,7 @@ const accordionData = [
     In addition to transactional work, Harsh advises companies on commercial and contractual matters and acts as an external advisor to the board of directors of leading Indian companies. He has previously worked as a partner at Cyril Amarchand Mangaldas and Shardul Amarchand Mangaldas and in the London office of Herbert Smith Freehills LLP, an international law firm, on international corporate law transactions.
     
     Harsh has been recognized for his legal expertise and leadership in the legal profession by Indian and international publications.`,
+    icon: "https://ik.imagekit.io/a9uxeuyhx/image%207%20(2).png",
   },
   {
     title: "Areas of Specialisation",
@@ -45,17 +46,17 @@ export default function ProfileAboutSection() {
 
   return (
     <Container variant="sectionSp1" className=" mt-[86px] !pt-0  ">
-      <div className=" flex items-start gap-[68px]  ">
+      <div className=" flex md:flex-row  flex-col items-start md:gap-[68px] gap-[128px] ">
         {/* LEFT SIDE */}
         <div className="flex flex-col        ">
           {/* Profile Image */}
 
-          <div className="shrink-0 !w-[472px] !h-[627px] ">
-            <Image
+          <div className="shrink-0 w-auto
+           md:!w-[472px] md:!h-[627px] h-[435px] ">
+            <img
               src="https://ik.imagekit.io/flyde/7e916c61a95f330254422851242e8bd9019db722.png"
               alt="Profile"
-              width={200}
-              height={150}
+             
               className=" w-full h-full !object-cover"
             />
           </div>
@@ -116,6 +117,7 @@ export default function ProfileAboutSection() {
                   }`}
                 >
                   <Typography variant="para-2">{item.content}</Typography>
+                  <img src={item.icon} className="w-[132px] h-[149px] object-cover mt-[26px]"/>
                 </div>
               </div>
             );

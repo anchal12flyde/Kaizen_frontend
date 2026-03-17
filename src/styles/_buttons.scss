@@ -16,7 +16,7 @@
   font-weight: 400;
   line-height: 120%; /* 21.6px */
   letter-spacing: -0.36px;
-  width: fit-content;
+
 
   /* Variants */
   &--primary {
@@ -50,7 +50,7 @@
     &--black-outline,
     &--white-outline {
       padding: var(--sp-18) var(--sp-24);
-      font-size: 16px;
+      font-size: 18px;
       gap: var(--sp-16);
       border-radius: var(--radius-xl);
     }

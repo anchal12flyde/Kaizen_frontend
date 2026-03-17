@@ -13,14 +13,13 @@ export default function ProfileHeader() {
   const role = useTypingText("Founding Partner", 80);
 
   return (
-    <Container variant="sectionSp1" className="!pb-0" animate={false} >
+    <Container variant="sectionSp1" className="!pb-0" animate={false}>
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         {/* Left Section */}
         <div>
           {/* Name Typing */}
           <Typography variant="display-3" animate={false}>
             {name}
-            
           </Typography>
 
           {/* Role Typing */}
@@ -39,22 +38,28 @@ export default function ProfileHeader() {
           <div className="flex gap-3">
             <Link
               href="/"
-              className="w-9 h-9 rounded-full border border-[#C8A26A] flex items-center justify-center hover:bg-[#C8A26A] hover:text-white transition"
+              className="w-9 h-9 rounded-full  flex items-center justify-center "
             >
-              <Copyright size={18} />
+              <img
+                src="https://ik.imagekit.io/a9uxeuyhx/Frame%202147238680.png"
+                size={18}
+              />
             </Link>
 
             <Link
               href="https://linkedin.com"
               target="_blank"
-              className="w-9 h-9 rounded-full border border-[#C8A26A] flex items-center justify-center hover:bg-[#C8A26A] hover:text-white transition"
+              className="w-9 h-9 rounded-full  hover:bg-[#C8A26A] "
             >
-              <Linkedin size={18} />
+              <img
+                src="https://ik.imagekit.io/a9uxeuyhx/Frame%202147238682.png"
+                size={18}
+              />
             </Link>
           </div>
 
           {/* Contact */}
-          <div className="text-sm text-right leading-relaxed flex flex-col gap-[10px]">
+          <div className="text-sm md:text-right text-left leading-relaxed flex flex-col gap-[10px]">
             <Typography
               variant="para-2"
               animate={false}

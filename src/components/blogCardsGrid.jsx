@@ -7,22 +7,20 @@ import Button from "./ui-kit/button";
 
 export default function BlogGridSection({ posts = [], buttonShow = false }) {
   return (
-    <Container variant="sectionSp1" className="!py-[60px]">
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-        }}
-      >
+    <Container variant="primarySpacing" className="md:!pr-[100px] !pr-0">
+      <div className="flex md:grid md:grid-cols-3 overflow-x-auto overflow-y-hidden md:overflow-visible gap-[16px] scrollbar-hide ">
         {posts.map((item, index) => (
-          <BlogCard buttonShow={buttonShow} key={index} data={item} />
+          <div key={index} className="min-w-[90%] md:min-w-0 h-full">
+            <BlogCard buttonShow={buttonShow} data={item} />
+          </div>
         ))}
       </div>
+
       {buttonShow && (
-        <div className=" flex justify-center " >
-          <Button variant="primary" className="mt-[36px]">
-            View More
-          </Button>
+        <div className="flex justify-center md:pr-0  !pr-[24px]">
+          <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-[#31110F] md:w-fit w-full text-[#31110F] md:text-[24px] text-[18px]">
+            View More ↓
+          </button>
         </div>
       )}
     </Container>

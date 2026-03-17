@@ -1,15 +1,28 @@
 "use client";
 
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect,useState,useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Typography from "./ui-kit/typography";
+import { Container } from "./ui-kit/spacing";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function WhyChooseSection() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth <= 740);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   const cardsData = [
     {
@@ -40,8 +53,7 @@ export default function WhyChooseSection() {
   ];
 
   useLayoutEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.innerWidth < 900) return;
+    if (isMobile) return;
 
     const section = sectionRef.current;
     const track = trackRef.current;
@@ -192,84 +204,130 @@ export default function WhyChooseSection() {
     }, section);
 
     return () => ctx.revert();
-  }, []);
+  }, [isMobile]);
 
   return (
     <section
       ref={sectionRef}
-      className="w-full !h-fit bg-[#f7f4eb] overflow-visible"
+      className="w-full !h-fit bg-[#f7f4eb] overflow-visible "
     >
-      <div className="h-[1.3cm] bg-transparent "></div>
-      {/* TRACK */}
-      <div ref={trackRef} className="!h-fit flex items-center gap-0 px-[160px]">
-        {/* LEFT TEXT */}
-        <div className="min-w-[520px] max-w-[520px] pr-16 mr-[200px] flex flex-col !gap-[96px] ">
-          <Typography variant="para-1">
-            Why Clients Choose <br /> Kaizen Law
-          </Typography>
+      {isMobile ? (
+        /* MOBILE VERSION */
+        <div className="block md:hidden">
+          <Container variant="primarySpacing">
+            <div className=" flex flex-col gap-[40px]">
+              <div className="flex flex-col gap-[16px] ">
+                <Typography variant="header-6">
+                  Why Clients Choose <br /> Kaizen Law
+                </Typography>
 
-          <Typography variant="para-2">
-            We deliver big-firm quality with boutique agility.
-          </Typography>
-        </div>
+                <Typography variant="para-2">
+                  We deliver big-firm quality with boutique agility.
+                </Typography>
+              </div>
 
-        {/* CARDS */}
-        {cardsData.map((card, i) => (
-          <div
-            key={i}
-            className={`
-              why-card
-              w-[330px]
-              h-[calc(100vh-1.3cm)]
-              bg-white
-              p-[16px]
-              flex
-              flex-col
-              justify-between
-              origin-left
-              overflow-hidden
+              {cardsData.map((card, i) => (
+                <div
+                  key={i}
+                  className="border-[0.5px] border-[#31110F] p-[16px] flex flex-col gap-[85px]"
+                >
+                  <Typography variant="display-2">{i + 1}</Typography>
+                  <div className="flex flex-col gap-[16px]">
+                    <Typography variant="big-firm">{card.title}</Typography>
 
-              ${i == 0 ? "borderLeftCard" : ""}
-              
-            `}
-          >
-            {/* TOP */}
-            <div className="flex items-start gap-6">
-              <h3 className="text-[64px] font-serif text-gray-800 leading-none">
-                {i + 1}
-              </h3>
+                    <Typography variant="para-2">{card.desc}</Typography>
+
+                    <img
+                      src={card.img}
+                      alt={card.title}
+                      className="w-full h-[220px] object-cover"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
+          </Container>
+        </div>
+      ) : (
+        <>
+          <div className="hidden md:block">
+            <div className="h-[1.3cm] bg-transparent "></div>
 
-            {/* BOTTOM */}
-            <div>
-              {/* Title + Description */}
-              <div className="flex items-start mb-[36px] justify-between">
-                <Typography variant="header-2">{card.title}</Typography>
+            <div
+              ref={trackRef}
+              className="!h-fit flex items-center gap-0 px-[100px] border-b-[0.5px] border-[#31110F] "
+            >
+              {/* LEFT TEXT */}
+              <div className="min-w-[520px] max-w-[520px] pr-16 mr-[200px] flex flex-col !gap-[96px] ">
+                <Typography variant="para-1">
+                  Why Clients Choose <br /> Kaizen Law
+                </Typography>
 
-                <p className="card-desc text-sm text-gray-600 max-w-[260px] ml-4 leading-relaxed">
-                  {card.desc}
-                </p>
+                <Typography variant="para-2">
+                  We deliver big-firm quality with boutique agility.
+                </Typography>
               </div>
 
-              {/* IMAGE WRAPPER */}
-              <div
-                className="
-                  card-image
-                  w-full
-                  overflow-hidden
-                  
-                "
-              >
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              {/* CARDS */}
+              {cardsData.map((card, i) => (
+                <div
+                  key={i}
+                  className={`
+            why-card
+            w-[330px]
+            h-[calc(100vh-1.3cm)]
+            
+            p-[16px]
+            flex
+            flex-col
+            justify-between
+            origin-left
+            overflow-hidden
+
+            ${i == 0 ? "borderLeftCard" : ""}
+            
+          `}
+                >
+                  {/* TOP */}
+                  <div className="flex items-start gap-6">
+                    <h3 className="text-[64px] font-serif text-gray-800 leading-none">
+                      {i + 1}
+                    </h3>
+                  </div>
+
+                  {/* BOTTOM */}
+                  <div>
+                    {/* Title + Description */}
+                    <div className="flex items-start mb-[36px] justify-between">
+                      <Typography variant="big-firm">{card.title}</Typography>
+
+                      <p className="card-desc text-sm text-gray-600 max-w-[260px] ml-4 leading-relaxed">
+                        {card.desc}
+                      </p>
+                    </div>
+
+                    {/* IMAGE WRAPPER */}
+                    <div
+                      className="
+                card-image
+                w-full
+                overflow-hidden
+                
+              "
+                    >
+                      <img
+                        src={card.img}
+                        alt={card.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </section>
   );
 }

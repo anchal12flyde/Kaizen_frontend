@@ -33,14 +33,19 @@ export default function AboutHeroSection() {
               A Transaction-Focused <br /> Law Firm Built on <br /> Precision
               and Execution
             </Typography>
-            <Typography variant="para-2" className="!text-white mt-[10px] ">
+            <Typography variant="para-2" className="!text-white md:mt-[10px] mt-[12px] ">
               Kaizen Law is a corporate and transaction advisory firm delivering
               big-firm quality advice <br /> through a partner-led, boutique
               model.
             </Typography>
-            <div className="mt-[26px] flex items-center gap-[16px] ">
-              <Button variant="primary">Explore Our Practise</Button>
-              <Button variant="white">Meet Our Team</Button>
+            <div className="mt-[26px] flex md:flex-row flex-col  items-center gap-[16px] ">
+              <Button variant="primary" className="w-full md:w-auto">
+                Explore Our Practise
+              </Button>
+              <Button variant="white" className="w-full md:w-auto">
+                {" "}
+                Meet Our Team
+              </Button>
             </div>
           </div>
         </div>
