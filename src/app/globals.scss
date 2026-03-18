@@ -299,13 +299,12 @@ body {
 }
 
 .blogCardCatText,
-.blogCardTitle,
-.blogCardDate {
-  color: var(--color-accent) !important ;
+.blogCardTitle {
+  color: var(--color-background-2) !important ;
 }
 
+
 .borderCardPerk {
- 
   border-bottom: 0.5px solid #fff;
 
   &:first-child {
@@ -320,7 +319,7 @@ body {
 
 
 .blogCard:hover {
-  background-color: var(--color-accent);
+  background-color: var(--color-background-2);
   transition: all 0.3s ease-in-out;
 
   .blogCardCat {
@@ -331,9 +330,7 @@ body {
   .blogCardTitle {
     color: white !important;
   }
-  .blogCardDate {
-    color: rgba(255, 255, 255, 0.5) !important;
-  }
+
 }
 
 .dateHeroIn {
@@ -362,6 +359,7 @@ body {
   }
   .hero-content {
     left: 24px;
+    right: 24px;
   }
   .text-wrapper h1 {
     font-size: 60px;

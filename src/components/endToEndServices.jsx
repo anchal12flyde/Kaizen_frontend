@@ -13,27 +13,27 @@ import Typography from "./ui-kit/typography";
 const services = [
   {
     title: "Startups & Emerging Companies",
-    img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208.png",
   },
   {
     title: "Financial Services & Fintech",
-    img: "https://images.unsplash.com/photo-1581093458791-9f3c3b16c2a4",
+    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(1).png",
   },
   {
     title: "Renewable Energy & Infrastructure",
-    img: "https://images.unsplash.com/photo-1509391366360-2e959784a276",
+    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(2).png",
   },
   {
     title: "Digital Businesses",
-    img: "https://images.unsplash.com/photo-1526378722445-9d0c0c2f8c36",
+    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(3).png",
   },
   {
     title: "Consumer & Retail",
-    img: "https://images.unsplash.com/photo-1521335629791-ce4aec67dd53",
+    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%209%20(1).png",
   },
   {
     title: "Education & EdTech",
-    img: "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d",
+    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(4).png",
   },
 ];
 
@@ -69,7 +69,7 @@ const cardReveal = {
 
 export default function EndToEndServices() {
   return (
-    <Container variant="sectionSp1" className="bg-[var(--color-background-2)]">
+    <Container variant="primarySpacing" className="bg-[var(--color-background-2)]">
       <div>
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[96px]">

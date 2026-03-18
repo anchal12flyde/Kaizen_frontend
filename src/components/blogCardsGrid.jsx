@@ -5,19 +5,43 @@ import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
 import Button from "./ui-kit/button";
 
-export default function BlogGridSection({ posts = [], buttonShow = false }) {
+export default function BlogGridSection({
+  posts = [],
+  buttonShow = false,
+  variant = "scroll",
+}) {
   return (
-    <Container variant="primarySpacing" className="md:!pr-[100px] !pr-0">
-      <div className="flex md:grid md:grid-cols-3 overflow-x-auto overflow-y-hidden md:overflow-visible gap-[16px] scrollbar-hide ">
+    <Container
+      variant="primarySpacing"
+      className={`md:!pr-[100px] ${
+        variant === "scroll" ? "!pr-0" : "!pr-[24px]"
+      }`}
+    >
+      <div
+        className={`
+          ${
+            variant === "scroll"
+              ? "flex md:grid md:grid-cols-3 overflow-x-auto overflow-y-hidden md:overflow-visible"
+              : "flex flex-col md:grid md:grid-cols-3"
+          }
+          gap-[16px] scrollbar-hide
+        `}
+      >
         {posts.map((item, index) => (
-          <div key={index} className="min-w-[90%] md:min-w-0 h-full">
+          <div
+            key={index}
+            className={`
+              ${variant === "scroll" ? "min-w-[90%] md:min-w-0" : "w-full"}
+              h-full
+            `}
+          >
             <BlogCard buttonShow={buttonShow} data={item} />
           </div>
         ))}
       </div>
 
       {buttonShow && (
-        <div className="flex justify-center md:pr-0  !pr-[24px]">
+        <div className="flex justify-center md:pr-0 !pr-[24px]">
           <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-[#31110F] md:w-fit w-full text-[#31110F] md:text-[24px] text-[18px]">
             View More ↓
           </button>
@@ -30,7 +54,7 @@ export default function BlogGridSection({ posts = [], buttonShow = false }) {
 /* Card Component */
 function BlogCard({ data, buttonShow }) {
   return (
-    <div className=" px-[14px] py-[16px] cursor-pointer flex flex-col gap-[16px] border border-[#D7C7AB]  blogCard  ">
+    <div className=" px-[14px] py-[16px] cursor-pointer flex flex-col gap-[16px] border border-[#D7C7AB]  blogCard group ">
       {/* Image */}
       <div className=" h-[217px] !w-full  ">
         <Image
@@ -45,10 +69,10 @@ function BlogCard({ data, buttonShow }) {
       {/* Content */}
       <div>
         {/* Category */}
-        <div className=" px-[36px] py-[8px] border border-[var(--color-accent)] !w-fit rounded-[500px] blogCardCat ">
+        <div className=" px-[36px] py-[8px] border border-[var(--color-background-2)] !w-fit rounded-[500px] blogCardCat ">
           <Typography
             variant="para-3"
-            className=" text-[var(--color-accent)] blogCardCatText "
+            className=" text-[var(--color-background-2)] blogCardCatText "
           >
             {data.category}
           </Typography>
@@ -57,16 +81,22 @@ function BlogCard({ data, buttonShow }) {
         {/* Title */}
         <Typography
           variant="header-2"
-          className=" text-[var(--color-accent)] group-hover:text-white hover:!underline mt-[16px] blogCardTitle "
+          className=" text-[var(--color-background-2)] group-hover:text-white hover:!underline mt-[16px] blogCardTitle "
         >
           {data.title}
         </Typography>
 
-        <Typography variant="button" className="mt-[36px] blogCardDate ">
-          {data.readTime} | {data.date}
-        </Typography>
-      </div>
+       
+       
       
+          <Typography
+            variant="button"
+            className="mt-[36px] !text-[#0A193A]/50 group-hover:!text-white/50"
+          >
+            {data.readTime} | {data.date}
+          </Typography>
+       
+      </div>
     </div>
   );
 }

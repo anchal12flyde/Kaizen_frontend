@@ -143,7 +143,7 @@ export default function PrivateEquity() {
             className=" absolute inset-0  flex items-center justify-center  "
           >
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
-              <div className="w-full md:w-[500px] h-[500px] p-[36px] bg-[var(--color-accent)]  flex flex-col">
+              <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography variant="header-5" className=" !text-white ">
                   Representative Experience
                 </Typography>
@@ -177,6 +177,7 @@ export default function PrivateEquity() {
       </Container>
 
       <BlogGridSection
+        variant="scroll" 
         posts={[
           {
             image: "https://ik.imagekit.io/demo/img/image1.jpg",

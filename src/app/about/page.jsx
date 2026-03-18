@@ -46,7 +46,7 @@ export default function About() {
             className=" absolute inset-0  flex items-center justify-center  "
           >
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
-              <div className="w-full md:w-[500px] h-[500px] p-[36px] bg-[var(--color-accent)]  flex flex-col">
+              <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography variant="header-5" className=" !text-white ">
                   Ready To Talk?
                 </Typography>
@@ -114,7 +114,7 @@ export default function About() {
             Law can support your objectives.
           </Typography>
         </div>
-        <button className=" md:px-[36px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[24px] text-[18px]">
+        <button className=" md:px-[36px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white  text-[18px]">
           Schedule A Consulation →
         </button>
       </Container>

@@ -2,16 +2,21 @@
 
 import Image from "next/image";
 import Typography from "./ui-kit/typography";
-import { Container } from "./ui-kit/spacing";
 import Button from "./ui-kit/button";
 
-export default function AboutHeroSection() {
+export default function AboutHeroSection({
+  bgImage,
+  title,
+  description,
+  buttons = [],
+  align = "left", // "left" | "center" | "right"
+}) {
   return (
-    <section className="hero-section">
+    <section className="hero-section relative">
       {/* Background Image */}
       <Image
-        src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
-        alt="Kaizen Hero"
+        src={bgImage}
+        alt="Hero"
         fill
         className="hero-background"
         priority
@@ -21,33 +26,48 @@ export default function AboutHeroSection() {
       <div className="hero-overlay"></div>
 
       {/* Content */}
-      <div className="hero-content right-[50px]">
-        <div>
-          <div className="flex flex-col ">
-            <Typography
-              delay={0.4}
-              variant="display-3"
-              colorVariant="white"
-              className="w-full flex-shrink-0 "
-            >
-              A Transaction-Focused <br /> Law Firm Built on <br /> Precision
-              and Execution
-            </Typography>
-            <Typography variant="para-2" className="!text-white md:mt-[10px] mt-[12px] ">
-              Kaizen Law is a corporate and transaction advisory firm delivering
-              big-firm quality advice <br /> through a partner-led, boutique
-              model.
-            </Typography>
-            <div className="mt-[26px] flex md:flex-row flex-col  items-center gap-[16px] ">
-              <Button variant="primary" className="w-full md:w-auto">
-                Explore Our Practise
-              </Button>
-              <Button variant="white" className="w-full md:w-auto">
-                {" "}
-                Meet Our Team
-              </Button>
-            </div>
+      <div
+        className={`hero-content ${
+          align === "right"
+            ? "right-[50px] text-right"
+            : align === "center"
+              ? "left-1/2 -translate-x-1/2 text-center"
+              : "left-[50px] text-left"
+        }`}
+      >
+        <div className="flex flex-col">
+          <Typography
+            variant="display-3"
+            colorVariant="white"
+            className="w-full"
+          >
+            {title}
+          </Typography>
+          <div className="md:w-[668px] w-full">
+            {description && (
+              <Typography
+                variant="para-2"
+                className="!text-white md:mt-[15px] mt-[12px]"
+              >
+                {description}
+              </Typography>
+            )}
           </div>
+
+          {buttons.length > 0 && (
+            <div className="mt-[26px] flex md:flex-row flex-col items-center gap-[16px]">
+              {buttons.map((btn, index) => (
+                <Button
+                  key={index}
+                  variant={btn.variant || "primary"}
+                  className="w-full md:w-auto"
+                  onClick={btn.onClick}
+                >
+                  {btn.label}
+                </Button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
