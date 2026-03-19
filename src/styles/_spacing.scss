@@ -33,6 +33,9 @@
 .metric-spacing{
   padding: var(--sp-96) var(--sp-160);
 }
+.main-box{
+  padding: 100px;
+}
 @media (max-width: 850px) {
   .header-spacing {
     padding: var(--sp-20) var(--sp-40);
@@ -72,7 +75,9 @@
   .header-spacing {
     padding: var(--sp-20) var(--sp-24);
   }
-
+  .main-box{
+    padding: 64px 0 64px 0;
+  }
   .footer-spacing {
     padding: var(--sp-68) var(--sp-28);
   }

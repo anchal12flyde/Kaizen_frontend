@@ -17,6 +17,7 @@ const spacingVariants = {
   sectionSpBottom: "section-sp-bottom",
   footerSpacing: "footer-spacing",
   metricSpacing: "metric-spacing",
+  mainBox:"main-box",
 };
 
 /* ---------------- ANIMATION VARIANT ---------------- */

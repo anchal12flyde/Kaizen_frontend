@@ -1,5 +1,5 @@
 "use client";
-
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -49,15 +49,16 @@ const gridVariants = {
     },
   },
 };
-
 const cardReveal = {
   hidden: {
-    height: 0,
+    scaleY: 0,
+    transformOrigin: "top",
   },
   show: {
-    height: "100%",
+    scaleY: 1,
+    transformOrigin: "top",
     transition: {
-      duration: 1.4,
+      duration: 1.2,
       ease: "easeInOut",
     },
   },
@@ -65,6 +66,20 @@ const cardReveal = {
 
 
 export default function EndToEndServices() {
+
+  function useIsMobile() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const check = () => setIsMobile(window.innerWidth < 768);
+      check();
+      window.addEventListener("resize", check);
+      return () => window.removeEventListener("resize", check);
+    }, []);
+
+    return isMobile;
+  }
+  const isMobile = useIsMobile();
   return (
     <Container
       variant="primarySpacing"
@@ -88,14 +103,11 @@ export default function EndToEndServices() {
 
         {/* Grid */}
         <motion.div
-          variants={gridVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[26px] mt-[100px]"
         >
           {services.map((item, index) => (
-            <ServiceCard key={index} {...item} />
+            <ServiceCard key={index} {...item} isMobile={isMobile} />
           ))}
         </motion.div>
       </div>
@@ -104,14 +116,21 @@ export default function EndToEndServices() {
 }
 
 
-function ServiceCard({ title, img }) {
+function ServiceCard({ title, img,isMobile }) {
   return (
     /* Fixed height wrapper */
-    <div className="relative aspect-[3/4] overflow-hidden">
+    <div className="relative w-full h-[500px]  overflow-hidden">
       {/* Animated container */}
       <motion.div
         variants={cardReveal}
-        className="relative w-full overflow-hidden"
+        initial="hidden"
+        whileInView="show"
+        viewport={{
+          once: true,
+          amount: 0.2,
+          margin: "0px 0px -100px 0px", 
+        }}
+        className="relative w-full h-full overflow-hidden"
       >
         {/* Image */}
         <div className="absolute inset-0">

@@ -6,6 +6,7 @@ import Footer from "@/components/ui-kit/footer";
 import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
+import Image from "next/image";
 
 export default function Careers() {
   const jobsData = [
@@ -14,7 +15,8 @@ export default function Careers() {
       title: "UI / Graphic Designer",
       company: "Kaizen Law",
       location: "Gurugram",
-      employmentType: ["Full-time", "Part-Time"],
+      type1: "Full Time",
+      type2: "Part Time",
       qualifications: [
         "1+ year of experience partnering with stakeholders (clients, partners, users).",
         "Strong knowledge of design systems and branding guidelines.",
@@ -29,7 +31,8 @@ export default function Careers() {
       title: "Frontend Developer",
       company: "Kaizen Law",
       location: "Remote / Gurugram",
-      employmentType: ["Full-time"],
+      type1: "Full Time",
+      type2: "Part Time",
       qualifications: [
         "2+ years of experience with React and Next.js.",
         "Strong understanding of HTML, CSS, and JavaScript.",
@@ -44,7 +47,8 @@ export default function Careers() {
       title: "Digital Marketing Executive",
       company: "Kaizen Law",
       location: "Gurugram",
-      employmentType: ["Full-time"],
+      type1: "Full Time",
+      type2: "Part Time",
       qualifications: [
         "Experience in SEO, SEM, and social media marketing.",
         "Knowledge of Google Ads and Meta Ads Manager.",
@@ -59,7 +63,8 @@ export default function Careers() {
       title: "HR Recruiter",
       company: "Kaizen Law",
       location: "Delhi NCR",
-      employmentType: ["Full-time", "Internship"],
+      type1: "Full Time",
+      type2: "Part Time",
       qualifications: [
         "Experience in end-to-end recruitment process.",
         "Strong interviewing and candidate screening skills.",
@@ -103,18 +108,96 @@ export default function Careers() {
   return (
     <div>
       <Header />
-      <AboutHeroSection />
+      <section className="hero-section relative">
+        {/* Background Image */}
+        <Image
+          src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
+          alt="Hero"
+          fill
+          className="hero-background"
+          priority
+        />
+
+        {/* Overlay */}
+        <div className="hero-overlay"></div>
+
+        {/* Content */}
+        <div className="hero-content  text-left w-full overflow-hidden">
+          <div className="flex flex-col">
+            <div className="flex flex-col !pr-[48px] w-full  ">
+              <Typography
+                variant="display-3"
+                colorVariant="white"
+                className="w-full"
+              >
+                Careers
+              </Typography>
+
+              <Typography
+                variant="para-2"
+                className="!text-white md:mt-[15px] mt-[12px] md:!w-[668px] !w-full max-w-full "
+              >
+                Unlock Your Potential at Codeandcore: Join a community of
+                brilliant minds, where creativity meets ambition. Together,
+                let's chart a course for success in your career journey.
+              </Typography>
+
+              <div className="mt-[26px] flex flex-col md:flex-row items-center gap-[16px]">
+                <Button variant="primary" className="w-full md:w-auto">
+                  Primary Button
+                </Button>
+
+                <Button variant="white" className="w-full md:w-auto">
+                  White Button
+                </Button>
+              </div>
+            </div>
+            {/* Icons */}
+            <div className="w-full overflow-x-auto md:overflow-hidden md:mt-[156px] mt-[86px] md:!pr-[200px]">
+              <div className="flex md:justify-between gap-[48px] w-full">
+                <img
+                  src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png"
+                  alt="logo"
+                  className="w-[152px] h-[58px] object-contain flex-shrink-0"
+                />
+                <img
+                  src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/2bb225baf628900ed5c4ac8b54cda265c1ff6070.png"
+                  alt="logo"
+                  className="w-[152px] h-[58px] object-contain flex-shrink-0"
+                />
+                <img
+                  src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png"
+                  alt="logo"
+                  className="w-[152px] h-[58px] object-contain flex-shrink-0"
+                />
+                <img
+                  src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/2bb225baf628900ed5c4ac8b54cda265c1ff6070.png"
+                  alt="logo"
+                  className="w-[152px] h-[58px] object-contain flex-shrink-0"
+                />
+                <img
+                  src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png"
+                  alt="logo"
+                  className="w-[152px] h-[58px] object-contain flex-shrink-0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <PEVCPracticeSection
-             cardsData={data}
-             topContent={topContent}
-             careersPage={false}
-             startupPage={true}
-           />
+        cardsData={data}
+        topContent={topContent}
+        careersPage={false}
+        startupPage={true}
+      />
       <Container
         variant="primarySpacing"
-        className=" flex md:flex-row flex-col items-start md:gap-[303px] gap-[16px]"
+        className="bg-[var(--color-background-1)] flex md:flex-row flex-col items-start md:gap-[303px] gap-[16px]"
       >
-        <Typography variant="para-1" className= " shrink-0 " >Job Openings</Typography>
+        <Typography variant="para-1" className=" shrink-0 ">
+          Job Openings
+        </Typography>
         <Typography variant="para-2">
           Founded in August 2022, Kaizen Law was established with a clear
           purpose — to build a focused corporate and transaction advisory firm
@@ -122,85 +205,73 @@ export default function Careers() {
           accountability.
         </Typography>
       </Container>
-       <div className="md:py-[12px] py-0 md:px-[100px] px-0 w-full borderInsightFilter border">
-              {/* Desktop Layout (unchanged) */}
-              <div className="hidden md:flex items-center justify-between w-full">
-                <Button variant="primary" className="!px-[36px] !py-[12px]">
-                  Filter
-                </Button>
-      
-                <div className="!px-[36px] !py-[12px] border border-[var(--color-accent)] rounded-[500px] !w-[463px]">
-                  <input
-                    type="text"
-                    className="text-[var(--color-accent)] focus:outline-none text-center w-full"
-                    placeholder="Search"
-                  />
-                </div>
-      
-                <Button variant="primary" className="!px-[36px] !py-[12px]">
-                  Filter
-                </Button>
-              </div>
-      
-              {/* Mobile Layout */}
-              <div className="md:hidden w-full flex flex-col">
-                {/* Row 1 - Search */}
-                <div className="px-[24px] py-[12px] border-b border-[var(--color-accent)]">
-                  <div className="border border-[var(--color-accent)] rounded-[500px] px-[16px] py-[10px]">
-                    <input
-                      type="text"
-                      className="text-[var(--color-accent)] focus:outline-none text-center w-full"
-                      placeholder="Search"
-                    />
-                  </div>
-                </div>
-      
-                {/* Row 2 - Filters */}
-                <div className="px-[24px] py-[12px] flex gap-[12px]">
-                  <Button variant="primary" className="w-full !py-[12px]">
-                    Filter
-                  </Button>
-                  <Button variant="primary" className="w-full !py-[12px]">
-                    Filter
-                  </Button>
-                </div>
-              </div>
+
+      <div className="md:py-[12px] py-0 md:px-[100px] px-0 w-full borderInsightFilter border bg-[var(--color-background-1)]">
+        {/* Desktop Layout (unchanged) */}
+        <div className="hidden md:flex items-center justify-between w-full">
+          <Button variant="primary" className="!px-[36px] !py-[12px]">
+            Filter
+          </Button>
+
+          <div className="!px-[36px] !py-[12px] border border-[var(--color-accent)] rounded-[500px] !w-[463px]">
+            <input
+              type="text"
+              className="text-[var(--color-accent)] focus:outline-none text-center w-full"
+              placeholder="Search"
+            />
+          </div>
+
+          <Button variant="primary" className="!px-[36px] !py-[12px]">
+            Filter
+          </Button>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="md:hidden w-full flex flex-col">
+          {/* Row 1 - Search */}
+          <div className="px-[24px] py-[12px] border-b border-[var(--color-accent)]">
+            <div className="border border-[var(--color-accent)] rounded-[500px] px-[16px] py-[10px]">
+              <input
+                type="text"
+                className="text-[var(--color-accent)] focus:outline-none text-center w-full"
+                placeholder="Search"
+              />
             </div>
-      <Container
-        variant="sectionSp1"
-        className=" !py-[40px] bg-[var(--color-background-1)] flex flex-col gap-[16px] "
-      >
+          </div>
+
+          {/* Row 2 - Filters */}
+          <div className="px-[24px] py-[12px] flex gap-[12px]">
+            <Button variant="primary" className="w-full !py-[12px]">
+              Filter
+            </Button>
+            <Button variant="primary" className="w-full !py-[12px]">
+              Filter
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div className="md:px-[100px] px-[24px] md:pt-[40px] pt-[32px] md:pb-[100px] pb-[64px] bg-[var(--color-background-1)] flex flex-col gap-[16px] ">
         {jobsData.map((job) => (
           <JobCard key={job.id} job={job} />
         ))}
-      </Container>
-      <Container
-        variant="sectionSp1"
-        className=" flex flex-col gap-[16px] items-center bg-[var(--color-background-1)]    "
-      >
-        <Typography variant="para-1">Life at Kaizen</Typography>
-        <Typography variant="para-2" className="w-[716px] text-center ">
-          We align legal strategy with commercial objectives, ensuring clarity
-          on rights, governance, and risk. Our approach is centered on
-          long-term value creation, helping clients make informed decisions at
-          every stage of the transaction.
-        </Typography>
-      </Container>
-      <Container
-        variant="sectionSp1"
-        className=" !py-[60px] !bg-[var(--color-background-2)] "
-      >
-        <Typography variant="para-2" className="!text-white text-center">
+      </div>
+
+      <div className="md:px-[100px] px-[24px] py-[60px] flex justify-center !bg-[var(--color-background-2)]">
+        <Typography
+          variant="para-2"
+          className="!text-white text-center md:w-[734px] w-full"
+        >
           “Didn’t find any position fit for you? No worries please drop your
-          resume at below mail or contact <br /> number and our HR will going to
+          resume at below mail or contact number and our HR will going to
           connect with you.”
         </Typography>
-      </Container>
+      </div>
 
-      <div className=" grid grid-cols-2 bg-[var(--color-background-2)] border-t border-white  ">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-[var(--color-background-2)] border-t border-white  ">
         <Container
           variant="sectionSp1"
-          className=" !py-[58px] border-r border-white flex items-center justify-center gap-[16px] "
+          className=" border-b md:border-b-0 md:border-r border-white flex items-center justify-center gap-[16px]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -228,7 +299,7 @@ export default function Careers() {
 
         <Container
           variant="sectionSp1"
-          className=" !py-[58px] flex items-center justify-center gap-[16px]  "
+          className=" flex items-center justify-center gap-[16px]  "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

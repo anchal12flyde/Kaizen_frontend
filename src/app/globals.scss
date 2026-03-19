@@ -71,6 +71,7 @@ body {
 .hero-content {
   position: absolute;
   left: 100px;
+  right: 0;
   bottom: 70px;
   display: flex;
   flex-direction: column;
@@ -337,6 +338,7 @@ body {
   color: rgba(242, 242, 242, 0.6) !important;
 }
 
+
 /* Responsive */
 @media (max-width: 1024px) {
   .step-content-container {
@@ -359,7 +361,7 @@ body {
   }
   .hero-content {
     left: 24px;
-    right: 24px;
+    right: 24px !important;
   }
   .text-wrapper h1 {
     font-size: 60px;
@@ -496,6 +498,14 @@ body {
   text-align: left;
 }
 
+
+.policy-desc{
+  position: relative;
+  padding: 80px 133px 80px 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -525,6 +535,12 @@ body {
   }
   .service-head {
     gap: 64px;
+  }
+
+  .policy-desc{
+    flex-direction: column;
+    gap: 64px;
+    padding: 32px 18px 64px 18px;
   }
 }
 //Home Page CSS

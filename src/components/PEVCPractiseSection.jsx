@@ -48,7 +48,7 @@ export default function PEVCPracticeSection({
   topContent = {},
 }) {
   return (
-    <Container variant="primarySpacing" className="bg-[#0A193A] ">
+    <Container variant="mainBox" className="bg-[#0A193A] ">
       {careersPage && !startupPage ? (
         <div className="flex  gap-[126px] ">
           {/* Top Content */}
@@ -130,7 +130,7 @@ export default function PEVCPracticeSection({
       ) : startupPage && !careersPage ? (
         <div className="flex md:flex-row flex-col md:gap-[126px] gap-[84px] ">
           {/* Top Content */}
-          <div className="flex flex-col gap-[16px] ">
+          <div className="flex flex-col gap-[16px] md:px-0 px-[24px] ">
             <motion.div
               variants={fadeUp}
               initial="hidden"
