@@ -5,26 +5,26 @@ import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
 import Image from "next/image";
 
-const cards = [
-  {
-    id: 1,
-    title: "Transaction Structuring & Risk Allocation",
-    desc: `Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.`,
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-  },
-  {
-    id: 2,
-    title: "Working Across the Investment Table",
-    desc: `We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.`,
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png",
-  },
-  {
-    id: 3,
-    title: "Advising Across the Capital Lifecycle",
-    desc: `We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.`,
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png",
-  },
-];
+// const cards = [
+//   {
+//     id: 1,
+//     title: "Transaction Structuring & Risk Allocation",
+//     desc: `Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.`,
+//     icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
+//   },
+//   {
+//     id: 2,
+//     title: "Working Across the Investment Table",
+//     desc: `We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.`,
+//     icon: "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png",
+//   },
+//   {
+//     id: 3,
+//     title: "Advising Across the Capital Lifecycle",
+//     desc: `We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.`,
+//     icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png",
+//   },
+// ];
 
 const fadeUp = {
   hidden: {
@@ -44,9 +44,11 @@ const fadeUp = {
 export default function PEVCPracticeSection({
   careersPage = false,
   startupPage = false,
+  cardsData = [],
+  topContent = {},
 }) {
   return (
-    <Container variant="primarySpacing" className="bg-[#0A193A]">
+    <Container variant="primarySpacing" className="bg-[#0A193A] ">
       {careersPage && !startupPage ? (
         <div className="flex  gap-[126px] ">
           {/* Top Content */}
@@ -59,7 +61,7 @@ export default function PEVCPracticeSection({
               className="shrink-0"
             >
               <Typography variant="header-6" className="!text-white  ">
-                Perk And Benefits
+                {topContent?.title}
               </Typography>
             </motion.div>
 
@@ -70,17 +72,14 @@ export default function PEVCPracticeSection({
               viewport={{ once: true }}
             >
               <Typography variant="para-2" className="!text-white">
-                We align legal strategy with commercial objectives, ensuring
-                clarity on rights, governance, and risk. Our approach is
-                centered on long-term value creation, helping clients make
-                informed decisions at every stage of the transaction.
+                {topContent?.subtitle}
               </Typography>
             </motion.div>
           </div>
 
           {/* Cards */}
           <div className="flex flex-col !w-[635px] shrink-0 ">
-            {cards.map((item, i) => (
+            {cardsData.map((item, i) => (
               <motion.div
                 key={item.id}
                 variants={fadeUp}
@@ -115,7 +114,7 @@ export default function PEVCPracticeSection({
                 </div>
 
                 <Typography
-                  variant="header-2"
+                  variant="big-firm"
                   className="!text-white mt-[36px]"
                 >
                   {item.title}
@@ -129,7 +128,7 @@ export default function PEVCPracticeSection({
           </div>
         </div>
       ) : startupPage && !careersPage ? (
-        <div className="flex  gap-[126px] ">
+        <div className="flex md:flex-row flex-col md:gap-[126px] gap-[84px] ">
           {/* Top Content */}
           <div className="flex flex-col gap-[16px] ">
             <motion.div
@@ -139,8 +138,8 @@ export default function PEVCPracticeSection({
               viewport={{ once: true }}
               className="shrink-0"
             >
-              <Typography variant="para-1" className="!text-white  ">
-                Perk And Benefits
+              <Typography variant="header-6" className="!text-white  ">
+                {topContent?.title}
               </Typography>
             </motion.div>
 
@@ -151,17 +150,14 @@ export default function PEVCPracticeSection({
               viewport={{ once: true }}
             >
               <Typography variant="para-2" className="!text-white">
-                We align legal strategy with commercial objectives, ensuring
-                clarity on rights, governance, and risk. Our approach is
-                centered on long-term value creation, helping clients make
-                informed decisions at every stage of the transaction.
+                {topContent?.subtitle}
               </Typography>
             </motion.div>
           </div>
 
           {/* Cards */}
-          <div className="flex flex-col !w-[635px] shrink-0 ">
-            {cards.map((item, i) => (
+          <div className="flex flex-col md:!w-[635px] w-full shrink-0 ">
+            {cardsData.map((item, i) => (
               <motion.div
                 key={item.id}
                 variants={fadeUp}
@@ -169,10 +165,10 @@ export default function PEVCPracticeSection({
                 whileInView="show"
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className=" px-[20px] py-[46px] borderCardPerk flex items-center gap-[56px] "
+                className=" md:px-[20px] px-[20px] md:py-[46px] py-[100px] borderCardPerk flex  md:flex-row flex-col md:gap-[56px] gap-[80px] "
               >
                 {/* Icon Placeholder */}
-                <div className="">
+                <div className="flex md:justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="89"
@@ -196,7 +192,7 @@ export default function PEVCPracticeSection({
                 </div>
 
                 <div>
-                  <Typography variant="header-2" className="!text-white ">
+                  <Typography variant="big-firm" className="!text-white ">
                     {item.title}
                   </Typography>
 
@@ -223,7 +219,7 @@ export default function PEVCPracticeSection({
               className="shrink-0"
             >
               <Typography variant="header-6" className="!text-white  ">
-                Our PE & VC <br /> Practice
+                {topContent?.title}
               </Typography>
             </motion.div>
 
@@ -236,17 +232,14 @@ export default function PEVCPracticeSection({
               w-full"
             >
               <Typography variant="para-2" className="!text-white">
-                We align legal strategy with commercial objectives, ensuring
-                clarity on rights, governance, and risk. Our approach is
-                centered on long-term value creation, helping clients make
-                informed decisions at every stage of the transaction.
+                {topContent?.subtitle}
               </Typography>
             </motion.div>
           </div>
 
           {/* Cards */}
           <div className="grid md:grid-cols-3 gap-[15px] ">
-            {cards.map((item, i) => (
+            {cardsData.map((item, i) => (
               <motion.div
                 key={item.id}
                 variants={fadeUp}
@@ -267,7 +260,7 @@ export default function PEVCPracticeSection({
                 </div>
 
                 <Typography
-                  variant="header-2"
+                  variant="big-firm"
                   className="!text-white mt-[61px]"
                 >
                   {item.title}

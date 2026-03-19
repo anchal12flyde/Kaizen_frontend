@@ -63,23 +63,26 @@ const cardReveal = {
   },
 };
 
-/* ---------------------------------- */
-/* Main */
-/* ---------------------------------- */
 
 export default function EndToEndServices() {
   return (
-    <Container variant="primarySpacing" className="bg-[var(--color-background-2)]">
+    <Container
+      variant="primarySpacing"
+      className="bg-[var(--color-background-2)]"
+    >
       <div>
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[96px]">
-          <Typography variant="para-1" className="!text-white">
-            End-to-End <br /> Services
+          <Typography variant="header-6" className="!text-white w-[250px]">
+            Lorem Ipsum
+            <br />
+            Dolor
           </Typography>
 
           <Typography variant="para-2" className="!text-white">
-            Kaizen Law is a corporate and transaction advisory firm delivering
-            big-firm quality advice through a partner-led, boutique model.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation.
           </Typography>
         </div>
 
@@ -100,9 +103,6 @@ export default function EndToEndServices() {
   );
 }
 
-/* ---------------------------------- */
-/* Card */
-/* ---------------------------------- */
 
 function ServiceCard({ title, img }) {
   return (

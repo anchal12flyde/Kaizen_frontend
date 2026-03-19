@@ -69,15 +69,50 @@ export default function Careers() {
       ctaText: "Apply Now",
     },
   ];
-
+  const data = [
+    {
+      id: 1,
+      title: "Lorem ipsum dolor",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
+    },
+    {
+      id: 2,
+      title: "Lorem ipsum dolor",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
+    },
+    {
+      id: 3,
+      title: "Lorem ipsum dolor",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
+    },
+    {
+      id: 4,
+      title: "Lorem ipsum dolor",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
+    },
+  ];
+  const topContent = {
+    title: "Perk And Benefits",
+    subtitle:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  };
   return (
     <div>
       <Header />
       <AboutHeroSection />
-      <PEVCPracticeSection careersPage={true} startupPage={false} />
+      <PEVCPracticeSection
+             cardsData={data}
+             topContent={topContent}
+             careersPage={false}
+             startupPage={true}
+           />
       <Container
-        variant="sectionSp1"
-        className="pt-[220px] flex items-start gap-[303px] "
+        variant="primarySpacing"
+        className=" flex md:flex-row flex-col items-start md:gap-[303px] gap-[16px]"
       >
         <Typography variant="para-1" className= " shrink-0 " >Job Openings</Typography>
         <Typography variant="para-2">
@@ -87,24 +122,50 @@ export default function Careers() {
           accountability.
         </Typography>
       </Container>
-      <Container
-        variant="sectionSp1"
-        className=" !py-[12px] flex items-center justify-between w-full borderInsightFilter border  "
-      >
-        <Button variant="primary" className=" !px-[36px] !py-[12px] ">
-          Filter
-        </Button>
-        <div className="!px-[36px] !py-[12px] border border-[var(--color-accent)] rounded-[500px] !w-[463px]  ">
-          <input
-            type="text"
-            className=" text-[var(--color-accent)] focus:outline-none text-center w-full   "
-            placeholder="Search"
-          />
-        </div>
-        <Button variant="primary" className=" !px-[36px] !py-[12px] ">
-          Filter
-        </Button>
-      </Container>
+       <div className="md:py-[12px] py-0 md:px-[100px] px-0 w-full borderInsightFilter border">
+              {/* Desktop Layout (unchanged) */}
+              <div className="hidden md:flex items-center justify-between w-full">
+                <Button variant="primary" className="!px-[36px] !py-[12px]">
+                  Filter
+                </Button>
+      
+                <div className="!px-[36px] !py-[12px] border border-[var(--color-accent)] rounded-[500px] !w-[463px]">
+                  <input
+                    type="text"
+                    className="text-[var(--color-accent)] focus:outline-none text-center w-full"
+                    placeholder="Search"
+                  />
+                </div>
+      
+                <Button variant="primary" className="!px-[36px] !py-[12px]">
+                  Filter
+                </Button>
+              </div>
+      
+              {/* Mobile Layout */}
+              <div className="md:hidden w-full flex flex-col">
+                {/* Row 1 - Search */}
+                <div className="px-[24px] py-[12px] border-b border-[var(--color-accent)]">
+                  <div className="border border-[var(--color-accent)] rounded-[500px] px-[16px] py-[10px]">
+                    <input
+                      type="text"
+                      className="text-[var(--color-accent)] focus:outline-none text-center w-full"
+                      placeholder="Search"
+                    />
+                  </div>
+                </div>
+      
+                {/* Row 2 - Filters */}
+                <div className="px-[24px] py-[12px] flex gap-[12px]">
+                  <Button variant="primary" className="w-full !py-[12px]">
+                    Filter
+                  </Button>
+                  <Button variant="primary" className="w-full !py-[12px]">
+                    Filter
+                  </Button>
+                </div>
+              </div>
+            </div>
       <Container
         variant="sectionSp1"
         className=" !py-[40px] bg-[var(--color-background-1)] flex flex-col gap-[16px] "

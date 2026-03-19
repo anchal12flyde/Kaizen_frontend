@@ -12,6 +12,32 @@ import WhyChooseSection from "@/components/whyChooseSection";
 import Image from "next/image";
 import Recognization from "@/components/recognization";
 
+
+const data = [
+  {
+    id: 1,
+    title: "Transaction Structuring & Risk Allocation",
+    desc: "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
+    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
+  },
+  {
+    id: 2,
+    title: "Working Across the Investment Table",
+    desc: "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
+    icon: "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376",
+  },
+  {
+    id: 3,
+    title: "Advising Across the Capital Lifecycle",
+    desc: "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363",
+  },
+];
+const topContent = {
+  title: "Our PE & VC Practice",
+  subtitle:
+    "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
+};
 export default function PrivateEquity() {
   const services = [
     {
@@ -107,7 +133,7 @@ export default function PrivateEquity() {
       </Container>
 
       <AdvisorySection />
-      <PEVCPracticeSection />
+      <PEVCPracticeSection cardsData={data} topContent={topContent} />
       <Container
         variant="sectionSp3"
         className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] "
@@ -143,7 +169,7 @@ export default function PrivateEquity() {
             className=" absolute inset-0  flex items-center justify-center  "
           >
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
-              <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
+              <div className="w-full md:w-[500px] h-full md:px-[36px] px-[16px] pt-[36px] md:pb-[113px] pb-[48px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography variant="header-5" className=" !text-white ">
                   Representative Experience
                 </Typography>
@@ -156,8 +182,8 @@ export default function PrivateEquity() {
                   infrastructure, and energy sectors on investments, follow-on
                   rounds, and exits.
                 </Typography>
-                <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white md:text-[24px] text-[18px]">
-                  Schedule A Consulation →
+                <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white md:text-[24px] text-[18px]">
+                  View Representative Transactions
                 </button>
               </div>
               <div></div>
@@ -177,7 +203,7 @@ export default function PrivateEquity() {
       </Container>
 
       <BlogGridSection
-        variant="scroll" 
+        variant="scroll"
         posts={[
           {
             image: "https://ik.imagekit.io/demo/img/image1.jpg",

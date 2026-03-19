@@ -4,7 +4,30 @@ import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
+const items = [
+  {
+    title: "Private Equity & Venture Capital",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+  },
+  {
+    title: "Mergers & Acquisitions",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+  },
+  {
+    title: "General Counsel Services",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+  },
+  {
+    title: "Technology Law",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+  },
+];
 export default function ServicesListing () {
     return (
       <div>
@@ -36,6 +59,74 @@ export default function ServicesListing () {
             },
           ]}
         />
+
+        <Container variant="primarySpacing" className=" bg-[#0A193A] ">
+          <div className=" flex flex-col md:gap-[100px] gap-[80px] ">
+            {/* Heading */}
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-[96px] gap-[36px]">
+              <Typography variant="header-6" className="!text-white w-[250px]">
+                End-to-End <br /> Services
+              </Typography>
+
+              <Typography variant="para-2" className="!text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation.
+              </Typography>
+            </div>
+
+            {/* List */}
+            <div className="flex md:gap-[16px] gap-[2px] flex-col">
+              {items.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex md:flex-row flex-col md:items-center md:justify-between border-t border-white/30 py-[38px]"
+                >
+                  {/* Content */}
+                  <div className="flex md:flex-row flex-col md:gap-[96px] gap-[16px]">
+                    
+                    <div className="flex justify-between items-center md:block md:w-auto w-full">
+                      <Typography
+                        variant="header-1"
+                        className="!text-white w-[250px]"
+                      >
+                        {item.title}
+                      </Typography>
+
+                      
+                      <div className="md:hidden w-[30px] h-[30px]">
+                        <img
+                          src={item.icon}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <Typography
+                      variant="para-2"
+                      className="!text-white w-[316px]"
+                    >
+                      {item.desc}
+                    </Typography>
+                  </div>
+
+                  {/* Icon (desktop only - same as your original) */}
+                  <div className="hidden md:block md:w-[45px] md:h-[45px]">
+                    <img
+                      src={item.icon}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
+
+              {/* Bottom Border */}
+              <div className="border-t border-white/30"></div>
+            </div>
+          </div>
+        </Container>
+
         <Container variant="primarySpacing" className=" privateEquityHeroCopy">
           {/* Background Image */}
           <Image
