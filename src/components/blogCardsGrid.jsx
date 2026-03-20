@@ -24,7 +24,7 @@ export default function BlogGridSection({
               ? "flex md:grid md:grid-cols-3 overflow-x-auto overflow-y-hidden md:overflow-visible"
               : "flex flex-col md:grid md:grid-cols-3"
           }
-          gap-[16px] scrollbar-hide
+           md:gap-0 gap-[16px] scrollbar-hide
         `}
       >
         {posts.map((item, index) => (

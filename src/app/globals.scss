@@ -322,6 +322,7 @@ body {
 .blogCard:hover {
   background-color: var(--color-background-2);
   transition: all 0.3s ease-in-out;
+  border: none;
 
   .blogCardCat {
     border: 1px solid white;
