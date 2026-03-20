@@ -56,8 +56,9 @@ const team = [
 ];
 
 export default function LeadershipTeam() {
+  const cardRefs = useRef([]);  
   const scrollRef = useRef(null);
-
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);

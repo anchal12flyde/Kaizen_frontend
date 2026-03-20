@@ -50,36 +50,22 @@ const gridVariants = {
   },
 };
 const cardReveal = {
-  hidden: {
-    scaleY: 0,
-    transformOrigin: "top",
-  },
-  show: {
-    scaleY: 1,
-    transformOrigin: "top",
-    transition: {
-      duration: 1.2,
-      ease: "easeInOut",
-    },
-  },
+  hidden: { height: 0 },
+  show: { height: "100%", transition: { duration: 1.4, ease: "easeInOut" } },
 };
 
 
 export default function EndToEndServices() {
+  const [isMobile, setIsMobile] = useState(false);
 
-  function useIsMobile() {
-    const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 768);
+    checkScreen();
 
-    useEffect(() => {
-      const check = () => setIsMobile(window.innerWidth < 768);
-      check();
-      window.addEventListener("resize", check);
-      return () => window.removeEventListener("resize", check);
-    }, []);
-
-    return isMobile;
-  }
-  const isMobile = useIsMobile();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+  
   return (
     <Container
       variant="primarySpacing"
@@ -103,7 +89,10 @@ export default function EndToEndServices() {
 
         {/* Grid */}
         <motion.div
-          
+          variants={gridVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[26px] mt-[100px]"
         >
           {services.map((item, index) => (
@@ -116,20 +105,19 @@ export default function EndToEndServices() {
 }
 
 
-function ServiceCard({ title, img,isMobile }) {
+function ServiceCard({ title, img, isMobile }) {
   return (
     /* Fixed height wrapper */
-    <div className="relative w-full h-[500px]  overflow-hidden">
+    <div
+      className={`relative w-full overflow-hidden ${
+        isMobile ? "h-[500px]" : "h-[500px]"
+      }`}
+    >
       {/* Animated container */}
       <motion.div
-        variants={cardReveal}
-        initial="hidden"
-        whileInView="show"
-        viewport={{
-          once: true,
-          amount: 0.2,
-          margin: "0px 0px -100px 0px", 
-        }}
+        variants={!isMobile ? cardReveal : {}}
+        initial={!isMobile ? "hidden" : false}
+        animate={!isMobile ? "show" : false}
         className="relative w-full h-full overflow-hidden"
       >
         {/* Image */}
@@ -143,7 +131,11 @@ function ServiceCard({ title, img,isMobile }) {
         {/* Content wrapper */}
         <div className="relative h-full flex items-start">
           {/* Title */}
-          <div className="pt-[36px] px-[26px]">
+          <div
+            className={`${
+              isMobile ? "pt-[20px] px-[16px]" : "pt-[36px] px-[26px]"
+            }`}
+          >
             <Typography variant="header-2" className="!text-white">
               {title}
             </Typography>

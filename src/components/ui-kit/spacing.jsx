@@ -20,12 +20,12 @@ const spacingVariants = {
   mainBox:"main-box",
 };
 
-/* ---------------- ANIMATION VARIANT ---------------- */
+
 
 const containerFadeUp = {
   hidden: {
     opacity: 0,
-    y: 60, // thoda zyada so movement dikhe
+    y: 60, 
   },
   visible: (delay = 0) => ({
     opacity: 1,

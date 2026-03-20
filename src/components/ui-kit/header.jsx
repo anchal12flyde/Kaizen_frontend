@@ -179,7 +179,7 @@ export default function Header() {
       {/* MOBILE FULLSCREEN MENU */}
       <div
         className={`fixed inset-0 !z-[1000] bg-[var(--color-accent)]
-        transition-all duration-700 ease-in-out flex flex-col 
+        transition-all duration-700 ease-in-out flex flex-col overflow-y-auto
         ${
           isMenuOpen
             ? "translate-y-0 opacity-100"
@@ -278,7 +278,7 @@ export default function Header() {
         </Container>
 
         {/* Menu Links */}
-        <div className=" flex flex-col justify-between flex-1 " >
+        <div className=" flex flex-col justify-between flex-1 ">
           <Container
             variant="primarySpacing"
             className="flex flex-col gap-[46px] justify-center"
@@ -292,7 +292,7 @@ export default function Header() {
                 <Typography
                   variant="header-1"
                   className="!text-white transition-all"
-                  animate = {false}
+                  animate={false}
                 >
                   {link.name}
                 </Typography>

@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { motion } from "framer-motion";
 
 const colorMap = {
   black: "#000000",
@@ -11,61 +10,27 @@ const colorMap = {
   background3: "#1F0808",
 };
 
-const textFadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 32,
-  },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-      delay,
-    },
-  }),
-};
-
 const Typography = ({
   variant = "para-1",
   as,
   children,
   className,
   colorVariant = "black",
-  animate = true,
-  delay = 0,
   ...props
 }) => {
   const Tag = as || getDefaultTag(variant);
 
-  const commonProps = {
-    className: clsx(variant, className),
-    style: {
-      whiteSpace: "pre-line",
-      color: colorMap[colorVariant] || colorMap.black,
-    },
-    ...props,
-  };
-
-  // ✅ FIX: use motion.create
-  const MotionTag = motion[Tag] || motion.p;
-
-  if (!animate) {
-    return <Tag {...commonProps}>{children}</Tag>;
-  }
-
   return (
-    <MotionTag
-      {...commonProps}
-      variants={textFadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      custom={delay}
+    <Tag
+      className={clsx(variant, className)}
+      style={{
+        whiteSpace: "pre-line",
+        color: colorMap[colorVariant] || colorMap.black,
+      }}
+      {...props}
     >
       {children}
-    </MotionTag>
+    </Tag>
   );
 };
 

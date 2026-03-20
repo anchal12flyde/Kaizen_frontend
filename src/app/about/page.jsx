@@ -19,31 +19,31 @@ export default function About() {
     <div>
       <Header />
      <AboutHeroSection
-              bgImage="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
-              title={
-                <>
-                  A Transaction-Focused
-                  <br />
-                  Law Firm Built on <br /> Precision and Execution
-                </>
-              }
-              description={
-                <>
-                  Kaizen Law is a corporate and transaction advisory firm delivering
-                  big-firm quality advice through a partner-led, boutique model.
-                </>
-              }
-              align="left"
-              buttons={[
-                {
-                  label: "Explore Our Practise",
-                  variant: "primary",
-                },
-                {
-                  label: "Meet Our Team",
-                  variant: "white",
-                },
-              ]}
+        bgImage="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
+        title={
+          <>
+            A Transaction-Focused
+            <br />
+            Law Firm Built on <br /> Precision and Execution
+          </>
+        }
+        description={
+          <>
+            Kaizen Law is a corporate and transaction advisory firm delivering
+            big-firm quality advice through a partner-led, boutique model.
+          </>
+        }
+        align="left"
+        buttons={[
+          {
+            label: "Explore Our Practise",
+            variant: "primary",
+          },
+          {
+            label: "Meet Our Team",
+            variant: "white",
+          },
+        ]}
             />
       <OurStorySection />
       <KaizenPhilosophySection />
@@ -121,8 +121,8 @@ export default function About() {
           </Container>
         </>
       </Container>
-
-      <LetsConnectSection />
+{/* 
+      <LetsConnectSection /> */}
       <Container
         variant="sectionSp1"
         className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between md:items-start"
