@@ -68,7 +68,7 @@ export default function PrivateEquity() {
   ];
 
   return (
-    <div>
+    <div className="!overflow-x-none">
       <Header />
       <section className="hero-section">
         {/* Background Image */}
@@ -84,7 +84,7 @@ export default function PrivateEquity() {
         <div className="hero-overlay"></div>
 
         {/* Content */}
-        <div className="hero-content right-[50px]">
+        <div className="hero-content md:!right-[100px]">
           <div>
             <div className="md:mb-[26px] mb-[42px]">
               <Typography variant="display-3" colorVariant="white">

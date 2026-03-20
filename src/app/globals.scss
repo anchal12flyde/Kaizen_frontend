@@ -71,7 +71,7 @@ body {
 .hero-content {
   position: absolute;
   left: 100px;
-  right: 0;
+ 
   bottom: 70px;
   display: flex;
   flex-direction: column;
@@ -389,6 +389,16 @@ body {
   text-align: left;
 }
 
+
+   input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+            -webkit-text-fill-color: white !important;
+            opacity: 50%;
+            transition: background-color 5000s ease-in-out 0s;
+          }
 /* Tablet — upto 1024px */
 @media (max-width: 1024px) {
   .stats-section {

@@ -209,7 +209,7 @@ export default function WhyChooseSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full !h-fit bg-[#f7f4eb] overflow-visible "
+      className="w-full !h-fit bg-[#f7f4eb] overflow-x-hidden "
     >
       {isMobile ? (
         /* MOBILE VERSION */

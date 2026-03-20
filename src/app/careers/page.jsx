@@ -106,7 +106,7 @@ export default function Careers() {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   };
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Header />
       <section className="hero-section relative">
         {/* Background Image */}
@@ -153,8 +153,8 @@ export default function Careers() {
               </div>
             </div>
             {/* Icons */}
-            <div className="w-full overflow-x-auto md:overflow-hidden md:mt-[156px] mt-[86px] md:!pr-[200px]">
-              <div className="flex md:justify-between gap-[48px] w-full">
+            <div className="w-full overflow-x-auto md:overflow-hidden mt-[86px] md:mt-[156px] md:pr-[200px] pr-[24px]">
+              <div className="flex w-max md:w-full gap-[48px] md:gap-0 md:justify-between">
                 <img
                   src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png"
                   alt="logo"

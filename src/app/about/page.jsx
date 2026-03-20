@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import AboutHeroSection from "@/components/abouthero";
 import GuidesSection from "@/components/guidesSection";
 import KaizenPhilosophySection from "@/components/KaizenPhilosphy";
@@ -14,11 +16,26 @@ import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 
 export default function About() {
-  
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email) {
+      alert("Please enter email");
+      return;
+    }
+
+    console.log("Submitted Email:", email);
+
+    
+
+    setEmail(""); 
+  };
   return (
     <div>
       <Header />
-     <AboutHeroSection
+      <AboutHeroSection
         bgImage="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
         title={
           <>
@@ -44,7 +61,7 @@ export default function About() {
             variant: "white",
           },
         ]}
-            />
+      />
       <OurStorySection />
       <KaizenPhilosophySection />
       <GuidesSection />
@@ -121,9 +138,40 @@ export default function About() {
           </Container>
         </>
       </Container>
-{/* 
-      <LetsConnectSection /> */}
-      <Container
+
+      {/* Desktop only */}
+      <div className="hidden md:block">
+        <LetsConnectSection />
+      </div>
+
+      {/* Mobile only */}
+      <div className="block md:hidden px-[28px] py-[220px] bg-[#0A193A]">
+      <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-[56px] text-center relative"
+    >
+      <Typography variant="display-3" className="!text-white">
+        Lets Connect
+      </Typography>
+
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter Email Address"
+        className="w-full bg-transparent outline-none 
+                   text-white placeholder:text-white/50 text-center"
+        required
+      />
+
+      <button type="submit" className="w-full text-center">
+        <Typography variant="header-2" className="!text-white">
+          Submit
+        </Typography>
+      </button>
+      </form>
+      </div>
+      {/* <Container
         variant="sectionSp1"
         className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between md:items-start"
       >
@@ -143,7 +191,7 @@ export default function About() {
         <button className=" md:px-[36px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white  text-[18px]">
           Schedule A Consulation →
         </button>
-      </Container>
+      </Container> */}
       <Footer />
     </div>
   );

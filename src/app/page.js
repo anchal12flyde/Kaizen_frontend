@@ -23,7 +23,7 @@ export default function Home() {
 
         <div className="hero-overlay"></div>
 
-        <div className="hero-content right-[50px]">
+        <div className="hero-content md:right-[100px]">
           <div>
             <div className="mb-[42px]">
               <Typography variant="hero-display" colorVariant="white">
@@ -160,12 +160,12 @@ export default function Home() {
             ]}
           />
 
-          <div className="flex flex-col gap-[74px]">
+          <div className="flex flex-col md:gap-[74px] gap-[36px]">
             <Typography variant="para-2" delay={0.6}>
               {" "}
               Asia Pacific 2026
             </Typography>
-            <div className="relative w-full h-full hidden md:block">
+            <div className="relative w-full h-full ">
               <Image
                 src="https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg"
                 width={183}

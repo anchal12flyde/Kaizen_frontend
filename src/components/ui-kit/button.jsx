@@ -1,27 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { motion } from "framer-motion";
-
-/* ---------------- ANIMATION VARIANT ---------------- */
-
-const buttonFadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 32,
-  },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-      delay, // ✅ yahin hona chahiye
-    },
-  }),
-};
-
-/* ---------------- COMPONENT ---------------- */
 
 const Button = ({
   children,
@@ -32,27 +11,19 @@ const Button = ({
   className,
   as,
   disabled = false,
-  animate = true,
-  delay = 0,
   ...props
 }) => {
   const Tag = as || "button";
-  const MotionTag = motion(Tag);
 
   return (
-    <MotionTag
+    <Tag
       disabled={disabled}
-      variants={buttonFadeUp}
-      initial={animate ? "hidden" : false}
-      whileInView={animate ? "visible" : undefined}
-      viewport={{ once: true }}
-      custom={delay}
       className={clsx(
         "btn",
         `btn--${variant}`,
         disabled && "btn--disabled",
         icon && showIcon && "btn--with-icon",
-        className
+        className,
       )}
       {...props}
     >
@@ -65,7 +36,7 @@ const Button = ({
       {icon && showIcon && iconPosition === "right" && (
         <span className="btn-icon">{icon}</span>
       )}
-    </MotionTag>
+    </Tag>
   );
 };
 
