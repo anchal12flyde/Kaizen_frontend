@@ -664,7 +664,9 @@ export default function page() {
             big-firm quality advice through a partner-led, boutique model.
           </Typography>
         </Container>
-        <AdvisorySection />
+        <div className="!overflow-x-none">
+          <AdvisorySection />
+        </div>
         <PEVCPracticeSection cardsData={data} topContent={topContent} />
         <Container
           variant="sectionSp3"
@@ -677,7 +679,9 @@ export default function page() {
             We advise clients at each stage of the investment journey:
           </Typography>
         </Container>
-        <StackedServicesSection items={services} />
+       
+          <StackedServicesSection items={services} />
+        
         <OurApproachSection />
         <Container
           variant="primarySpacing"
