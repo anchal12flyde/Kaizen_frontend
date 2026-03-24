@@ -115,7 +115,7 @@ export default function Home() {
             <Typography variant="punctuation" delay={0.6}>
               +Post-Transaction Integration & Compliance
             </Typography>
-            <Button className="evaluationBtn" variant="white" delay={0.8}>
+            <Button className="evaluationBtn !w-fit" variant="white" delay={0.8}>
               Explore Capabilities
             </Button>
           </div>

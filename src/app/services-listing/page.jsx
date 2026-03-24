@@ -111,7 +111,6 @@ export default function ServicesListing () {
                     </Typography>
                   </div>
 
-                  {/* Icon (desktop only - same as your original) */}
                   <div className="hidden md:block md:w-[45px] md:h-[45px]">
                     <img
                       src={item.icon}
@@ -121,7 +120,7 @@ export default function ServicesListing () {
                 </div>
               ))}
 
-              {/* Bottom Border */}
+              
               <div className="border-t border-white/30"></div>
             </div>
           </div>

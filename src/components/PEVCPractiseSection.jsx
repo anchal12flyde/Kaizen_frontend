@@ -52,7 +52,7 @@ export default function PEVCPracticeSection({
       {careersPage && !startupPage ? (
         <div className="flex  gap-[126px] ">
           {/* Top Content */}
-          <div className="flex flex-col gap-[16px] ">
+          <div className="flex flex-col gap-[16px] md:px-0 px-[24px]">
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -210,7 +210,7 @@ export default function PEVCPracticeSection({
       ) : (
         <div className="flex flex-col md:gap-[96px] gap-[56px]">
           {/* Top Content */}
-          <div className="flex md:flex-row flex-col justify-between gap-[36px] ">
+          <div className="flex md:flex-row flex-col justify-between gap-[36px] md:px-0 px-[24px] ">
             <motion.div
               variants={fadeUp}
               initial="hidden"
