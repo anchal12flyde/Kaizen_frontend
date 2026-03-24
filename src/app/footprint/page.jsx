@@ -6,23 +6,12 @@ import Header from "@/components/ui-kit/header";
 import Footer from "@/components/ui-kit/footer";
 import Button from "@/components/ui-kit/button";
 import TransactionCard from "@/components/ui-kit/transactionCard";
+import footprintData from "@/data/footprint.json";
 
 export default function page() {
-
-  const stats = [
-    {
-      number: "100+",
-      label: "Number of transactions facilitated",
-    },
-    {
-      number: "$1B",
-      label: "Aggregate transaction value advised on",
-    },
-    {
-      number: "12+",
-      label: "Years of transactional experience",
-    },
-  ];
+  const { hero, stats, representativeMandates, fullTransactionList } =
+    footprintData;
+ 
   const items = [
     {
       title: "Mergers & Acquisitions",
@@ -80,7 +69,7 @@ export default function page() {
       <section className="hero-section">
         {/* Background Image */}
         <Image
-          src="https://ik.imagekit.io/a9uxeuyhx/c8b4f7e16bf497a2e506a10e688d0d5d572bb78c.jpg"
+          src={hero.heroImage}
           alt="Kaizen Hero"
           fill
           className="hero-background"
@@ -95,7 +84,7 @@ export default function page() {
           <div>
             <div className="mb-[42px]">
               <Typography variant="hero-display" colorVariant="white">
-                Transaction Footprint
+                {hero.title}
               </Typography>
             </div>
 
@@ -106,8 +95,7 @@ export default function page() {
                 className="lg:w-[623px] w-full flex-shrink-0"
                 delay={0.4}
               >
-                Complex, high-value transactions across sectors, stages, and
-                transaction types
+                {hero.heading}
               </Typography>
 
               <Typography
@@ -116,8 +104,7 @@ export default function page() {
                 className="lg:w-[370px] w-full flex-shrink-0 "
                 delay={0.6}
               >
-                Transactions are presented in an anonymised format in accordance
-                with applicable confidentiality and regulatory considerations.
+                {hero.description}
               </Typography>
             </div>
           </div>
@@ -149,19 +136,16 @@ export default function page() {
           {/* Heading */}
           <div className="md:mb-[60] mb-[18px] flex flex-col gap-[18px]">
             <Typography variant="header-1" colorVariant="white">
-              Representative Mandates
+              {representativeMandates.heading}
             </Typography>
             <Typography variant="para-2" colorVariant="white">
-              A curated selection of transactions that reflect the complexity,
-              scale, and diversity of our transactional experience. Details are
-              shared in a concise and anonymised format, in line with
-              confidentiality and regulatory considerations.
+              {representativeMandates.description}
             </Typography>
           </div>
           <div className="top-border"></div>
           {/* 2 Column Layout */}
           <div className="grid-root">
-            {items.map((item, index) => (
+            {representativeMandates.items.map((item, index) => (
               <div key={index} className="footprint">
                 <div className="footprint-left">
                   <Typography variant="header-3" colorVariant="white">
@@ -200,85 +184,34 @@ export default function page() {
           </div>
         </Container>
       </section>
+
       <Container variant="sectionSp1" className="section-bg">
-        <Typography variant="header-1"> Full Transaction List</Typography>
+        <Typography variant="header-1">
+          {" "}
+          {fullTransactionList.heading}
+        </Typography>
         <div className="flex flex-col gap-[50px] md:mt-[60px] mt-[40px]">
           <Typography variant="para-2">
             {" "}
-            A comprehensive list of representative transactions advised by
-            Kaizen Law, presented in an anonymised format and subject to
-            confidentiality and regulatory considerations.
+            {fullTransactionList.description}
           </Typography>
           <div>
             <Button variant="primary" delay={0.6}>
               {" "}
-              Filters
+              {fullTransactionList.buttonLabel}
             </Button>
           </div>
           <div className="flex flex-col gap-[40px]">
-            <TransactionCard
-              labelText="Capital Markets"
-              mainText="Advised a strategic acquirer on the acquisition of a controlling stake in a
-              technology-enabled services company, including legal due diligence and
-              negotiation of transaction documentation."
-              roleText="Advisor to Acquirer"
-              sectorText="Technology"
-              transactionValue="305cr INR"
-            />
-            <TransactionCard
-              labelText="Capital Markets"
-              mainText="Advised a strategic acquirer on the acquisition of a controlling stake in a
-              technology-enabled services company, including legal due diligence and
-              negotiation of transaction documentation."
-              roleText="Advisor to Acquirer"
-              sectorText="Technology"
-              transactionValue="305cr INR"
-            />
-            <TransactionCard
-              labelText="Capital Markets"
-              mainText="Advised a strategic acquirer on the acquisition of a controlling stake in a
-              technology-enabled services company, including legal due diligence and
-              negotiation of transaction documentation."
-              roleText="Advisor to Acquirer"
-              sectorText="Technology"
-              transactionValue="305cr INR"
-            />
-            <TransactionCard
-              labelText="Capital Markets"
-              mainText="Advised a strategic acquirer on the acquisition of a controlling stake in a
-              technology-enabled services company, including legal due diligence and
-              negotiation of transaction documentation."
-              roleText="Advisor to Acquirer"
-              sectorText="Technology"
-              transactionValue="305cr INR"
-            />
-            <TransactionCard
-              labelText="Capital Markets"
-              mainText="Advised a strategic acquirer on the acquisition of a controlling stake in a
-              technology-enabled services company, including legal due diligence and
-              negotiation of transaction documentation."
-              roleText="Advisor to Acquirer"
-              sectorText="Technology"
-              transactionValue="305cr INR"
-            />
-            <TransactionCard
-              labelText="Capital Markets"
-              mainText="Advised a strategic acquirer on the acquisition of a controlling stake in a
-              technology-enabled services company, including legal due diligence and
-              negotiation of transaction documentation."
-              roleText="Advisor to Acquirer"
-              sectorText="Technology"
-              transactionValue="305cr INR"
-            />
-            <TransactionCard
-              labelText="Capital Markets"
-              mainText="Advised a strategic acquirer on the acquisition of a controlling stake in a
-              technology-enabled services company, including legal due diligence and
-              negotiation of transaction documentation."
-              roleText="Advisor to Acquirer"
-              sectorText="Technology"
-              transactionValue="305cr INR"
-            />
+            {fullTransactionList.transactions.map((tx, index) => (
+              <TransactionCard
+                key={index}
+                labelText={tx.labelText}
+                mainText={tx.mainText}
+                roleText={tx.roleText}
+                sectorText={tx.sectorText}
+                transactionValue={tx.transactionValue}
+              />
+            ))}
           </div>
         </div>
       </Container>

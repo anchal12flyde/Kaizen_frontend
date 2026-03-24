@@ -1,0 +1,234 @@
+{
+  "aboutHero": {
+    "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+    "title": "A Transaction-Focused\nLaw Firm Built on\nPrecision and Execution",
+    "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model.",
+    "align": "left",
+    "buttons": [
+      {
+        "label": "Explore Our Practise",
+        "variant": "primary"
+      },
+      {
+        "label": "Meet Our Team",
+        "variant": "white"
+      }
+    ]
+  },
+  "ourStory": {
+    "title": "Our Story",
+    "paragraphs": [
+      "Founded in August 2022, Kaizen Law was established with a clear purpose — to build a focused corporate and transaction advisory firm that combines technical excellence with agility and personal accountability.",
+      "In just over two and a half years, the firm has developed a strong presence in India’s mid-market Corporate and M&A space, advising founders, promoters, investors, and multinational clients on complex domestic and cross-border matters"
+    ],
+    "buttonText": "Read More"
+  },
+  "philosophy": {
+    "leftTitle": "The Kaizen \n Philosohpy",
+    "right": {
+      "heading": "The word Kaizen means continuous improvement.",
+      "description": "In transactional practice, outcomes are shaped through disciplined preparation, thoughtful structuring, and consistent execution — not shortcuts. Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity, manage risk, and protect long-term value."
+    }
+  },
+  "guides": {
+    "title": "What Guides Our Work",
+    "items": [
+      {
+        "title": "Execution Excellence",
+        "desc": "Relentless focus on quality, timelines, and outcomes."
+      },
+      {
+        "title": "Senior Ownership",
+        "desc": "Direct partner and senior lawyer involvement throughout every mandate."
+      },
+      {
+        "title": "Commercial Insight",
+        "desc": "Advice grounded in business realities, not theoretical risk."
+      },
+      {
+        "title": "Integrity",
+        "desc": "Independent judgment, discretion, and professional responsibility."
+      },
+      {
+        "title": "Client Partnership",
+        "desc": "Long-term relationships over one-off transactions."
+      }
+    ]
+  },
+  "whyClients": {
+    "title": "Why Clients Choose Kaizen Law",
+    "subtitle": "We deliver big-firm quality with boutique agility.",
+    "cards": [
+      {
+        "title": "Execution Excellence",
+        "desc": "Relentless focus on quality, timelines, and outcomes.",
+        "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+      },
+      {
+        "title": "Senior Ownership",
+        "desc": "Direct partner and senior lawyer involvement throughout every mandate.",
+        "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+      },
+      {
+        "title": "Commercial Insight",
+        "desc": "Advice grounded in business realities, not theoretical risk.",
+        "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+      },
+      {
+        "title": "Integrity",
+        "desc": "Independent judgment, discretion, and professional responsibility.",
+        "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+      },
+      {
+        "title": "Client Partnership",
+        "desc": "Long-term relationships over one-off transactions.",
+        "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+      }
+    ]
+  },
+  "sectorExperience": {
+    "title": "Sector Experience",
+    "sectors": [
+      {
+        "title": "Technology & Digital Businesses",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=40"
+      },
+      {
+        "title": "Financial Services & Fintech",
+        "image": "https://images.unsplash.com/photo-1559526324-593bc073d938?w=400&q=40"
+      },
+      {
+        "title": "Consumer & Retail",
+        "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&q=40"
+      },
+      {
+        "title": "Education & EdTech",
+        "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=40"
+      },
+      {
+        "title": "E-commerce & Platforms",
+        "image": "https://images.unsplash.com/photo-1515165562835-c4c8c7c1adcc?w=400&q=40"
+      },
+      {
+        "title": "Renewable Energy",
+        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=40"
+      },
+      {
+        "title": "IT & Technology Services",
+        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&q=40"
+      }
+    ]
+  },
+  "recognition": {
+    "title": "Recognition & Market Feedback",
+    "description": "We believe that our clients' experiences speak volumes about the quality of our legal services. Here's what some of them have to say:",
+    "testimonials": [
+      {
+        "text": "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
+        "author": "Corporate/Mergers and Acquisitions"
+      },
+      {
+        "text": "Their expertise was impressive...",
+        "author": "Startup Founder"
+      },
+      {
+        "text": "Their expertise was impressive...",
+        "author": "Startup Founder"
+      },
+      {
+        "text": "Their expertise was impressive...",
+        "author": "Startup Founder"
+      }
+    ],
+    "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
+    "continent": "  Asia Pacific 2026",
+    "button": {
+      "label": "View on Chambers and Partners"
+    },
+    "testimonialUI": {
+      "bg": "bg-[#B6996A]",
+      "textColor": "!text-white",
+      "dotActive": "#ffffff",
+      "dotInactive": "rgba(255,255,255,0.4)",
+      "leftArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202.png",
+      "rightArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202%20(1).png"
+    }
+  },
+  "leadershipTeam": {
+    "title": "Leadership Team",
+    "description": "Kaizen Law is led by experienced corporate and transaction lawyers with backgrounds at leading law firms in India.",
+    "members": [
+      {
+        "name": "Harsh",
+        "role": "Legal Advisor",
+        "desc": "Expert in corporate and transaction advisory.",
+        "img": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=500&q=50"
+      },
+      {
+        "name": "Emma",
+        "role": "Partner",
+        "desc": "Specialist in mergers and acquisitions.",
+        "img": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=50"
+      },
+      {
+        "name": "John",
+        "role": "Senior Counsel",
+        "desc": "Corporate compliance expert.",
+        "img": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=50"
+      },
+      {
+        "name": "Sarah",
+        "role": "Associate Partner",
+        "desc": "Startup and VC advisory.",
+        "img": "https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?w=500&q=50"
+      },
+      {
+        "name": "David",
+        "role": "Tax Consultant",
+        "desc": "International tax structuring.",
+        "img": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=500&q=50"
+      },
+      {
+        "name": "Lisa",
+        "role": "Legal Head",
+        "desc": "Regulatory and compliance specialist.",
+        "img": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&q=50"
+      },
+      {
+        "name": "Michael",
+        "role": "Managing Partner",
+        "desc": "Business and corporate strategy.",
+        "img": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&q=50"
+      },
+      {
+        "name": "Sophia",
+        "role": "Senior Associate",
+        "desc": "Investment and PE advisory.",
+        "img": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=500&q=50"
+      }
+    ]
+  },
+  "privateEquityHero": {
+    "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+    "title": "Ready To Talk?",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "subText": "I want to talk to your experts in:",
+    "selectIndustryText": "Select an Industry",
+    "button": {
+      "label": "View Representative Transactions"
+    }
+  },
+  "letsConnect": {
+    "title": ["Lets", "Connect"],
+    "enter":"enter",
+    "form": {
+      "newsletterText": "SUBSCRIBE TO OUR NEWSLETTER",
+      "placeholder": "email address",
+      "submitLabel": "→ submit"
+    },
+    "thankYou": {
+      "heading": "Thank You 💙",
+      "message": "We will connect with you soon."
+    }
+  }
+}

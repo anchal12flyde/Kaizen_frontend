@@ -5,6 +5,7 @@ import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import aboutData from "@/data/about.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,10 +47,12 @@ const sectorsData = [
   },
 ];
 
-export default function SectorExperience({ sectors = sectorsData }) {
+export default function SectorExperience({ data }) {
   const [isMobile, setIsMobile] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const { sectorExperience } = aboutData;
+  data = data || sectorExperience;
+  const { title, sectors } = data;
   const sectionRef = useRef(null);
   const imageRef = useRef(null);
 
@@ -113,104 +116,96 @@ export default function SectorExperience({ sectors = sectorsData }) {
     );
   }, [activeIndex]);
 
-  
   if (isMobile === null) return null;
 
   return (
     <>
       <section>
-       
-
-          {/* ================= DESKTOP ================= */}
-          {isDesktop ? (
-             <section>
-             <Container
-               variant="sectionSp1"
-               className="flex flex-col gap-[96px] bg-[#F7F4EB] overflow-visible"
-             >
-               <Typography variant="header-6" className="text-center">
-                 Sector Experience
-               </Typography>
-            <div className="w-full">
-              {sectors.map((item, index) => {
-                const isRight = index % 2 === 0;
-
-                return (
-                  <div
-                    key={index}
-                    className={`${
-                      index === sectors.length - 1
-                        ? "borderBottomSec"
-                        : "borderTopSec"
-                    } py-[20px] sector-item`}
-                  >
-                    <Typography variant="header-2" className="text-center">
-                      {item.title}
-                    </Typography>
-
-                    <div
-                      className={`tooltip ${
-                        isRight ? "right" : "left"
-                      } !rounded-none`}
-                    >
-                      <img src={item.image} alt={item.title} />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            </Container>
-            </section>
-          ) : (
-            <section ref={sectionRef}>
-            <div
-              
-              className="flex flex-col gap-[60px] bg-[#F7F4EB] overflow-visible"
+        {/* ================= DESKTOP ================= */}
+        {isDesktop ? (
+          <section>
+            <Container
+              variant="sectionSp1"
+              className="flex flex-col gap-[96px] bg-[#F7F4EB] overflow-visible"
             >
               <Typography variant="header-6" className="text-center">
-                Sector Experience
+                {title}
               </Typography>
-            <div ref={sectionRef}>
-              <div className="flex flex-col  justify-center px-[24px]">
-                
-                {sectors.map((item, index) => (
-                  <div
-                    key={index}
-                    className={`py-[20px] transition-all duration-300 ${
-                      index === sectors.length - 1
-                        ? "borderBottomSec"
-                        : "borderTopSec"
-                    }`}
-                  >
-                    <Typography
-                      variant="header-2"
-                      className={`text-center transition-all duration-300 ${
-                        index === activeIndex
-                          ? "text-black opacity-100 scale-105"
-                          : "text-black/30 opacity-50"
+              <div className="w-full">
+                {sectors.map((item, index) => {
+                  const isRight = index % 2 === 0;
+
+                  return (
+                    <div
+                      key={index}
+                      className={`${
+                        index === sectors.length - 1
+                          ? "borderBottomSec"
+                          : "borderTopSec"
+                      } py-[20px] sector-item`}
+                    >
+                      <Typography variant="header-2" className="text-center">
+                        {item.title}
+                      </Typography>
+
+                      <div
+                        className={`tooltip ${
+                          isRight ? "right" : "left"
+                        } !rounded-none`}
+                      >
+                        <img src={item.image} alt={item.title} />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </Container>
+          </section>
+        ) : (
+          <section ref={sectionRef}>
+            <div className="flex flex-col gap-[60px] bg-[#F7F4EB] overflow-visible">
+              <Typography variant="header-6" className="text-center">
+                {title}
+              </Typography>
+              <div ref={sectionRef}>
+                <div className="flex flex-col  justify-center px-[24px]">
+                  {sectors.map((item, index) => (
+                    <div
+                      key={index}
+                      className={`py-[20px] transition-all duration-300 ${
+                        index === sectors.length - 1
+                          ? "borderBottomSec"
+                          : "borderTopSec"
                       }`}
                     >
-                      {item.title}
-                    </Typography>
-                  </div>
-                ))}
+                      <Typography
+                        variant="header-2"
+                        className={`text-center transition-all duration-300 ${
+                          index === activeIndex
+                            ? "text-black opacity-100 scale-105"
+                            : "text-black/30 opacity-50"
+                        }`}
+                      >
+                        {item.title}
+                      </Typography>
+                    </div>
+                  ))}
 
-                {/* IMAGE */}
-                <div className="w-full h-[180px] mt-[40px] overflow-hidden">
-                  <img
-                    ref={imageRef}
-                    key={activeIndex}
-                    src={sectors[activeIndex]?.image}
-                    alt="sector preview"
-                    className="w-full h-full object-cover"
-                  />
+                  {/* IMAGE */}
+                  <div className="w-full h-[180px] mt-[40px] overflow-hidden">
+                    <img
+                      ref={imageRef}
+                      key={activeIndex}
+                      src={sectors[activeIndex]?.image}
+                      alt="sector preview"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-            </div>
-            </section>
-          )}
-       
+          </section>
+        )}
 
         {/* ================= DESKTOP CSS ================= */}
         <style jsx>{`

@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
+import aboutData from "@/data/about.json";
 
 const team = [
   {
@@ -63,6 +64,9 @@ export default function LeadershipTeam() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
+  const { leadershipTeam } = aboutData;
+  const { title, description, members } = leadershipTeam;
+
   /* Mouse Drag Scroll */
   const handleMouseDown = (e) => {
     setIsDown(true);
@@ -98,12 +102,11 @@ export default function LeadershipTeam() {
       {/* Header */}
       <div className="flex md:flex-row flex-col  md:gap-[152px] gap-[42px]">
         <Typography variant="header-6" className="!text-white">
-          Leadership Team
+          {title}
         </Typography>
 
         <Typography variant="para-2" className="!text-white">
-          Kaizen Law is led by experienced corporate and transaction lawyers
-          with backgrounds at leading law firms in India.
+          {description}
         </Typography>
       </div>
 
@@ -116,7 +119,7 @@ export default function LeadershipTeam() {
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
       >
-        {team.map((item, index) => (
+        {members.map((item, index) => (
           <div key={index} className="team-card">
             <img src={item.img} alt={item.name} />
 
@@ -277,7 +280,7 @@ export default function LeadershipTeam() {
             height: 400px;
           }
           .team-track {
-          flex-direction:column;
+            flex-direction: column;
           }
         }
       `}</style>

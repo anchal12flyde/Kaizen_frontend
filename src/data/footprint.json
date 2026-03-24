@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "title": "Transaction Footprint",
+    "heading": "Complex, high-value transactions across sectors, stages, and transaction types",
+    "description": "Transactions are presented in an anonymised format in accordance with applicable confidentiality and regulatory considerations.",
+    "heroImage": "https://ik.imagekit.io/a9uxeuyhx/c8b4f7e16bf497a2e506a10e688d0d5d572bb78c.jpg"
+  },
+  "stats": [
+    {
+      "number": "100+",
+      "label": "Number of transactions facilitated"
+    },
+    {
+      "number": "$1B",
+      "label": "Aggregate transaction value advised on"
+    },
+    {
+      "number": "12+",
+      "label": "Years of transactional experience"
+    }
+  ],
+  "representativeMandates": {
+    "heading": "Representative Mandates",
+    "description": "A curated selection of transactions that reflect the complexity, scale, and diversity of our transactional experience. Details are shared in a concise and anonymised format, in line with confidentiality and regulatory considerations.",
+    "items": [
+      {
+        "title": "Mergers & Acquisitions",
+        "sector": "Technology",
+        "year": "2021",
+        "role": "Advisor to Company",
+        "desc": "Advised the promoters of a technology-enabled services company on the sale of a controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+      },
+      {
+        "title": "Mergers & Acquisitions",
+        "sector": "Technology",
+        "year": "2021",
+        "role": "Advisor to Company",
+        "desc": "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+      },
+      {
+        "title": "Mergers & Acquisitions",
+        "sector": "Technology",
+        "year": "2021",
+        "role": "Advisor to Company",
+        "desc": "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+      },
+      {
+        "title": "Mergers & Acquisitions",
+        "sector": "Technology",
+        "year": "2021",
+        "role": "Advisor to Company",
+        "desc": "Advised the promoters of a technology-enabled services company on the sale of a controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+      },
+      {
+        "title": "Mergers & Acquisitions",
+        "sector": "Technology",
+        "year": "2021",
+        "role": "Advisor to Company",
+        "desc": "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+      },
+      {
+        "title": "Mergers & Acquisitions",
+        "sector": "Technology",
+        "year": "2021",
+        "role": "Advisor to Company",
+        "desc": "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+      },
+      {
+        "title": "Mergers & Acquisitions",
+        "sector": "Technology",
+        "year": "2021",
+        "role": "Advisor to Company",
+        "desc": "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+      }
+    ]
+  },
+  "fullTransactionList": {
+    "heading": "Full Transaction List",
+    "description": "A comprehensive list of representative transactions advised by Kaizen Law, presented in an anonymised format and subject to confidentiality and regulatory considerations.",
+    "buttonLabel": "Filters",
+    "transactions": [
+      {
+        "labelText": "Capital Markets",
+        "mainText": "Advised a strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+        "roleText": "Advisor to Acquirer",
+        "sectorText": "Technology",
+        "transactionValue": "305cr INR"
+      },
+      {
+        "labelText": "Capital Markets",
+        "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+        "roleText": "Advisor to Acquirer",
+        "sectorText": "Technology",
+        "transactionValue": "150cr INR"
+      },
+      {
+        "labelText": "Capital Markets",
+        "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+        "roleText": "Advisor to Acquirer",
+        "sectorText": "Technology",
+        "transactionValue": "150cr INR"
+      },
+      {
+        "labelText": "Capital Markets",
+        "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+        "roleText": "Advisor to Acquirer",
+        "sectorText": "Technology",
+        "transactionValue": "150cr INR"
+      },
+      {
+        "labelText": "Capital Markets",
+        "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+        "roleText": "Advisor to Acquirer",
+        "sectorText": "Technology",
+        "transactionValue": "150cr INR"
+      }
+    ]
+  }
+}
+ 

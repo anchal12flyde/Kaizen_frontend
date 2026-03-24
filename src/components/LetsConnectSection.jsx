@@ -4,12 +4,14 @@ import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Typography from "./ui-kit/typography";
+import aboutData from "@/data/about.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LetsConnectSection() {
   const sectionRef = useRef(null);
-
+  const { letsConnect } = aboutData;
+  const { title, form, thankYou } = letsConnect;
   const letsRef = useRef(null);
   const connectRef = useRef(null);
 
@@ -124,8 +126,8 @@ export default function LetsConnectSection() {
       {/* TEXT */}
       {!submitted && (
         <div className="text-wrapper">
-          <h1 ref={letsRef}>Lets</h1>
-          <h1 ref={connectRef}>Connect</h1>
+          <h1 ref={letsRef}>{title[0]}</h1>
+          <h1 ref={connectRef}>{title[1]}</h1>
         </div>
       )}
 
@@ -133,21 +135,21 @@ export default function LetsConnectSection() {
       {!submitted && (
         <form onSubmit={handleSubmit} className="newsletter-form">
           <span ref={enterRef} className="side-text">
-            enter
+           {letsConnect.enter}
           </span>
 
-          <div ref={inputRef} className=" flex flex-col items-center  " >
-            <Typography variant="para1" className="!text-white " >SUBSCRIBE TO OUR NEWSLETTER</Typography>
+          <div ref={inputRef} className=" flex flex-col items-center  ">
+            <Typography variant="para1" className="!text-white ">
+              {form.newsletterText}
+            </Typography>
             <input
               type="email"
               name="email"
               autoComplete="email"
-              placeholder="email address"
+              placeholder={form.placeholder}
               required
               className="newsletter-input"
-              onFocus={() =>
-                gsap.to(inputRef.current, )
-              }
+              onFocus={() => gsap.to(inputRef.current)}
               onBlur={() =>
                 gsap.to(inputRef.current, { scale: 1, duration: 0.3 })
               }
@@ -159,7 +161,7 @@ export default function LetsConnectSection() {
             type="submit"
             className="side-text submit-btn"
           >
-            → submit
+            {form.submitLabel}
           </button>
         </form>
       )}
@@ -167,8 +169,8 @@ export default function LetsConnectSection() {
       {/* THANK YOU */}
       {submitted && (
         <div ref={thanksRef} className="thank-you">
-          <h2>Thank You 💙</h2>
-          <p>We will connect with you soon.</p>
+          <h2>{thankYou.heading}</h2>
+          <p>{thankYou.message}</p>
         </div>
       )}
     </section>

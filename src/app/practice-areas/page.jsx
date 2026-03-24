@@ -4,28 +4,32 @@ import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const items = [
   {
     title: "Private Equity & Venture Capital",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+    link: "/private-equity",
   },
   {
     title: "Mergers & Acquisitions",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+    link: "/private-equity",
   },
   {
     title: "General Counsel Services",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+    link: "/private-equity",
   },
   {
     title: "Technology Law",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+    link: "/private-equity",
   },
 ];
 export default function ServicesListing () {
@@ -84,7 +88,6 @@ export default function ServicesListing () {
                 >
                   {/* Content */}
                   <div className="flex md:flex-row flex-col md:gap-[96px] gap-[16px]">
-                    
                     <div className="flex justify-between items-center md:block md:w-auto w-full">
                       <Typography
                         variant="header-1"
@@ -93,13 +96,15 @@ export default function ServicesListing () {
                         {item.title}
                       </Typography>
 
-                      
-                      <div className="md:hidden w-[30px] h-[30px]">
-                        <img
-                          src={item.icon}
-                          className="h-full w-full object-contain"
-                        />
-                      </div>
+                      <Link href={item.link} className="cursor-pointer">
+                        <div className="md:hidden w-[30px] h-[30px] cursor-pointer">
+                          <img
+                            src={item.icon}
+                            className="h-full w-full object-contain"
+                            alt={item.title}
+                          />
+                        </div>
+                      </Link>
                     </div>
 
                     {/* Description */}
@@ -110,17 +115,17 @@ export default function ServicesListing () {
                       {item.desc}
                     </Typography>
                   </div>
-
+                  <Link href={item.link} className="cursor-pointer">
                   <div className="hidden md:block md:w-[45px] md:h-[45px]">
                     <img
                       src={item.icon}
                       className="h-full w-full object-contain"
                     />
                   </div>
+                  </Link>
                 </div>
               ))}
 
-              
               <div className="border-t border-white/30"></div>
             </div>
           </div>

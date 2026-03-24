@@ -14,66 +14,71 @@ import Recognization from "@/components/recognization";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
+import aboutData from "@/data/about.json";
+
+
+const industries = [
+  "Finance",
+  "Healthcare",
+  "Technology",
+  "Real Estate",
+  "Energy",
+];
 
 export default function About() {
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!email) {
       alert("Please enter email");
       return;
     }
-
-    console.log("Submitted Email:", email);
-
-    
-
     setEmail(""); 
   };
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState("");
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+  const selectIndustry = (industry) => {
+    setSelected(industry);
+    setIsOpen(false);
+  };
+  const { aboutHero, privateEquityHero, letsConnect,whyClients } = aboutData;
+  
+    const { title, form, thankYou } = letsConnect;
   return (
     <div>
       <Header />
       <AboutHeroSection
-        bgImage="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
+        bgImage={aboutHero.bgImage}
+        align={aboutHero.align}
+        buttons={aboutHero.buttons}
         title={
           <>
-            A Transaction-Focused
-            <br />
-            Law Firm Built on <br /> Precision and Execution
+            {aboutHero.title.split("\n").map((line, i) => (
+              <span key={i}>
+                {line}
+                <br />
+              </span>
+            ))}
           </>
         }
-        description={
-          <>
-            Kaizen Law is a corporate and transaction advisory firm delivering
-            big-firm quality advice through a partner-led, boutique model.
-          </>
-        }
-        align="left"
-        buttons={[
-          {
-            label: "Explore Our Practise",
-            variant: "primary",
-          },
-          {
-            label: "Meet Our Team",
-            variant: "white",
-          },
-        ]}
+        description={<>{aboutHero.description}</>}
       />
       <OurStorySection />
       <KaizenPhilosophySection />
-      <GuidesSection />
-      <WhyChooseSection />
+      <GuidesSection data={aboutData.guides} />
+      <WhyChooseSection data={whyClients} />
       <SectorExperience />
       <Recognization />
       <LeadershipTeam />
       <Container variant="primarySpacing" className=" privateEquityHeroCopy">
         {/* Background Image */}
         <Image
-          src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
-          alt="Kaizen Hero"
+          src={privateEquityHero.bgImage}
           fill
           className="hero-background"
           priority
@@ -86,51 +91,107 @@ export default function About() {
         <>
           <Container
             variant="sectionSp1"
-            className=" absolute inset-0  flex items-center justify-center  "
+            className=" absolute inset-0  flex  justify-center  "
           >
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
               <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography variant="header-5" className=" !text-white ">
-                  Ready To Talk?
+                  {privateEquityHero.title}
                 </Typography>
                 <Typography
                   variant="para-2"
                   className=" !text-white mt-[26px] "
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  {privateEquityHero.description}
                 </Typography>
 
                 <div className="mt-[57px] mb-[32px] flex flex-col gap-[16px]">
                   <Typography variant="header-4" className="!text-white">
-                    I want to talk to your experts in:
+                    {privateEquityHero.subText}
                   </Typography>
-                  <div className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0">
-                    <Typography variant="para-2" className="!text-white">
-                      {" "}
-                      Select an Industry
-                    </Typography>
+                  <div className="relative w-full">
+                    {/* Dropdown container when open */}
+                    {isOpen ? (
+                      <div
+                        className="absolute  w-full shadow-md px-[8px]"
+                        style={{
+                          boxShadow: "1px 0px 8px 1px #00000033",
+                          backgroundColor: "#B6996A",
+                          zIndex: 10,
+                        }}
+                      >
+                        {/* Trigger inside dropdown */}
+                        <div
+                          onClick={toggleDropdown}
+                          className="w-full h-[32px] border-b border-white flex items-center justify-between cursor-pointer"
+                        >
+                          <Typography variant="para-2" className="!text-white">
+                            {selected || privateEquityHero.selectIndustryText}
+                          </Typography>
 
-                    {/* Arrow */}
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="text-white"
-                    >
-                      <path
-                        d="M6 9L12 15L18 9"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            className="text-white transition-transform duration-300"
+                            style={{ transform: "rotate(180deg)" }} // Arrow flips when open
+                          >
+                            <path
+                              d="M6 9L12 15L18 9"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </div>
+
+                        {/* Options */}
+                        <div className="mt-2">
+                          {industries.map((industry) => (
+                            <div
+                              key={industry}
+                              onClick={() => selectIndustry(industry)}
+                              className="px-[12px] py-[6px] hover:bg-white/20 cursor-pointer text-white "
+                            >
+                              {industry}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      // Trigger when closed
+                      <div
+                        onClick={toggleDropdown}
+                        className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0 cursor-pointer px-2"
+                      >
+                        <Typography variant="para-2" className="!text-white">
+                          {selected || privateEquityHero.selectIndustryText}
+                        </Typography>
+
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          className="text-white transition-transform duration-300"
+                          style={{ transform: "rotate(0deg)" }}
+                        >
+                          <path
+                            d="M6 9L12 15L18 9"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white md:text-[24px] text-[18px]">
-                  View Representative Transactions
+                  {privateEquityHero.button.label}
                 </button>
               </div>
               <div></div>
@@ -146,30 +207,30 @@ export default function About() {
 
       {/* Mobile only */}
       <div className="block md:hidden px-[28px] py-[220px] bg-[#0A193A]">
-      <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-[56px] text-center relative"
-    >
-      <Typography variant="display-3" className="!text-white">
-        Lets Connect
-      </Typography>
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-[56px] text-center relative"
+        >
+          <Typography variant="display-3" className="!text-white">
+            {title[0]} {title[1]}
+          </Typography>
 
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter Email Address"
-        className="w-full bg-transparent outline-none 
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder={`${letsConnect.enter} ${form.placeholder}`}
+            className="w-full bg-transparent outline-none 
                    text-white placeholder:text-white/50 text-center"
-        required
-      />
+            required
+          />
 
-      <button type="submit" className="w-full text-center">
-        <Typography variant="header-2" className="!text-white">
-          Submit
-        </Typography>
-      </button>
-      </form>
+          <button type="submit" className="w-full text-center">
+            <Typography variant="header-2" className="!text-white">
+              {form.submitLabel}
+            </Typography>
+          </button>
+        </form>
       </div>
       {/* <Container
         variant="sectionSp1"

@@ -3,30 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Typography from "./ui-kit/typography";
+import equityData from "@/data/privateEquity.json";
 
-const sections = [
-  {
-    id: 1,
-    title: "Who We Advise",
-    desc: `Kaizen Law works with private equity funds, venture capital investors, and growth-stage companies across sectors. We support both sides of the investment ecosystem — investors deploying capital and founders raising capital to build and scale businesses.`,
-    image: "https://ik.imagekit.io/flyde/Frame%202147238636.png",
-    reverse: false,
-  },
-  {
-    id: 2,
-    title: "What We Do",
-    desc: `Our practice covers the full lifecycle of investments, including early stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.`,
-    image: "https://ik.imagekit.io/flyde/Frame%202147238636.png",
-    reverse: true,
-  },
-  {
-    id: 3,
-    title: "How We Think",
-    desc: `We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.`,
-    image: "https://ik.imagekit.io/flyde/Frame%202147238636.png",
-    reverse: false,
-  },
-];
 
 const slideVariant = (from) => ({
   hidden: {
@@ -44,6 +22,8 @@ const slideVariant = (from) => ({
 });
 
 export default function AdvisorySection() {
+  const sections = equityData.advisorySections;
+
   return (
     <section className="w-full overflow-hidden bg-[var(--color-background-1)]">
       {sections.map((item, index) => {

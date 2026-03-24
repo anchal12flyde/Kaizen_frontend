@@ -7,15 +7,19 @@ import { Container } from "@/components/ui-kit/spacing";
 import Button from "@/components/ui-kit/button";
 import Image from "next/image";
 import Testimonials from "@/components/ui-kit/testimonials";
+import homeData from "@/data/home.json";
 
 export default function Home() {
+  const { recognition } = homeData;
+  const { hero, improvement, evaluation, bannerImage, overlayImage } = homeData;
+
   return (
     <div>
       <Header />
       <section className="hero-section">
         <Image
-          src="https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
-          alt="Kaizen Hero"
+          src={hero.image}
+          alt={hero.title}
           fill
           className="hero-background"
           priority
@@ -27,7 +31,7 @@ export default function Home() {
           <div>
             <div className="mb-[42px]">
               <Typography variant="hero-display" colorVariant="white">
-                Legal Advisory
+                {hero.title}
               </Typography>
             </div>
 
@@ -36,9 +40,14 @@ export default function Home() {
                 delay={0.4}
                 variant="header-hero"
                 colorVariant="white"
-                className="lg:w-[623px] w-full flex-shrink-0 "
+                className="lg:w-[623px] w-full flex-shrink-0"
               >
-                For Complex Deals <br /> and Critical Decisions
+                {hero.heading.split("\n").map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
               </Typography>
 
               <Typography
@@ -47,9 +56,7 @@ export default function Home() {
                 colorVariant="white"
                 className="lg:w-[370px] w-full flex-shrink-0"
               >
-                Kaizen Law is a corporate and transaction-focused law firm
-                advising businesses, founders, and investors across M&A, private
-                equity, capital markets, and general counsel mandates.
+                {hero.description}
               </Typography>
             </div>
           </div>
@@ -58,41 +65,34 @@ export default function Home() {
       {/* Second Section */}
       <Container className="section-bg" variant="primarySpacing">
         <div>
-          <Typography variant="header-1">
-            Built on the Principle of Continuous Improvement
-          </Typography>
+          <Typography variant="header-1">{improvement.title}</Typography>
 
           <div className="inprovementSection">
-            <Typography className="text-block" variant="para-2" delay={0.4}>
-              Kaizen is not about dramatic change. It is about deliberate
-              progress : refining structures, strengthening positions, and
-              anticipating what lies ahead. This philosophy defines how we
-              approach every mandate, from early-stage advisory to complex,
-              multi-party transactions.
-            </Typography>
-
-            <Typography className="text-block" variant="para-2" delay={0.6}>
-              In mergers and acquisitions, value is rarely created by a single
-              decisive moment. It is built through disciplined preparation,
-              careful structuring, informed negotiation, and precise execution.
-              Our Kaizen approach reflects this reality. We focus on incremental
-              advantage at every stage of a transaction — identifying risk
-              early, refining deal terms continuously, and aligning legal
-              strategy with commercial objectives. The result is not just deal
-              completion, but durable outcomes that withstand scrutiny and time.
-            </Typography>
+            {improvement.paragraphs.map((text, index) => (
+              <Typography
+                key={index}
+                className="text-block"
+                variant="para-2"
+                delay={0.4 + index * 0.2}
+              >
+                {text}
+              </Typography>
+            ))}
           </div>
 
-          <Button className="inprovementSectionBtn">More About Kaizen</Button>
+          <Button className="inprovementSectionBtn">
+            {improvement.buttonText}
+          </Button>
         </div>
       </Container>
+
       <div className="relative w-full h-[280px] md:h-full">
         <Image
-          src="https://ik.imagekit.io/75zj3bigp/7d11d9363b24d18bf891f3cb0eaa9eb909fbb467.png"
-          width={1200}
-          height={800}
+          src={bannerImage.src}
+          width={bannerImage.width}
+          height={bannerImage.height}
           className="object-cover w-full h-full"
-          alt=""
+          alt={bannerImage.alt}
         />
       </div>
 
@@ -100,23 +100,35 @@ export default function Home() {
         <Container className="evaluationSection" variant="primarySpacing">
           <div>
             <Typography colorVariant="white" variant="header-1">
-              Advising Across <br /> the Full Deal Lifecycle
+              {evaluation.title.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  <br />
+                </span>
+              ))}
             </Typography>
           </div>
+
           <div className="flex flex-col md:gap-0 gap-[8px]">
             <Typography colorVariant="white" variant="display-3" delay={0.4}>
-              Strategic Evaluation <br />
-              Structuring & Planning <br />
-              Due Diligence <br />
-              Negotiation <br />
-              Documentation & Execution <br />
-              Closing & Completion
+              {evaluation.steps.map((step, i) => (
+                <span key={i}>
+                  {step}
+                  <br />
+                </span>
+              ))}
             </Typography>
+
             <Typography variant="punctuation" delay={0.6}>
-              +Post-Transaction Integration & Compliance
+              {evaluation.highlight}
             </Typography>
-            <Button className="evaluationBtn !w-fit" variant="white" delay={0.8}>
-              Explore Capabilities
+
+            <Button
+              className="evaluationBtn !w-fit"
+              variant="white"
+              delay={0.8}
+            >
+              {evaluation.buttonText}
             </Button>
           </div>
         </Container>
@@ -126,57 +138,36 @@ export default function Home() {
         variant="primarySpacing"
         className="flex flex-col items-center overflow-hidden w-full"
       >
-        <Typography variant="header-1">
-          Recognition & Market Feedback
-        </Typography>
+        <Typography variant="header-1">{recognition.title}</Typography>
+
         <div className="flex flex-col gap-[56px] items-center text-center">
           <Typography
             variant="para-2"
             className="mt-[32px] lg:w-[480px] w-full"
             delay={0.4}
           >
-            We believe that our clients' experiences speak volumes about the
-            quality of our legal services. Here's what some of them have to say:
+            {recognition.description}
           </Typography>
 
-          <Testimonials
-            data={[
-              {
-                text: "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
-                author: "Corporate/Mergers and Acquisitions",
-              },
-              {
-                text: "Their expertise was impressive...",
-                author: "Startup Founder",
-              },
-              {
-                text: "Their expertise was impressive...",
-                author: "Startup Founder",
-              },
-              {
-                text: "Their expertise was impressive...",
-                author: "Startup Founder",
-              },
-            ]}
-          />
+          <Testimonials data={recognition.testimonials} />
 
           <div className="flex flex-col md:gap-[74px] gap-[36px]">
             <Typography variant="para-2" delay={0.6}>
-              {" "}
-              Asia Pacific 2026
+              {recognition.award.year}
             </Typography>
-            <div className="relative w-full h-full ">
+
+            <div className="relative w-full h-full">
               <Image
-                src="https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg"
+                src={recognition.award.image}
                 width={183}
                 height={154}
                 className="object-cover w-full h-full"
-                alt=""
+                alt={recognition.award.alt}
               />
             </div>
 
             <Button variant="primary" delay={0.4}>
-              View on Chambers and Partners
+              {recognition.buttonText}
             </Button>
           </div>
         </div>
@@ -184,7 +175,7 @@ export default function Home() {
 
       <div className="relative w-full h-[280px] md:h-full">
         <Image
-          src="https://ik.imagekit.io/a9uxeuyhx/c187c8de4a3719b0bf6fce2d5297411e54a28f20.png"
+          src={overlayImage.src}
           width={1200}
           height={800}
           className="object-cover w-full h-full"

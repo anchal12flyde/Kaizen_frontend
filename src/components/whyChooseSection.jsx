@@ -6,13 +6,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
-export default function WhyChooseSection() {
+export default function WhyChooseSection({ data = { title: "", subtitle: "", cards: [] } }) {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
-
+ 
   useEffect(() => {
     const checkScreen = () => {
       setIsMobile(window.innerWidth <= 740);
@@ -23,34 +24,6 @@ export default function WhyChooseSection() {
 
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
-
-  const cardsData = [
-    {
-      title: "Big-Firm Quality",
-      desc: "Institutional-grade advice with boutique agility.",
-      img: "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg",
-    },
-    {
-      title: "Partner Led",
-      desc: "Handled directly by senior partners.",
-      img: "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg",
-    },
-    {
-      title: "Strategic Thinking",
-      desc: "Focused on long-term growth.",
-      img: "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg",
-    },
-    {
-      title: "Client First",
-      desc: "Your success comes first.",
-      img: "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg",
-    },
-    {
-      title: "Execution Ready",
-      desc: "Strategy that actually ships.",
-      img: "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg",
-    },
-  ];
 
   useLayoutEffect(() => {
     if (isMobile) return;
@@ -217,16 +190,11 @@ export default function WhyChooseSection() {
           <Container variant="primarySpacing">
             <div className=" flex flex-col gap-[40px]">
               <div className="flex flex-col gap-[16px] ">
-                <Typography variant="header-6">
-                  Why Clients Choose <br /> Kaizen Law
-                </Typography>
-
-                <Typography variant="para-2">
-                  We deliver big-firm quality with boutique agility.
-                </Typography>
+                <Typography variant="header-6">{data.title}</Typography>
+                <Typography variant="para-2">{data.subtitle}</Typography>
               </div>
 
-              {cardsData.map((card, i) => (
+              {data.cards.map((card, i) => (
                 <div
                   key={i}
                   className="border-[0.5px] border-[#31110F] p-[16px] flex flex-col gap-[85px]"
@@ -237,11 +205,13 @@ export default function WhyChooseSection() {
 
                     <Typography variant="para-2">{card.desc}</Typography>
 
-                    <img
-                      src={card.img}
-                      alt={card.title}
-                      className="w-full h-[220px] object-cover"
-                    />
+                    {card.img && (
+                      <img
+                        src={card.img}
+                        alt={card.title}
+                        className="w-full h-[220px] object-cover"
+                      />
+                    )}
                   </div>
                 </div>
               ))}
@@ -259,17 +229,12 @@ export default function WhyChooseSection() {
             >
               {/* LEFT TEXT */}
               <div className="min-w-[520px] max-w-[520px] pr-16 mr-[200px] flex flex-col !gap-[96px] ">
-                <Typography variant="para-1">
-                  Why Clients Choose <br /> Kaizen Law
-                </Typography>
-
-                <Typography variant="para-2">
-                  We deliver big-firm quality with boutique agility.
-                </Typography>
+                <Typography variant="para-1">{data.title}</Typography>
+                <Typography variant="para-2">{data.subtitle}</Typography>
               </div>
 
               {/* CARDS */}
-              {cardsData.map((card, i) => (
+              {data.cards.map((card, i) => (
                 <div
                   key={i}
                   className={`
@@ -307,20 +272,15 @@ export default function WhyChooseSection() {
                     </div>
 
                     {/* IMAGE WRAPPER */}
-                    <div
-                      className="
-                card-image
-                w-full
-                overflow-hidden
-                
-              "
-                    >
-                      <img
-                        src={card.img}
-                        alt={card.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    {card.img && (
+                      <div className="card-image w-full overflow-hidden">
+                        <img
+                          src={card.img}
+                          alt={card.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

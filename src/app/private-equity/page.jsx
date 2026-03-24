@@ -1,3 +1,5 @@
+"use client";
+import React from "react";
 import AdvisorySection from "@/components/advisorySection";
 import BlogGridSection from "@/components/blogCardsGrid";
 import OurApproachSection from "@/components/ourApproachSection";
@@ -11,6 +13,8 @@ import Typography from "@/components/ui-kit/typography";
 import WhyChooseSection from "@/components/whyChooseSection";
 import Image from "next/image";
 import Recognization from "@/components/recognization";
+import equity from "@/data/privateEquity.json";
+import Testimonials from "@/components/ui-kit/testimonials";
 
 
 const data = [
@@ -38,7 +42,18 @@ const topContent = {
   subtitle:
     "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
 };
-export default function PrivateEquity() {
+export default function privateEquity({ data }) {
+  const { recognition } = data || equity;
+  const {
+    title,
+    description,
+    testimonials,
+    image,
+    button,
+    continent,
+    testimonialUI,
+
+  } = recognition;
   const services = [
     {
       title: "Early-Stage Fundraising",
@@ -66,6 +81,17 @@ export default function PrivateEquity() {
         "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
     },
   ];
+  const {
+    privateEquity,
+    overview,
+    pevcPractice,
+    investmentLifecycle,
+    stackedServices,
+    whyClients,
+    privateEquityHero,
+    relatedInsights,
+    cta,
+  } = equity;
 
   return (
     <div className="!overflow-x-none">
@@ -73,7 +99,7 @@ export default function PrivateEquity() {
       <section className="hero-section">
         {/* Background Image */}
         <Image
-          src="https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
+          src={privateEquity.image}
           alt="Kaizen Hero"
           fill
           className="hero-background"
@@ -88,7 +114,7 @@ export default function PrivateEquity() {
           <div>
             <div className="md:mb-[26px] mb-[42px]">
               <Typography variant="display-3" colorVariant="white">
-                Private Equity & Venture Capital
+                {privateEquity.title}
               </Typography>
             </div>
 
@@ -99,8 +125,12 @@ export default function PrivateEquity() {
                 colorVariant="white"
                 className="lg:w-[623px] w-full flex-shrink-0 "
               >
-                Advisory for Investors and <br />
-                Growth-Stage Companies <br /> Across the Investment Lifecycl
+                {privateEquity.subtitle.split("<br />").map((line, idx) => (
+                  <>
+                    {line}
+                    <br />
+                  </>
+                ))}
               </Typography>
 
               <Typography
@@ -109,9 +139,7 @@ export default function PrivateEquity() {
                 colorVariant="white"
                 className="lg:w-[370px] w-full flex-shrink-0"
               >
-                Kaizen Law is a corporate and transaction-focused law firm
-                advising businesses, founders, and investors across M&A, private
-                equity, capital markets, and general counsel mandates.
+                {privateEquity.description}
               </Typography>
             </div>
           </div>
@@ -122,37 +150,37 @@ export default function PrivateEquity() {
         variant="primarySpacing"
         className=" flex flex-col md:gap-[16px] gap-[36px] items-center bg-[#F7F4EB]    "
       >
-        <Typography variant="header-6">Overview</Typography>
+        <Typography variant="header-6">{overview.title}</Typography>
         <Typography
           variant="para-2"
           className="md:w-[716px] w-full text-center "
         >
-          Kaizen Law is a corporate and transaction advisory firm delivering
-          big-firm quality advice through a partner-led, boutique model.
+          {overview.description}
         </Typography>
       </Container>
 
       <AdvisorySection />
-      <PEVCPracticeSection cardsData={data} topContent={topContent} />
+      <PEVCPracticeSection
+        cardsData={pevcPractice.cardsData}
+        topContent={pevcPractice.topContent}
+      />
       <Container
         variant="sectionSp3"
         className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] "
       >
-        <Typography variant="header-6">
-          Advising Across the Investment Lifecycle
-        </Typography>
+        <Typography variant="header-6">{investmentLifecycle.title}</Typography>
         <Typography variant="para-2">
-          We advise clients at each stage of the investment journey:
+          {investmentLifecycle.description}
         </Typography>
       </Container>
-      <StackedServicesSection items={services} />
-      <WhyChooseSection />
+      <StackedServicesSection items={stackedServices} />
+      <WhyChooseSection data={whyClients} />
       <OurApproachSection />
 
       <Container variant="primarySpacing" className=" privateEquityHeroCopy">
         {/* Background Image */}
         <Image
-          src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
+          src={privateEquityHero.bgImage}
           alt="Kaizen Hero"
           fill
           className="hero-background"
@@ -171,19 +199,16 @@ export default function PrivateEquity() {
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
               <div className="w-full md:w-[500px] h-full md:px-[36px] px-[16px] pt-[36px] md:pb-[113px] pb-[48px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography variant="header-5" className=" !text-white ">
-                  Representative Experience
+                  {privateEquityHero.title}
                 </Typography>
                 <Typography
                   variant="para-2"
                   className=" !text-white mt-[26px] "
                 >
-                  We have advised investors and growth-stage companies across
-                  technology, consumer, financial services, healthcare,
-                  infrastructure, and energy sectors on investments, follow-on
-                  rounds, and exits.
+                  {privateEquityHero.description}
                 </Typography>
                 <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white md:text-[24px] text-[18px]">
-                  View Representative Transactions
+                  {privateEquityHero.button.label}
                 </button>
               </div>
               <div></div>
@@ -191,45 +216,62 @@ export default function PrivateEquity() {
           </Container>
         </>
       </Container>
-      <Recognization />
+      <Container
+        variant="primarySpacing"
+        className="flex flex-col items-center text-center overflow-hidden w-full"
+      >
+        <Typography variant="header-6">{title}</Typography>
+        <div className="flex flex-col gap-[56px] items-center text-center">
+          <Typography
+            variant="para-2"
+            className="mt-[32px] lg:w-[480px] w-full"
+            delay={0.4}
+          >
+            {description}
+          </Typography>
+
+          <Testimonials
+            bg={testimonialUI.bg}
+            textColor={testimonialUI.textColor}
+            dotActive={testimonialUI.dotActive}
+            dotInactive={testimonialUI.dotInactive}
+            leftArrow={testimonialUI.leftArrow}
+            rightArrow={testimonialUI.rightArrow}
+            data={testimonials}
+          />
+
+          <div className="flex flex-col gap-[74px]">
+            <Typography variant="para-2" delay={0.6}>
+              {" "}
+              {continent}
+            </Typography>
+            <div className="relative w-full h-full hidden md:block">
+              <Image
+                src={image}
+                width={183}
+                height={154}
+                className="object-cover w-full h-full"
+                alt=""
+              />
+            </div>
+
+            <Button variant="primary" delay={0.4}>
+              {button.label}
+            </Button>
+          </div>
+        </div>
+      </Container>
       <Container
         variant="primarySpacing"
         className=" flex flex-col items-center gap-[16px] !pb-[20px] "
       >
-        <Typography variant="header-6">Related Insights</Typography>
-        <Typography variant="para-2">
-          We advise clients at each stage of the investment journey:
-        </Typography>
+        <Typography variant="header-6">{relatedInsights.title}</Typography>
+        <Typography variant="para-2">{relatedInsights.description}</Typography>
       </Container>
 
       <BlogGridSection
         variant="scroll"
-        posts={[
-          {
-            image: "https://ik.imagekit.io/demo/img/image1.jpg",
-            category: "Category",
-            title:
-              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
-            readTime: "4 min",
-            date: "14/09/2024",
-          },
-          {
-            image: "https://ik.imagekit.io/demo/img/image2.jpg",
-            category: "Category",
-            title:
-              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
-            readTime: "4 min",
-            date: "14/09/2024",
-          },
-          {
-            image: "https://ik.imagekit.io/demo/img/image3.jpg",
-            category: "Category",
-            title:
-              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
-            readTime: "4 min",
-            date: "14/09/2024",
-          },
-        ]}
+        posts={equity.blogs}
         buttonShow={true}
       />
       <Container
@@ -238,19 +280,17 @@ export default function PrivateEquity() {
       >
         <div className="flex flex-col gap-[16px] md:gap-[12px]">
           <Typography variant="header-5" className="!text-white">
-            Speak With Our Team
+            {cta.title}
           </Typography>
           <Typography
             variant="para-2"
             className="!text-white w-full md:w-[486px]"
           >
-            If you are evaluating an investment, planning a fundraising round,
-            or considering an exit, we would be pleased to discuss how Kaizen
-            Law can support your objectives.
+            {cta.description}
           </Typography>
         </div>
         <button className=" md:px-[36px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[24px] text-[18px]">
-          Schedule A Consulation →
+          {cta.buttonText}
         </button>
       </Container>
       <Footer />

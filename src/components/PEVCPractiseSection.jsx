@@ -44,8 +44,8 @@ const fadeUp = {
 export default function PEVCPracticeSection({
   careersPage = false,
   startupPage = false,
-  cardsData = [],
-  topContent = {},
+  cardsData,
+  topContent,
 }) {
   return (
     <Container variant="mainBox" className="bg-[#0A193A] ">
