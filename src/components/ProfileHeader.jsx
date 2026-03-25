@@ -6,58 +6,50 @@ import { Linkedin, Copyright } from "lucide-react";
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
 import useTypingText from "@/hooks/useTypingTesxt";
+import data from "@/data/profile.json";
 
 export default function ProfileHeader() {
   /* Typing Text */
-  const name = useTypingText("Harsh Kumar", 100);
-  const role = useTypingText("Founding Partner", 80);
+  const { profileHeader } = data;
 
+  const { name, role, phone, email, socials } = profileHeader;
+
+  /* Typing */
+  const typedName = useTypingText(name, 100);
+  const typedRole = useTypingText(role, 80);
   return (
     <Container variant="sectionSp1" className="!pb-0" animate={false}>
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         {/* Left Section */}
         <div>
           {/* Name Typing */}
-          <Typography variant="display-3" animate={false}>
-            {name}
-          </Typography>
+          <div>
+            <Typography variant="display-3">{typedName}</Typography>
 
-          {/* Role Typing */}
-          <Typography
-            variant="header-1"
-            animate={false}
-            className="!text-[var(--color-accent)] mt-[16px]"
-          >
-            {role}
-          </Typography>
+            <Typography
+              variant="header-1"
+              className="!text-[var(--color-accent)] mt-[16px]"
+            >
+              {typedRole}
+            </Typography>
+          </div>
         </div>
 
         {/* Right Section */}
         <div className="flex flex-col items-start md:items-end gap-3 text-[#C8A26A]">
           {/* Icons */}
           <div className="flex gap-3">
-            <Link
-              href="/"
-              className="w-9 h-9 rounded-full  flex items-center justify-center "
-            >
-              <img
-                src="https://ik.imagekit.io/a9uxeuyhx/Frame%202147238680.png"
-                size={18}
-              />
-            </Link>
-
-            <Link
-              href="https://linkedin.com"
-              target="_blank"
-              className="w-9 h-9 rounded-full  hover:bg-[#C8A26A] "
-            >
-              <img
-                src="https://ik.imagekit.io/a9uxeuyhx/Frame%202147238682.png"
-                size={18}
-              />
-            </Link>
+            {socials.map((item, index) => (
+              <Link
+                key={index}
+                href={item.link}
+                target={item.external ? "_blank" : "_self"}
+                className="w-[46] h-[46] flex items-center justify-center "
+              >
+                <img src={item.icon} className="w-full h-full" />
+              </Link>
+            ))}
           </div>
-
           {/* Contact */}
           <div className="text-sm md:text-right text-left leading-relaxed flex flex-col gap-[10px]">
             <Typography
@@ -65,7 +57,7 @@ export default function ProfileHeader() {
               animate={false}
               className="!text-[var(--color-accent)]"
             >
-              +91-9999191620
+              {phone}
             </Typography>
 
             <Typography
@@ -73,7 +65,7 @@ export default function ProfileHeader() {
               animate={false}
               className="!text-[var(--color-accent)]"
             >
-              harsh.kumar@kaizenlaw.in
+              {email}
             </Typography>
           </div>
         </div>

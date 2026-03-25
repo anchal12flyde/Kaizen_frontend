@@ -5,41 +5,12 @@ import Image from "next/image";
 import { Plus, Minus } from "lucide-react";
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
+import data from "@/data/profile.json";
 
-const accordionData = [
-  {
-    title: "About",
-    content: `Harsh is a highly experienced and recommended transactional lawyer with over 18 years of experience in advising on Indian laws. He specializes in mergers & acquisitions of listed and unlisted companies, private equity, and venture capital transactions. He has worked on complex, high-end transactions involving domestic and cross-border investments and acquisitions for leading Indian corporates, MNCs, and Indian start-ups and unicorns across diverse industry sectors such as manufacturing, healthcare, pharmaceuticals, e-commerce & logistics, I.T. & services, and new-age/sunrise sectors.
-
-    In addition to transactional work, Harsh advises companies on commercial and contractual matters and acts as an external advisor to the board of directors of leading Indian companies. He has previously worked as a partner at Cyril Amarchand Mangaldas and Shardul Amarchand Mangaldas and in the London office of Herbert Smith Freehills LLP, an international law firm, on international corporate law transactions.
-    
-    Harsh has been recognized for his legal expertise and leadership in the legal profession by Indian and international publications.`,
-    icon: "https://ik.imagekit.io/a9uxeuyhx/image%207%20(2).png",
-  },
-  {
-    title: "Areas of Specialisation",
-    content: `Mergers & Acquisitions,
-Private Equity,
-Venture Capital,
-Corporate Restructuring,
-Commercial Contracts.`,
-  },
-  {
-    title: "Memberships and Associations",
-    content: `Bar Council of India,
-International Bar Association,
-Indian National Bar Association.`,
-  },
-  {
-    title: "Education",
-    content: `LLB – Delhi University,
-LLM – University of London.`,
-  },
-];
 
 export default function ProfileAboutSection() {
   const [activeIndex, setActiveIndex] = useState(0); // First open by default
-
+  const accordionData = data.accordionData;
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };

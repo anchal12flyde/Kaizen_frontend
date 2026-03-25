@@ -1,0 +1,98 @@
+{
+  "insightsHero": {
+    "title": "Insights",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+  },
+  "insightsFilter": {
+    "searchPlaceholder": "Search",
+    "buttons": [
+      {
+        "label": "Filter"
+      },
+      {
+        "label": "Filter"
+      }
+    ]
+  },
+  "insightDetailHero": {
+    "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+
+    "category": "Category",
+
+    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+
+    "meta": {
+      "readTime": "4 min",
+      "date": "14/09/2024"
+    }
+  },
+  "blogs": [
+    {
+      "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+      "category": "Category",
+      "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+      "readTime": "4 min",
+      "date": "14/09/2024"
+    },
+    {
+      "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+      "category": "Category",
+      "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+      "readTime": "4 min",
+      "date": "14/09/2024"
+    },
+    {
+      "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+      "category": "Category",
+      "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+      "readTime": "4 min",
+      "date": "14/09/2024"
+    },
+    {
+      "image": "https://ik.imagekit.io/demo/img/image4.jpg",
+      "category": "Category",
+      "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+      "readTime": "4 min",
+      "date": "14/09/2024"
+    },
+    {
+      "image": "https://ik.imagekit.io/demo/img/image5.jpg",
+      "category": "Category",
+      "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+      "readTime": "4 min",
+      "date": "14/09/2024"
+    }
+  ],
+  "letsConnect": {
+    "title": ["Lets", "Connect"],
+    "enter": "enter",
+    "form": {
+      "newsletterText": "SUBSCRIBE TO OUR NEWSLETTER",
+      "placeholder": "email address",
+      "submitLabel": "→ submit"
+    },
+    "thankYou": {
+      "heading": "Thank You 💙",
+      "message": "We will connect with you soon."
+    }
+  },
+  "privateEquityHero": {
+    "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+    "title": "Ready To Talk?",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "subText": "I want to talk to your experts in:",
+    "selectIndustryText": "Select an Industry",
+    "industries": [
+      "Fintech",
+      "Healthcare",
+      "E-commerce",
+      "SaaS",
+      "Manufacturing"
+    ],
+    "button": {
+      "label": "View Representative Transactions"
+    }
+  }
+}

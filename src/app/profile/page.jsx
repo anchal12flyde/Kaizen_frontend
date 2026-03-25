@@ -10,8 +10,10 @@ import Testimonial from "@/components/ui-kit/testimonial";
 import Testimonials from "@/components/ui-kit/testimonials";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
+import profile from "@/data/profile.json";
 
 export default function ProfilePage() {
+  const {recognition,cta}=profile;
   return (
     <div className="bg-[#F7F4EB]">
       <Header />
@@ -21,17 +23,14 @@ export default function ProfilePage() {
         variant="primarySpacing"
         className="flex flex-col items-center text-center overflow-hidden w-full"
       >
-        <Typography variant="header-6">
-          Recognition & Market Feedback
-        </Typography>
+        <Typography variant="header-1">{recognition.title}</Typography>
         <div className="flex flex-col gap-[56px] items-center text-center">
           <Typography
             variant="para-2"
             className="mt-[32px] lg:w-[480px] w-full"
             delay={0.4}
           >
-            We believe that our clients' experiences speak volumes about the
-            quality of our legal services. Here's what some of them have to say:
+            {recognition.description}
           </Typography>
 
           <Testimonials
@@ -41,34 +40,17 @@ export default function ProfilePage() {
             dotInactive="rgba(255,255,255,0.4)"
             leftArrow="https://ik.imagekit.io/a9uxeuyhx/Vector%202.png"
             rightArrow="https://ik.imagekit.io/a9uxeuyhx/Vector%202%20(1).png"
-            data={[
-              {
-                text: "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
-                author: "Corporate/Mergers and Acquisitions",
-              },
-              {
-                text: "Their expertise was impressive...",
-                author: "Startup Founder",
-              },
-              {
-                text: "Their expertise was impressive...",
-                author: "Startup Founder",
-              },
-              {
-                text: "Their expertise was impressive...",
-                author: "Startup Founder",
-              },
-            ]}
+            data={recognition.testimonials}
           />
 
           <div className="flex flex-col gap-[74px]">
             <Typography variant="para-2" delay={0.6}>
               {" "}
-              Asia Pacific 2026
+              {recognition.award.year}
             </Typography>
             <div className="relative w-full h-full hidden md:block">
               <Image
-                src="https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg"
+                src={recognition.award.image}
                 width={183}
                 height={154}
                 className="object-cover w-full h-full"
@@ -77,7 +59,7 @@ export default function ProfilePage() {
             </div>
 
             <Button variant="primary" delay={0.4}>
-              View on Chambers and Partners
+              {recognition.buttonText}
             </Button>
           </div>
         </div>
@@ -89,18 +71,17 @@ export default function ProfilePage() {
       >
         <div className="flex flex-col gap-[16px] md:gap-[12px]">
           <Typography variant="header-5" className="!text-white">
-            Connect with Harsh Kumar
+            {cta.title}
           </Typography>
           <Typography
             variant="para-2"
             className="!text-white w-full md:w-[486px]"
           >
-            If you would like to discuss a transaction, investment, or strategic
-            legal matter, you may reach out directly or schedule a consultation.
+            {cta.description}
           </Typography>
         </div>
         <button className=" md:px-[36px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[24px] text-[18px]">
-          Schedule A Consulation →
+          {cta.buttonText}
         </button>
       </Container>
       <Footer />

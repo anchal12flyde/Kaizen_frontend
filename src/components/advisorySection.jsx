@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Typography from "./ui-kit/typography";
-import equityData from "@/data/privateEquity.json";
+import Typography from "./ui-kit/typography"
 
 
 const slideVariant = (from) => ({
@@ -21,8 +20,8 @@ const slideVariant = (from) => ({
   },
 });
 
-export default function AdvisorySection() {
-  const sections = equityData.advisorySections;
+export default function AdvisorySection({ sections = [] }) {
+ 
 
   return (
     <section className="w-full overflow-hidden bg-[var(--color-background-1)]">

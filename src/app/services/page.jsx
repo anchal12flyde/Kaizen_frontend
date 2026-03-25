@@ -1,3 +1,4 @@
+"use client";
 import Footer from "@/components/ui-kit/footer";
 import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
@@ -19,7 +20,7 @@ export default function Services() {
       label: "attorneys at hand",
     },
   ];
-  
+
   const services = [
     {
       title: "Business and Corporate Law",
@@ -82,7 +83,6 @@ export default function Services() {
         "Green cards and citizenship",
         "Deportation defense",
         "Employment-based immigration",
-       
       ],
     },
   ];

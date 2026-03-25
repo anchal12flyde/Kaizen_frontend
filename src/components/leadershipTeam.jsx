@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
 import aboutData from "@/data/about.json";
+import Link from "next/link";
 
 const team = [
   {
@@ -120,23 +121,25 @@ export default function LeadershipTeam() {
         onMouseMove={handleMouseMove}
       >
         {members.map((item, index) => (
-          <div key={index} className="team-card">
-            <img src={item.img} alt={item.name} />
+          <Link href={item.link}>
+            <div key={index} className="team-card">
+              <img src={item.img} alt={item.name} />
 
-            <div className="overlay flex flex-col !justify-between ">
-              <div className="flex flex-col items-start gap-[4px] ">
-                <Typography variant="header-2" className="!text-white">
-                  {item.name}{" "}
-                </Typography>
+              <div className="overlay flex flex-col !justify-between ">
+                <div className="flex flex-col items-start gap-[4px] ">
+                  <Typography variant="header-2" className="!text-white">
+                    {item.name}{" "}
+                  </Typography>
+                  <Typography variant="para-3" className="!text-white">
+                    {item.role}
+                  </Typography>
+                </div>
                 <Typography variant="para-3" className="!text-white">
-                  {item.role}
+                  {item.desc}
                 </Typography>
               </div>
-              <Typography variant="para-3" className="!text-white">
-                {item.desc}
-              </Typography>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

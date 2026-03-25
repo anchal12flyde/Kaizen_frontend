@@ -1,0 +1,76 @@
+{
+  "policiesPage": {
+    "hero": {
+      "title": "Policies",
+      "description": "Founded in August 2022, Kaizen Law was established with a clear purpose — to build a focused corporate and transaction advisory firm that combines technical excellence with agility and personal accountability."
+    }
+  },
+
+  "policies": {
+    "tabs": [
+      {
+        "key": "disclosures",
+        "label": "Regulatory Disclosures",
+        "title": "Regulatory Disclosures",
+        "date": "Last Updated: November 15, 2025",
+        "sections": [
+          {
+            "heading": "Overview",
+            "content": [
+              "This is disclosure overview.",
+              "Second paragraph for disclosure."
+            ]
+          }
+        ]
+      },
+      {
+        "key": "disclaimer",
+        "label": "Disclaimer",
+        "title": "Disclaimer",
+        "date": "Last Updated: November 15, 2025",
+        "sections": [
+          {
+            "heading": "1. Information We Collect",
+            "content": ["We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."]
+          },
+          {
+            "heading": "1. Information We Collect",
+            "content": [
+              "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+            ]
+          },
+          {
+            "heading": "1. Information We Collect",
+            "content": [
+              "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+            ]
+          }
+        ]
+      },
+      {
+        "key": "terms",
+        "label": "Terms of Use",
+        "title": "Terms of Use",
+        "date": "Last Updated: November 15, 2025",
+        "sections": [
+          {
+            "heading": "Terms",
+            "content": ["Terms content here."]
+          }
+        ]
+      },
+      {
+        "key": "privacy",
+        "label": "Privacy Policy",
+        "title": "Privacy Policy",
+        "date": "Last Updated: November 15, 2025",
+        "sections": [
+          {
+            "heading": "Privacy",
+            "content": ["Privacy content here."]
+          }
+        ]
+      }
+    ]
+  }
+}

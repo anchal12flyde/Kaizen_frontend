@@ -5,10 +5,8 @@ import { motion } from "framer-motion";
 
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
-
-/* ---------------------------------- */
-/* Data */
-/* ---------------------------------- */
+import Data from "@/data/sectorListing.json";
+import Link from "next/link";
 
 const services = [
   {
@@ -37,10 +35,6 @@ const services = [
   },
 ];
 
-/* ---------------------------------- */
-/* Animation */
-/* ---------------------------------- */
-
 const gridVariants = {
   hidden: {},
   show: {
@@ -56,6 +50,11 @@ const cardReveal = {
 
 
 export default function EndToEndServices() {
+
+  const { servicesSection } = Data;
+
+  const { heading, services } = servicesSection;
+
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -75,15 +74,12 @@ export default function EndToEndServices() {
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[96px]">
           <Typography variant="header-6" className="!text-white w-[250px]">
-            Lorem Ipsum
-            <br />
-            Dolor
+            {heading.title}
+           
           </Typography>
 
           <Typography variant="para-2" className="!text-white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation.
+            {heading.description}
           </Typography>
         </div>
 
@@ -105,43 +101,45 @@ export default function EndToEndServices() {
 }
 
 
-function ServiceCard({ title, img, isMobile }) {
+function ServiceCard({ title, img, isMobile,link }) {
   return (
     /* Fixed height wrapper */
-    <div
-      className={`relative w-full overflow-hidden ${
-        isMobile ? "h-[500px]" : "h-[500px]"
-      }`}
-    >
-      {/* Animated container */}
-      <motion.div
-        variants={!isMobile ? cardReveal : {}}
-        initial={!isMobile ? "hidden" : false}
-        animate={!isMobile ? "show" : false}
-        className="relative w-full h-full overflow-hidden"
+    <Link href={link}>
+      <div
+        className={`relative w-full overflow-hidden ${
+          isMobile ? "h-[500px]" : "h-[500px]"
+        }`}
       >
-        {/* Image */}
-        <div className="absolute inset-0">
-          <Image src={img} alt={title} fill className="object-cover" />
-        </div>
-
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-
-        {/* Content wrapper */}
-        <div className="relative h-full flex items-start">
-          {/* Title */}
-          <div
-            className={`${
-              isMobile ? "pt-[20px] px-[16px]" : "pt-[36px] px-[26px]"
-            }`}
-          >
-            <Typography variant="header-2" className="!text-white">
-              {title}
-            </Typography>
+        {/* Animated container */}
+        <motion.div
+          variants={!isMobile ? cardReveal : {}}
+          initial={!isMobile ? "hidden" : false}
+          animate={!isMobile ? "show" : false}
+          className="relative w-full h-full overflow-hidden"
+        >
+          {/* Image */}
+          <div className="absolute inset-0">
+            <Image src={img} alt={title} fill className="object-cover" />
           </div>
-        </div>
-      </motion.div>
-    </div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+          {/* Content wrapper */}
+          <div className="relative h-full flex items-start">
+            {/* Title */}
+            <div
+              className={`${
+                isMobile ? "pt-[20px] px-[16px]" : "pt-[36px] px-[26px]"
+              }`}
+            >
+              <Typography variant="header-2" className="!text-white">
+                {title}
+              </Typography>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </Link>
   );
 }

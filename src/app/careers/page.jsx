@@ -1,3 +1,4 @@
+"use client";
 import AboutHeroSection from "@/components/abouthero";
 import JobCard from "@/components/jobCard";
 import PEVCPracticeSection from "@/components/PEVCPractiseSection";
@@ -7,111 +8,26 @@ import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
+import career from "@/data/career.json"
 
 export default function Careers() {
-  const jobsData = [
-    {
-      id: "ui-graphic-designer",
-      title: "UI / Graphic Designer",
-      company: "Kaizen Law",
-      location: "Gurugram",
-      type1: "Full Time",
-      type2: "Part Time",
-      qualifications: [
-        "1+ year of experience partnering with stakeholders (clients, partners, users).",
-        "Strong knowledge of design systems and branding guidelines.",
-        "Proficiency in Figma, Adobe XD, and Photoshop.",
-        "Ability to translate business requirements into clean UI designs.",
-      ],
-      ctaText: "Apply Now",
-    },
-
-    {
-      id: "frontend-developer",
-      title: "Frontend Developer",
-      company: "Kaizen Law",
-      location: "Remote / Gurugram",
-      type1: "Full Time",
-      type2: "Part Time",
-      qualifications: [
-        "2+ years of experience with React and Next.js.",
-        "Strong understanding of HTML, CSS, and JavaScript.",
-        "Experience with REST APIs and state management.",
-        "Familiarity with Tailwind CSS and modern UI frameworks.",
-      ],
-      ctaText: "Apply Now",
-    },
-
-    {
-      id: "digital-marketing-executive",
-      title: "Digital Marketing Executive",
-      company: "Kaizen Law",
-      location: "Gurugram",
-      type1: "Full Time",
-      type2: "Part Time",
-      qualifications: [
-        "Experience in SEO, SEM, and social media marketing.",
-        "Knowledge of Google Ads and Meta Ads Manager.",
-        "Ability to analyze campaign performance and optimize ROI.",
-        "Strong content writing and communication skills.",
-      ],
-      ctaText: "Apply Now",
-    },
-
-    {
-      id: "hr-recruiter",
-      title: "HR Recruiter",
-      company: "Kaizen Law",
-      location: "Delhi NCR",
-      type1: "Full Time",
-      type2: "Part Time",
-      qualifications: [
-        "Experience in end-to-end recruitment process.",
-        "Strong interviewing and candidate screening skills.",
-        "Knowledge of HR tools and ATS systems.",
-        "Good interpersonal and negotiation skills.",
-      ],
-      ctaText: "Apply Now",
-    },
-  ];
-  const data = [
-    {
-      id: 1,
-      title: "Lorem ipsum dolor",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-    },
-    {
-      id: 2,
-      title: "Lorem ipsum dolor",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-    },
-    {
-      id: 3,
-      title: "Lorem ipsum dolor",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-    },
-    {
-      id: 4,
-      title: "Lorem ipsum dolor",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-    },
-  ];
-  const topContent = {
-    title: "Perk And Benefits",
-    subtitle:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  };
+  
+   const {
+     careerHero,
+     pevcPractice,
+     insightsHero,
+     insightsFilter,
+     contactInfo,
+     quote,
+     jobsData,
+   } = career;
   return (
     <div className="overflow-x-hidden">
       <Header />
       <section className="hero-section relative">
         {/* Background Image */}
         <Image
-          src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
+          src={careerHero.bgImage}
           alt="Hero"
           fill
           className="hero-background"
@@ -130,64 +46,45 @@ export default function Careers() {
                 colorVariant="white"
                 className="w-full"
               >
-                Careers
+                {careerHero.title}
               </Typography>
 
               <Typography
                 variant="para-2"
                 className="!text-white md:mt-[15px] mt-[12px] md:!w-[668px] !w-full max-w-full "
               >
-                Unlock Your Potential at Codeandcore: Join a community of
-                brilliant minds, where creativity meets ambition. Together,
-                let's chart a course for success in your career journey.
+                {careerHero.description}
               </Typography>
 
               <div className="mt-[26px] flex flex-col md:flex-row items-center gap-[16px]">
                 <Button variant="primary" className="w-full md:w-auto">
-                  Primary Button
+                  {careerHero.buttons[0].label}
                 </Button>
 
                 <Button variant="white" className="w-full md:w-auto">
-                  White Button
+                  {careerHero.buttons[1].label}
                 </Button>
               </div>
             </div>
             {/* Icons */}
             <div className="w-full overflow-x-auto md:overflow-hidden mt-[86px] md:mt-[156px] md:pr-[200px] pr-[24px]">
               <div className="flex w-max md:w-full gap-[48px] md:gap-0 md:justify-between">
-                <img
-                  src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png"
-                  alt="logo"
-                  className="w-[152px] h-[58px] object-contain flex-shrink-0"
-                />
-                <img
-                  src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/2bb225baf628900ed5c4ac8b54cda265c1ff6070.png"
-                  alt="logo"
-                  className="w-[152px] h-[58px] object-contain flex-shrink-0"
-                />
-                <img
-                  src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png"
-                  alt="logo"
-                  className="w-[152px] h-[58px] object-contain flex-shrink-0"
-                />
-                <img
-                  src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/2bb225baf628900ed5c4ac8b54cda265c1ff6070.png"
-                  alt="logo"
-                  className="w-[152px] h-[58px] object-contain flex-shrink-0"
-                />
-                <img
-                  src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png"
-                  alt="logo"
-                  className="w-[152px] h-[58px] object-contain flex-shrink-0"
-                />
+                {careerHero.logos.map((logo, index) => (
+                  <img
+                    key={index}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="w-[152px] h-[58px] object-contain flex-shrink-0"
+                  />
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
       <PEVCPracticeSection
-        cardsData={data}
-        topContent={topContent}
+        cardsData={pevcPractice.cardsData}
+        topContent={pevcPractice.topContent}
         careersPage={false}
         startupPage={true}
       />
@@ -196,33 +93,28 @@ export default function Careers() {
         className="bg-[var(--color-background-1)] flex md:flex-row flex-col items-start md:gap-[303px] gap-[16px]"
       >
         <Typography variant="para-1" className=" shrink-0 ">
-          Job Openings
+          {insightsHero.title}
         </Typography>
-        <Typography variant="para-2">
-          Founded in August 2022, Kaizen Law was established with a clear
-          purpose — to build a focused corporate and transaction advisory firm
-          that combines technical excellence with agility and personal
-          accountability.
-        </Typography>
+        <Typography variant="para-2">{insightsHero.description}</Typography>
       </Container>
 
       <div className="md:py-[12px] py-0 md:px-[100px] px-0 w-full borderInsightFilter border bg-[var(--color-background-1)]">
         {/* Desktop Layout (unchanged) */}
         <div className="hidden md:flex items-center justify-between w-full">
           <Button variant="primary" className="!px-[36px] !py-[12px]">
-            Filter
+            {insightsFilter.buttons[0].label}
           </Button>
 
           <div className="!px-[36px] !py-[12px] border border-[var(--color-accent)] rounded-[500px] !w-[463px]">
             <input
               type="text"
               className="text-[var(--color-accent)] focus:outline-none text-center w-full"
-              placeholder="Search"
+              placeholder={insightsFilter.searchPlaceholder}
             />
           </div>
 
           <Button variant="primary" className="!px-[36px] !py-[12px]">
-            Filter
+            {insightsFilter.buttons[1].label}
           </Button>
         </div>
 
@@ -234,19 +126,18 @@ export default function Careers() {
               <input
                 type="text"
                 className="text-[var(--color-accent)] focus:outline-none text-center w-full"
-                placeholder="Search"
+                placeholder={insightsFilter.searchPlaceholder}
               />
             </div>
           </div>
 
           {/* Row 2 - Filters */}
           <div className="px-[24px] py-[12px] flex gap-[12px]">
-            <Button variant="primary" className="w-full !py-[12px]">
-              Filter
-            </Button>
-            <Button variant="primary" className="w-full !py-[12px]">
-              Filter
-            </Button>
+            {insightsFilter.buttons.map((btn, i) => (
+              <Button key={i} variant="primary" className="w-full !py-[12px]">
+                {btn.label}
+              </Button>
+            ))}
           </div>
         </div>
       </div>
@@ -262,9 +153,7 @@ export default function Careers() {
           variant="para-2"
           className="!text-white text-center md:w-[734px] w-full"
         >
-          “Didn’t find any position fit for you? No worries please drop your
-          resume at below mail or contact number and our HR will going to
-          connect with you.”
+          {quote.title}
         </Typography>
       </div>
 
@@ -293,7 +182,7 @@ export default function Careers() {
             </defs>
           </svg>
           <Typography variant="header-2" className="!text-white">
-            +91-124-4389533
+            {contactInfo.items[0].value}
           </Typography>
         </Container>
 
@@ -325,7 +214,7 @@ export default function Careers() {
             </defs>
           </svg>
           <Typography variant="header-2" className="!text-white">
-            contact@kaizenlaw.in
+            {contactInfo.items[1].value}
           </Typography>
         </Container>
       </div>

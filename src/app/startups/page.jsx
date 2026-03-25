@@ -1,3 +1,4 @@
+"use client";
 import AboutHeroSection from "@/components/abouthero";
 import AdvisorySection from "@/components/advisorySection";
 import BlogGridSection from "@/components/blogCardsGrid";
@@ -10,92 +11,79 @@ import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import WhyChooseSection from "@/components/whyChooseSection";
 import Image from "next/image";
+import startup from "@/data/startups.json";
 
 
-const data = [
-  {
-    id: 1,
-    title: "Early-Stage Fundraising",
-    desc: "We regularly advise founder-led businesses across technology, consumer, fintech, education, and digital services sectors.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-  },
-  {
-    id: 2,
-    title: "Early-Stage Fundraising",
-    desc: "We regularly advise founder-led businesses across technology, consumer, fintech, education, and digital services sectors.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-  },
-  {
-    id: 3,
-    title: "Early-Stage Fundraising",
-    desc: "We regularly advise founder-led businesses across technology, consumer, fintech, education, and digital services sectors.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-  },
-  {
-    id: 4,
-    title: "Early-Stage Fundraising",
-    desc: "We regularly advise founder-led businesses across technology, consumer, fintech, education, and digital services sectors.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-  },
-];
-const topContent = {
-  title: "How We Work with Founders",
-  subtitle:
-    "We understand that founders often engage with legal advisors for the first time while building their businesses. Our approach focuses on:",
-};
 export default function Startups() {
+   const {
+     startupHero,
+     ourStory,
+     overview,
+     advisorySections,
+     whyClients,
+     pevcPractice,
+     relatedInsights,
+     privateEquityHero,
+     cta,
+   } = startup;
   return (
     <div>
       <Header />
       <AboutHeroSection
-        bgImage="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
+        bgImage={startupHero.bgImage}
+        align={startupHero.align}
+        buttons={startupHero.buttons}
         title={
           <>
-            Legal Advisory for
-            <br />
-            Businesses Building, <br />
-            Scaling, and Preparing
-            <br /> for Exit
+            {startupHero.title.split("\n").map((line, i) => (
+              <span key={i}>
+                {line}
+                <br />
+              </span>
+            ))}
           </>
         }
-        description={
-          <>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </>
-        }
-        align="left"
-        buttons={[
-          {
-            label: "Explore Our Practise",
-            variant: "primary",
-          },
-          {
-            label: "Meet Our Team",
-            variant: "white",
-          },
-        ]}
+        description={<>{startupHero.description}</>}
       />
+      <Container className="section-bg !bg-[#B6996A]" variant="primarySpacing">
+        <div>
+          <Typography variant="header-6" className="!text-white">
+            {ourStory.title}
+          </Typography>
+
+          <div className="inprovementSection">
+            {ourStory.paragraphs.map((text, index) => (
+              <Typography
+                key={index}
+                className="text-block !text-white"
+                variant="para-2"
+                delay={0.4 + index * 0.2}
+              >
+                {text}
+              </Typography>
+            ))}
+          </div>
+        </div>
+      </Container>
       <Container
         variant="primarySpacing"
         className=" flex flex-col md:gap-[16px] gap-[36px] items-center bg-[#F7F4EB]    "
       >
-        <Typography variant="header-6">Overview</Typography>
+        <Typography variant="header-6">{overview.title}</Typography>
         <Typography
           variant="para-2"
           className="md:w-[716px] w-full text-center "
         >
-          Kaizen Law is a corporate and transaction advisory firm delivering
-          big-firm quality advice through a partner-led, boutique model.
+          {overview.description}
         </Typography>
       </Container>
 
-      <AdvisorySection />
-      <WhyChooseSection />
+      <AdvisorySection sections={advisorySections} />
+      <WhyChooseSection data={whyClients} />
 
       <PEVCPracticeSection
-        cardsData={data}
-        topContent={topContent}
+        cardsData={pevcPractice.cardsData}
+        topContent={pevcPractice.topContent}
         careersPage={false}
         startupPage={true}
       />
@@ -104,46 +92,20 @@ export default function Startups() {
         variant="sectionSp1"
         className=" flex flex-col items-center  text-center gap-[16px] !pb-[20px] "
       >
-        <Typography variant="para-1">Related Insights</Typography>
-        <Typography variant="para-2">
-          We advise clients at each stage of the investment journey:
-        </Typography>
+        <Typography variant="header-6">{relatedInsights.title}</Typography>
+        <Typography variant="para-2">{relatedInsights.description}</Typography>
       </Container>
 
       <BlogGridSection
         variant="scroll"
-        posts={[
-          {
-            image: "https://ik.imagekit.io/demo/img/image1.jpg",
-            category: "Category",
-            title:
-              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
-            readTime: "4 min",
-            date: "14/09/2024",
-          },
-          {
-            image: "https://ik.imagekit.io/demo/img/image2.jpg",
-            category: "Category",
-            title:
-              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
-            readTime: "4 min",
-            date: "14/09/2024",
-          },
-          {
-            image: "https://ik.imagekit.io/demo/img/image3.jpg",
-            category: "Category",
-            title:
-              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
-            readTime: "4 min",
-            date: "14/09/2024",
-          },
-        ]}
+        buttonText={startup.blogs.button}
+        posts={startup.blogs.items}
         buttonShow={true}
       />
       <Container variant="primarySpacing" className=" privateEquityHeroCopy">
         {/* Background Image */}
         <Image
-          src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
+          src={privateEquityHero.bgImage}
           alt="Kaizen Hero"
           fill
           className="hero-background"
@@ -162,21 +124,18 @@ export default function Startups() {
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
               <div className="w-full md:w-[500px] h-full md:px-[36px] px-[16px]  pt-[36px] md:pb-[63px] pb-[48px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography variant="header-5" className=" !text-white ">
-                  Representative Experience
+                  {privateEquityHero.title}
                 </Typography>
                 <Typography
                   variant="para-2"
                   className=" !text-white mt-[26px] "
                 >
-                  Our experience includes advising startups and emerging
-                  companies on early-stage fundraises, growth investments,
-                  strategic partnerships, acquisitions, and exits across
-                  multiple sectors.
+                  {privateEquityHero.description}
                 </Typography>
 
                 <div className="mt-[36px] mb-[26px] flex flex-col gap-[16px]">
                   <Typography variant="para-2" className="!text-white">
-                    Further details are available in our{" "}
+                    {privateEquityHero.subText.text}
                     <span
                       style={{
                         textDecoration: "underline",
@@ -184,12 +143,12 @@ export default function Startups() {
                         textDecorationSkipInk: "auto",
                       }}
                     >
-                      Transaction Footprint.
+                      {privateEquityHero.subText.highlight}
                     </span>
                   </Typography>
                 </div>
                 <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
-                  View Representative Transactions →
+                  {privateEquityHero.button.label}
                 </button>
               </div>
               <div></div>
@@ -203,19 +162,17 @@ export default function Startups() {
       >
         <div className="flex flex-col gap-[16px] md:gap-[12px]">
           <Typography variant="header-5" className="!text-white">
-            Speak With Our Team
+            {cta.title}
           </Typography>
           <Typography
             variant="para-2"
             className="!text-white w-full md:w-[486px]"
           >
-            If you are building or scaling a startup, raising capital, or
-            evaluating a strategic transaction, we would be pleased to discuss
-            how Kaizen Law can support your journey.
+            {cta.description}
           </Typography>
         </div>
         <button className=" md:px-[36px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[24px] text-[18px]">
-          Schedule A Consulation →
+          {cta.buttonText}
         </button>
       </Container>
       <Footer />

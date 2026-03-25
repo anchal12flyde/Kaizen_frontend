@@ -17,31 +17,7 @@ import equity from "@/data/privateEquity.json";
 import Testimonials from "@/components/ui-kit/testimonials";
 
 
-const data = [
-  {
-    id: 1,
-    title: "Transaction Structuring & Risk Allocation",
-    desc: "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-  },
-  {
-    id: 2,
-    title: "Working Across the Investment Table",
-    desc: "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376",
-  },
-  {
-    id: 3,
-    title: "Advising Across the Capital Lifecycle",
-    desc: "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363",
-  },
-];
-const topContent = {
-  title: "Our PE & VC Practice",
-  subtitle:
-    "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
-};
+
 export default function privateEquity({ data }) {
   const { recognition } = data || equity;
   const {
@@ -54,33 +30,7 @@ export default function privateEquity({ data }) {
     testimonialUI,
 
   } = recognition;
-  const services = [
-    {
-      title: "Early-Stage Fundraising",
-      description:
-        "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
-    },
-    {
-      title: "Growth-Stage & Late-Stage Investments",
-      description:
-        "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
-    },
-    {
-      title: "Governance & Shareholder Frameworks",
-      description:
-        "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
-    },
-    {
-      title: "Follow-on Investments & Restructuring",
-      description:
-        "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
-    },
-    {
-      title: "Secondary Transactions & Exits",
-      description:
-        "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
-    },
-  ];
+ 
   const {
     privateEquity,
     overview,
@@ -91,6 +41,7 @@ export default function privateEquity({ data }) {
     privateEquityHero,
     relatedInsights,
     cta,
+    advisorySections,
   } = equity;
 
   return (
@@ -159,7 +110,7 @@ export default function privateEquity({ data }) {
         </Typography>
       </Container>
 
-      <AdvisorySection />
+      <AdvisorySection sections={advisorySections} />
       <PEVCPracticeSection
         cardsData={pevcPractice.cardsData}
         topContent={pevcPractice.topContent}
@@ -271,7 +222,8 @@ export default function privateEquity({ data }) {
 
       <BlogGridSection
         variant="scroll"
-        posts={equity.blogs}
+        buttonText={equity.blogs.button}
+        posts={equity.blogs.items}
         buttonShow={true}
       />
       <Container

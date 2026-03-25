@@ -63,7 +63,7 @@ export default function JobCard({ job }) {
                 variant={isMobile ? "para-3" : "para-2"}
                 className="!text-[#231F20] w-[80px]"
               >
-                {job.type1}
+                {job.type?.[0]}
               </Typography>
             </div>
 
@@ -76,7 +76,7 @@ export default function JobCard({ job }) {
                 variant={isMobile ? "para-3" : "para-2"}
                 className="!text-[#231F20] "
               >
-                {job.type2}
+                {job.type?.[1]}
               </Typography>
             </div>
           </div>

@@ -49,6 +49,7 @@ export default function About() {
   const { aboutHero, privateEquityHero, letsConnect,whyClients } = aboutData;
   
     const { title, form, thankYou } = letsConnect;
+    const { industries } = privateEquityHero;
   return (
     <div>
       <Header />

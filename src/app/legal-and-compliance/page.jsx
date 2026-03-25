@@ -5,86 +5,18 @@ import Header from "@/components/ui-kit/header";
 import Typography from "@/components/ui-kit/typography";
 import { Container } from "@/components/ui-kit/spacing";
 import Footer from "@/components/ui-kit/footer";
+import policy from "@/data/legal-and-compliance.json";
 
 
 
-const policiesData = {
-  disclosures: {
-    title: " Disclosures",
-    date: "Last Updated: November 15, 2025",
-    sections: [
-      {
-        heading: "1. Information We Collect",
-        content: [
-          "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
-          "We also automatically collect certain information about your device and how you interact with our services, including IP address, browser type, operating system, and usage data. This helps us improve our services and provide a better user experience.",
-        ],
-      },
-     
-    ],
-  },
-
-  disclaimer: {
-    title: "Disclaimer",
-    date: "Last Updated: November 15, 2025",
-    sections: [
-      {
-        heading: "1. Information We Collect",
-        content: [
-          "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
-          "We also automatically collect certain information about your device and how you interact with our services, including IP address, browser type, operating system, and usage data. This helps us improve our services and provide a better user experience.",
-        ],
-      },
-      {
-        heading: "1. Information We Collect",
-        content: [
-          "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
-          "We also automatically collect certain information about your device and how you interact with our services, including IP address, browser type, operating system, and usage data. This helps us improve our services and provide a better user experience.",
-        ],
-      },
-      {
-        heading: "1. Information We Collect",
-        content: [
-          "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
-          "We also automatically collect certain information about your device and how you interact with our services, including IP address, browser type, operating system, and usage data. This helps us improve our services and provide a better user experience.",
-        ],
-      },
-      {
-        heading: "1. Information We Collect",
-        content: [
-          "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
-          "We also automatically collect certain information about your device and how you interact with our services, including IP address, browser type, operating system, and usage data. This helps us improve our services and provide a better user experience.",
-        ],
-      },
-    ],
-  },
-
-  terms: {
-    title: "Terms of Use",
-    date: "Last Updated: November 15, 2025",
-    sections: [
-      {
-        heading: "1. Terms Heading",
-        content: ["Terms ka content..."],
-      },
-    ],
-  },
-
-  privacy: {
-    title: "Privacy Policy",
-    date: "Last Updated: November 15, 2025",
-    sections: [
-      {
-        heading: "1. Privacy Heading",
-        content: ["Privacy content..."],
-      },
-    ],
-  },
-};
 export default function PoliciesPage() {
   const [activeTab, setActiveTab] = useState("disclaimer");
   const [isMobile, setIsMobile] = useState(false);
-  const data = policiesData[activeTab];
+  // const data = policiesData[activeTab];
+
+  const { title, description } = policy.policiesPage.hero;
+  const tabs = policy.policies.tabs;
+  const data = tabs.find((item) => item.key === activeTab);
 
   useEffect(() => {
     const handleResize = () => {
@@ -104,13 +36,10 @@ export default function PoliciesPage() {
           variant="sectionSp3"
           className="md:!pt-[156px] !pt-[160px] flex md:flex-row flex-col items-start gap-[16px] md:justify-between border-b border-[#D9D4CC]"
         >
-          <Typography variant="display-3">Policies</Typography>
+          <Typography variant="display-3">{title}</Typography>
 
           <Typography variant="para-2" className="w-full md:w-[563px]">
-            Founded in August 2022, Kaizen Law was established with a clear
-            purpose — to build a focused corporate and transaction advisory firm
-            that combines technical excellence with agility and personal
-            accountability.
+            {description}
           </Typography>
         </Container>
 
@@ -123,53 +52,20 @@ export default function PoliciesPage() {
             </Typography>
 
             <ul className="grid grid-cols-2 gap-4 md:flex md:flex-col md:gap-[16px]">
-              <Typography
-                variant={isMobile ? "para-3" : "para-2"}
-                onClick={() => setActiveTab("disclosures")}
-                className={`cursor-pointer order-1 md:order-none ${
-                  activeTab === "disclosures"
-                    ? "text-[#231F20]"
-                    : "!text-[#231F20]/50"
-                }`}
-              >
-                Regulatory Disclosures
-              </Typography>
-
-              <Typography
-                variant={isMobile ? "para-3" : "para-2"}
-                onClick={() => setActiveTab("disclaimer")}
-                className={`cursor-pointer order-3 md:order-none ${
-                  activeTab === "disclaimer"
-                    ? "text-[#231F20]"
-                    : "!text-[#231F20]/50"
-                }`}
-              >
-                Disclaimer
-              </Typography>
-
-              <Typography
-                variant={isMobile ? "para-3" : "para-2"}
-                onClick={() => setActiveTab("terms")}
-                className={`cursor-pointer order-4 md:order-none ${
-                  activeTab === "terms"
-                    ? "text-[#231F20]"
-                    : "!text-[#231F20]/50"
-                }`}
-              >
-                Terms of Use
-              </Typography>
-
-              <Typography
-                variant={isMobile ? "para-3" : "para-2"}
-                onClick={() => setActiveTab("privacy")}
-                className={`cursor-pointer order-2 md:order-none ${
-                  activeTab === "privacy"
-                    ? "text-[#231F20]"
-                    : "!text-[#231F20]/50"
-                }`}
-              >
-                Privacy Policy
-              </Typography>
+              {tabs.map((item, index) => (
+                <Typography
+                  key={item.key}
+                  variant={isMobile ? "para-3" : "para-2"}
+                  onClick={() => setActiveTab(item.key)}
+                  className={`cursor-pointer ${
+                    activeTab === item.key
+                      ? "text-[#231F20]"
+                      : "!text-[#231F20]/50"
+                  }`}
+                >
+                  {item.label}
+                </Typography>
+              ))}
             </ul>
           </div>
 

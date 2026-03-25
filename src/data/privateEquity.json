@@ -163,32 +163,48 @@
     "title": "Related Insights",
     "description": "We advise clients at each stage of the investment journey"
   },
-  "blogs": [
-    {
-      "image": "https://ik.imagekit.io/demo/img/image1.jpg",
-      "category": "Private Equity",
-      "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
-      "readTime": "4 min",
-      "date": "14/09/2024"
-    },
-    {
-      "image": "https://ik.imagekit.io/demo/img/image2.jpg",
-      "category": "Private Equity",
-      "title": "How we ensure maximum value creation across investment portfolios.",
-      "readTime": "5 min",
-      "date": "20/09/2024"
-    },
-    {
-      "image": "https://ik.imagekit.io/demo/img/image3.jpg",
-      "category": "Private Equity",
-      "title": "Key considerations when advising on cross-border transactions.",
-      "readTime": "6 min",
-      "date": "25/09/2024"
-    }
-  ],
+  "blogs": {
+    "button": "View More ↓",
+   "items": [
+     {
+       "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+       "category": "Private Equity",
+       "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+       "readTime": "4 min",
+       "date": "14/09/2024"
+     },
+     {
+       "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+       "category": "Private Equity",
+       "title": "How we ensure maximum value creation across investment portfolios.",
+       "readTime": "5 min",
+       "date": "20/09/2024"
+     },
+     {
+       "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+       "category": "Private Equity",
+       "title": "Key considerations when advising on cross-border transactions.",
+       "readTime": "6 min",
+       "date": "25/09/2024"
+     }
+   ]
+ },
   "cta": {
     "title": "Speak With Our Team",
     "description": "If you are evaluating an investment, planning a fundraising round, or considering an exit, we would be pleased to discuss how Kaizen Law can support your objectives.",
     "buttonText": "Schedule A Consultation →"
+  },
+  "letsConnect": {
+    "title": ["Lets", "Connect"],
+    "enter": "enter",
+    "form": {
+      "newsletterText": "SUBSCRIBE TO OUR NEWSLETTER",
+      "placeholder": "email address",
+      "submitLabel": "→ submit"
+    },
+    "thankYou": {
+      "heading": "Thank You 💙",
+      "message": "We will connect with you soon."
+    }
   }
 }

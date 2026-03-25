@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/components/ui-kit/button";
 import Typography from "@/components/ui-kit/typography";
 

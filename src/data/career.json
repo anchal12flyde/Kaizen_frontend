@@ -1,0 +1,171 @@
+{
+  "careerHero": {
+    "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+    "title": "A Transaction-Focused\nLaw Firm Built on\nPrecision and Execution",
+    "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model.",
+    "align": "left",
+    "buttons": [
+      {
+        "label": "Explore Our Practise"
+      },
+      {
+        "label": "Meet Our Team"
+      }
+    ],
+    "logos": [
+      {
+        "src": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png",
+        "alt": "logo"
+      },
+      {
+        "src": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/2bb225baf628900ed5c4ac8b54cda265c1ff6070.png",
+        "alt": "logo"
+      },
+      {
+        "src": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png",
+        "alt": "logo"
+      },
+      {
+        "src": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/2bb225baf628900ed5c4ac8b54cda265c1ff6070.png",
+        "alt": "logo"
+      },
+      {
+        "src": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png",
+        "alt": "logo"
+      }
+    ]
+  },
+  "pevcPractice": {
+    "topContent": {
+      "title": "Our PE & VC Practice",
+      "subtitle": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+    },
+    "cardsData": [
+      {
+        "id": 1,
+        "title": "Transaction Structuring & Risk Allocation",
+        "desc": "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
+        "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png"
+      },
+      {
+        "id": 2,
+        "title": "Working Across the Investment Table",
+        "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
+        "icon": "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376"
+      },
+      {
+        "id": 3,
+        "title": "Advising Across the Capital Lifecycle",
+        "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+        "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363"
+      },
+      {
+        "id": 1,
+        "title": "Transaction Structuring & Risk Allocation",
+        "desc": "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
+        "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png"
+      },
+      {
+        "id": 2,
+        "title": "Working Across the Investment Table",
+        "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
+        "icon": "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376"
+      },
+      {
+        "id": 3,
+        "title": "Advising Across the Capital Lifecycle",
+        "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+        "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363"
+      }
+    ]
+  },
+  "insightsHero": {
+    "title": "Job Openings",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  "insightsFilter": {
+    "searchPlaceholder": "Search",
+    "buttons": [
+      {
+        "label": "Filter"
+      },
+      {
+        "label": "Filter"
+      }
+    ]
+  },
+  "jobsData": [
+    {
+      "id": "ui-graphic-designer",
+      "title": "UI / Graphic Designer",
+      "company": "Kaizen Law",
+      "location": "Gurugram",
+      "type": ["Full Time", "Part Time"],
+      "qualifications": [
+        "1+ year of experience partnering with stakeholders (clients, partners, users).",
+        "Strong knowledge of design systems and branding guidelines.",
+        "Proficiency in Figma, Adobe XD, and Photoshop.",
+        "Ability to translate business requirements into clean UI designs."
+      ],
+      "ctaText": "Apply Now"
+    },
+    {
+      "id": "frontend-developer",
+      "title": "Frontend Developer",
+      "company": "Kaizen Law",
+      "location": "Remote / Gurugram",
+      "type": ["Full Time", "Part Time"],
+      "qualifications": [
+        "2+ years of experience with React and Next.js.",
+        "Strong understanding of HTML, CSS, and JavaScript.",
+        "Experience with REST APIs and state management.",
+        "Familiarity with Tailwind CSS and modern UI frameworks."
+      ],
+      "ctaText": "Apply Now"
+    },
+    {
+      "id": "digital-marketing-executive",
+      "title": "Digital Marketing Executive",
+      "company": "Kaizen Law",
+      "location": "Gurugram",
+      "type": ["Full Time", "Part Time"],
+      "qualifications": [
+        "Experience in SEO, SEM, and social media marketing.",
+        "Knowledge of Google Ads and Meta Ads Manager.",
+        "Ability to analyze campaign performance and optimize ROI.",
+        "Strong content writing and communication skills."
+      ],
+      "ctaText": "Apply Now"
+    },
+    {
+      "id": "hr-recruiter",
+      "title": "HR Recruiter",
+      "company": "Kaizen Law",
+      "location": "Delhi NCR",
+      "type": ["Full Time", "Part Time"],
+      "qualifications": [
+        "Experience in end-to-end recruitment process.",
+        "Strong interviewing and candidate screening skills.",
+        "Knowledge of HR tools and ATS systems.",
+        "Good interpersonal and negotiation skills."
+      ],
+      "ctaText": "Apply Now"
+    }
+  ],
+  "contactInfo": {
+    "items": [
+      {
+        "type": "phone",
+        "value": "+91-124-4389533"
+      },
+      {
+        "type": "email",
+        "value": "contact@kaizenlaw.in"
+      }
+    ]
+  },
+  "quote": {
+    "title": "Didn’t find any position fit for you? No worries please drop your resume at below mail or contact number\nand our HR will connect with you."
+  }
+  
+}

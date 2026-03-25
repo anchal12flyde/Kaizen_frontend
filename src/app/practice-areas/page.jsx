@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import AboutHeroSection from "@/components/abouthero";
 import Footer from "@/components/ui-kit/footer";
 import Header from "@/components/ui-kit/header";
@@ -5,63 +7,42 @@ import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 import Link from "next/link";
+import Practice from "@/data/practiceAreas.json";
 
-const items = [
-  {
-    title: "Private Equity & Venture Capital",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
-    link: "/private-equity",
-  },
-  {
-    title: "Mergers & Acquisitions",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
-    link: "/private-equity",
-  },
-  {
-    title: "General Counsel Services",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
-    link: "/private-equity",
-  },
-  {
-    title: "Technology Law",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
-    link: "/private-equity",
-  },
-];
+
+
 export default function ServicesListing () {
+const { practiceHero, pevcPractice, privateEquityHero } = Practice;
+const { industries } = privateEquityHero;
+  
+const { cardsData } = pevcPractice;
+    const [isOpen, setIsOpen] = useState(false);
+    const [selected, setSelected] = useState("");
+  
+    const toggleDropdown = () => setIsOpen(!isOpen);
+  
+    const selectIndustry = (industry) => {
+      setSelected(industry);
+      setIsOpen(false);
+    };
     return (
       <div>
         <Header />
         <AboutHeroSection
-          bgImage="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
+          bgImage={practiceHero.bgImage}
+          align={practiceHero.align}
+          buttons={practiceHero.buttons}
           title={
             <>
-              A Transaction-Focused
-              <br />
-              Law Firm Built on <br /> Precision and Execution
+              {practiceHero.title.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  <br />
+                </span>
+              ))}
             </>
           }
-          description={
-            <>
-              Kaizen Law is a corporate and transaction advisory firm delivering
-              big-firm quality advice through a partner-led, boutique model.
-            </>
-          }
-          align="left"
-          buttons={[
-            {
-              label: "Explore Our Practise",
-              variant: "primary",
-            },
-            {
-              label: "Meet Our Team",
-              variant: "white",
-            },
-          ]}
+          description={<>{practiceHero.description}</>}
         />
 
         <Container variant="primarySpacing" className=" bg-[#0A193A] ">
@@ -69,19 +50,18 @@ export default function ServicesListing () {
             {/* Heading */}
             <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-[96px] gap-[36px]">
               <Typography variant="header-6" className="!text-white w-[250px]">
-                End-to-End <br /> Services
+                {pevcPractice.topContent.title}
               </Typography>
 
               <Typography variant="para-2" className="!text-white">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation.
+                {pevcPractice.topContent.subtitle}
               </Typography>
             </div>
 
             {/* List */}
             <div className="flex md:gap-[16px] gap-[2px] flex-col">
-              {items.map((item, index) => (
+              {pevcPractice.cardsData.map((item, index) => (
+                 <Link href={item.link} className="cursor-pointer">
                 <div
                   key={index}
                   className="flex md:flex-row flex-col md:items-center md:justify-between border-t border-white/30 py-[38px]"
@@ -96,7 +76,7 @@ export default function ServicesListing () {
                         {item.title}
                       </Typography>
 
-                      <Link href={item.link} className="cursor-pointer">
+                     
                         <div className="md:hidden w-[30px] h-[30px] cursor-pointer">
                           <img
                             src={item.icon}
@@ -104,7 +84,7 @@ export default function ServicesListing () {
                             alt={item.title}
                           />
                         </div>
-                      </Link>
+                    
                     </div>
 
                     {/* Description */}
@@ -115,15 +95,16 @@ export default function ServicesListing () {
                       {item.desc}
                     </Typography>
                   </div>
-                  <Link href={item.link} className="cursor-pointer">
-                  <div className="hidden md:block md:w-[45px] md:h-[45px]">
-                    <img
-                      src={item.icon}
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                  </Link>
+                  
+                    <div className="hidden md:block md:w-[45px] md:h-[45px]">
+                      <img
+                        src={item.icon}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                  
                 </div>
+                </Link>
               ))}
 
               <div className="border-t border-white/30"></div>
@@ -134,7 +115,7 @@ export default function ServicesListing () {
         <Container variant="primarySpacing" className=" privateEquityHeroCopy">
           {/* Background Image */}
           <Image
-            src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
+            src={privateEquityHero.bgImage}
             alt="Kaizen Hero"
             fill
             className="hero-background"
@@ -148,52 +129,110 @@ export default function ServicesListing () {
           <>
             <Container
               variant="sectionSp1"
-              className=" absolute inset-0  flex items-center justify-center  "
+              className=" absolute inset-0  flex justify-center  "
             >
               <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
                 <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
                   <Typography variant="header-5" className=" !text-white ">
-                    Ready To Talk?
+                    {privateEquityHero.title}
                   </Typography>
                   <Typography
                     variant="para-2"
                     className=" !text-white mt-[26px] "
                   >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    {privateEquityHero.description}
                   </Typography>
 
                   <div className="mt-[57px] mb-[32px] flex flex-col gap-[16px]">
                     <Typography variant="header-4" className="!text-white">
-                      I want to talk to your experts in:
+                      {privateEquityHero.subText}
                     </Typography>
-                    <div className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0">
-                      <Typography variant="para-2" className="!text-white">
-                        {" "}
-                        Select an Industry
-                      </Typography>
+                    <div className="relative w-full">
+                      {/* Dropdown container when open */}
+                      {isOpen ? (
+                        <div
+                          className="absolute  w-full shadow-md px-[8px]"
+                          style={{
+                            boxShadow: "1px 0px 8px 1px #00000033",
+                            backgroundColor: "#B6996A",
+                            zIndex: 10,
+                          }}
+                        >
+                          {/* Trigger inside dropdown */}
+                          <div
+                            onClick={toggleDropdown}
+                            className="w-full h-[32px] border-b border-white flex items-center justify-between cursor-pointer"
+                          >
+                            <Typography
+                              variant="para-2"
+                              className="!text-white"
+                            >
+                              {selected || privateEquityHero.selectIndustryText}
+                            </Typography>
 
-                      {/* Arrow */}
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        className="text-white"
-                      >
-                        <path
-                          d="M6 9L12 15L18 9"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                            <svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              className="text-white transition-transform duration-300"
+                              style={{ transform: "rotate(180deg)" }} // Arrow flips when open
+                            >
+                              <path
+                                d="M6 9L12 15L18 9"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </div>
+
+                          {/* Options */}
+                          <div className="mt-2">
+                            {industries.map((industry) => (
+                              <div
+                                key={industry}
+                                onClick={() => selectIndustry(industry)}
+                                className="px-[12px] py-[6px] hover:bg-white/20 cursor-pointer text-white "
+                              >
+                                {industry}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        // Trigger when closed
+                        <div
+                          onClick={toggleDropdown}
+                          className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0 cursor-pointer px-2"
+                        >
+                          <Typography variant="para-2" className="!text-white">
+                            {selected || privateEquityHero.selectIndustryText}
+                          </Typography>
+
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            className="text-white transition-transform duration-300"
+                            style={{ transform: "rotate(0deg)" }}
+                          >
+                            <path
+                              d="M6 9L12 15L18 9"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </div>
+                      )}
                     </div>
                   </div>
                   <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
-                    View Representative Transactions →
+                    {privateEquityHero.button.label}
                   </button>
                 </div>
                 <div></div>
