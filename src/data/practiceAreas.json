@@ -23,31 +23,31 @@
     "cardsData": [
       {
         "id": 1,
-        "title": "Transaction Structuring & Risk Allocation",
+        "title": "Private Equity & Venture Capital",
         "desc": "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
         "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
         "link": "/private-equity"
       },
       {
         "id": 2,
-        "title": "Working Across the Investment Table",
+        "title": "Mergers-acquisition",
         "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
         "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
-        "link": "/privateEquity copy"
+        "link": "/mergers-acquisitions"
       },
       {
         "id": 3,
-        "title": "Advising Across the Capital Lifecycle",
+        "title": "Capital Lifecycle",
         "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
         "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
-        "link": "/privateEquity copy2"
+        "link": "/capital-lifecycle"
       },
       {
         "id": 3,
-        "title": "Advising Across the Capital Lifecycle",
+        "title": "Technology Law",
         "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
         "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
-        "link": "/privateEquity copy3"
+        "link": "/technology-law"
       }
     ]
   },

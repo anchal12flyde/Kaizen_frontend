@@ -1,4 +1,4 @@
-"use client";
+
 import React from "react";
 import AdvisorySection from "@/components/advisorySection";
 import BlogGridSection from "@/components/blogCardsGrid";
@@ -13,13 +13,21 @@ import Typography from "@/components/ui-kit/typography";
 import WhyChooseSection from "@/components/whyChooseSection";
 import Image from "next/image";
 import Recognization from "@/components/recognization";
-import equity from "@/data/privateEquity.json";
+import dataJson from "@/data/privateEquity.json";
 import Testimonials from "@/components/ui-kit/testimonials";
+import { notFound } from "next/navigation";
 
 
 
-export default function privateEquity({ data }) {
-  const { recognition } = data || equity;
+export default async function privateEquity({ params }) {
+  const { slug } = await params; 
+
+  const data = dataJson.pages[slug];
+
+  if (!data) return notFound();
+  
+
+  const { recognition } = data;
   const {
     title,
     description,
@@ -28,9 +36,8 @@ export default function privateEquity({ data }) {
     button,
     continent,
     testimonialUI,
-
   } = recognition;
- 
+
   const {
     privateEquity,
     overview,
@@ -42,7 +49,8 @@ export default function privateEquity({ data }) {
     relatedInsights,
     cta,
     advisorySections,
-  } = equity;
+    blogs,
+  } = data;
 
   return (
     <div className="!overflow-x-none">
@@ -222,8 +230,8 @@ export default function privateEquity({ data }) {
 
       <BlogGridSection
         variant="scroll"
-        buttonText={equity.blogs.button}
-        posts={equity.blogs.items}
+        buttonText={blogs.button}
+        posts={blogs.items}
         buttonShow={true}
       />
       <Container

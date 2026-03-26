@@ -289,27 +289,25 @@ export default function page({ data }) {
   }, []);
   return (
     <>
-      <Typography variant="hero-display">hero-display</Typography>
-      <Typography variant="header-hero">header-hero</Typography>
-      <Typography variant="display-1">display-1</Typography>
-      <Typography variant="display-2">display-2</Typography>
-      <Typography variant="display-3">display-3</Typography>
-      <Typography variant="header-1">header-1</Typography>
-      <Typography variant="header-2">header-2</Typography>
-      <Typography variant="header-3">header-3</Typography>
-      <Typography variant="header-4">header-4</Typography>
-      <Typography variant="header-5">header-5</Typography>
-      <Typography variant="header-6">header-6</Typography>
-      <Typography variant="para-1">para-1</Typography>
-      <Typography variant="para-2">para-2</Typography>
-      <Typography variant="para-3"></Typography>
-      <Typography variant="big-firm">big-firm</Typography>
-      <Typography variant="linkText">linkText</Typography>
-
-      
-
       <div className="overflow-x-hidden">
         <Header />
+
+        <Typography variant="hero-display">hero-display</Typography>
+        <Typography variant="header-hero">header-hero</Typography>
+        <Typography variant="display-1">display-1</Typography>
+        <Typography variant="display-2">display-2</Typography>
+        <Typography variant="display-3">display-3</Typography>
+        <Typography variant="header-1">header-1</Typography>
+        <Typography variant="header-2">header-2</Typography>
+        <Typography variant="header-3">header-3</Typography>
+        <Typography variant="header-4">header-4</Typography>
+        <Typography variant="header-5">header-5</Typography>
+        <Typography variant="header-6">header-6</Typography>
+        <Typography variant="para-1">para-1</Typography>
+        <Typography variant="para-2">para-2</Typography>
+        <Typography variant="para-3"></Typography>
+        <Typography variant="big-firm">big-firm</Typography>
+        <Typography variant="linkText">linkText</Typography>
         <section className="hero-section">
           <Image
             src="https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
