@@ -956,7 +956,7 @@
     }
   },
   "sectorpages": {
-    "startup": {
+
       "startupHero": {
         "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
         "title": "A Transaction-Focused\nLaw Firm Built on\nPrecision and Execution",
@@ -1113,7 +1113,7 @@
         "description": "If you are evaluating an investment, planning a fundraising round, or considering an exit, we would be pleased to discuss how Kaizen Law can support your objectives.",
         "buttonText": "Schedule A Consultation →"
       }
-    }
+    
   },
 
   "servicepages": {

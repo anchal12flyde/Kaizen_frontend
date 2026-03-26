@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
-import Data from "@/data/sectorListing.json";
+
+import { getSiteContent } from "@/lib/siteContent";
 import Link from "next/link";
 
 const services = [
@@ -50,8 +51,8 @@ const cardReveal = {
 
 
 export default function EndToEndServices() {
-
-  const { servicesSection } = Data;
+  const sitecontent = getSiteContent(); 
+  const { servicesSection } = sitecontent.sector;
 
   const { heading, services } = servicesSection;
 

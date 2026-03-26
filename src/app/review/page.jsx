@@ -23,9 +23,7 @@ import ProfileAboutSection from "@/components/profileAboutSection";
 import ProfileHeader from "@/components/ProfileHeader";
 import EndToEndServices from "@/components/endToEndServices";
 import JobCard from "@/components/jobCard";
-import equity from "@/data/privateEquity.json";
-import aboutData from "@/data/about.json";
-import career from "@/data/career.json";
+import sitecontent from "@/data/sitecontent.json";
 
 
 const data =  {
@@ -259,9 +257,7 @@ export default function page({ data }) {
         "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
     },
   ];
-  const { pevcPractice: equityPractice } = equity;
-  const { pevcPractice: careerPractice } = career;
-
+ 
   const [email, setEmail] = useState("");
   const [activeTab, setActiveTab] = useState("disclaimer");
   const [isMobile, setIsMobile] = useState(false);
@@ -532,7 +528,7 @@ export default function page({ data }) {
         />
 
         <KaizenPhilosophySection />
-        <GuidesSection data={aboutData.guides} />
+
         <WhyChooseSection />
         <SectorExperience />
         <LeadershipTeam />
@@ -695,10 +691,10 @@ export default function page({ data }) {
         <div className="!overflow-x-none">
           <AdvisorySection />
         </div>
-        <PEVCPracticeSection
-          cardsData={equityPractice.cardsData}
-          topContent={equityPractice.topContent}
-        />
+        {/* <PEVCPracticeSection
+          cardsData={pevcPractice.cardsData}
+          topContent={pevcPractice.topContent}
+        /> */}
         <Container
           variant="sectionSp3"
           className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] "
@@ -1217,12 +1213,12 @@ export default function page({ data }) {
           </div>
         </Container>
         <EndToEndServices />
-        <PEVCPracticeSection
+        {/* <PEVCPracticeSection
           cardsData={careerPractice.cardsData}
           topContent={careerPractice.topContent}
           careersPage={false}
           startupPage={true}
-        />
+        /> */}
         <section className="hero-section relative">
           {/* Background Image */}
           <Image

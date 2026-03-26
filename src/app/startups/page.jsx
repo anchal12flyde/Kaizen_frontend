@@ -17,7 +17,7 @@ import { getSiteContent } from "@/lib/siteContent";
 
 export default function Startups() {
     const sitecontent = getSiteContent(); 
-  const {sectorpages}=sitecontent
+  const {sectorpages}=sitecontent;
    const {
      startupHero,
      ourStory,
@@ -28,6 +28,7 @@ export default function Startups() {
      relatedInsights,
      privateEquityHero,
      cta,
+     blogs,
    } = sectorpages;
   return (
     <div>
@@ -101,8 +102,8 @@ export default function Startups() {
 
       <BlogGridSection
         variant="scroll"
-        buttonText={startup.blogs.button}
-        posts={startup.blogs.items}
+        buttonText={blogs.button}
+        posts={blogs.items}
         buttonShow={true}
       />
       <Container variant="primarySpacing" className=" privateEquityHeroCopy">
