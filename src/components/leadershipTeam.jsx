@@ -6,56 +6,7 @@ import { Container } from "./ui-kit/spacing";
 import aboutData from "@/data/about.json";
 import Link from "next/link";
 
-const team = [
-  {
-    name: "Harsh",
-    role: "Legal Advisor",
-    desc: "Expert in corporate and transaction advisory.",
-    img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=500&q=50",
-  },
-  {
-    name: "Emma",
-    role: "Partner",
-    desc: "Specialist in mergers and acquisitions.",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=50",
-  },
-  {
-    name: "John",
-    role: "Senior Counsel",
-    desc: "Corporate compliance expert.",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=50",
-  },
-  {
-    name: "Sarah",
-    role: "Associate Partner",
-    desc: "Startup and VC advisory.",
-    img: "https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?w=500&q=50",
-  },
-  {
-    name: "David",
-    role: "Tax Consultant",
-    desc: "International tax structuring.",
-    img: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=500&q=50",
-  },
-  {
-    name: "Lisa",
-    role: "Legal Head",
-    desc: "Regulatory and compliance specialist.",
-    img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&q=50",
-  },
-  {
-    name: "Michael",
-    role: "Managing Partner",
-    desc: "Business and corporate strategy.",
-    img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&q=50",
-  },
-  {
-    name: "Sophia",
-    role: "Senior Associate",
-    desc: "Investment and PE advisory.",
-    img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=500&q=50",
-  },
-];
+
 
 export default function LeadershipTeam() {
   const cardRefs = useRef([]);  
@@ -121,8 +72,8 @@ export default function LeadershipTeam() {
         onMouseMove={handleMouseMove}
       >
         {members.map((item, index) => (
-          <Link href={item.link}>
-            <div key={index} className="team-card">
+          <Link key={item.name || index} href={item.link}>
+            <div className="team-card">
               <img src={item.img} alt={item.name} />
 
               <div className="overlay flex flex-col !justify-between ">

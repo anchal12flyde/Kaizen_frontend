@@ -43,7 +43,7 @@ export default function BlogGridSection({
 
       {buttonShow && (
         <div className="flex justify-center md:pr-0 !pr-[24px]">
-          <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-[#31110F] md:w-fit w-full text-[#31110F] md:text-[24px] text-[18px]">
+          <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-[#31110F] md:w-fit w-full text-[#31110F]  text-[18px]">
             {buttonText}
           </button>
         </div>

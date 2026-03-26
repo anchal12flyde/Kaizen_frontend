@@ -33,14 +33,21 @@
         "title": "Working Across the Investment Table",
         "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
         "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
-        "link": "/private-equity"
+        "link": "/privateEquity copy"
       },
       {
         "id": 3,
         "title": "Advising Across the Capital Lifecycle",
         "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
         "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
-        "link": "/private-equity"
+        "link": "/privateEquity copy2"
+      },
+      {
+        "id": 3,
+        "title": "Advising Across the Capital Lifecycle",
+        "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+        "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+        "link": "/privateEquity copy3"
       }
     ]
   },

@@ -19,7 +19,7 @@ const HEADER_DATA = {
     { name: "Careers", href: "/careers" },
     { name: "Contact Us", href: "/contact-us" },
 
-    { name: "Legal & Compliance ", href: "/legal-and-compliance" },
+    // { name: "Legal & Compliance ", href: "/legal-and-compliance" },
   ],
   ctaText: "Get Started",
   ctaLink: "/contact",

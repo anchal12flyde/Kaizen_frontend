@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Times_New_Romanwwww } from "next/font/google";
 import "./globals.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import LenisProvider from "@/components/LenisProvider";
 
 
 const geistSans = Geist({
@@ -22,10 +23,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={``}
-      >
-        {children}
+      <body className={``}>
+        <LenisProvider> {children}</LenisProvider>
       </body>
     </html>
   );

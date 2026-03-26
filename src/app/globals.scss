@@ -5,11 +5,17 @@
 @import "../styles/spacing";
 @import "../styles/header";
 
+html, body {
+  scroll-behavior: auto; 
+  height: 100%;
+}
 body {
   font-family: "Times New Roman", Times, serif;
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
+ 
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {

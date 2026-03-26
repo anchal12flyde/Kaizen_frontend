@@ -16,15 +16,6 @@ import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 import aboutData from "@/data/about.json";
 
-
-const industries = [
-  "Finance",
-  "Healthcare",
-  "Technology",
-  "Real Estate",
-  "Energy",
-];
-
 export default function About() {
   const [email, setEmail] = useState("");
 
@@ -191,7 +182,7 @@ export default function About() {
                     )}
                   </div>
                 </div>
-                <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white md:text-[24px] text-[18px]">
+                <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white text-[18px]">
                   {privateEquityHero.button.label}
                 </button>
               </div>

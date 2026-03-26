@@ -23,28 +23,36 @@ import ProfileAboutSection from "@/components/profileAboutSection";
 import ProfileHeader from "@/components/ProfileHeader";
 import EndToEndServices from "@/components/endToEndServices";
 import JobCard from "@/components/jobCard";
+import equity from "@/data/privateEquity.json";
+import aboutData from "@/data/about.json";
+import career from "@/data/career.json";
 
 
-const data = [
-  {
-    id: 1,
-    title: "Transaction Structuring & Risk Allocation",
-    desc: "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-  },
-  {
-    id: 2,
-    title: "Working Across the Investment Table",
-    desc: "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376",
-  },
-  {
-    id: 3,
-    title: "Advising Across the Capital Lifecycle",
-    desc: "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
-    icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363",
-  },
-];
+const data =  {
+  "title": "What Guides Our Work",
+  "items": [
+    {
+      "title": "Execution Excellence",
+      "desc": "Relentless focus on quality, timelines, and outcomes."
+    },
+    {
+      "title": "Senior Ownership",
+      "desc": "Direct partner and senior lawyer involvement throughout every mandate."
+    },
+    {
+      "title": "Commercial Insight",
+      "desc": "Advice grounded in business realities, not theoretical risk."
+    },
+    {
+      "title": "Integrity",
+      "desc": "Independent judgment, discretion, and professional responsibility."
+    },
+    {
+      "title": "Client Partnership",
+      "desc": "Long-term relationships over one-off transactions."
+    }
+  ]
+}
 const topContent = {
   title: "Our PE & VC Practice",
   subtitle:
@@ -209,7 +217,7 @@ const policiesData = {
     ],
   },
 };
-export default function page() {
+export default function page({ data }) {
   const stats = [
     {
       number: "100+",
@@ -251,6 +259,9 @@ export default function page() {
         "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
     },
   ];
+  const { pevcPractice: equityPractice } = equity;
+  const { pevcPractice: careerPractice } = career;
+
   const [email, setEmail] = useState("");
   const [activeTab, setActiveTab] = useState("disclaimer");
   const [isMobile, setIsMobile] = useState(false);
@@ -278,6 +289,25 @@ export default function page() {
   }, []);
   return (
     <>
+      <Typography variant="hero-display">hero-display</Typography>
+      <Typography variant="header-hero">header-hero</Typography>
+      <Typography variant="display-1">display-1</Typography>
+      <Typography variant="display-2">display-2</Typography>
+      <Typography variant="display-3">display-3</Typography>
+      <Typography variant="header-1">header-1</Typography>
+      <Typography variant="header-2">header-2</Typography>
+      <Typography variant="header-3">header-3</Typography>
+      <Typography variant="header-4">header-4</Typography>
+      <Typography variant="header-5">header-5</Typography>
+      <Typography variant="header-6">header-6</Typography>
+      <Typography variant="para-1">para-1</Typography>
+      <Typography variant="para-2">para-2</Typography>
+      <Typography variant="para-3"></Typography>
+      <Typography variant="big-firm">big-firm</Typography>
+      <Typography variant="linkText">linkText</Typography>
+
+      
+
       <div className="overflow-x-hidden">
         <Header />
         <section className="hero-section">
@@ -504,7 +534,7 @@ export default function page() {
         />
 
         <KaizenPhilosophySection />
-        <GuidesSection />
+        <GuidesSection data={aboutData.guides} />
         <WhyChooseSection />
         <SectorExperience />
         <LeadershipTeam />
@@ -667,7 +697,10 @@ export default function page() {
         <div className="!overflow-x-none">
           <AdvisorySection />
         </div>
-        <PEVCPracticeSection cardsData={data} topContent={topContent} />
+        <PEVCPracticeSection
+          cardsData={equityPractice.cardsData}
+          topContent={equityPractice.topContent}
+        />
         <Container
           variant="sectionSp3"
           className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] "
@@ -679,9 +712,9 @@ export default function page() {
             We advise clients at each stage of the investment journey:
           </Typography>
         </Container>
-       
-          <StackedServicesSection items={services} />
-        
+
+        <StackedServicesSection items={services} />
+
         <OurApproachSection />
         <Container
           variant="primarySpacing"
@@ -914,7 +947,7 @@ export default function page() {
               viewBox="0 0 20 20"
               fill="none"
             >
-              <g clip-path="url(#clip0_119_49793)">
+              <g clipPath="url(#clip0_119_49793)">
                 <path
                   d="M18.3952 13.1277C17.1707 13.1277 15.9684 12.9362 14.8291 12.5597C14.2708 12.3693 13.5845 12.544 13.2438 12.8939L10.995 14.5915C8.38703 13.1994 6.78057 11.5934 5.40745 9.00505L7.0551 6.81484C7.48318 6.38734 7.63672 5.76286 7.45276 5.17693C7.07464 4.03161 6.88255 2.8299 6.88255 1.6049C6.8826 0.719948 6.16266 0 5.27776 0H1.60484C0.719948 0 0 0.719948 0 1.60484C0 11.7481 8.25198 20 18.3952 20C19.2801 20 20.0001 19.2801 20.0001 18.3952V14.7325C20 13.8477 19.2801 13.1277 18.3952 13.1277Z"
                   fill="white"
@@ -942,7 +975,7 @@ export default function page() {
               viewBox="0 0 20 20"
               fill="none"
             >
-              <g clip-path="url(#clip0_119_49800)">
+              <g clipPath="url(#clip0_119_49800)">
                 <path
                   d="M11.6714 12.2536C11.1739 12.5853 10.5959 12.7606 10 12.7606C9.40414 12.7606 8.82617 12.5853 8.32859 12.2536L0.133164 6.78977C0.087922 6.75952 0.0435173 6.72803 0 6.69535L0 15.6484C0 16.6748 0.833008 17.4895 1.84113 17.4895H18.1588C19.1853 17.4895 20 16.6565 20 15.6484V6.69531C19.9564 6.72808 19.9119 6.75963 19.8665 6.78992L11.6714 12.2536Z"
                   fill="white"
@@ -1186,8 +1219,8 @@ export default function page() {
         </Container>
         <EndToEndServices />
         <PEVCPracticeSection
-          cardsData={data}
-          topContent={topContent}
+          cardsData={careerPractice.cardsData}
+          topContent={careerPractice.topContent}
           careersPage={false}
           startupPage={true}
         />
