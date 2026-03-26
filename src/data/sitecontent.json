@@ -1,0 +1,2236 @@
+{
+  "home": {
+    "hero": {
+      "title": "Legal Advisory",
+      "heading": "For Complex Deals \n and Critical Decisions",
+      "description": "Kaizen Law is a corporate and transaction-focused law firm advising businesses, founders, and investors across M&A, private equity, capital markets, and general counsel mandates.",
+      "image": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
+    },
+    "improvement": {
+      "title": "Built on the Principle of Continuous Improvement",
+      "paragraphs": [
+        "Kaizen is not about dramatic change. It is about deliberate progress : refining structures, strengthening positions, and anticipating what lies ahead. This philosophy defines how we approach every mandate, from early-stage advisory to complex, multi-party transactions.",
+        "In mergers and acquisitions, value is rarely created by a single decisive moment. It is built through disciplined preparation, careful structuring, informed negotiation, and precise execution. Our Kaizen approach reflects this reality. We focus on incremental advantage at every stage of a transaction — identifying risk early, refining deal terms continuously, and aligning legal strategy with commercial objectives. The result is not just deal completion, but durable outcomes that withstand scrutiny and time."
+      ],
+      "buttonText": "More About Kaizen"
+    },
+    "bannerImage": {
+      "src": "https://ik.imagekit.io/75zj3bigp/7d11d9363b24d18bf891f3cb0eaa9eb909fbb467.png",
+      "alt": "Kaizen banner",
+      "width": 1200,
+      "height": 800
+    },
+    "evaluation": {
+      "title": "Advising Across \n the Full Deal Lifecycle",
+      "steps": [
+        "Strategic Evaluation",
+        "Structuring & Planning",
+        "Due Diligence",
+        "Negotiation",
+        "Documentation & Execution",
+        "Closing & Completion"
+      ],
+      "highlight": "+Post-Transaction Integration & Compliance",
+      "buttonText": "Explore Capabilities"
+    },
+    "recognition": {
+      "title": "Recognition & Market Feedback",
+      "description": "We believe that our clients' experiences speak volumes about the quality of our legal services. Here's what some of them have to say:",
+
+      "testimonials": [
+        {
+          "text": "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
+          "author": "Corporate/Mergers and Acquisitions"
+        },
+        {
+          "text": "Their expertise was impressive...",
+          "author": "Startup Founder"
+        },
+        {
+          "text": "Their expertise was impressive...",
+          "author": "Startup Founder"
+        },
+        {
+          "text": "Their expertise was impressive...",
+          "author": "Startup Founder"
+        }
+      ],
+
+      "award": {
+        "year": "Asia Pacific 2026",
+        "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
+        "alt": "Chambers and Partners Award"
+      },
+
+      "buttonText": "View on Chambers and Partners"
+    },
+    "overlayImage": {
+      "src": "https://ik.imagekit.io/a9uxeuyhx/c187c8de4a3719b0bf6fce2d5297411e54a28f20.png"
+    }
+  },
+
+  "about": {
+    "aboutHero": {
+      "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+      "title": "A Transaction-Focused\nLaw Firm Built on\nPrecision and Execution",
+      "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model.",
+      "align": "left",
+      "buttons": [
+        {
+          "label": "Explore Our Practise",
+          "variant": "primary"
+        },
+        {
+          "label": "Meet Our Team",
+          "variant": "white"
+        }
+      ]
+    },
+    "ourStory": {
+      "title": "Our Story",
+      "paragraphs": [
+        "Founded in August 2022, Kaizen Law was established with a clear purpose — to build a focused corporate and transaction advisory firm that combines technical excellence with agility and personal accountability.",
+        "In just over two and a half years, the firm has developed a strong presence in India’s mid-market Corporate and M&A space, advising founders, promoters, investors, and multinational clients on complex domestic and cross-border matters"
+      ],
+      "buttonText": "Read More"
+    },
+    "philosophy": {
+      "leftTitle": "The Kaizen \n Philosohpy",
+      "right": {
+        "heading": "The word Kaizen means continuous improvement.",
+        "description": "In transactional practice, outcomes are shaped through disciplined preparation, thoughtful structuring, and consistent execution — not shortcuts. Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity, manage risk, and protect long-term value."
+      }
+    },
+    "guides": {
+      "title": "What Guides Our Work",
+      "items": [
+        {
+          "title": "Execution Excellence",
+          "desc": "Relentless focus on quality, timelines, and outcomes."
+        },
+        {
+          "title": "Senior Ownership",
+          "desc": "Direct partner and senior lawyer involvement throughout every mandate."
+        },
+        {
+          "title": "Commercial Insight",
+          "desc": "Advice grounded in business realities, not theoretical risk."
+        },
+        {
+          "title": "Integrity",
+          "desc": "Independent judgment, discretion, and professional responsibility."
+        },
+        {
+          "title": "Client Partnership",
+          "desc": "Long-term relationships over one-off transactions."
+        }
+      ]
+    },
+    "whyClients": {
+      "title": "Why Clients Choose Kaizen Law",
+      "subtitle": "We deliver big-firm quality with boutique agility.",
+      "cards": [
+        {
+          "title": "Execution Excellence",
+          "desc": "Relentless focus on quality, timelines, and outcomes.",
+          "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+        },
+        {
+          "title": "Senior Ownership",
+          "desc": "Direct partner and senior lawyer involvement throughout every mandate.",
+          "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+        },
+        {
+          "title": "Commercial Insight",
+          "desc": "Advice grounded in business realities, not theoretical risk.",
+          "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+        },
+        {
+          "title": "Integrity",
+          "desc": "Independent judgment, discretion, and professional responsibility.",
+          "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+        },
+        {
+          "title": "Client Partnership",
+          "desc": "Long-term relationships over one-off transactions.",
+          "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+        }
+      ]
+    },
+    "sectorExperience": {
+      "title": "Sector Experience",
+      "sectors": [
+        {
+          "title": "Technology & Digital Businesses",
+          "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=40"
+        },
+        {
+          "title": "Financial Services & Fintech",
+          "image": "https://images.unsplash.com/photo-1559526324-593bc073d938?w=400&q=40"
+        },
+        {
+          "title": "Consumer & Retail",
+          "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&q=40"
+        },
+        {
+          "title": "Education & EdTech",
+          "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=40"
+        },
+        {
+          "title": "E-commerce & Platforms",
+          "image": "https://images.unsplash.com/photo-1515165562835-c4c8c7c1adcc?w=400&q=40"
+        },
+        {
+          "title": "Renewable Energy",
+          "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=40"
+        },
+        {
+          "title": "IT & Technology Services",
+          "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&q=40"
+        }
+      ]
+    },
+    "recognition": {
+      "title": "Recognition & Market Feedback",
+      "description": "We believe that our clients' experiences speak volumes about the quality of our legal services. Here's what some of them have to say:",
+      "testimonials": [
+        {
+          "text": "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
+          "author": "Corporate/Mergers and Acquisitions"
+        },
+        {
+          "text": "Their expertise was impressive...",
+          "author": "Startup Founder"
+        },
+        {
+          "text": "Their expertise was impressive...",
+          "author": "Startup Founder"
+        },
+        {
+          "text": "Their expertise was impressive...",
+          "author": "Startup Founder"
+        }
+      ],
+      "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
+      "continent": "  Asia Pacific 2026",
+      "button": {
+        "label": "View on Chambers and Partners"
+      },
+      "testimonialUI": {
+        "bg": "bg-[#B6996A]",
+        "textColor": "!text-white",
+        "dotActive": "#ffffff",
+        "dotInactive": "rgba(255,255,255,0.4)",
+        "leftArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202.png",
+        "rightArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202%20(1).png"
+      }
+    },
+    "leadershipTeam": {
+      "title": "Leadership Team",
+      "description": "Kaizen Law is led by experienced corporate and transaction lawyers with backgrounds at leading law firms in India.",
+      "members": [
+        {
+          "name": "Harsh",
+          "role": "Legal Advisor",
+          "desc": "Expert in corporate and transaction advisory.",
+          "img": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=500&q=50",
+          "link": "/profile"
+        },
+        {
+          "name": "Emma",
+          "role": "Partner",
+          "desc": "Specialist in mergers and acquisitions.",
+          "img": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=50",
+          "link": "/profile"
+        },
+        {
+          "name": "John",
+          "role": "Senior Counsel",
+          "desc": "Corporate compliance expert.",
+          "img": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=50",
+          "link": "/profile"
+        },
+        {
+          "name": "Sarah",
+          "role": "Associate Partner",
+          "desc": "Startup and VC advisory.",
+          "img": "https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?w=500&q=50",
+          "link": "/profile"
+        },
+        {
+          "name": "David",
+          "role": "Tax Consultant",
+          "desc": "International tax structuring.",
+          "img": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=500&q=50",
+          "link": "/profile"
+        },
+        {
+          "name": "Lisa",
+          "role": "Legal Head",
+          "desc": "Regulatory and compliance specialist.",
+          "img": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&q=50",
+          "link": "/profile"
+        },
+        {
+          "name": "Michael",
+          "role": "Managing Partner",
+          "desc": "Business and corporate strategy.",
+          "img": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&q=50",
+          "link": "/profile"
+        },
+        {
+          "name": "Sophia",
+          "role": "Senior Associate",
+          "desc": "Investment and PE advisory.",
+          "img": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=500&q=50",
+          "link": "/profile"
+        }
+      ]
+    },
+    "privateEquityHero": {
+      "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+      "title": "Ready To Talk?",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "subText": "I want to talk to your experts in:",
+      "selectIndustryText": "Select an Industry",
+      "industries": [
+        "Fintech",
+        "Healthcare",
+        "E-commerce",
+        "SaaS",
+        "Manufacturing"
+      ],
+      "button": {
+        "label": "View Representative Transactions"
+      }
+    },
+    "letsConnect": {
+      "title": ["Lets", "Connect"],
+      "enter": "enter",
+      "form": {
+        "newsletterText": "SUBSCRIBE TO OUR NEWSLETTER",
+        "placeholder": "email address",
+        "submitLabel": "→ submit"
+      },
+      "thankYou": {
+        "heading": "Thank You 💙",
+        "message": "We will connect with you soon."
+      }
+    }
+  },
+
+  "career": {
+    "careerHero": {
+      "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+      "title": "A Transaction-Focused\nLaw Firm Built on\nPrecision and Execution",
+      "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model.",
+      "align": "left",
+      "buttons": [
+        {
+          "label": "Explore Our Practise"
+        },
+        {
+          "label": "Meet Our Team"
+        }
+      ],
+      "logos": [
+        {
+          "src": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png",
+          "alt": "logo"
+        },
+        {
+          "src": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/2bb225baf628900ed5c4ac8b54cda265c1ff6070.png",
+          "alt": "logo"
+        },
+        {
+          "src": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png",
+          "alt": "logo"
+        },
+        {
+          "src": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/2bb225baf628900ed5c4ac8b54cda265c1ff6070.png",
+          "alt": "logo"
+        },
+        {
+          "src": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/a552f92c9f961f6ce5a1f585f3aad0154cb1b104.png",
+          "alt": "logo"
+        }
+      ]
+    },
+    "pevcPractice": {
+      "topContent": {
+        "title": "Our PE & VC Practice",
+        "subtitle": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+      },
+      "cardsData": [
+        {
+          "id": 1,
+          "title": "Transaction Structuring & Risk Allocation",
+          "desc": "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png"
+        },
+        {
+          "id": 2,
+          "title": "Working Across the Investment Table",
+          "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376"
+        },
+        {
+          "id": 3,
+          "title": "Advising Across the Capital Lifecycle",
+          "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363"
+        },
+        {
+          "id": 1,
+          "title": "Transaction Structuring & Risk Allocation",
+          "desc": "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png"
+        },
+        {
+          "id": 2,
+          "title": "Working Across the Investment Table",
+          "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376"
+        },
+        {
+          "id": 3,
+          "title": "Advising Across the Capital Lifecycle",
+          "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363"
+        }
+      ]
+    },
+    "insightsHero": {
+      "title": "Job Openings",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "insightsFilter": {
+      "searchPlaceholder": "Search",
+      "buttons": [
+        {
+          "label": "Filter"
+        },
+        {
+          "label": "Filter"
+        }
+      ]
+    },
+    "jobsData": [
+      {
+        "id": "ui-graphic-designer",
+        "title": "UI / Graphic Designer",
+        "company": "Kaizen Law",
+        "location": "Gurugram",
+        "type": ["Full Time", "Part Time"],
+        "qualifications": [
+          "1+ year of experience partnering with stakeholders (clients, partners, users).",
+          "Strong knowledge of design systems and branding guidelines.",
+          "Proficiency in Figma, Adobe XD, and Photoshop.",
+          "Ability to translate business requirements into clean UI designs."
+        ],
+        "ctaText": "Apply Now"
+      },
+      {
+        "id": "frontend-developer",
+        "title": "Frontend Developer",
+        "company": "Kaizen Law",
+        "location": "Remote / Gurugram",
+        "type": ["Full Time", "Part Time"],
+        "qualifications": [
+          "2+ years of experience with React and Next.js.",
+          "Strong understanding of HTML, CSS, and JavaScript.",
+          "Experience with REST APIs and state management.",
+          "Familiarity with Tailwind CSS and modern UI frameworks."
+        ],
+        "ctaText": "Apply Now"
+      },
+      {
+        "id": "digital-marketing-executive",
+        "title": "Digital Marketing Executive",
+        "company": "Kaizen Law",
+        "location": "Gurugram",
+        "type": ["Full Time", "Part Time"],
+        "qualifications": [
+          "Experience in SEO, SEM, and social media marketing.",
+          "Knowledge of Google Ads and Meta Ads Manager.",
+          "Ability to analyze campaign performance and optimize ROI.",
+          "Strong content writing and communication skills."
+        ],
+        "ctaText": "Apply Now"
+      },
+      {
+        "id": "hr-recruiter",
+        "title": "HR Recruiter",
+        "company": "Kaizen Law",
+        "location": "Delhi NCR",
+        "type": ["Full Time", "Part Time"],
+        "qualifications": [
+          "Experience in end-to-end recruitment process.",
+          "Strong interviewing and candidate screening skills.",
+          "Knowledge of HR tools and ATS systems.",
+          "Good interpersonal and negotiation skills."
+        ],
+        "ctaText": "Apply Now"
+      }
+    ],
+    "contactInfo": {
+      "items": [
+        {
+          "type": "phone",
+          "value": "+91-124-4389533"
+        },
+        {
+          "type": "email",
+          "value": "contact@kaizenlaw.in"
+        }
+      ]
+    },
+    "quote": {
+      "title": "Didn’t find any position fit for you? No worries please drop your resume at below mail or contact number\nand our HR will connect with you."
+    }
+  },
+  "contact": {
+    "contactSection": {
+      "bgImage": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg",
+
+      "form": {
+        "title": "Ready To Discuss Your Project With Us?",
+        "fields": [
+          { "placeholder": "First Name", "type": "text" },
+          { "placeholder": "Last Name", "type": "text" },
+          { "placeholder": "Email Address", "type": "email" },
+          { "placeholder": "Phone Number", "type": "tel" },
+          { "placeholder": "Company Name", "type": "text" },
+          { "placeholder": "Country", "type": "text" }
+        ],
+        "textarea": {
+          "placeholder": "Description"
+        },
+        "button": {
+          "label": "View Representative Transactions →"
+        }
+      },
+
+      "locations": {
+        "title": "Where To Find Us",
+        "items": [
+          {
+            "city": "Gurgaon",
+            "address": "1st Floor, DLF Centre Court, Golf Course Road, DLF Phase 5, Sector-42, Gurugram, Haryana – 122002"
+          },
+          {
+            "city": "Bengaluru",
+            "address": "KustomWork, 1st Floor, No.129, 5th Main Rd, 3rd Phase, J.P. Nagar, Bengaluru, Karnataka – 560078"
+          }
+        ],
+        "mapImage": "https://ik.imagekit.io/flyde/map.png"
+      }
+    },
+    "contactInfo": {
+      "items": [
+        {
+          "type": "phone",
+          "value": "+91-124-4389533"
+        },
+        {
+          "type": "email",
+          "value": "contact@kaizenlaw.in"
+        }
+      ]
+    },
+    "contactCTA": {
+      "title": "Ready to discuss your \n project with us?",
+      "button": {
+        "label": "Schedule A Consultation →"
+      }
+    }
+  },
+  "footprint": {
+    "hero": {
+      "title": "Transaction Footprint",
+      "heading": "Complex, high-value transactions across sectors, stages, and transaction types",
+      "description": "Transactions are presented in an anonymised format in accordance with applicable confidentiality and regulatory considerations.",
+      "heroImage": "https://ik.imagekit.io/a9uxeuyhx/c8b4f7e16bf497a2e506a10e688d0d5d572bb78c.jpg"
+    },
+    "stats": [
+      {
+        "number": "100+",
+        "label": "Number of transactions facilitated"
+      },
+      {
+        "number": "$1B",
+        "label": "Aggregate transaction value advised on"
+      },
+      {
+        "number": "12+",
+        "label": "Years of transactional experience"
+      }
+    ],
+    "representativeMandates": {
+      "heading": "Representative Mandates",
+      "description": "A curated selection of transactions that reflect the complexity, scale, and diversity of our transactional experience. Details are shared in a concise and anonymised format, in line with confidentiality and regulatory considerations.",
+      "items": [
+        {
+          "title": "Mergers & Acquisitions",
+          "sector": "Technology",
+          "year": "2021",
+          "role": "Advisor to Company",
+          "desc": "Advised the promoters of a technology-enabled services company on the sale of a controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+        },
+        {
+          "title": "Mergers & Acquisitions",
+          "sector": "Technology",
+          "year": "2021",
+          "role": "Advisor to Company",
+          "desc": "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+        },
+        {
+          "title": "Mergers & Acquisitions",
+          "sector": "Technology",
+          "year": "2021",
+          "role": "Advisor to Company",
+          "desc": "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+        },
+        {
+          "title": "Mergers & Acquisitions",
+          "sector": "Technology",
+          "year": "2021",
+          "role": "Advisor to Company",
+          "desc": "Advised the promoters of a technology-enabled services company on the sale of a controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+        },
+        {
+          "title": "Mergers & Acquisitions",
+          "sector": "Technology",
+          "year": "2021",
+          "role": "Advisor to Company",
+          "desc": "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+        },
+        {
+          "title": "Mergers & Acquisitions",
+          "sector": "Technology",
+          "year": "2021",
+          "role": "Advisor to Company",
+          "desc": "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+        },
+        {
+          "title": "Mergers & Acquisitions",
+          "sector": "Technology",
+          "year": "2021",
+          "role": "Advisor to Company",
+          "desc": "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements."
+        }
+      ]
+    },
+    "fullTransactionList": {
+      "heading": "Full Transaction List",
+      "description": "A comprehensive list of representative transactions advised by Kaizen Law, presented in an anonymised format and subject to confidentiality and regulatory considerations.",
+      "buttonLabel": "Filters",
+      "transactions": [
+        {
+          "labelText": "Capital Markets",
+          "mainText": "Advised a strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+          "roleText": "Advisor to Acquirer",
+          "sectorText": "Technology",
+          "transactionValue": "305cr INR"
+        },
+        {
+          "labelText": "Capital Markets",
+          "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+          "roleText": "Advisor to Acquirer",
+          "sectorText": "Technology",
+          "transactionValue": "150cr INR"
+        },
+        {
+          "labelText": "Capital Markets",
+          "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+          "roleText": "Advisor to Acquirer",
+          "sectorText": "Technology",
+          "transactionValue": "150cr INR"
+        },
+        {
+          "labelText": "Capital Markets",
+          "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+          "roleText": "Advisor to Acquirer",
+          "sectorText": "Technology",
+          "transactionValue": "150cr INR"
+        },
+        {
+          "labelText": "Capital Markets",
+          "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+          "roleText": "Advisor to Acquirer",
+          "sectorText": "Technology",
+          "transactionValue": "150cr INR"
+        }
+      ]
+    }
+  }
+  ,
+  "legal": {
+    "policiesPage": {
+      "hero": {
+        "title": "Policies",
+        "description": "Founded in August 2022, Kaizen Law was established with a clear purpose — to build a focused corporate and transaction advisory firm that combines technical excellence with agility and personal accountability."
+      }
+    },
+
+    "policies": {
+      "tabs": [
+        {
+          "key": "disclosures",
+          "label": "Regulatory Disclosures",
+          "title": "Regulatory Disclosures",
+          "date": "Last Updated: November 15, 2025",
+          "sections": [
+            {
+              "heading": "Overview",
+              "content": [
+                "This is disclosure overview.",
+                "Second paragraph for disclosure."
+              ]
+            }
+          ]
+        },
+        {
+          "key": "disclaimer",
+          "label": "Disclaimer",
+          "title": "Disclaimer",
+          "date": "Last Updated: November 15, 2025",
+          "sections": [
+            {
+              "heading": "1. Information We Collect",
+              "content": [
+                "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+              ]
+            }
+           
+          ]
+        },
+        {
+          "key": "terms",
+          "label": "Terms of Use",
+          "title": "Terms of Use",
+          "date": "Last Updated: November 15, 2025",
+          "sections": [
+            {
+              "heading": "Terms",
+              "content": ["Terms content here."]
+            }
+          ]
+        },
+        {
+          "key": "privacy",
+          "label": "Privacy Policy",
+          "title": "Privacy Policy",
+          "date": "Last Updated: November 15, 2025",
+          "sections": [
+            {
+              "heading": "Privacy",
+              "content": ["Privacy content here."]
+            }
+          ]
+        }
+      ]
+    }
+  }
+  ,
+  "practiceAreas": {
+    "practiceHero": {
+      "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+      "title": "A Transaction-Focused\nLaw Firm Built on\nPrecision and Execution",
+      "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model.",
+      "align": "left",
+      "buttons": [
+        {
+          "label": "Explore Our Practise",
+          "variant": "primary"
+        },
+        {
+          "label": "Meet Our Team",
+          "variant": "white"
+        }
+      ]
+    },
+    "pevcPractice": {
+      "topContent": {
+        "title": "Our PE & VC Practice",
+        "subtitle": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+      },
+      "cardsData": [
+        {
+          "id": 1,
+          "title": "Private Equity & Venture Capital",
+          "desc": "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+          "link": "/private-equity"
+        },
+        {
+          "id": 2,
+          "title": "Mergers-acquisition",
+          "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+          "link": "/mergers-acquisitions"
+        },
+        {
+          "id": 3,
+          "title": "Capital Lifecycle",
+          "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+          "link": "/capital-lifecycle"
+        },
+        {
+          "id": 3,
+          "title": "Technology Law",
+          "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+          "link": "/technology-law"
+        }
+      ]
+    },
+    "privateEquityHero": {
+      "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+      "title": "Ready To Talk?",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "subText": "I want to talk to your experts in:",
+      "selectIndustryText": "Select an Industry",
+      "industries": [
+        "Fintech",
+        "Healthcare",
+        "E-commerce",
+        "SaaS",
+        "Manufacturing"
+      ],
+      "button": {
+        "label": "View Representative Transactions"
+      }
+    }
+  },
+  "profile": {
+    "profileHeader": {
+      "name": "Harsh Kumar",
+      "role": "Founding Partner",
+      "phone": "+91-9999191620",
+      "email": "harsh.kumar@kaizenlaw.in",
+      "socials": [
+        {
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Frame%202147238680.png",
+          "link": "/"
+        },
+        {
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Frame%202147238682.png",
+          "link": "https://linkedin.com",
+          "external": true
+        }
+      ]
+    },
+    "accordionData": [
+      {
+        "title": "About",
+        "content": "Harsh is a highly experienced and recommended transactional lawyer with over 18 years of experience in advising on Indian laws. He specializes in mergers & acquisitions of listed and unlisted companies, private equity, and venture capital transactions. He has worked on complex, high-end transactions involving domestic and cross-border investments and acquisitions for leading Indian corporates, MNCs, and Indian start-ups and unicorns across diverse industry sectors such as manufacturing, healthcare, pharmaceuticals, e-commerce & logistics, I.T. & services, and new-age/sunrise sectors.\n\nIn addition to transactional work, Harsh advises companies on commercial and contractual matters and acts as an external advisor to the board of directors of leading Indian companies. He has previously worked as a partner at Cyril Amarchand Mangaldas and Shardul Amarchand Mangaldas and in the London office of Herbert Smith Freehills LLP, an international law firm, on international corporate law transactions.\n\nHarsh has been recognized for his legal expertise and leadership in the legal profession by Indian and international publications.",
+        "icon": "https://ik.imagekit.io/a9uxeuyhx/image%207%20(2).png"
+      },
+      {
+        "title": "Areas of Specialisation",
+        "content": "Mergers & Acquisitions,\nPrivate Equity,\nVenture Capital,\nCorporate Restructuring,\nCommercial Contracts.",
+        "icon": ""
+      },
+      {
+        "title": "Memberships and Associations",
+        "content": "Bar Council of India,\nInternational Bar Association,\nIndian National Bar Association.",
+        "icon": ""
+      },
+      {
+        "title": "Education",
+        "content": "LLB – Delhi University,\nLLM – University of London.",
+        "icon": ""
+      }
+    ],
+    "recognition": {
+      "title": "Recognition & Market Feedback",
+      "description": "We believe that our clients' experiences speak volumes about the quality of our legal services. Here's what some of them have to say:",
+
+      "testimonials": [
+        {
+          "text": "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
+          "author": "Corporate/Mergers and Acquisitions"
+        },
+        {
+          "text": "Their expertise was impressive...",
+          "author": "Startup Founder"
+        },
+        {
+          "text": "Their expertise was impressive...",
+          "author": "Startup Founder"
+        },
+        {
+          "text": "Their expertise was impressive...",
+          "author": "Startup Founder"
+        }
+      ],
+
+      "award": {
+        "year": "Asia Pacific 2026",
+        "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
+        "alt": "Chambers and Partners Award"
+      },
+
+      "buttonText": "View on Chambers and Partners"
+    },
+    "cta": {
+      "title": "Speak With Our Team",
+      "description": "If you are evaluating an investment, planning a fundraising round, or considering an exit, we would be pleased to discuss how Kaizen Law can support your objectives.",
+      "buttonText": "Schedule A Consultation →"
+    }
+  }
+  ,
+  "sector":{
+    "sectorHero": {
+      "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+      "title": "A Transaction-Focused\nLaw Firm Built on\nPrecision and Execution",
+      "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model.",
+      "align": "left",
+      "buttons": [
+        {
+          "label": "Explore Our Practise",
+          "variant": "primary"
+        },
+        {
+          "label": "Meet Our Team",
+          "variant": "white"
+        }
+      ]
+    },
+    "servicesSection": {
+      "heading": {
+        "title": "Lorem IpsumDolor",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+      },
+      "services": [
+        {
+          "title": "Startups & Emerging Companies",
+          "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208.png",
+          "link": "/startups"
+        },
+        {
+          "title": "Financial Services & Fintech",
+          "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(1).png",
+          "link": "/financial"
+        },
+        {
+          "title": "Renewable Energy & Infrastructure",
+          "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(2).png",
+          "link": "/startup"
+        },
+        {
+          "title": "Digital Businesses",
+          "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(3).png",
+          "link": "/startup"
+        },
+        {
+          "title": "Consumer & Retail",
+          "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%209%20(1).png",
+          "link": "/startup"
+        },
+        {
+          "title": "Education & EdTech",
+          "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(4).png",
+          "link": "/startup"
+        }
+      ]
+    },
+    "privateEquityHero": {
+      "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+      "title": "Ready To Talk?",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "subText": "I want to talk to your experts in:",
+      "selectIndustryText": "Select an Industry",
+      "industries": [
+        "Fintech",
+        "Healthcare",
+        "E-commerce",
+        "SaaS",
+        "Manufacturing"
+      ],
+      "button": {
+        "label": "View Representative Transactions →"
+      }
+    }
+  },
+  "sectorpages": {
+    "startup": {
+      "startupHero": {
+        "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+        "title": "A Transaction-Focused\nLaw Firm Built on\nPrecision and Execution",
+        "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model.",
+        "align": "left",
+        "buttons": [
+          {
+            "label": "Explore Our Practise",
+            "variant": "primary"
+          },
+          {
+            "label": "Meet Our Team",
+            "variant": "white"
+          }
+        ]
+      },
+      "ourStory": {
+        "title": "Overview",
+        "paragraphs": [
+          "Founded in August 2022, Kaizen Law was established with a clear purpose — to build a focused corporate and transaction advisory firm that combines technical excellence with agility and personal accountability.",
+          "In just over two and a half years, the firm has developed a strong presence in India’s mid-market Corporate and M&A space, advising founders, promoters, investors, and multinational clients on complex domestic and cross-border matters"
+        ],
+        "buttonText": "Read More"
+      },
+      "overview": {
+        "title": "Overview",
+        "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model."
+      },
+      "advisorySections": [
+        {
+          "id": 1,
+          "title": "Who We Advise",
+          "desc": "Kaizen Law works with private equity funds, venture capital investors, and growth-stage companies across sectors. We support both sides of the investment ecosystem — investors deploying capital and founders raising capital to build and scale businesses.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": false
+        },
+        {
+          "id": 2,
+          "title": "What We Do",
+          "desc": "Our practice covers the full lifecycle of investments, including early stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": true
+        },
+        {
+          "id": 3,
+          "title": "How We Think",
+          "desc": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": false
+        }
+      ],
+      "whyClients": {
+        "title": "Why Clients Choose Kaizen Law",
+        "subtitle": "We deliver big-firm quality with boutique agility.",
+        "cards": [
+          {
+            "title": "Execution Excellence",
+            "desc": "Relentless focus on quality, timelines, and outcomes.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Senior Ownership",
+            "desc": "Direct partner and senior lawyer involvement throughout every mandate.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Commercial Insight",
+            "desc": "Advice grounded in business realities, not theoretical risk.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Integrity",
+            "desc": "Independent judgment, discretion, and professional responsibility.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Client Partnership",
+            "desc": "Long-term relationships over one-off transactions.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          }
+        ]
+      },
+      "pevcPractice": {
+        "topContent": {
+          "title": "Our PE & VC Practice",
+          "subtitle": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+        },
+        "cardsData": [
+          {
+            "id": 1,
+            "title": "Transaction Structuring & Risk Allocation",
+            "desc": "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png"
+          },
+          {
+            "id": 2,
+            "title": "Working Across the Investment Table",
+            "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376"
+          },
+          {
+            "id": 3,
+            "title": "Advising Across the Capital Lifecycle",
+            "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363"
+          }
+        ]
+      },
+      "relatedInsights": {
+        "title": "Related Insights",
+        "description": "We advise clients at each stage of the investment journey"
+      },
+      "blogs": {
+        "button": "View More ↓",
+        "items": [
+          {
+            "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          },
+          {
+            "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+            "category": "Private Equity",
+            "title": "How we ensure maximum value creation across investment portfolios.",
+            "readTime": "5 min",
+            "date": "20/09/2024"
+          },
+          {
+            "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+            "category": "Private Equity",
+            "title": "Key considerations when advising on cross-border transactions.",
+            "readTime": "6 min",
+            "date": "25/09/2024"
+          }
+        ]
+      },
+      "privateEquityHero": {
+        "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+        "title": "Ready To Talk?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "subText": {
+          "text": "Further details are available in our ",
+          "highlight": "Transaction Footprint."
+        },
+
+        "button": {
+          "label": "View Representative Transactions →"
+        }
+      },
+      "cta": {
+        "title": "Speak With Our Team",
+        "description": "If you are evaluating an investment, planning a fundraising round, or considering an exit, we would be pleased to discuss how Kaizen Law can support your objectives.",
+        "buttonText": "Schedule A Consultation →"
+      }
+    }
+  },
+
+  "servicepages": {
+    "private-equity": {
+      "privateEquity": {
+        "title": "Private Equity & Venture Capital",
+        "subtitle": "Advisory for Investors and Growth-Stage Companies Across the Investment Lifecycle",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea consequat.",
+        "image": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
+      },
+      "overview": {
+        "title": "Overview",
+        "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model."
+      },
+      "advisorySections": [
+        {
+          "id": 1,
+          "title": "Who We Advise",
+          "desc": "Kaizen Law works with private equity funds, venture capital investors, and growth-stage companies across sectors. We support both sides of the investment ecosystem — investors deploying capital and founders raising capital to build and scale businesses.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": false
+        },
+        {
+          "id": 2,
+          "title": "What We Do",
+          "desc": "Our practice covers the full lifecycle of investments, including early stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": true
+        },
+        {
+          "id": 3,
+          "title": "How We Think",
+          "desc": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": false
+        }
+      ],
+      "pevcPractice": {
+        "topContent": {
+          "title": "Our PE & VC Practice",
+          "subtitle": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+        },
+        "cardsData": [
+          {
+            "id": 1,
+            "title": "Transaction Structuring & Risk Allocation",
+            "desc": "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png"
+          },
+          {
+            "id": 2,
+            "title": "Working Across the Investment Table",
+            "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376"
+          },
+          {
+            "id": 3,
+            "title": "Advising Across the Capital Lifecycle",
+            "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363"
+          }
+        ]
+      },
+      "investmentLifecycle": {
+        "title": "Advising Across the Investment Lifecycle",
+        "description": "We advise clients at each stage of the investment journey:"
+      },
+      "stackedServices": [
+        {
+          "title": "Early-Stage Fundraising",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Growth-Stage & Late-Stage Investments",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Governance & Shareholder Frameworks",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Follow-on Investments & Restructuring",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Secondary Transactions & Exits",
+          "description": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+        }
+      ],
+      "whyClients": {
+        "title": "Startup & Early-Stage Fundraising",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+        "cards": [
+          {
+            "title": "Startup & Early-Stage Fundraising",
+            "desc": "Advisory on institutional and private equity investments, including structured instruments and investor protection rights.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Growth-Stage & Late-Stage Investments",
+            "desc": "Advisory on institutional and private equity investments, including structured instruments and investor protection rights.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Fund Structuring & Formation",
+            "desc": "Advisory to fund sponsors on investment vehicles and structural considerations, in coordination with tax and regulatory advisors.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Investor-Side IP Advisory",
+            "desc": "Transaction-focused intellectual property advisory, including IP due diligence, ownership assessment, and IP risk allocation in investment documentation.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Secondary Transactions & Exits",
+            "desc": "Advisory on secondary share sales, sponsor exits, promoter buybacks, and strategic exit transactions.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          }
+        ]
+      },
+      "privateEquityHero": {
+        "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+        "title": " Representative Experience",
+        "description": "We have advised investors and growth-stage companies across technology, consumer, financial services, healthcare, infrastructure, and energy sectors on investments, follow-on rounds, and exits.",
+
+        "button": {
+          "label": "View Representative Transactions"
+        }
+      },
+      "recognition": {
+        "title": "Recognition & Market Feedback",
+        "description": "We believe that our clients' experiences speak volumes about the quality of our legal services. Here's what some of them have to say:",
+        "testimonials": [
+          {
+            "text": "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
+            "author": "Corporate/Mergers and Acquisitions"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          }
+        ],
+        "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
+        "continent": "  Asia Pacific 2026",
+        "button": {
+          "label": "View on Chambers and Partners"
+        },
+        "testimonialUI": {
+          "bg": "bg-[#B6996A]",
+          "textColor": "!text-white",
+          "dotActive": "#ffffff",
+          "dotInactive": "rgba(255,255,255,0.4)",
+          "leftArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202.png",
+          "rightArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202%20(1).png"
+        }
+      },
+      "relatedInsights": {
+        "title": "Related Insights",
+        "description": "We advise clients at each stage of the investment journey"
+      },
+      "blogs": {
+        "button": "View More ↓",
+        "items": [
+          {
+            "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          },
+          {
+            "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+            "category": "Private Equity",
+            "title": "How we ensure maximum value creation across investment portfolios.",
+            "readTime": "5 min",
+            "date": "20/09/2024"
+          },
+          {
+            "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+            "category": "Private Equity",
+            "title": "Key considerations when advising on cross-border transactions.",
+            "readTime": "6 min",
+            "date": "25/09/2024"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Speak With Our Team",
+        "description": "If you are evaluating an investment, planning a fundraising round, or considering an exit, we would be pleased to discuss how Kaizen Law can support your objectives.",
+        "buttonText": "Schedule A Consultation →"
+      },
+      "letsConnect": {
+        "title": ["Lets", "Connect"],
+        "enter": "enter",
+        "form": {
+          "newsletterText": "SUBSCRIBE TO OUR NEWSLETTER",
+          "placeholder": "email address",
+          "submitLabel": "→ submit"
+        },
+        "thankYou": {
+          "heading": "Thank You 💙",
+          "message": "We will connect with you soon."
+        }
+      }
+    },
+    "mergers-acquisitions": {
+      "privateEquity": {
+        "title": "Mergers-acquisition",
+        "subtitle": "Advisory for Investors and Growth-Stage Companies Across the Investment Lifecycle",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea consequat.",
+        "image": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
+      },
+      "overview": {
+        "title": "Overview",
+        "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model."
+      },
+      "advisorySections": [
+        {
+          "id": 1,
+          "title": "Who We Advise",
+          "desc": "Kaizen Law works with private equity funds, venture capital investors, and growth-stage companies across sectors. We support both sides of the investment ecosystem — investors deploying capital and founders raising capital to build and scale businesses.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": false
+        },
+        {
+          "id": 2,
+          "title": "What We Do",
+          "desc": "Our practice covers the full lifecycle of investments, including early stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": true
+        },
+        {
+          "id": 3,
+          "title": "How We Think",
+          "desc": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": false
+        }
+      ],
+      "pevcPractice": {
+        "topContent": {
+          "title": "Our PE & VC Practice",
+          "subtitle": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+        },
+        "cardsData": [
+          {
+            "id": 1,
+            "title": "Transaction Structuring & Risk Allocation",
+            "desc": "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png"
+          },
+          {
+            "id": 2,
+            "title": "Working Across the Investment Table",
+            "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376"
+          },
+          {
+            "id": 3,
+            "title": "Advising Across the Capital Lifecycle",
+            "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363"
+          }
+        ]
+      },
+      "investmentLifecycle": {
+        "title": "Advising Across the Investment Lifecycle",
+        "description": "We advise clients at each stage of the investment journey:"
+      },
+      "stackedServices": [
+        {
+          "title": "Early-Stage Fundraising",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Growth-Stage & Late-Stage Investments",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Governance & Shareholder Frameworks",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Follow-on Investments & Restructuring",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Secondary Transactions & Exits",
+          "description": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+        }
+      ],
+      "whyClients": {
+        "title": "Startup & Early-Stage Fundraising",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+        "cards": [
+          {
+            "title": "Startup & Early-Stage Fundraising",
+            "desc": "Advisory on institutional and private equity investments, including structured instruments and investor protection rights.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Growth-Stage & Late-Stage Investments",
+            "desc": "Advisory on institutional and private equity investments, including structured instruments and investor protection rights.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Fund Structuring & Formation",
+            "desc": "Advisory to fund sponsors on investment vehicles and structural considerations, in coordination with tax and regulatory advisors.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Investor-Side IP Advisory",
+            "desc": "Transaction-focused intellectual property advisory, including IP due diligence, ownership assessment, and IP risk allocation in investment documentation.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Secondary Transactions & Exits",
+            "desc": "Advisory on secondary share sales, sponsor exits, promoter buybacks, and strategic exit transactions.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          }
+        ]
+      },
+      "privateEquityHero": {
+        "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+        "title": " Representative Experience",
+        "description": "We have advised investors and growth-stage companies across technology, consumer, financial services, healthcare, infrastructure, and energy sectors on investments, follow-on rounds, and exits.",
+
+        "button": {
+          "label": "View Representative Transactions"
+        }
+      },
+      "recognition": {
+        "title": "Recognition & Market Feedback",
+        "description": "We believe that our clients' experiences speak volumes about the quality of our legal services. Here's what some of them have to say:",
+        "testimonials": [
+          {
+            "text": "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
+            "author": "Corporate/Mergers and Acquisitions"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          }
+        ],
+        "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
+        "continent": "  Asia Pacific 2026",
+        "button": {
+          "label": "View on Chambers and Partners"
+        },
+        "testimonialUI": {
+          "bg": "bg-[#B6996A]",
+          "textColor": "!text-white",
+          "dotActive": "#ffffff",
+          "dotInactive": "rgba(255,255,255,0.4)",
+          "leftArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202.png",
+          "rightArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202%20(1).png"
+        }
+      },
+      "relatedInsights": {
+        "title": "Related Insights",
+        "description": "We advise clients at each stage of the investment journey"
+      },
+      "blogs": {
+        "button": "View More ↓",
+        "items": [
+          {
+            "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          },
+          {
+            "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+            "category": "Private Equity",
+            "title": "How we ensure maximum value creation across investment portfolios.",
+            "readTime": "5 min",
+            "date": "20/09/2024"
+          },
+          {
+            "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+            "category": "Private Equity",
+            "title": "Key considerations when advising on cross-border transactions.",
+            "readTime": "6 min",
+            "date": "25/09/2024"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Speak With Our Team",
+        "description": "If you are evaluating an investment, planning a fundraising round, or considering an exit, we would be pleased to discuss how Kaizen Law can support your objectives.",
+        "buttonText": "Schedule A Consultation →"
+      },
+      "letsConnect": {
+        "title": ["Lets", "Connect"],
+        "enter": "enter",
+        "form": {
+          "newsletterText": "SUBSCRIBE TO OUR NEWSLETTER",
+          "placeholder": "email address",
+          "submitLabel": "→ submit"
+        },
+        "thankYou": {
+          "heading": "Thank You 💙",
+          "message": "We will connect with you soon."
+        }
+      }
+    },
+    "capital-lifecycle": {
+      "privateEquity": {
+        "title": "Capital Lifecycle",
+        "subtitle": "Advisory for Investors and Growth-Stage Companies Across the Investment Lifecycle",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea consequat.",
+        "image": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
+      },
+      "overview": {
+        "title": "Overview",
+        "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model."
+      },
+      "advisorySections": [
+        {
+          "id": 1,
+          "title": "Who We Advise",
+          "desc": "Kaizen Law works with private equity funds, venture capital investors, and growth-stage companies across sectors. We support both sides of the investment ecosystem — investors deploying capital and founders raising capital to build and scale businesses.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": false
+        },
+        {
+          "id": 2,
+          "title": "What We Do",
+          "desc": "Our practice covers the full lifecycle of investments, including early stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": true
+        },
+        {
+          "id": 3,
+          "title": "How We Think",
+          "desc": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": false
+        }
+      ],
+      "pevcPractice": {
+        "topContent": {
+          "title": "Our PE & VC Practice",
+          "subtitle": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+        },
+        "cardsData": [
+          {
+            "id": 1,
+            "title": "Transaction Structuring & Risk Allocation",
+            "desc": "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png"
+          },
+          {
+            "id": 2,
+            "title": "Working Across the Investment Table",
+            "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376"
+          },
+          {
+            "id": 3,
+            "title": "Advising Across the Capital Lifecycle",
+            "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363"
+          }
+        ]
+      },
+      "investmentLifecycle": {
+        "title": "Advising Across the Investment Lifecycle",
+        "description": "We advise clients at each stage of the investment journey:"
+      },
+      "stackedServices": [
+        {
+          "title": "Early-Stage Fundraising",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Growth-Stage & Late-Stage Investments",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Governance & Shareholder Frameworks",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Follow-on Investments & Restructuring",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Secondary Transactions & Exits",
+          "description": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+        }
+      ],
+      "whyClients": {
+        "title": "Startup & Early-Stage Fundraising",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+        "cards": [
+          {
+            "title": "Startup & Early-Stage Fundraising",
+            "desc": "Advisory on institutional and private equity investments, including structured instruments and investor protection rights.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Growth-Stage & Late-Stage Investments",
+            "desc": "Advisory on institutional and private equity investments, including structured instruments and investor protection rights.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Fund Structuring & Formation",
+            "desc": "Advisory to fund sponsors on investment vehicles and structural considerations, in coordination with tax and regulatory advisors.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Investor-Side IP Advisory",
+            "desc": "Transaction-focused intellectual property advisory, including IP due diligence, ownership assessment, and IP risk allocation in investment documentation.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Secondary Transactions & Exits",
+            "desc": "Advisory on secondary share sales, sponsor exits, promoter buybacks, and strategic exit transactions.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          }
+        ]
+      },
+      "privateEquityHero": {
+        "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+        "title": " Representative Experience",
+        "description": "We have advised investors and growth-stage companies across technology, consumer, financial services, healthcare, infrastructure, and energy sectors on investments, follow-on rounds, and exits.",
+
+        "button": {
+          "label": "View Representative Transactions"
+        }
+      },
+      "recognition": {
+        "title": "Recognition & Market Feedback",
+        "description": "We believe that our clients' experiences speak volumes about the quality of our legal services. Here's what some of them have to say:",
+        "testimonials": [
+          {
+            "text": "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
+            "author": "Corporate/Mergers and Acquisitions"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          }
+        ],
+        "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
+        "continent": "  Asia Pacific 2026",
+        "button": {
+          "label": "View on Chambers and Partners"
+        },
+        "testimonialUI": {
+          "bg": "bg-[#B6996A]",
+          "textColor": "!text-white",
+          "dotActive": "#ffffff",
+          "dotInactive": "rgba(255,255,255,0.4)",
+          "leftArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202.png",
+          "rightArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202%20(1).png"
+        }
+      },
+      "relatedInsights": {
+        "title": "Related Insights",
+        "description": "We advise clients at each stage of the investment journey"
+      },
+      "blogs": {
+        "button": "View More ↓",
+        "items": [
+          {
+            "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          },
+          {
+            "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+            "category": "Private Equity",
+            "title": "How we ensure maximum value creation across investment portfolios.",
+            "readTime": "5 min",
+            "date": "20/09/2024"
+          },
+          {
+            "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+            "category": "Private Equity",
+            "title": "Key considerations when advising on cross-border transactions.",
+            "readTime": "6 min",
+            "date": "25/09/2024"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Speak With Our Team",
+        "description": "If you are evaluating an investment, planning a fundraising round, or considering an exit, we would be pleased to discuss how Kaizen Law can support your objectives.",
+        "buttonText": "Schedule A Consultation →"
+      },
+      "letsConnect": {
+        "title": ["Lets", "Connect"],
+        "enter": "enter",
+        "form": {
+          "newsletterText": "SUBSCRIBE TO OUR NEWSLETTER",
+          "placeholder": "email address",
+          "submitLabel": "→ submit"
+        },
+        "thankYou": {
+          "heading": "Thank You 💙",
+          "message": "We will connect with you soon."
+        }
+      }
+    },
+    "technology-law": {
+      "privateEquity": {
+        "title": "Technology Law",
+        "subtitle": "Advisory for Investors and Growth-Stage Companies Across the Investment Lifecycle",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea consequat.",
+        "image": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
+      },
+      "overview": {
+        "title": "Overview",
+        "description": "Kaizen Law is a corporate and transaction advisory firm delivering big-firm quality advice through a partner-led, boutique model."
+      },
+      "advisorySections": [
+        {
+          "id": 1,
+          "title": "Who We Advise",
+          "desc": "Kaizen Law works with private equity funds, venture capital investors, and growth-stage companies across sectors. We support both sides of the investment ecosystem — investors deploying capital and founders raising capital to build and scale businesses.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": false
+        },
+        {
+          "id": 2,
+          "title": "What We Do",
+          "desc": "Our practice covers the full lifecycle of investments, including early stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": true
+        },
+        {
+          "id": 3,
+          "title": "How We Think",
+          "desc": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
+          "image": "https://ik.imagekit.io/flyde/Frame%202147238636.png",
+          "reverse": false
+        }
+      ],
+      "pevcPractice": {
+        "topContent": {
+          "title": "Our PE & VC Practice",
+          "subtitle": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+        },
+        "cardsData": [
+          {
+            "id": 1,
+            "title": "Transaction Structuring & Risk Allocation",
+            "desc": "Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png"
+          },
+          {
+            "id": 2,
+            "title": "Working Across the Investment Table",
+            "desc": "We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png?updatedAt=1773733504376"
+          },
+          {
+            "id": 3,
+            "title": "Advising Across the Capital Lifecycle",
+            "desc": "We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.",
+            "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png?updatedAt=1773733504363"
+          }
+        ]
+      },
+      "investmentLifecycle": {
+        "title": "Advising Across the Investment Lifecycle",
+        "description": "We advise clients at each stage of the investment journey:"
+      },
+      "stackedServices": [
+        {
+          "title": "Early-Stage Fundraising",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Growth-Stage & Late-Stage Investments",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Governance & Shareholder Frameworks",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Follow-on Investments & Restructuring",
+          "description": "Our practice covers the full lifecycle of investments, including early-stage financings, growth and structured investments, fundraises, and sponsor-led exits. We advise on shareholder transactions with a focus on precision, speed, and execution."
+        },
+        {
+          "title": "Secondary Transactions & Exits",
+          "description": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction."
+        }
+      ],
+      "whyClients": {
+        "title": "Startup & Early-Stage Fundraising",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+        "cards": [
+          {
+            "title": "Startup & Early-Stage Fundraising",
+            "desc": "Advisory on institutional and private equity investments, including structured instruments and investor protection rights.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Growth-Stage & Late-Stage Investments",
+            "desc": "Advisory on institutional and private equity investments, including structured instruments and investor protection rights.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Fund Structuring & Formation",
+            "desc": "Advisory to fund sponsors on investment vehicles and structural considerations, in coordination with tax and regulatory advisors.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Investor-Side IP Advisory",
+            "desc": "Transaction-focused intellectual property advisory, including IP due diligence, ownership assessment, and IP risk allocation in investment documentation.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          },
+          {
+            "title": "Secondary Transactions & Exits",
+            "desc": "Advisory on secondary share sales, sponsor exits, promoter buybacks, and strategic exit transactions.",
+            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+          }
+        ]
+      },
+      "privateEquityHero": {
+        "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+        "title": " Representative Experience",
+        "description": "We have advised investors and growth-stage companies across technology, consumer, financial services, healthcare, infrastructure, and energy sectors on investments, follow-on rounds, and exits.",
+
+        "button": {
+          "label": "View Representative Transactions"
+        }
+      },
+      "recognition": {
+        "title": "Recognition & Market Feedback",
+        "description": "We believe that our clients' experiences speak volumes about the quality of our legal services. Here's what some of them have to say:",
+        "testimonials": [
+          {
+            "text": "Kaizen has consistently demonstrates a strong command over corporate legal matters, combining deep technical expertise with a business-centric approach.",
+            "author": "Corporate/Mergers and Acquisitions"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          },
+          {
+            "text": "Their expertise was impressive...",
+            "author": "Startup Founder"
+          }
+        ],
+        "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
+        "continent": "  Asia Pacific 2026",
+        "button": {
+          "label": "View on Chambers and Partners"
+        },
+        "testimonialUI": {
+          "bg": "bg-[#B6996A]",
+          "textColor": "!text-white",
+          "dotActive": "#ffffff",
+          "dotInactive": "rgba(255,255,255,0.4)",
+          "leftArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202.png",
+          "rightArrow": "https://ik.imagekit.io/a9uxeuyhx/Vector%202%20(1).png"
+        }
+      },
+      "relatedInsights": {
+        "title": "Related Insights",
+        "description": "We advise clients at each stage of the investment journey"
+      },
+      "blogs": {
+        "button": "View More ↓",
+        "items": [
+          {
+            "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          },
+          {
+            "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+            "category": "Private Equity",
+            "title": "How we ensure maximum value creation across investment portfolios.",
+            "readTime": "5 min",
+            "date": "20/09/2024"
+          },
+          {
+            "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+            "category": "Private Equity",
+            "title": "Key considerations when advising on cross-border transactions.",
+            "readTime": "6 min",
+            "date": "25/09/2024"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Speak With Our Team",
+        "description": "If you are evaluating an investment, planning a fundraising round, or considering an exit, we would be pleased to discuss how Kaizen Law can support your objectives.",
+        "buttonText": "Schedule A Consultation →"
+      },
+      "letsConnect": {
+        "title": ["Lets", "Connect"],
+        "enter": "enter",
+        "form": {
+          "newsletterText": "SUBSCRIBE TO OUR NEWSLETTER",
+          "placeholder": "email address",
+          "submitLabel": "→ submit"
+        },
+        "thankYou": {
+          "heading": "Thank You 💙",
+          "message": "We will connect with you soon."
+        }
+      }
+    }
+  },
+  "insights":{
+    "insightsHero": {
+      "title": "Insights",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+    },
+    "insightsFilter": {
+      "searchPlaceholder": "Search",
+      "buttons": [
+        {
+          "label": "Filter"
+        },
+        {
+          "label": "Filter"
+        }
+      ]
+    },
+    "insightDetailHero": {
+      "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+
+      "category": "Category",
+
+      "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+
+      "meta": {
+        "readTime": "4 min",
+        "date": "14/09/2024"
+      }
+    },
+    "blogs": [
+      {
+        "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+        "category": "Category",
+        "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+        "readTime": "4 min",
+        "date": "14/09/2024"
+      },
+      {
+        "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+        "category": "Category",
+        "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+        "readTime": "4 min",
+        "date": "14/09/2024"
+      },
+      {
+        "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+        "category": "Category",
+        "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+        "readTime": "4 min",
+        "date": "14/09/2024"
+      },
+      {
+        "image": "https://ik.imagekit.io/demo/img/image4.jpg",
+        "category": "Category",
+        "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+        "readTime": "4 min",
+        "date": "14/09/2024"
+      },
+      {
+        "image": "https://ik.imagekit.io/demo/img/image5.jpg",
+        "category": "Category",
+        "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+        "readTime": "4 min",
+        "date": "14/09/2024"
+      }
+    ],
+    "letsConnect": {
+      "title": ["Lets", "Connect"],
+      "enter": "enter",
+      "form": {
+        "newsletterText": "SUBSCRIBE TO OUR NEWSLETTER",
+        "placeholder": "email address",
+        "submitLabel": "→ submit"
+      },
+      "thankYou": {
+        "heading": "Thank You 💙",
+        "message": "We will connect with you soon."
+      }
+    },
+    "privateEquityHero": {
+      "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+      "title": "Ready To Talk?",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "subText": "I want to talk to your experts in:",
+      "selectIndustryText": "Select an Industry",
+      "industries": [
+        "Fintech",
+        "Healthcare",
+        "E-commerce",
+        "SaaS",
+        "Manufacturing"
+      ],
+      "button": {
+        "label": "View Representative Transactions"
+      }
+    }
+  },
+  "insightpages": [
+    {
+      "id": 1,
+      "slug": "cross-border-ma-regulatory-strategies",
+      "title": "Navigating Cross-Border M&A: Regulatory Strategies for Global Deals",
+      "excerpt": "A deep dive into regulatory frameworks, approval processes, and strategic considerations for cross-border mergers and acquisitions.",
+      "author": "Editorial Team",
+      "date": "2026-03-20",
+      "readTime": "8 min read",
+      "tags": ["M&A", "Cross-Border", "Regulation", "Compliance"],
+      "content": {
+        "introduction": "Cross-border mergers and acquisitions have become a cornerstone of global expansion strategies. However, they come with a complex web of regulatory requirements that vary significantly across jurisdictions. Understanding these nuances is critical for ensuring successful deal execution.",
+        "sections": [
+          {
+            "heading": "Understanding Jurisdictional Challenges",
+            "body": "Every country has its own regulatory framework governing foreign investments, antitrust laws, and sector-specific restrictions. Companies must conduct detailed jurisdictional analysis to identify approval requirements, foreign ownership limits, and compliance obligations."
+          },
+          {
+            "heading": "Antitrust and Competition Approvals",
+            "body": "Competition authorities play a pivotal role in cross-border deals. Filing thresholds, review timelines, and substantive tests differ across regions. Early assessment of potential competition concerns helps avoid delays and deal restructuring."
+          },
+          {
+            "heading": "Foreign Investment Regulations",
+            "body": "Many jurisdictions impose foreign direct investment (FDI) restrictions in sensitive sectors such as defense, telecommunications, and infrastructure. Legal teams must evaluate whether approvals or notifications are required prior to closing."
+          },
+          {
+            "heading": "Risk Mitigation Strategies",
+            "body": "To mitigate risks, parties often include regulatory conditions precedent, break fees, and detailed representations in transaction documents. Pre-filing consultations with regulators can also streamline the approval process."
+          },
+          {
+            "heading": "Conclusion",
+            "body": "Cross-border M&A transactions require a coordinated legal strategy across multiple jurisdictions. Early planning, regulatory mapping, and proactive engagement with authorities are key to successful deal completion."
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "slug": "due-diligence-best-practices-ma",
+      "title": "Due Diligence in M&A: Best Practices for Risk Identification",
+      "excerpt": "Explore the essential components of legal due diligence and how it shapes deal value and risk allocation.",
+      "author": "Editorial Team",
+      "date": "2026-03-18",
+      "readTime": "7 min read",
+      "tags": ["Due Diligence", "Risk Management", "M&A"],
+      "content": {
+        "introduction": "Due diligence is one of the most critical phases in any merger or acquisition. It enables buyers to identify risks, validate assumptions, and negotiate deal terms effectively.",
+        "sections": [
+          {
+            "heading": "Scope of Legal Due Diligence",
+            "body": "Legal due diligence covers corporate structure, contracts, litigation, intellectual property, employment matters, and regulatory compliance. A well-defined scope ensures that no critical area is overlooked."
+          },
+          {
+            "heading": "Material Contracts Review",
+            "body": "Reviewing key commercial agreements helps identify change-of-control clauses, termination rights, and obligations that may impact the transaction. These insights are crucial for valuation and negotiation."
+          },
+          {
+            "heading": "Litigation and Compliance Risks",
+            "body": "Pending or potential litigation can significantly affect deal value. Compliance issues, including regulatory violations, must also be carefully assessed to avoid post-closing liabilities."
+          },
+          {
+            "heading": "Data Room Management",
+            "body": "Efficient organization of virtual data rooms enhances the due diligence process. Clear indexing and timely updates enable faster review and better collaboration among stakeholders."
+          },
+          {
+            "heading": "Conclusion",
+            "body": "A thorough due diligence process not only uncovers risks but also creates opportunities for value enhancement. It forms the foundation for informed decision-making in M&A transactions."
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "slug": "structuring-ma-transactions",
+      "title": "Structuring M&A Transactions: Choosing the Right Approach",
+      "excerpt": "An overview of deal structures including asset purchases, share acquisitions, and mergers, with their legal and tax implications.",
+      "author": "Editorial Team",
+      "date": "2026-03-15",
+      "readTime": "9 min read",
+      "tags": ["Deal Structuring", "Tax", "M&A"],
+      "content": {
+        "introduction": "The structure of an M&A transaction has significant legal, tax, and commercial implications. Selecting the right approach requires a careful analysis of business objectives and regulatory constraints.",
+        "sections": [
+          {
+            "heading": "Asset vs Share Purchase",
+            "body": "In an asset purchase, specific assets and liabilities are transferred, offering flexibility but requiring third-party consents. Share purchases involve acquiring ownership of the target entity, resulting in a simpler transfer but with broader liability exposure."
+          },
+          {
+            "heading": "Merger Structures",
+            "body": "Mergers involve combining two entities into one, often through statutory processes. They can provide tax efficiencies and operational synergies but require regulatory approvals and shareholder consent."
+          },
+          {
+            "heading": "Tax Considerations",
+            "body": "Tax implications vary depending on the deal structure. Factors such as capital gains tax, stamp duty, and indirect taxes must be evaluated to optimize transaction outcomes."
+          },
+          {
+            "heading": "Financing the Transaction",
+            "body": "Financing options include debt, equity, or hybrid instruments. The chosen structure impacts ownership, control, and financial risk."
+          },
+          {
+            "heading": "Conclusion",
+            "body": "Effective deal structuring aligns legal, tax, and commercial considerations to achieve optimal outcomes. Early involvement of legal advisors is essential in this process."
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "slug": "post-merger-integration-strategies",
+      "title": "Post-Merger Integration: Turning Strategy into Value",
+      "excerpt": "Key considerations for successful post-merger integration and long-term value creation.",
+      "author": "Editorial Team",
+      "date": "2026-03-12",
+      "readTime": "8 min read",
+      "tags": ["Post-Merger Integration", "Strategy", "Operations"],
+      "content": {
+        "introduction": "The success of an M&A transaction is ultimately determined by post-merger integration (PMI). Without effective integration, anticipated synergies may fail to materialize.",
+        "sections": [
+          {
+            "heading": "Integration Planning",
+            "body": "Integration planning should begin during the deal phase. Identifying key integration areas, timelines, and leadership responsibilities ensures a smoother transition."
+          },
+          {
+            "heading": "Cultural Alignment",
+            "body": "Differences in organizational culture can create significant challenges. Aligning values, communication styles, and management practices is essential for employee retention and productivity."
+          },
+          {
+            "heading": "Operational Synergies",
+            "body": "Realizing operational synergies involves streamlining processes, consolidating functions, and leveraging combined capabilities. This requires careful execution and monitoring."
+          },
+          {
+            "heading": "Legal and Compliance Integration",
+            "body": "Post-closing, companies must harmonize compliance frameworks, policies, and reporting systems to ensure regulatory adherence."
+          },
+          {
+            "heading": "Conclusion",
+            "body": "Post-merger integration is a complex but critical phase that determines the long-term success of a transaction. A structured and proactive approach is key to unlocking value."
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "slug": "emerging-trends-ma-2026",
+      "title": "Emerging Trends in M&A: What to Expect in 2026",
+      "excerpt": "An analysis of key trends shaping the M&A landscape, including technology, ESG, and evolving regulatory frameworks.",
+      "author": "Editorial Team",
+      "date": "2026-03-10",
+      "readTime": "6 min read",
+      "tags": ["Trends", "ESG", "Technology", "M&A"],
+      "content": {
+        "introduction": "The M&A landscape is constantly evolving, driven by economic conditions, technological advancements, and regulatory developments. Understanding these trends is essential for staying competitive.",
+        "sections": [
+          {
+            "heading": "Rise of ESG Considerations",
+            "body": "Environmental, Social, and Governance (ESG) factors are increasingly influencing deal-making. Investors are prioritizing sustainability and ethical practices in target companies."
+          },
+          {
+            "heading": "Technology-Driven Transactions",
+            "body": "Digital transformation is driving acquisitions in sectors such as fintech, healthtech, and artificial intelligence. Companies are acquiring capabilities to stay ahead in a competitive market."
+          },
+          {
+            "heading": "Increased Regulatory Scrutiny",
+            "body": "Governments and regulators are taking a more active role in reviewing transactions, particularly in strategic sectors. This trend is expected to continue in 2026."
+          },
+          {
+            "heading": "Private Equity Activity",
+            "body": "Private equity firms remain key players in the M&A market, with significant dry powder and a focus on value creation through strategic acquisitions."
+          },
+          {
+            "heading": "Conclusion",
+            "body": "Staying informed about emerging trends enables businesses to identify opportunities and navigate challenges in the dynamic M&A landscape."
+          }
+        ]
+      }
+    }
+  ]
+}

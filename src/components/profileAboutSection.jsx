@@ -5,12 +5,12 @@ import Image from "next/image";
 import { Plus, Minus } from "lucide-react";
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
-import data from "@/data/profile.json";
+import sitecontent from "@/data/sitecontent.json";
 
 
 export default function ProfileAboutSection() {
-  const [activeIndex, setActiveIndex] = useState(0); // First open by default
-  const accordionData = data.accordionData;
+  const [activeIndex, setActiveIndex] = useState(0);   const { profile } = sitecontent;
+  const accordionData = profile.accordionData;
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };

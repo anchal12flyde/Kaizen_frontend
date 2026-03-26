@@ -169,6 +169,7 @@ export default function Services() {
           width={1200}
           height={800}
           className="!object-cover w-full h-full  "
+          alt=""
         />
       </div>
       <Footer />

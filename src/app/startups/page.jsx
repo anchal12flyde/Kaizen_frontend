@@ -11,10 +11,13 @@ import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import WhyChooseSection from "@/components/whyChooseSection";
 import Image from "next/image";
-import startup from "@/data/startups.json";
+import sitecontent from "@/data/sitecontent.json";
+import { getSiteContent } from "@/lib/siteContent";
 
 
 export default function Startups() {
+    const sitecontent = getSiteContent(); 
+  const {sectorpages}=sitecontent
    const {
      startupHero,
      ourStory,
@@ -25,7 +28,7 @@ export default function Startups() {
      relatedInsights,
      privateEquityHero,
      cta,
-   } = startup;
+   } = sectorpages;
   return (
     <div>
       <Header />

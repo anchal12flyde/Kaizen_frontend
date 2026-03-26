@@ -8,9 +8,12 @@ import AboutHeroSection from "@/components/abouthero";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
-import sector from "@/data/sectorListing.json";
+import sitecontent from "@/data/sitecontent.json";
+import { getSiteContent } from "@/lib/siteContent";
 
 export default function Sectors() {
+  const sitecontent = getSiteContent(); 
+  const {sector}=sitecontent;
   const { sectorHero, privateEquityHero } = sector;
   const { industries } = privateEquityHero;
     const [isOpen, setIsOpen] = useState(false);

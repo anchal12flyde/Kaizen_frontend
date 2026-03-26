@@ -14,18 +14,19 @@ import Recognization from "@/components/recognization";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
-import aboutData from "@/data/about.json";
+import { getSiteContent } from "@/lib/siteContent";
 
 export default function About() {
   const [email, setEmail] = useState("");
-
+  const sitecontent = getSiteContent(); // 👈 CALL IT
+  const { about } = sitecontent;
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email) {
       alert("Please enter email");
       return;
     }
-    setEmail(""); 
+    setEmail("");
   };
 
   const [isOpen, setIsOpen] = useState(false);
@@ -37,10 +38,10 @@ export default function About() {
     setSelected(industry);
     setIsOpen(false);
   };
-  const { aboutHero, privateEquityHero, letsConnect,whyClients } = aboutData;
-  
-    const { title, form, thankYou } = letsConnect;
-    const { industries } = privateEquityHero;
+  const { aboutHero, privateEquityHero, letsConnect, whyClients } = about;
+
+  const { title, form, thankYou } = letsConnect;
+  const { industries } = privateEquityHero;
   return (
     <div>
       <Header />
@@ -62,8 +63,8 @@ export default function About() {
       />
       <OurStorySection />
       <KaizenPhilosophySection />
-      <GuidesSection data={aboutData.guides} />
-      <WhyChooseSection data={whyClients} />
+      <GuidesSection data={about.guides} />
+      <WhyChooseSection data={about.whyClients} />
       <SectorExperience />
       <Recognization />
       <LeadershipTeam />
@@ -74,6 +75,7 @@ export default function About() {
           fill
           className="hero-background"
           priority
+          alt=""
         />
 
         {/* Overlay */}

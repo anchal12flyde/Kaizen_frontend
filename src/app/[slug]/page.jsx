@@ -13,16 +13,17 @@ import Typography from "@/components/ui-kit/typography";
 import WhyChooseSection from "@/components/whyChooseSection";
 import Image from "next/image";
 import Recognization from "@/components/recognization";
-import dataJson from "@/data/privateEquity.json";
+import sitecontent from "@/data/sitecontent.json";
 import Testimonials from "@/components/ui-kit/testimonials";
 import { notFound } from "next/navigation";
-
+import { getSiteContent } from "@/lib/siteContent";
 
 
 export default async function privateEquity({ params }) {
+  const sitecontent = getSiteContent();
   const { slug } = await params; 
-
-  const data = dataJson.pages[slug];
+ 
+  const data = sitecontent.servicepages[slug];
 
   if (!data) return notFound();
   

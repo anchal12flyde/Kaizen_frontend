@@ -7,12 +7,14 @@ import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 import Link from "next/link";
-import Practice from "@/data/practiceAreas.json";
-
+import sitecontent from "@/data/sitecontent.json";
+import { getSiteContent } from "@/lib/siteContent";
 
 
 export default function ServicesListing () {
-const { practiceHero, pevcPractice, privateEquityHero } = Practice;
+  const sitecontent = getSiteContent(); 
+  const {practiceAreas}=sitecontent;
+const { practiceHero, pevcPractice, privateEquityHero } = practiceAreas;
 const { industries } = privateEquityHero;
   
 const { cardsData } = pevcPractice;

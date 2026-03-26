@@ -7,11 +7,14 @@ import { Container } from "@/components/ui-kit/spacing";
 import Button from "@/components/ui-kit/button";
 import Image from "next/image";
 import Testimonials from "@/components/ui-kit/testimonials";
-import homeData from "@/data/home.json";
+import { getSiteContent } from "@/lib/siteContent";
+import Link from "next/link";
+
 
 export default function Home() {
-  const { recognition } = homeData;
-  const { hero, improvement, evaluation, bannerImage, overlayImage } = homeData;
+  const { home } = getSiteContent();
+  const { recognition } = home;
+  const { hero, improvement, evaluation, bannerImage, overlayImage } = home;
 
   return (
     <div>
@@ -109,8 +112,13 @@ export default function Home() {
             </Typography>
           </div>
 
-          <div className="flex flex-col md:gap-0 gap-[8px]">
-            <Typography colorVariant="white" variant="display-3" delay={0.4}>
+          <div className="group flex flex-col md:gap-0 gap-[8px]">
+            <Typography
+              colorVariant="white"
+              variant="display-3"
+              delay={0.4}
+              className="group-hover:!text-[var(--color-accent)]"
+            >
               {evaluation.steps.map((step, i) => (
                 <span key={i}>
                   {step}
@@ -119,17 +127,23 @@ export default function Home() {
               ))}
             </Typography>
 
-            <Typography variant="punctuation" delay={0.6}>
+            <Typography
+              variant="punctuation"
+              delay={0.6}
+              className="group-hover:!text-[var(--color-accent)]"
+            >
               {evaluation.highlight}
             </Typography>
 
-            <Button
-              className="evaluationBtn !w-fit"
-              variant="white"
-              delay={0.8}
-            >
-              {evaluation.buttonText}
-            </Button>
+            <Link href="/practice-areas">
+              <Button
+                className="evaluationBtn !w-fit group-hover:!bg-[var(--color-accent)]"
+                variant="white"
+                delay={0.8}
+              >
+                {evaluation.buttonText}
+              </Button>
+            </Link>
           </div>
         </Container>
       </div>

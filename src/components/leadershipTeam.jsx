@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
-import aboutData from "@/data/about.json";
+import { getSiteContent } from "@/lib/siteContent";
 import Link from "next/link";
 
 
@@ -15,8 +15,9 @@ export default function LeadershipTeam() {
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-
-  const { leadershipTeam } = aboutData;
+  const sitecontent = getSiteContent();
+  const { about } = sitecontent;
+  const { leadershipTeam } = about;
   const { title, description, members } = leadershipTeam;
 
   /* Mouse Drag Scroll */

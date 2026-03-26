@@ -6,63 +6,16 @@ import Header from "@/components/ui-kit/header";
 import Footer from "@/components/ui-kit/footer";
 import Button from "@/components/ui-kit/button";
 import TransactionCard from "@/components/ui-kit/transactionCard";
-import footprintData from "@/data/footprint.json";
+import sitecontent from "@/data/sitecontent.json";
+import { getSiteContent } from "@/lib/siteContent";
 
 export default function page() {
+    const sitecontent = getSiteContent(); 
+  const {footprint} =sitecontent;
   const { hero, stats, representativeMandates, fullTransactionList } =
-    footprintData;
+    footprint;
  
-  const items = [
-    {
-      title: "Mergers & Acquisitions",
-      sector: "Technology",
-      year: "2021",
-      role: "Advisor to Company",
-      desc: "Advised the promoters of a technology-enabled services company on the sale of a controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements.",
-    },
-    {
-      title: "Mergers & Acquisitions",
-      sector: "Technology",
-      year: "2021",
-      role: "Advisor to Company",
-      desc: "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements.",
-    },
-    {
-      title: "Mergers & Acquisitions",
-      sector: "Technology",
-      year: "2021",
-      role: "Advisor to Company",
-      desc: "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements.",
-    },
-    {
-      title: "Mergers & Acquisitions",
-      sector: "Technology",
-      year: "2021",
-      role: "Advisor to Company",
-      desc: "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements.",
-    },
-    {
-      title: "Mergers & Acquisitions",
-      sector: "Technology",
-      year: "2021",
-      role: "Advisor to Company",
-      desc: "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements.",
-    },
-    {
-      title: "Mergers & Acquisitions",
-      sector: "Technology",
-      year: "2021",
-      role: "Advisor to Company",
-      desc: "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements.",
-    },
-    {
-      title: "Mergers & Acquisitions",
-      sector: "Technology",
-      year: "2021",
-      role: "Advisor to Company",
-      desc: "Advised the promoters of a technology-enabled services company on the sale of controlling stake to a strategic acquirer, including transaction structuring, legal due diligence, and negotiation of definitive agreements.",
-    },
-  ];
+  
   return (
     <>
       <Header />

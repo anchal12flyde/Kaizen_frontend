@@ -5,12 +5,14 @@ import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
-import ContactData from "@/data/contact.json";
+import sitecontent from "@/data/sitecontent.json";
+import { getSiteContent } from "@/lib/siteContent";
 
 export default function Contact() {
-  const contactSection = ContactData.contactSection;
-  const contactInfo = ContactData.contactInfo;
-  const contactCTA = ContactData.contactCTA;
+  const sitecontent = getSiteContent(); 
+  const {contact} =sitecontent;
+  const {contactSection, contactInfo,contactCTA} = contact;
+  
   return (
     <div>
       <Header />
@@ -106,6 +108,7 @@ export default function Contact() {
                   width={200}
                   height={200}
                   className=" relative w-full h-auto  "
+                  alt=""
                 />
               </div>
             </div>

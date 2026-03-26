@@ -6,11 +6,11 @@ import { Linkedin, Copyright } from "lucide-react";
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
 import useTypingText from "@/hooks/useTypingTesxt";
-import data from "@/data/profile.json";
+import sitecontent from "@/data/sitecontent.json";
 
 export default function ProfileHeader() {
-  /* Typing Text */
-  const { profileHeader } = data;
+ const { profile } = sitecontent;
+  const { profileHeader } = profile;
 
   const { name, role, phone, email, socials } = profileHeader;
 

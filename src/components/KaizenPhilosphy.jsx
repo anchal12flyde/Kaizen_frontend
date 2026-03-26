@@ -2,10 +2,14 @@
 
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
-import aboutData from "@/data/about.json";
+import sitecontent from "@/data/sitecontent.json";
+import { getSiteContent } from "@/lib/siteContent";
 
 export default function KaizenPhilosophySection() {
-  const { philosophy } = aboutData;
+
+  const sitecontent = getSiteContent(); // 👈 CALL IT
+  const { about } = sitecontent;
+  const { philosophy } = about;
   return (
     <Container
       variant="primarySpacing"

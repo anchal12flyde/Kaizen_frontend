@@ -927,6 +927,7 @@ export default function page({ data }) {
                     width={200}
                     height={200}
                     className=" relative w-full h-auto  "
+                    alt=""
                   />
                 </div>
               </div>

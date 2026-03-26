@@ -8,10 +8,12 @@ import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
-import career from "@/data/career.json"
+import sitecontent from "@/data/sitecontent.json";
+import { getSiteContent } from "@/lib/siteContent";
 
 export default function Careers() {
-  
+  const sitecontent = getSiteContent();
+    const { career } = sitecontent;
    const {
      careerHero,
      pevcPractice,

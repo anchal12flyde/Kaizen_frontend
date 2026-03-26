@@ -5,17 +5,18 @@ import Header from "@/components/ui-kit/header";
 import Typography from "@/components/ui-kit/typography";
 import { Container } from "@/components/ui-kit/spacing";
 import Footer from "@/components/ui-kit/footer";
-import policy from "@/data/legal-and-compliance.json";
-
+import sitecontent from "@/data/sitecontent.json";
+import { getSiteContent } from "@/lib/siteContent";
 
 
 export default function PoliciesPage() {
   const [activeTab, setActiveTab] = useState("disclaimer");
   const [isMobile, setIsMobile] = useState(false);
   // const data = policiesData[activeTab];
-
-  const { title, description } = policy.policiesPage.hero;
-  const tabs = policy.policies.tabs;
+  const sitecontent = getSiteContent();
+const { legal } = sitecontent;
+  const { title, description } = legal.policiesPage.hero;
+  const tabs = legal.policies.tabs;
   const data = tabs.find((item) => item.key === activeTab);
 
   useEffect(() => {

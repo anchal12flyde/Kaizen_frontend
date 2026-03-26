@@ -5,8 +5,8 @@ import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import aboutData from "@/data/about.json";
-
+import sitecontent from "@/data/sitecontent.json";
+import { getSiteContent } from "@/lib/siteContent";
 gsap.registerPlugin(ScrollTrigger);
 
 const sectorsData = [
@@ -50,7 +50,10 @@ const sectorsData = [
 export default function SectorExperience({ data }) {
   const [isMobile, setIsMobile] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const { sectorExperience } = aboutData;
+ 
+  const sitecontent = getSiteContent(); 
+  const { about } = sitecontent;
+  const { sectorExperience } = about;
   data = data || sectorExperience;
   const { title, sectors } = data;
   const sectionRef = useRef(null);

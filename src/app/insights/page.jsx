@@ -9,19 +9,21 @@ import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
-import Data from "@/data/insights.json";
-
+import sitecontent from "@/data/sitecontent.json";
+import { getSiteContent } from "@/lib/siteContent";
 
 
 
 export default function Insights() {
+  const sitecontent = getSiteContent(); 
+  const {insights}=sitecontent;
   const {
     insightsHero,
     insightsFilter,
     insightDetailHero,
     letsConnect,
     privateEquityHero,
-  } = Data;
+  } = insights;
   const { title, enter, form } = letsConnect;
   const { industries } = privateEquityHero;
     const [email, setEmail] = useState("");
@@ -143,7 +145,7 @@ export default function Insights() {
         </section>
       </Container>
 
-      <BlogGridSection variant="stack" posts={Data.blogs} />
+      <BlogGridSection variant="stack" posts={insights.blogs} />
       <div className="hidden md:block">
         <LetsConnectSection />
       </div>

@@ -16,6 +16,7 @@ const Typography = ({
   children,
   className,
   colorVariant = "black",
+  animate,
   ...props
 }) => {
   const Tag = as || getDefaultTag(variant);

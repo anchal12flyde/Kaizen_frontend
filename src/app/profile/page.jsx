@@ -10,9 +10,12 @@ import Testimonial from "@/components/ui-kit/testimonial";
 import Testimonials from "@/components/ui-kit/testimonials";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
-import profile from "@/data/profile.json";
+import sitecontent from "@/data/sitecontent.json";
+import { getSiteContent } from "@/lib/siteContent";
 
 export default function ProfilePage() {
+    const sitecontent = getSiteContent();
+  const { profile } = sitecontent;
   const {recognition,cta}=profile;
   return (
     <div className="bg-[#F7F4EB]">
