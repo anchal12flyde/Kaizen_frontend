@@ -68,7 +68,6 @@
       "src": "https://ik.imagekit.io/a9uxeuyhx/c187c8de4a3719b0bf6fce2d5297411e54a28f20.png"
     }
   },
-
   "about": {
     "aboutHero": {
       "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
@@ -1958,7 +1957,7 @@
       }
     }
   },
-  "insights":{
+  "insight":{
     "insightsHero": {
       "title": "Insights",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."

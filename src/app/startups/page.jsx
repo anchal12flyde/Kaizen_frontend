@@ -12,11 +12,11 @@ import Typography from "@/components/ui-kit/typography";
 import WhyChooseSection from "@/components/whyChooseSection";
 import Image from "next/image";
 import sitecontent from "@/data/sitecontent.json";
-import { getSiteContent } from "@/lib/siteContent";
+import { useSiteContent } from "@/context/SiteContentProvider";
 
 
 export default function Startups() {
-    const sitecontent = getSiteContent(); 
+    const sitecontent = useSiteContent(); 
   const {sectorpages}=sitecontent;
    const {
      startupHero,

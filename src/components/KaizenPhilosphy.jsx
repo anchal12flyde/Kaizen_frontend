@@ -3,11 +3,11 @@
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
 import sitecontent from "@/data/sitecontent.json";
-import { getSiteContent } from "@/lib/siteContent";
+import { useSiteContent } from "@/context/SiteContentProvider";
 
 export default function KaizenPhilosophySection() {
 
-  const sitecontent = getSiteContent(); // 👈 CALL IT
+  const sitecontent = useSiteContent(); // 👈 CALL IT
   const { about } = sitecontent;
   const { philosophy } = about;
   return (

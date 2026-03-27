@@ -6,14 +6,14 @@ import Typography from "@/components/ui-kit/typography";
 import { Container } from "@/components/ui-kit/spacing";
 import Footer from "@/components/ui-kit/footer";
 import sitecontent from "@/data/sitecontent.json";
-import { getSiteContent } from "@/lib/siteContent";
+import { useSiteContent } from "@/context/SiteContentProvider";
 
 
 export default function PoliciesPage() {
   const [activeTab, setActiveTab] = useState("disclaimer");
   const [isMobile, setIsMobile] = useState(false);
   // const data = policiesData[activeTab];
-  const sitecontent = getSiteContent();
+  const sitecontent = useSiteContent();
 const { legal } = sitecontent;
   const { title, description } = legal.policiesPage.hero;
   const tabs = legal.policies.tabs;

@@ -4,7 +4,7 @@ import Button from "./ui-kit/button";
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
 import sitecontent from "@/data/sitecontent.json";
-import { getSiteContent } from "@/lib/siteContent";
+import { useSiteContent } from "@/context/SiteContentProvider";
 
 export default function OurStorySection({
   bgColor = "bg-[var(--color-background-1)]",
@@ -12,7 +12,7 @@ export default function OurStorySection({
   showButton = true,
 }) {
  
-  const sitecontent = getSiteContent(); // 👈 CALL IT
+  const sitecontent = useSiteContent(); // 👈 CALL IT
   const { about } = sitecontent;
   const { ourStory } = about;
   return (

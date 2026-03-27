@@ -9,10 +9,10 @@ import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 import sitecontent from "@/data/sitecontent.json";
-import { getSiteContent } from "@/lib/siteContent";
+import { useSiteContent } from "@/context/SiteContentProvider";
 
 export default function Careers() {
-  const sitecontent = getSiteContent();
+  const sitecontent = useSiteContent();
     const { career } = sitecontent;
    const {
      careerHero,

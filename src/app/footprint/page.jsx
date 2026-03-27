@@ -7,10 +7,10 @@ import Footer from "@/components/ui-kit/footer";
 import Button from "@/components/ui-kit/button";
 import TransactionCard from "@/components/ui-kit/transactionCard";
 import sitecontent from "@/data/sitecontent.json";
-import { getSiteContent } from "@/lib/siteContent";
+import { useSiteContent } from "@/context/SiteContentProvider";
 
 export default function page() {
-    const sitecontent = getSiteContent(); 
+    const sitecontent = useSiteContent(); 
   const {footprint} =sitecontent;
   const { hero, stats, representativeMandates, fullTransactionList } =
     footprint;

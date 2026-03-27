@@ -4,13 +4,13 @@ import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Typography from "./ui-kit/typography";
-import { getSiteContent } from "@/lib/siteContent";
+import { useSiteContent } from "@/context/SiteContentProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LetsConnectSection() {
   const sectionRef = useRef(null);
-  const sitecontent = getSiteContent(); 
+  const sitecontent = useSiteContent(); 
   const { about } = sitecontent;
   const { letsConnect } = about;
   const { title, form, thankYou } = letsConnect;

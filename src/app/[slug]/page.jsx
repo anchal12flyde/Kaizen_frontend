@@ -17,7 +17,7 @@ import sitecontent from "@/data/sitecontent.json";
 import Testimonials from "@/components/ui-kit/testimonials";
 import { notFound } from "next/navigation";
 import { getSiteContent } from "@/lib/siteContent";
-
+import DigitalTransformationFamiliarSection from "@/components/DigitalTransformationFamiliarSection";
 
 export default async function privateEquity({ params }) {
   const sitecontent = getSiteContent();
@@ -120,6 +120,7 @@ export default async function privateEquity({ params }) {
       </Container>
 
       <AdvisorySection sections={advisorySections} />
+      <DigitalTransformationFamiliarSection/>
       <PEVCPracticeSection
         cardsData={pevcPractice.cardsData}
         topContent={pevcPractice.topContent}

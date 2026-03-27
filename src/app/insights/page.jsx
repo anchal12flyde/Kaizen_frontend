@@ -10,20 +10,20 @@ import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 import sitecontent from "@/data/sitecontent.json";
-import { getSiteContent } from "@/lib/siteContent";
+import { useSiteContent } from "@/context/SiteContentProvider";
 
 
 
 export default function Insights() {
-  const sitecontent = getSiteContent(); 
-  const {insights}=sitecontent;
+  const sitecontent = useSiteContent(); 
+  const {insight}=sitecontent;
   const {
     insightsHero,
     insightsFilter,
     insightDetailHero,
     letsConnect,
     privateEquityHero,
-  } = insights;
+  } = insight;
   const { title, enter, form } = letsConnect;
   const { industries } = privateEquityHero;
     const [email, setEmail] = useState("");
@@ -145,18 +145,21 @@ export default function Insights() {
         </section>
       </Container>
 
-      <BlogGridSection variant="stack" posts={insights.blogs} />
+      <BlogGridSection variant="stack" posts={insight.blogs} />
       <div className="hidden md:block">
         <LetsConnectSection />
       </div>
 
       {/* Mobile only */}
-      <div className="block md:hidden px-[28px] py-[220px] bg-[#0A193A]">
+      <div className="block md:hidden px-[28px] py-[220px] bg-[var(--color-background-2)]">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-[56px] text-center relative"
         >
-          <Typography variant="display-3" className="!text-white">
+          <Typography
+            variant="display-3"
+            className="!text-[var(--color-para-2)]"
+          >
             {title[0]} {title[1]}
           </Typography>
 
@@ -166,12 +169,15 @@ export default function Insights() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder={`${enter} ${form.placeholder}`}
             className="w-full bg-transparent outline-none 
-      text-white placeholder:text-white/50 text-center"
+      text-[var(--color-para-2)] placeholder:text-white/50 text-center"
             required
           />
 
           <button type="submit" className="w-full text-center">
-            <Typography variant="header-2" className="!text-white">
+            <Typography
+              variant="header-2"
+              className="!text-[var(--color-para-2)]"
+            >
               {form.submitLabel}
             </Typography>
           </button>
@@ -198,18 +204,24 @@ export default function Insights() {
           >
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
               <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
-                <Typography variant="header-5" className=" !text-white ">
+                <Typography
+                  variant="header-5"
+                  className=" !text-[var(--color-para-2)] "
+                >
                   {privateEquityHero.title}
                 </Typography>
                 <Typography
                   variant="para-2"
-                  className=" !text-white mt-[26px] "
+                  className=" !text-[var(--color-para-2)] mt-[26px] "
                 >
                   {privateEquityHero.description}
                 </Typography>
 
                 <div className="mt-[57px] mb-[32px] flex flex-col gap-[16px]">
-                  <Typography variant="header-4" className="!text-white">
+                  <Typography
+                    variant="header-4"
+                    className="!text-[var(--color-para-2)]"
+                  >
                     {privateEquityHero.subText}
                   </Typography>
                   <div className="relative w-full">
@@ -228,7 +240,10 @@ export default function Insights() {
                           onClick={toggleDropdown}
                           className="w-full h-[32px] border-b border-white flex items-center justify-between cursor-pointer"
                         >
-                          <Typography variant="para-2" className="!text-white">
+                          <Typography
+                            variant="para-2"
+                            className="!text-[var(--color-para-2)]"
+                          >
                             {selected || privateEquityHero.selectIndustryText}
                           </Typography>
 
@@ -237,7 +252,7 @@ export default function Insights() {
                             height="20"
                             viewBox="0 0 24 24"
                             fill="none"
-                            className="text-white transition-transform duration-300"
+                            className="text-[var(--color-para-2)] transition-transform duration-300"
                             style={{ transform: "rotate(180deg)" }} // Arrow flips when open
                           >
                             <path

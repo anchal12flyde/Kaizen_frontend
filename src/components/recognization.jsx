@@ -5,10 +5,10 @@ import Typography from './ui-kit/typography';
 import Button from './ui-kit/button';
 import Image from 'next/image';
 import Testimonials from './ui-kit/testimonials';
-import { getSiteContent } from "@/lib/siteContent";
+import { useSiteContent } from "@/context/SiteContentProvider";
 
 export default function Recognization({ data }) {
-  const sitecontent = getSiteContent(); 
+  const sitecontent = useSiteContent(); 
   const { about } = sitecontent;
   const { recognition } = data || about;
   const { title, description, testimonials, image, button,continent, testimonialUI } =

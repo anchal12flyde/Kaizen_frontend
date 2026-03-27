@@ -7,14 +7,21 @@ import { Container } from "@/components/ui-kit/spacing";
 import Button from "@/components/ui-kit/button";
 import Image from "next/image";
 import Testimonials from "@/components/ui-kit/testimonials";
-import { getSiteContent } from "@/lib/siteContent";
+import { useSiteContent } from "@/context/SiteContentProvider";
 import Link from "next/link";
 
 
 export default function Home() {
-  const { home } = getSiteContent();
-  const { recognition } = home;
-  const { hero, improvement, evaluation, bannerImage, overlayImage } = home;
+  const { home } = useSiteContent();
+  // console.log("homedata",home);
+  const {
+    recognition,
+    hero,
+    improvement,
+    evaluation,
+    bannerImage,
+    overlayImage,
+  } = home;
 
   return (
     <div>
@@ -82,10 +89,11 @@ export default function Home() {
               </Typography>
             ))}
           </div>
-
-          <Button className="inprovementSectionBtn">
-            {improvement.buttonText}
-          </Button>
+          <Link href="/about">
+            <Button className="inprovementSectionBtn">
+              {improvement.buttonText}
+            </Button>
+          </Link>
         </div>
       </Container>
 

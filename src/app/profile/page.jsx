@@ -11,10 +11,10 @@ import Testimonials from "@/components/ui-kit/testimonials";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 import sitecontent from "@/data/sitecontent.json";
-import { getSiteContent } from "@/lib/siteContent";
+import { useSiteContent } from "@/context/SiteContentProvider";
 
 export default function ProfilePage() {
-    const sitecontent = getSiteContent();
+    const sitecontent = useSiteContent();
   const { profile } = sitecontent;
   const {recognition,cta}=profile;
   return (
