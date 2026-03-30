@@ -908,7 +908,7 @@
         ]
       },
       "privateEquityHero": {
-        "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+        "bgImage": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/7bc45fa26651d3dfae1ff61022fe1b12be28c045.jpg",
         "title": " Representative Experience",
         "description": "We have advised investors and growth-stage companies across technology, consumer, financial services, healthcare, infrastructure, and energy sectors on investments, follow-on rounds, and exits.",
 
@@ -959,7 +959,7 @@
         "button": "View More ↓",
         "items": [
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image1.jpg",
             "category": "Private Equity",
             "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
@@ -1159,6 +1159,7 @@
         "button": "View More ↓",
         "items": [
           {
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image1.jpg",
             "category": "Private Equity",
             "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
@@ -1166,6 +1167,7 @@
             "date": "14/09/2024"
           },
           {
+            "slug": "blogs",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
             "category": "Private Equity",
             "title": "How we ensure maximum value creation across investment portfolios.",
@@ -1173,6 +1175,7 @@
             "date": "20/09/2024"
           },
           {
+            "slug": "blogs",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
             "category": "Private Equity",
             "title": "Key considerations when advising on cross-border transactions.",
@@ -1204,7 +1207,7 @@
       "privateEquity": {
         "title": "Capital Lifecycle",
         "subtitle": "Advisory for Investors and Growth-Stage Companies Across the Investment Lifecycle",
-       
+
         "image": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/24fe3dc0ae5b179c7fef561083a58aa08917de69.jpg?updatedAt=1774854269372"
       },
       "overview": {
@@ -1215,7 +1218,7 @@
         ],
         "buttonText": "Read More"
       },
-     
+
       "pevcPractice": {
         "topContent": {
           "title": "Our PE & VC Practice",
@@ -1361,6 +1364,7 @@
         "button": "View More ↓",
         "items": [
           {
+            "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image1.jpg",
             "category": "Private Equity",
             "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
@@ -1368,6 +1372,7 @@
             "date": "14/09/2024"
           },
           {
+            "slug": "blogs",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
             "category": "Private Equity",
             "title": "How we ensure maximum value creation across investment portfolios.",
@@ -1375,6 +1380,7 @@
             "date": "20/09/2024"
           },
           {
+            "slug": "blogs",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
             "category": "Private Equity",
             "title": "Key considerations when advising on cross-border transactions.",
@@ -1406,7 +1412,7 @@
       "privateEquity": {
         "title": "Technology Law",
         "subtitle": "Advisory for Investors and Growth-Stage Companies Across the Investment Lifecycle",
-       
+
         "image": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/f511fcd80299fa7d269a572d594e171b6de83781.jpg?updatedAt=1774854267394"
       },
       "overview": {
@@ -1562,6 +1568,7 @@
         "button": "View More ↓",
         "items": [
           {
+            "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image1.jpg",
             "category": "Private Equity",
             "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
@@ -1569,6 +1576,7 @@
             "date": "14/09/2024"
           },
           {
+            "slug": "blogs",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
             "category": "Private Equity",
             "title": "How we ensure maximum value creation across investment portfolios.",
@@ -1576,6 +1584,7 @@
             "date": "20/09/2024"
           },
           {
+            "slug": "blogs",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
             "category": "Private Equity",
             "title": "Key considerations when advising on cross-border transactions.",
@@ -1844,7 +1853,7 @@
         "button": "View More ↓",
         "items": [
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image1.jpg",
             "category": "Private Equity",
             "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
@@ -2110,7 +2119,7 @@
         "button": "View More ↓",
         "items": [
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image1.jpg",
             "category": "Private Equity",
             "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
@@ -2118,7 +2127,7 @@
             "date": "14/09/2024"
           },
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
             "category": "Private Equity",
             "title": "How we ensure maximum value creation across investment portfolios.",
@@ -2245,7 +2254,7 @@
         "button": "View More ↓",
         "items": [
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image1.jpg",
             "category": "Private Equity",
             "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
@@ -2253,7 +2262,7 @@
             "date": "14/09/2024"
           },
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
             "category": "Private Equity",
             "title": "How we ensure maximum value creation across investment portfolios.",
@@ -2261,7 +2270,7 @@
             "date": "20/09/2024"
           },
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
             "category": "Private Equity",
             "title": "Key considerations when advising on cross-border transactions.",
@@ -2379,7 +2388,7 @@
         "button": "View More ↓",
         "items": [
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image1.jpg",
             "category": "Private Equity",
             "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
@@ -2387,7 +2396,7 @@
             "date": "14/09/2024"
           },
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
             "category": "Private Equity",
             "title": "How we ensure maximum value creation across investment portfolios.",
@@ -2395,7 +2404,7 @@
             "date": "20/09/2024"
           },
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
             "category": "Private Equity",
             "title": "Key considerations when advising on cross-border transactions.",
@@ -2515,7 +2524,7 @@
         "button": "View More ↓",
         "items": [
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image1.jpg",
             "category": "Private Equity",
             "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
@@ -2523,7 +2532,7 @@
             "date": "14/09/2024"
           },
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
             "category": "Private Equity",
             "title": "How we ensure maximum value creation across investment portfolios.",
@@ -2531,7 +2540,7 @@
             "date": "20/09/2024"
           },
           {
-            "slug":"blogs",
+            "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
             "category": "Private Equity",
             "title": "Key considerations when advising on cross-border transactions.",
@@ -2662,209 +2671,554 @@
       }
     }
   },
-  "blogPage": {
-    "heroSection": {
-      "image": {
-        "src": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg",
-        "alt": "Kaizen Hero"
+
+  "blogPage": [
+    {
+      "slug": "refining-strategy-mandate",
+      "heroSection": {
+        "image": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg",
+
+        "overlay": true,
+        "content": {
+          "category": "Category",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "meta": {
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          }
+        }
       },
-      "overlay": true,
-      "content": {
-        "category": "Category",
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "meta": {
-          "readTime": "4 min",
-          "date": "14/09/2024"
+      "policies": {
+        "tabs": [
+          {
+            "key": "disclosures",
+            "label": "Regulatory Disclosures",
+            "title": "Regulatory Disclosures",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              },
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "disclaimer",
+            "label": "Disclaimer",
+            "sections": [
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              },
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "terms",
+            "label": "Terms of Use",
+            "title": "Terms of Use",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "Terms",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "privacy",
+            "label": "Privacy Policy",
+            "title": "Privacy Policy",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "Privacy",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "relatedInsights": {
+        "title": "Related Insights",
+        "description": "We advise clients at each stage of the investment journey"
+      },
+      "blogs": {
+        "button": "View More ↓",
+        "items": [
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          },
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "5 min",
+            "date": "20/09/2024"
+          },
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "6 min",
+            "date": "25/09/2024"
+          }
+        ]
+      },
+      "privateEquityHero": {
+        "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+        "title": "Ready To Talk?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "subText": "I want to talk to your experts in:",
+        "selectIndustryText": "Select an Industry",
+        "industries": ["Fintech", "Healthcare", "E-commerce"],
+        "button": {
+          "label": "Submit →"
+        }
+      }
+    },
+    {
+      "slug": "refining-strategy-mandate",
+      "heroSection": {
+        "image": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg",
+
+        "overlay": true,
+        "content": {
+          "category": "Category",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "meta": {
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          }
+        }
+      },
+      "policies": {
+        "tabs": [
+          {
+            "key": "disclosures",
+            "label": "Regulatory Disclosures",
+            "title": "Regulatory Disclosures",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              },
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "disclaimer",
+            "label": "Disclaimer",
+            "sections": [
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              },
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "terms",
+            "label": "Terms of Use",
+            "title": "Terms of Use",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "Terms",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "privacy",
+            "label": "Privacy Policy",
+            "title": "Privacy Policy",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "Privacy",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "relatedInsights": {
+        "title": "Related Insights",
+        "description": "We advise clients at each stage of the investment journey"
+      },
+      "blogs": {
+        "button": "View More ↓",
+        "items": [
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          },
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "5 min",
+            "date": "20/09/2024"
+          },
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "6 min",
+            "date": "25/09/2024"
+          }
+        ]
+      },
+      "privateEquityHero": {
+        "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+        "title": "Ready To Talk?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "subText": "I want to talk to your experts in:",
+        "selectIndustryText": "Select an Industry",
+        "industries": ["Fintech", "Healthcare", "E-commerce"],
+        "button": {
+          "label": "Submit →"
+        }
+      }
+    },
+    {
+      "slug": "refining-strategy-mandate",
+      "heroSection": {
+        "image": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg",
+
+        "overlay": true,
+        "content": {
+          "category": "Category",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "meta": {
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          }
+        }
+      },
+      "policies": {
+        "tabs": [
+          {
+            "key": "disclosures",
+            "label": "Regulatory Disclosures",
+            "title": "Regulatory Disclosures",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              },
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "disclaimer",
+            "label": "Disclaimer",
+            "sections": [
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              },
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "terms",
+            "label": "Terms of Use",
+            "title": "Terms of Use",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "Terms",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "privacy",
+            "label": "Privacy Policy",
+            "title": "Privacy Policy",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "Privacy",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "relatedInsights": {
+        "title": "Related Insights",
+        "description": "We advise clients at each stage of the investment journey"
+      },
+      "blogs": {
+        "button": "View More ↓",
+        "items": [
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          },
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "5 min",
+            "date": "20/09/2024"
+          },
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "6 min",
+            "date": "25/09/2024"
+          }
+        ]
+      },
+      "privateEquityHero": {
+        "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+        "title": "Ready To Talk?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "subText": "I want to talk to your experts in:",
+        "selectIndustryText": "Select an Industry",
+        "industries": ["Fintech", "Healthcare", "E-commerce"],
+        "button": {
+          "label": "Submit →"
+        }
+      }
+    },
+    {
+      "slug": "refining-strategy-mandate",
+      "heroSection": {
+        "image": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg",
+
+        "overlay": true,
+        "content": {
+          "category": "Category",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "meta": {
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          }
+        }
+      },
+      "policies": {
+        "tabs": [
+          {
+            "key": "disclosures",
+            "label": "Regulatory Disclosures",
+            "title": "Regulatory Disclosures",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              },
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "disclaimer",
+            "label": "Disclaimer",
+            "sections": [
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              },
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "terms",
+            "label": "Terms of Use",
+            "title": "Terms of Use",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "Terms",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          },
+          {
+            "key": "privacy",
+            "label": "Privacy Policy",
+            "title": "Privacy Policy",
+            "date": "Last Updated: November 15, 2025",
+            "sections": [
+              {
+                "heading": "Privacy",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "relatedInsights": {
+        "title": "Related Insights",
+        "description": "We advise clients at each stage of the investment journey"
+      },
+      "blogs": {
+        "button": "View More ↓",
+        "items": [
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image1.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "4 min",
+            "date": "14/09/2024"
+          },
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image2.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "5 min",
+            "date": "20/09/2024"
+          },
+          {
+            "slug": "blogs",
+            "image": "https://ik.imagekit.io/demo/img/image3.jpg",
+            "category": "Private Equity",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
+            "readTime": "6 min",
+            "date": "25/09/2024"
+          }
+        ]
+      },
+      "privateEquityHero": {
+        "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
+        "title": "Ready To Talk?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "subText": "I want to talk to your experts in:",
+        "selectIndustryText": "Select an Industry",
+        "industries": ["Fintech", "Healthcare", "E-commerce"],
+        "button": {
+          "label": "Submit →"
         }
       }
     }
-    
-  },
-
-
-
-
-
-
-
-
-
-
-  "insightpages": [
-    {
-      "id": 1,
-      "slug": "cross-border-ma-regulatory-strategies",
-      "title": "Navigating Cross-Border M&A: Regulatory Strategies for Global Deals",
-      "excerpt": "A deep dive into regulatory frameworks, approval processes, and strategic considerations for cross-border mergers and acquisitions.",
-      "author": "Editorial Team",
-      "date": "2026-03-20",
-      "readTime": "8 min read",
-      "tags": ["M&A", "Cross-Border", "Regulation", "Compliance"],
-      "content": {
-        "introduction": "Cross-border mergers and acquisitions have become a cornerstone of global expansion strategies. However, they come with a complex web of regulatory requirements that vary significantly across jurisdictions. Understanding these nuances is critical for ensuring successful deal execution.",
-        "sections": [
-          {
-            "heading": "Understanding Jurisdictional Challenges",
-            "body": "Every country has its own regulatory framework governing foreign investments, antitrust laws, and sector-specific restrictions. Companies must conduct detailed jurisdictional analysis to identify approval requirements, foreign ownership limits, and compliance obligations."
-          },
-          {
-            "heading": "Antitrust and Competition Approvals",
-            "body": "Competition authorities play a pivotal role in cross-border deals. Filing thresholds, review timelines, and substantive tests differ across regions. Early assessment of potential competition concerns helps avoid delays and deal restructuring."
-          },
-          {
-            "heading": "Foreign Investment Regulations",
-            "body": "Many jurisdictions impose foreign direct investment (FDI) restrictions in sensitive sectors such as defense, telecommunications, and infrastructure. Legal teams must evaluate whether approvals or notifications are required prior to closing."
-          },
-          {
-            "heading": "Risk Mitigation Strategies",
-            "body": "To mitigate risks, parties often include regulatory conditions precedent, break fees, and detailed representations in transaction documents. Pre-filing consultations with regulators can also streamline the approval process."
-          },
-          {
-            "heading": "Conclusion",
-            "body": "Cross-border M&A transactions require a coordinated legal strategy across multiple jurisdictions. Early planning, regulatory mapping, and proactive engagement with authorities are key to successful deal completion."
-          }
-        ]
-      }
-    },
-    {
-      "id": 2,
-      "slug": "due-diligence-best-practices-ma",
-      "title": "Due Diligence in M&A: Best Practices for Risk Identification",
-      "excerpt": "Explore the essential components of legal due diligence and how it shapes deal value and risk allocation.",
-      "author": "Editorial Team",
-      "date": "2026-03-18",
-      "readTime": "7 min read",
-      "tags": ["Due Diligence", "Risk Management", "M&A"],
-      "content": {
-        "introduction": "Due diligence is one of the most critical phases in any merger or acquisition. It enables buyers to identify risks, validate assumptions, and negotiate deal terms effectively.",
-        "sections": [
-          {
-            "heading": "Scope of Legal Due Diligence",
-            "body": "Legal due diligence covers corporate structure, contracts, litigation, intellectual property, employment matters, and regulatory compliance. A well-defined scope ensures that no critical area is overlooked."
-          },
-          {
-            "heading": "Material Contracts Review",
-            "body": "Reviewing key commercial agreements helps identify change-of-control clauses, termination rights, and obligations that may impact the transaction. These insights are crucial for valuation and negotiation."
-          },
-          {
-            "heading": "Litigation and Compliance Risks",
-            "body": "Pending or potential litigation can significantly affect deal value. Compliance issues, including regulatory violations, must also be carefully assessed to avoid post-closing liabilities."
-          },
-          {
-            "heading": "Data Room Management",
-            "body": "Efficient organization of virtual data rooms enhances the due diligence process. Clear indexing and timely updates enable faster review and better collaboration among stakeholders."
-          },
-          {
-            "heading": "Conclusion",
-            "body": "A thorough due diligence process not only uncovers risks but also creates opportunities for value enhancement. It forms the foundation for informed decision-making in M&A transactions."
-          }
-        ]
-      }
-    },
-    {
-      "id": 3,
-      "slug": "structuring-ma-transactions",
-      "title": "Structuring M&A Transactions: Choosing the Right Approach",
-      "excerpt": "An overview of deal structures including asset purchases, share acquisitions, and mergers, with their legal and tax implications.",
-      "author": "Editorial Team",
-      "date": "2026-03-15",
-      "readTime": "9 min read",
-      "tags": ["Deal Structuring", "Tax", "M&A"],
-      "content": {
-        "introduction": "The structure of an M&A transaction has significant legal, tax, and commercial implications. Selecting the right approach requires a careful analysis of business objectives and regulatory constraints.",
-        "sections": [
-          {
-            "heading": "Asset vs Share Purchase",
-            "body": "In an asset purchase, specific assets and liabilities are transferred, offering flexibility but requiring third-party consents. Share purchases involve acquiring ownership of the target entity, resulting in a simpler transfer but with broader liability exposure."
-          },
-          {
-            "heading": "Merger Structures",
-            "body": "Mergers involve combining two entities into one, often through statutory processes. They can provide tax efficiencies and operational synergies but require regulatory approvals and shareholder consent."
-          },
-          {
-            "heading": "Tax Considerations",
-            "body": "Tax implications vary depending on the deal structure. Factors such as capital gains tax, stamp duty, and indirect taxes must be evaluated to optimize transaction outcomes."
-          },
-          {
-            "heading": "Financing the Transaction",
-            "body": "Financing options include debt, equity, or hybrid instruments. The chosen structure impacts ownership, control, and financial risk."
-          },
-          {
-            "heading": "Conclusion",
-            "body": "Effective deal structuring aligns legal, tax, and commercial considerations to achieve optimal outcomes. Early involvement of legal advisors is essential in this process."
-          }
-        ]
-      }
-    },
-    {
-      "id": 4,
-      "slug": "post-merger-integration-strategies",
-      "title": "Post-Merger Integration: Turning Strategy into Value",
-      "excerpt": "Key considerations for successful post-merger integration and long-term value creation.",
-      "author": "Editorial Team",
-      "date": "2026-03-12",
-      "readTime": "8 min read",
-      "tags": ["Post-Merger Integration", "Strategy", "Operations"],
-      "content": {
-        "introduction": "The success of an M&A transaction is ultimately determined by post-merger integration (PMI). Without effective integration, anticipated synergies may fail to materialize.",
-        "sections": [
-          {
-            "heading": "Integration Planning",
-            "body": "Integration planning should begin during the deal phase. Identifying key integration areas, timelines, and leadership responsibilities ensures a smoother transition."
-          },
-          {
-            "heading": "Cultural Alignment",
-            "body": "Differences in organizational culture can create significant challenges. Aligning values, communication styles, and management practices is essential for employee retention and productivity."
-          },
-          {
-            "heading": "Operational Synergies",
-            "body": "Realizing operational synergies involves streamlining processes, consolidating functions, and leveraging combined capabilities. This requires careful execution and monitoring."
-          },
-          {
-            "heading": "Legal and Compliance Integration",
-            "body": "Post-closing, companies must harmonize compliance frameworks, policies, and reporting systems to ensure regulatory adherence."
-          },
-          {
-            "heading": "Conclusion",
-            "body": "Post-merger integration is a complex but critical phase that determines the long-term success of a transaction. A structured and proactive approach is key to unlocking value."
-          }
-        ]
-      }
-    },
-    {
-      "id": 5,
-      "slug": "emerging-trends-ma-2026",
-      "title": "Emerging Trends in M&A: What to Expect in 2026",
-      "excerpt": "An analysis of key trends shaping the M&A landscape, including technology, ESG, and evolving regulatory frameworks.",
-      "author": "Editorial Team",
-      "date": "2026-03-10",
-      "readTime": "6 min read",
-      "tags": ["Trends", "ESG", "Technology", "M&A"],
-      "content": {
-        "introduction": "The M&A landscape is constantly evolving, driven by economic conditions, technological advancements, and regulatory developments. Understanding these trends is essential for staying competitive.",
-        "sections": [
-          {
-            "heading": "Rise of ESG Considerations",
-            "body": "Environmental, Social, and Governance (ESG) factors are increasingly influencing deal-making. Investors are prioritizing sustainability and ethical practices in target companies."
-          },
-          {
-            "heading": "Technology-Driven Transactions",
-            "body": "Digital transformation is driving acquisitions in sectors such as fintech, healthtech, and artificial intelligence. Companies are acquiring capabilities to stay ahead in a competitive market."
-          },
-          {
-            "heading": "Increased Regulatory Scrutiny",
-            "body": "Governments and regulators are taking a more active role in reviewing transactions, particularly in strategic sectors. This trend is expected to continue in 2026."
-          },
-          {
-            "heading": "Private Equity Activity",
-            "body": "Private equity firms remain key players in the M&A market, with significant dry powder and a focus on value creation through strategic acquisitions."
-          },
-          {
-            "heading": "Conclusion",
-            "body": "Staying informed about emerging trends enables businesses to identify opportunities and navigate challenges in the dynamic M&A landscape."
-          }
-        ]
-      }
-    }
   ]
+
+
+
+
+
+
+
+
+
+
+ 
 }

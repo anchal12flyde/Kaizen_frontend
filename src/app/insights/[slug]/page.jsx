@@ -1,4 +1,5 @@
 "use client";
+import { use } from "react";
 import { useEffect, useState } from "react";
 import React from 'react'
 import Typography from '@/components/ui-kit/typography';
@@ -90,18 +91,29 @@ const policiesData = {
     ],
   },
 };
-export default function SingleInsights() {
+export default function Page({ params }) {
+  const { slug } = use(params); // ✅ unwrap params
 
- const sitecontent = useSiteContent(); 
-  const { blogPage } = sitecontent;
-  const { heroSection, stats, representativeMandates, fullTransactionList } =
-    blogPage;
+  const sitecontent = useSiteContent();
 
-  const [activeTab, setActiveTab] = useState("disclaimer");
+  const blog = sitecontent.blogPage.find(
+    (page) => page.slug === slug
+  );
+
+
+  if (!blog) {
+    return <div>Blog not found</div>;
+  }
+
+  const { heroSection, relatedInsights, blogs, privateEquityHero } = blog;
+  const tabs = blog?.policies?.tabs || [];
+  const [activeTab, setActiveTab] = useState(tabs[0]?.key || "");
+  const activeTabData = tabs.find((tab) => tab.key === activeTab);
   const [isMobile, setIsMobile] = useState(false);
   const data = policiesData[activeTab];
 
-
+  const [showEmail, setShowEmail] = useState(false);
+  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -111,15 +123,30 @@ export default function SingleInsights() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email) {
+      alert("Please enter email");
+      return;
+    }
+
+    console.log("Submitted Email:", email); 
+
+    setEmail("");
+  };
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("");
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
+  
   const selectIndustry = (industry) => {
     setSelected(industry);
     setIsOpen(false);
+    setShowEmail(true);
   };
   return (
     <>
@@ -127,7 +154,7 @@ export default function SingleInsights() {
 
       <section className="hero-section  !h-[504px]">
         <Image
-          src="https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg"
+          src={heroSection?.image}
           alt="Kaizen Hero"
           fill
           className="hero-background"
@@ -142,7 +169,7 @@ export default function SingleInsights() {
           <div className="flex flex-col gap-[16px]">
             <div className=" px-[36px] py-[8px] border border-white !w-fit rounded-[500px]  ">
               <Typography variant="para-3" className=" !text-white  ">
-                Category
+                {heroSection?.content?.category}
               </Typography>
             </div>
 
@@ -151,11 +178,12 @@ export default function SingleInsights() {
               colorVariant="white"
               className="md:w-[626px] w-full"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              {heroSection?.content?.title}
             </Typography>
 
-            <Typography variant="button" className=" dateHeroIn  ">
-              4 min | Date: 14/09/2024
+            <Typography variant="button" className="dateHeroIn">
+              {heroSection?.content?.meta?.readTime} | Date:{" "}
+              {heroSection?.content?.meta?.date}
             </Typography>
           </div>
         </div>
@@ -168,72 +196,31 @@ export default function SingleInsights() {
           </Typography>
 
           <ul className="grid grid-cols-2 gap-4 md:flex md:flex-col md:gap-[16px]">
-            <Typography
-              variant={isMobile ? "para-3" : "para-2"}
-              onClick={() => setActiveTab("disclosures")}
-              className={`cursor-pointer order-1 md:order-none ${
-                activeTab === "disclosures"
-                  ? "text-[#231F20]"
-                  : "!text-[#231F20]/50"
-              }`}
-            >
-              Regulatory Disclosures
-            </Typography>
-
-            <Typography
-              variant={isMobile ? "para-3" : "para-2"}
-              onClick={() => setActiveTab("disclaimer")}
-              className={`cursor-pointer order-3 md:order-none ${
-                activeTab === "disclaimer"
-                  ? "text-[#231F20]"
-                  : "!text-[#231F20]/50"
-              }`}
-            >
-              Disclaimer
-            </Typography>
-
-            <Typography
-              variant={isMobile ? "para-3" : "para-2"}
-              onClick={() => setActiveTab("terms")}
-              className={`cursor-pointer order-4 md:order-none ${
-                activeTab === "terms" ? "text-[#231F20]" : "!text-[#231F20]/50"
-              }`}
-            >
-              Terms of Use
-            </Typography>
-
-            <Typography
-              variant={isMobile ? "para-3" : "para-2"}
-              onClick={() => setActiveTab("privacy")}
-              className={`cursor-pointer order-2 md:order-none ${
-                activeTab === "privacy"
-                  ? "text-[#231F20]"
-                  : "!text-[#231F20]/50"
-              }`}
-            >
-              Privacy Policy
-            </Typography>
+            {tabs.map((tab, index) => (
+              <Typography
+                key={tab.key}
+                variant={isMobile ? "para-3" : "para-2"}
+                onClick={() => setActiveTab(tab.key)}
+                className={`cursor-pointer ${
+                  activeTab === tab.key
+                    ? "text-[#231F20]"
+                    : "!text-[#231F20]/50"
+                }`}
+              >
+                {tab.label}
+              </Typography>
+            ))}
           </ul>
         </div>
 
         {/* Main Content */}
         <div className="flex-1 max-w-[700px]">
-          <Typography
-            variant={isMobile ? "display-3" : "header-hero"}
-            className=" mb-[16px] "
-          >
-            {data.title}
-          </Typography>
-          <Typography variant="para-2" className=" !text-[#231F20] mb-[56px]">
-            {data.date}
-          </Typography>
-
           <div className="space-y-[56px] ">
-            {data.sections?.map((section, i) => (
+            {activeTabData?.sections?.map((section, i) => (
               <div key={i}>
                 <Typography
                   variant="big-firm"
-                  className=" !text-[#231F20] mb-[20px]"
+                  className="!text-[#231F20] mb-[20px]"
                 >
                   {section.heading}
                 </Typography>
@@ -242,7 +229,7 @@ export default function SingleInsights() {
                   <Typography
                     variant="para-2"
                     key={idx}
-                    className={idx !== 0 ? " !text-[#231F20] mt-[20px]" : ""}
+                    className={idx !== 0 ? "!text-[#231F20] mt-[20px]" : ""}
                   >
                     {para}
                   </Typography>
@@ -252,37 +239,25 @@ export default function SingleInsights() {
           </div>
         </div>
       </Container>
-      <BlogGridSection
-        variant="scroll"
-        posts={[
-          {
-            image: "https://ik.imagekit.io/demo/img/image1.jpg",
-            category: "Category",
-            title:
-              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
-            readTime: "4 min",
-            date: "14/09/2024",
-          },
-          {
-            image: "https://ik.imagekit.io/demo/img/image2.jpg",
-            category: "Category",
-            title:
-              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
-            readTime: "4 min",
-            date: "14/09/2024",
-          },
-          {
-            image: "https://ik.imagekit.io/demo/img/image3.jpg",
-            category: "Category",
-            title:
-              "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
-            readTime: "4 min",
-            date: "14/09/2024",
-          },
-        ]}
-        buttonShow={true}
-        buttonText="View More"
-      />
+
+      <div className="bg-[#F7F4EB]">
+        <Container
+          variant="sectionSp1"
+          className=" flex flex-col items-center  text-center gap-[16px] !pb-[20px]  "
+        >
+          <Typography variant="header-6">{relatedInsights.title}</Typography>
+          <Typography variant="para-2">
+            {relatedInsights.description}
+          </Typography>
+        </Container>
+
+        <BlogGridSection
+          variant="scroll"
+          posts={blogs.items}
+          buttonShow={true}
+          buttonText={blogs.button}
+        />
+      </div>
       <Container variant="primarySpacing" className=" privateEquityHeroCopy">
         {/* Background Image */}
         <Image
@@ -298,32 +273,34 @@ export default function SingleInsights() {
 
         {/* Content */}
         <>
-          <Container
-            variant="sectionSp1"
-            className=" absolute inset-0  flex justify-center  "
-          >
-            <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
+          <div className=" relative flex justify-center z-10 ">
+            <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
               <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
-                <Typography variant="header-5" className=" !text-white ">
-                  Ready To Talk?
+                <Typography
+                  variant="header-5"
+                  className=" !text-[var(--color-para-2)] "
+                >
+                  {privateEquityHero.title}
                 </Typography>
                 <Typography
                   variant="para-2"
-                  className=" !text-white mt-[26px] "
+                  className=" !text-[var(--color-para-2)] mt-[26px] "
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  {privateEquityHero.description}
                 </Typography>
 
-                <div className="mt-[57px] mb-[32px] flex flex-col gap-[16px]">
-                  <Typography variant="header-4" className="!text-white">
-                    I want to talk to your experts in:
+                <div className="mt-[57px] flex flex-col gap-[16px]">
+                  <Typography
+                    variant="header-4"
+                    className="!text-[var(--color-para-2)]"
+                  >
+                    {privateEquityHero.subText}
                   </Typography>
                   <div className="relative w-full">
                     {/* Dropdown container when open */}
                     {isOpen ? (
                       <div
-                        className="absolute  w-full shadow-md px-[8px]"
+                        className="absolute top-full left-0 w-full shadow-md px-[8px]"
                         style={{
                           boxShadow: "1px 0px 8px 1px #00000033",
                           backgroundColor: "#B6996A",
@@ -335,8 +312,11 @@ export default function SingleInsights() {
                           onClick={toggleDropdown}
                           className="w-full h-[32px] border-b border-white flex items-center justify-between cursor-pointer"
                         >
-                          <Typography variant="para-2" className="!text-white">
-                            {selected || "Select an industry"}
+                          <Typography
+                            variant="para-2"
+                            className="!text-[var(--color-para-2)]"
+                          >
+                            {selected || privateEquityHero.selectIndustryText}
                           </Typography>
 
                           <svg
@@ -344,7 +324,7 @@ export default function SingleInsights() {
                             height="20"
                             viewBox="0 0 24 24"
                             fill="none"
-                            className="text-white transition-transform duration-300"
+                            className="text-[var(--color-para-2)] transition-transform duration-300"
                             style={{ transform: "rotate(180deg)" }} // Arrow flips when open
                           >
                             <path
@@ -377,7 +357,7 @@ export default function SingleInsights() {
                         className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0 cursor-pointer px-2"
                       >
                         <Typography variant="para-2" className="!text-white">
-                          {selected || "Select an industry"}
+                          {selected || privateEquityHero.selectIndustryText}
                         </Typography>
 
                         <svg
@@ -400,13 +380,29 @@ export default function SingleInsights() {
                     )}
                   </div>
                 </div>
-                <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
-                  View Representative Transactions
+                {showEmail && (
+                  <div className="mt-[24px] w-full">
+                    <Typography variant="para-2" className="!text-white">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter your email"
+                        className="w-full h-[40px] px-2 border-b border-white bg-transparent text-white outline-none placeholder:text-white"
+                      />
+                    </Typography>
+                  </div>
+                )}
+                <button
+                  onClick={handleSubmit}
+                  className=" md:px-[36px] px-[24px] mt-[32px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]"
+                >
+                  {privateEquityHero.button.label}
                 </button>
               </div>
               <div></div>
             </div>
-          </Container>
+          </div>
         </>
       </Container>
 
