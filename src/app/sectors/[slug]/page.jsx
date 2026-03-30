@@ -1,4 +1,5 @@
 "use client";
+import { use } from "react";
 import AboutHeroSection from "@/components/abouthero";
 import AdvisorySection from "@/components/advisorySection";
 import BlogGridSection from "@/components/blogCardsGrid";
@@ -13,42 +14,70 @@ import WhyChooseSection from "@/components/whyChooseSection";
 import Image from "next/image";
 import sitecontent from "@/data/sitecontent.json";
 import { useSiteContent } from "@/context/SiteContentProvider";
+import { notFound } from "next/navigation";
 import DigitalTransformationFamiliarSection from "@/components/DigitalTransformationFamiliarSection";
+import Link from "next/link";
 
-export default function Startups() {
-    const sitecontent = useSiteContent(); 
-  const {sectorpages}=sitecontent;
-   const {
-     startupHero,
-     ourStory,
-     overview,
-     advisorySections,
-     whyClients,
-     pevcPractice,
-     relatedInsights,
-     privateEquityHero,
-     cta,
-     blogs,
-   } = sectorpages;
+export default function Startups({ params }) {
+  const { slug } = use(params);
+ 
+  const sitecontent = useSiteContent();
+  const data = sitecontent.sectorpages[slug];
+  if (!data) return notFound();
+  console.log("slug:", slug);
+  console.log("data:", sitecontent.sectorpages[slug]);
+  const {
+    startupHero,
+    ourStory,
+    overview,
+    advisorySections,
+    whyClients,
+    pevcPractice,
+    relatedInsights,
+    privateEquityHero,
+    cta,
+    blogs,
+  } = data;
+  const description = startupHero?.description || "";
   return (
     <div>
       <Header />
-      <AboutHeroSection
-        bgImage={startupHero.bgImage}
-        align={startupHero.align}
-        buttons={startupHero.buttons}
-        title={
-          <>
-            {startupHero.title.split("\n").map((line, i) => (
-              <span key={i}>
-                {line}
-                <br />
-              </span>
-            ))}
-          </>
-        }
-        description={<>{startupHero.description}</>}
-      />
+
+      <section className="hero-section">
+        {/* Background Image */}
+        <Image
+          src={startupHero.bgImage}
+          alt="Kaizen Hero"
+          fill
+          className="hero-background"
+          priority
+        />
+
+        {/* Overlay */}
+        <div className="hero-overlay"></div>
+
+        {/* Content */}
+        <div className="hero-content md:!right-[100px]">
+          <div>
+            <div className="md:mb-[26px] mb-[42px]">
+              <Typography variant="display-3" colorVariant="white">
+                {startupHero.title}
+              </Typography>
+            </div>
+
+            <div className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]">
+              <Typography
+                delay={0.4}
+                variant="header-hero"
+                colorVariant="white"
+                className="lg:w-[623px] w-full flex-shrink-0 "
+              >
+                {startupHero.description}
+              </Typography>
+            </div>
+          </div>
+        </div>
+      </section>
       <Container className="section-bg !bg-[#B6996A]" variant="primarySpacing">
         <div>
           <Typography variant="header-6" className="!text-white">
@@ -144,15 +173,17 @@ export default function Startups() {
                 <div className="mt-[36px] mb-[26px] flex flex-col gap-[16px]">
                   <Typography variant="para-2" className="!text-white">
                     {privateEquityHero.subText.text}
-                    <span
-                      style={{
-                        textDecoration: "underline",
-                        textDecorationStyle: "solid",
-                        textDecorationSkipInk: "auto",
-                      }}
-                    >
-                      {privateEquityHero.subText.highlight}
-                    </span>
+                    <Link href="/footprint">
+                      <span
+                        style={{
+                          textDecoration: "underline",
+                          textDecorationStyle: "solid",
+                          textDecorationSkipInk: "auto",
+                        }}
+                      >
+                        {privateEquityHero.subText.highlight}
+                      </span>
+                    </Link>
                   </Typography>
                 </div>
                 <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">

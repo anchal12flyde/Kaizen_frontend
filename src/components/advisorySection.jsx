@@ -51,7 +51,7 @@ export default function AdvisorySection({ sections = [] }) {
                 src={item.image}
                 alt={item.title}
                 fill
-                className="object-cover grayscale"
+                className="object-cover "
                 priority={item.id === 1}
               />
             </div>

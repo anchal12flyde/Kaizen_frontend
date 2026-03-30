@@ -17,27 +17,33 @@ import Image from "next/image";
 import { useSiteContent } from "@/context/SiteContentProvider";
 
 export default function About() {
-  const [email, setEmail] = useState("");
   const sitecontent = useSiteContent(); 
   const { about } = sitecontent;
+  const [email, setEmail] = useState("");
+    
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!email) {
       alert("Please enter email");
       return;
     }
+
+    console.log("Submitted Email:", email); // 👈 now it will log properly
+
     setEmail("");
   };
-
-  const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState("");
-
-  const toggleDropdown = () => setIsOpen(!isOpen);
-
-  const selectIndustry = (industry) => {
-    setSelected(industry);
-    setIsOpen(false);
-  };
+      const [isOpen, setIsOpen] = useState(false);
+      const [selected, setSelected] = useState("");
+      const [showEmail, setShowEmail] = useState(false);
+  
+      const toggleDropdown = () => setIsOpen(!isOpen);
+  
+      const selectIndustry = (industry) => {
+        setSelected(industry);
+        setIsOpen(false);
+        setShowEmail(true);
+      };
   const { aboutHero, privateEquityHero, letsConnect, whyClients } = about;
 
   const { title, form, thankYou } = letsConnect;
@@ -68,26 +74,27 @@ export default function About() {
       <SectorExperience />
       <Recognization />
       <LeadershipTeam />
-      <Container variant="primarySpacing" className=" privateEquityHeroCopy">
+      <Container
+        variant="primarySpacing"
+        className="relative w-full h-full min-h-[700px]"
+      >
         {/* Background Image */}
-        <Image
-          src={privateEquityHero.bgImage}
-          fill
-          className="hero-background"
-          priority
-          alt=""
-        />
-
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={privateEquityHero.bgImage}
+            alt="Kaizen Hero"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
         {/* Overlay */}
         <div className="hero-overlay"></div>
 
         {/* Content */}
         <>
-          <Container
-            variant="sectionSp1"
-            className=" absolute inset-0  flex  justify-center  "
-          >
-            <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
+          <div className=" relative flex justify-center z-10 ">
+            <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
               <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography
                   variant="header-5"
@@ -102,7 +109,7 @@ export default function About() {
                   {privateEquityHero.description}
                 </Typography>
 
-                <div className="mt-[57px] mb-[32px] flex flex-col gap-[16px]">
+                <div className="mt-[57px] flex flex-col gap-[16px]">
                   <Typography
                     variant="header-4"
                     className="!text-[var(--color-para-2)]"
@@ -113,7 +120,7 @@ export default function About() {
                     {/* Dropdown container when open */}
                     {isOpen ? (
                       <div
-                        className="absolute  w-full shadow-md px-[8px]"
+                        className="absolute top-full left-0 w-full shadow-md px-[8px]"
                         style={{
                           boxShadow: "1px 0px 8px 1px #00000033",
                           backgroundColor: "#B6996A",
@@ -156,7 +163,7 @@ export default function About() {
                             <div
                               key={industry}
                               onClick={() => selectIndustry(industry)}
-                              className="px-[12px] py-[6px] hover:bg-white/20 cursor-pointer text-[var(--color-para-2)] "
+                              className="px-[12px] py-[6px] hover:bg-white/20 cursor-pointer text-white "
                             >
                               {industry}
                             </div>
@@ -169,10 +176,7 @@ export default function About() {
                         onClick={toggleDropdown}
                         className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0 cursor-pointer px-2"
                       >
-                        <Typography
-                          variant="para-2"
-                          className="!text-[var(--color-para-2)]"
-                        >
+                        <Typography variant="para-2" className="!text-white">
                           {selected || privateEquityHero.selectIndustryText}
                         </Typography>
 
@@ -196,13 +200,29 @@ export default function About() {
                     )}
                   </div>
                 </div>
-                <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-[var(--color-para-2)] text-[18px]">
+                {showEmail && (
+                  <div className="mt-[24px] w-full">
+                    <Typography variant="para-2" className="!text-white">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter your email"
+                        className="w-full h-[40px] px-2 border-b border-white bg-transparent text-white outline-none placeholder:text-white"
+                      />
+                    </Typography>
+                  </div>
+                )}
+                <button
+                  onClick={handleSubmit}
+                  className=" md:px-[36px] px-[24px] mt-[32px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]"
+                >
                   {privateEquityHero.button.label}
                 </button>
               </div>
               <div></div>
             </div>
-          </Container>
+          </div>
         </>
       </Container>
 

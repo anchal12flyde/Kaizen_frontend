@@ -165,10 +165,10 @@ export default function PEVCPracticeSection({
                 whileInView="show"
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className=" md:px-[20px] px-[20px] md:py-[46px] py-[100px] borderCardPerk flex  md:flex-row flex-col md:gap-[56px] gap-[80px] "
+                className=" md:px-[20px] px-[20px] md:py-[46px] py-[100px] borderCardPerk flex  md:flex-col flex-col md:gap-[36px] gap-[80px] "
               >
                 {/* Icon Placeholder */}
-                <div className="flex md:justify-center">
+                <div className="flex">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="89"

@@ -20,12 +20,28 @@ const { industries } = privateEquityHero;
 const { cardsData } = pevcPractice;
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState("");
-  
+    const [email, setEmail] = useState("");
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+      if (!email) {
+        alert("Please enter email");
+        return;
+      }
+
+      console.log("Submitted Email:", email); // 👈 now it will log properly
+
+      setEmail("");
+    };
+    const [showEmail, setShowEmail] = useState(false);
+
     const toggleDropdown = () => setIsOpen(!isOpen);
-  
+
     const selectIndustry = (industry) => {
       setSelected(industry);
       setIsOpen(false);
+      setShowEmail(true);
     };
     return (
       <div>
@@ -63,22 +79,21 @@ const { cardsData } = pevcPractice;
             {/* List */}
             <div className="flex md:gap-[16px] gap-[2px] flex-col">
               {pevcPractice.cardsData.map((item, index) => (
-                 <Link href={item.link} className="cursor-pointer">
-                <div
-                  key={index}
-                  className="flex md:flex-row flex-col md:items-center md:justify-between border-t border-white/30 py-[38px]"
-                >
-                  {/* Content */}
-                  <div className="flex md:flex-row flex-col md:gap-[96px] gap-[16px]">
-                    <div className="flex justify-between items-center md:block md:w-auto w-full">
-                      <Typography
-                        variant="header-1"
-                        className="!text-white w-[250px]"
-                      >
-                        {item.title}
-                      </Typography>
+                <Link href={item.link} className="cursor-pointer">
+                  <div
+                    key={index}
+                    className="flex md:flex-row flex-col md:items-center md:justify-between border-t border-white/30 py-[38px]"
+                  >
+                    {/* Content */}
+                    <div className="flex md:flex-row flex-col md:gap-[96px] gap-[16px]">
+                      <div className="flex justify-between items-center md:block md:w-auto w-full">
+                        <Typography
+                          variant="header-1"
+                          className="!text-white w-[250px]"
+                        >
+                          {item.title}
+                        </Typography>
 
-                     
                         <div className="md:hidden w-[30px] h-[30px] cursor-pointer">
                           <img
                             src={item.icon}
@@ -86,26 +101,24 @@ const { cardsData } = pevcPractice;
                             alt={item.title}
                           />
                         </div>
-                    
+                      </div>
+
+                      {/* Description */}
+                      <Typography
+                        variant="para-2"
+                        className="!text-white w-[316px]"
+                      >
+                        {item.desc}
+                      </Typography>
                     </div>
 
-                    {/* Description */}
-                    <Typography
-                      variant="para-2"
-                      className="!text-white w-[316px]"
-                    >
-                      {item.desc}
-                    </Typography>
-                  </div>
-                  
                     <div className="hidden md:block md:w-[45px] md:h-[45px]">
                       <img
                         src={item.icon}
                         className="h-full w-full object-contain"
                       />
                     </div>
-                  
-                </div>
+                  </div>
                 </Link>
               ))}
 
@@ -114,46 +127,53 @@ const { cardsData } = pevcPractice;
           </div>
         </Container>
 
-        <Container variant="primarySpacing" className=" privateEquityHeroCopy">
+        <Container
+          variant="primarySpacing"
+          className="relative w-full h-full min-h-[700px]"
+        >
           {/* Background Image */}
-          <Image
-            src={privateEquityHero.bgImage}
-            alt="Kaizen Hero"
-            fill
-            className="hero-background"
-            priority
-          />
-
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={privateEquityHero.bgImage}
+              alt="Kaizen Hero"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           {/* Overlay */}
           <div className="hero-overlay"></div>
 
           {/* Content */}
           <>
-            <Container
-              variant="sectionSp1"
-              className=" absolute inset-0  flex justify-center  "
-            >
-              <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
+            <div className=" relative flex justify-center z-10 ">
+              <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
                 <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
-                  <Typography variant="header-5" className=" !text-white ">
+                  <Typography
+                    variant="header-5"
+                    className=" !text-[var(--color-para-2)] "
+                  >
                     {privateEquityHero.title}
                   </Typography>
                   <Typography
                     variant="para-2"
-                    className=" !text-white mt-[26px] "
+                    className=" !text-[var(--color-para-2)] mt-[26px] "
                   >
                     {privateEquityHero.description}
                   </Typography>
 
-                  <div className="mt-[57px] mb-[32px] flex flex-col gap-[16px]">
-                    <Typography variant="header-4" className="!text-white">
+                  <div className="mt-[57px] flex flex-col gap-[16px]">
+                    <Typography
+                      variant="header-4"
+                      className="!text-[var(--color-para-2)]"
+                    >
                       {privateEquityHero.subText}
                     </Typography>
                     <div className="relative w-full">
                       {/* Dropdown container when open */}
                       {isOpen ? (
                         <div
-                          className="absolute  w-full shadow-md px-[8px]"
+                          className="absolute top-full left-0 w-full shadow-md px-[8px]"
                           style={{
                             boxShadow: "1px 0px 8px 1px #00000033",
                             backgroundColor: "#B6996A",
@@ -167,7 +187,7 @@ const { cardsData } = pevcPractice;
                           >
                             <Typography
                               variant="para-2"
-                              className="!text-white"
+                              className="!text-[var(--color-para-2)]"
                             >
                               {selected || privateEquityHero.selectIndustryText}
                             </Typography>
@@ -177,7 +197,7 @@ const { cardsData } = pevcPractice;
                               height="20"
                               viewBox="0 0 24 24"
                               fill="none"
-                              className="text-white transition-transform duration-300"
+                              className="text-[var(--color-para-2)] transition-transform duration-300"
                               style={{ transform: "rotate(180deg)" }} // Arrow flips when open
                             >
                               <path
@@ -233,13 +253,29 @@ const { cardsData } = pevcPractice;
                       )}
                     </div>
                   </div>
-                  <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
+                  {showEmail && (
+                    <div className="mt-[24px] w-full">
+                      <Typography variant="para-2" className="!text-white">
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="Enter your email"
+                          className="w-full h-[40px] px-2 border-b border-white bg-transparent text-white outline-none placeholder:text-white"
+                        />
+                      </Typography>
+                    </div>
+                  )}
+                  <button
+                    onClick={handleSubmit}
+                    className=" md:px-[36px] px-[24px] mt-[32px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]"
+                  >
                     {privateEquityHero.button.label}
                   </button>
                 </div>
                 <div></div>
               </div>
-            </Container>
+            </div>
           </>
         </Container>
         <Footer />

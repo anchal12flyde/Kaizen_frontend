@@ -22,7 +22,10 @@ import DigitalTransformationFamiliarSection from "@/components/DigitalTransforma
 export default async function privateEquity({ params }) {
   const sitecontent = getSiteContent();
   const { slug } = await params; 
- 
+  const showPEVC = ["private-equity", "mergers-acquisitions"].includes(slug);
+  const showDigital = ["general-counsel", "technology-law"].includes(
+    slug,
+  );  
   const data = sitecontent.servicepages[slug];
 
   if (!data) return notFound();
@@ -51,6 +54,7 @@ export default async function privateEquity({ params }) {
     cta,
     advisorySections,
     blogs,
+    digitalTransformation,
   } = data;
 
   return (
@@ -105,26 +109,32 @@ export default async function privateEquity({ params }) {
           </div>
         </div>
       </section>
+      <Container className="section-bg " variant="primarySpacing">
+        <div>
+          <Typography variant="header-6" className="">
+            {overview.title}
+          </Typography>
 
-      <Container
-        variant="primarySpacing"
-        className=" flex flex-col md:gap-[16px] gap-[36px] items-center bg-[#F7F4EB]    "
-      >
-        <Typography variant="header-6">{overview.title}</Typography>
-        <Typography
-          variant="para-2"
-          className="md:w-[716px] w-full text-center "
-        >
-          {overview.description}
-        </Typography>
+          <div className="inprovementSection">
+            {overview?.paragraphs?.map((text, index) => (
+              <Typography
+                key={index}
+                className="text-block "
+                variant="para-2"
+                delay={0.4 + index * 0.2}
+              >
+                {text}
+              </Typography>
+            ))}
+          </div>
+        </div>
       </Container>
 
-      <AdvisorySection sections={advisorySections} />
-      <DigitalTransformationFamiliarSection/>
       <PEVCPracticeSection
         cardsData={pevcPractice.cardsData}
         topContent={pevcPractice.topContent}
       />
+
       <Container
         variant="sectionSp3"
         className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] "
@@ -134,8 +144,17 @@ export default async function privateEquity({ params }) {
           {investmentLifecycle.description}
         </Typography>
       </Container>
-      <StackedServicesSection items={stackedServices} />
+      {showPEVC && pevcPractice && (
+        <StackedServicesSection items={stackedServices} />
+      )}
       <WhyChooseSection data={whyClients} />
+      {showDigital && (
+        <DigitalTransformationFamiliarSection
+          title={digitalTransformation?.title}
+          subtitle={digitalTransformation?.subtitle}
+          cardsData={digitalTransformation?.cardsData || []}
+        />
+      )}
       <OurApproachSection />
 
       <Container variant="primarySpacing" className=" privateEquityHeroCopy">

@@ -1,8 +1,14 @@
+"use client";
 import React from "react";
 import { Container } from "./spacing";
 import Typography from "./typography";
+import { useRouter, usePathname } from "next/navigation";
+
 
 export default function Footer() {
+  const  router = useRouter();
+  const pathname = usePathname();
+  const isActive = (path) => pathname === path;
   return (
     <>
       <Container
@@ -47,8 +53,16 @@ export default function Footer() {
             {/* Links 1 */}
             <div className="lg:w-[214px] md:w-[137px] w-full">
               <ul className="space-y-[16px] ">
-                <li>
-                  <Typography variant="para-3">About Kaizen</Typography>
+                <li
+                  className="cursor-pointer"
+                  onClick={() => router.push("/about")}
+                >
+                  <Typography
+                    variant="para-3"
+                    className={`${isActive("/about") ? "!text-[#9D7D49]" : ""}`}
+                  >
+                    About Kaizen
+                  </Typography>
                 </li>
                 <li>
                   <details className="group">
@@ -58,11 +72,44 @@ export default function Footer() {
                         <img src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(19).png" />
                       </div>
                     </summary>
-                    <ul className="mt-[12px]  space-y-1 text-gray-600 list-disc list-outside pl-4">
-                      <li>Private Equity & Venture Capital</li>
-                      <li>Mergers & Acquisitions</li>
-                      <li>Technology Law</li>
-                      <li>General Counsel Services</li>
+                    <ul className="mt-[12px]  space-y-[8px]  list-disc list-outside pl-4">
+                      <li
+                        className={`sublist cursor-pointer ${
+                          isActive("/private-equity") ? "!text-[#9D7D49]" : ""
+                        }`}
+                        onClick={() => router.push("/private-equity")}
+                      >
+                        Private Equity & Venture Capital
+                      </li>
+
+                      <li
+                        className={`sublist cursor-pointer ${
+                          isActive("/mergers-acquisitions")
+                            ? "!text-[#9D7D49]"
+                            : ""
+                        }`}
+                        onClick={() => router.push("/mergers-acquisitions")}
+                      >
+                        Mergers & Acquisitions
+                      </li>
+
+                      <li
+                        className={`sublist cursor-pointer ${
+                          isActive("/technology-law") ? "!text-[#9D7D49]" : ""
+                        }`}
+                        onClick={() => router.push("/technology-law")}
+                      >
+                        Technology Law
+                      </li>
+
+                      <li
+                        className={`sublist cursor-pointer ${
+                          isActive("/general-counsel") ? "!text-[#9D7D49]" : ""
+                        }`}
+                        onClick={() => router.push("/general-counsel")}
+                      >
+                        General Counsel Services
+                      </li>
                     </ul>
                   </details>
                 </li>
@@ -74,16 +121,72 @@ export default function Footer() {
                         <img src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(19).png" />
                       </div>
                     </summary>
-                    <ul className="mt-[12px] ml-[11px] space-y-1 text-gray-600 list-disc list-outside pl-4">
-                      <li>Private Equity</li>
-                      <li>Mergers & Acquisitions</li>
-                      <li>Technology Law</li>
-                      <li>General Counsel Services</li>
+                    <ul className="mt-[12px]  space-y-[8px]  list-disc list-outside pl-4">
+                      <li
+                        className={`sublist cursor-pointer ${
+                          isActive("/sectors/startup") ? "!text-[#9D7D49]" : ""
+                        }`}
+                        onClick={() => router.push("/sectors/startup")}
+                      >
+                        Startups & Emerging Companies
+                      </li>
+                      <li
+                        className={`sublist cursor-pointer ${
+                          isActive("/sectors/financial")
+                            ? "!text-[#9D7D49]"
+                            : ""
+                        }`}
+                        onClick={() => router.push("/sectors/financial")}
+                      >
+                        Financial Services & Fintech
+                      </li>
+                      <li
+                        className={`sublist cursor-pointer ${
+                          isActive("/sectors/renewable")
+                            ? "!text-[#9D7D49]"
+                            : ""
+                        }`}
+                        onClick={() => router.push("/sectors/renewable")}
+                      >
+                        Renewable Energy & Infrastructure
+                      </li>
+                      <li
+                        className={`sublist cursor-pointer ${
+                          isActive("/sectors/digital") ? "!text-[#9D7D49]" : ""
+                        }`}
+                        onClick={() => router.push("/sectors/digital")}
+                      >
+                        Digital Businesses
+                      </li>
+                      <li
+                        className={`sublist cursor-pointer ${
+                          isActive("/sectors/consumer") ? "!text-[#9D7D49]" : ""
+                        }`}
+                        onClick={() => router.push("/sectors/consumer")}
+                      >
+                        Consumer & Retail
+                      </li>
+                      <li
+                        className={`sublist cursor-pointer ${
+                          isActive("/sectors/education")
+                            ? "!text-[#9D7D49]"
+                            : ""
+                        }`}
+                        onClick={() => router.push("/sectors/education")}
+                      >
+                        Education & EdTech
+                      </li>
                     </ul>
                   </details>
                 </li>
-                <li>
-                  <Typography variant="para-3">
+                <li
+                  className="cursor-pointer"
+                  onClick={() => router.push("/footprint")}
+                >
+                  <Typography
+                    variant="para-3"
+                    className={`${isActive("/footprint") ? "!text-[#9D7D49]" : ""}`}
+                  >
                     Transaction Footprint
                   </Typography>
                 </li>
@@ -93,17 +196,49 @@ export default function Footer() {
             {/* Links 2 */}
             <div className="md:mt-0 mt-[16px]">
               <ul className="space-y-[16px]">
-                <li>
-                  <Typography variant="para-3">Insights </Typography>
+                <li
+                  className="cursor-pointer"
+                  onClick={() => router.push("/insights")}
+                >
+                  <Typography
+                    variant="para-3"
+                    className={`${isActive("/insights") ? "!text-[#9D7D49]" : ""}`}
+                  >
+                    Insights{" "}
+                  </Typography>
                 </li>
-                <li>
-                  <Typography variant="para-3">Careers </Typography>
+                <li
+                  className="cursor-pointer"
+                  onClick={() => router.push("/careers")}
+                >
+                  <Typography
+                    variant="para-3"
+                    className={`${isActive("/careers") ? "!text-[#9D7D49]" : ""}`}
+                  >
+                    Careers{" "}
+                  </Typography>
                 </li>
-                <li>
-                  <Typography variant="para-3">Contact Us</Typography>
+                <li
+                  className="cursor-pointer"
+                  onClick={() => router.push("/contact-us")}
+                >
+                  <Typography
+                    variant="para-3"
+                    className={`${isActive("/contact-us") ? "!text-[#9D7D49]" : ""}`}
+                  >
+                    Contact Us
+                  </Typography>
                 </li>
-                <li>
-                  <Typography variant="para-3">Legal & Compliance</Typography>
+                <li
+                  className="cursor-pointer"
+                  onClick={() => router.push("/legal-and-compliance")}
+                >
+                  <Typography
+                    variant="para-3"
+                    className={`${isActive("/legal-and-compliance") ? "!text-[#9D7D49]" : ""}`}
+                  >
+                    Legal & Compliance
+                  </Typography>
                 </li>
               </ul>
             </div>
@@ -129,11 +264,11 @@ export default function Footer() {
                   </span>
                   <Typography variant="para-3">(555) 123-4567</Typography>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex  gap-2">
                   <span className="h-full  items-center">
                     <img
                       src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(20).png"
-                      className="w-[8px] h-[13px]"
+                      className="w-[9px] h-[13px] mt-[4px]"
                     />
                   </span>
                   <Typography variant="para-3">

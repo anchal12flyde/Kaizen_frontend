@@ -7,12 +7,21 @@ import Link from "next/link";
 import { Container } from "./spacing";
 import { usePathname, useRouter } from "next/navigation";
 
-/* 🔹 LOCAL HEADER DATA (API replacement) */
+
 const HEADER_DATA = {
   logo: "https://ik.imagekit.io/75zj3bigp/LogoLight.png",
   navLinks: [
     { name: "About Kaizen", href: "/about" },
-    { name: "Practice Areas", href: "/practice-areas" },
+    {
+      name: "Practice Areas",
+      href: "/practice-areas",
+      subLinks: [
+        { name: "Private Equity & Venture Capital", href: "/private-equity" },
+        { name: "Mergers & Acquisitions", href: "/mergers-acquisitions" },
+        { name: "Technology Law", href: "/technology-law" },
+        { name: "General Counsel Services", href: "/general-counsel" },
+      ],
+    },
     { name: "Sectors", href: "/sectors" },
     { name: "Transaction Footprint", href: "/footprint" },
     { name: "Insights", href: "/insights" },
@@ -26,7 +35,7 @@ const HEADER_DATA = {
 };
 
 export default function Header() {
-  const [activeLink, setActiveLink] = useState("");
+  
   const [header] = useState(HEADER_DATA);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHiding, setIsHiding] = useState(false);
@@ -64,12 +73,26 @@ export default function Header() {
   const handleLinkClick = (linkName, href, e) => {
     e.preventDefault();
 
-    setActiveLink(linkName);
+   
     setIsMenuOpen(false);
 
     router.push(href);
   };
+  const isParentActive = (link) => {
+    // direct match
+    if (pathname === link.href || pathname.startsWith(link.href)) {
+      return true;
+    }
 
+    // check sublinks
+    if (link.subLinks) {
+      return link.subLinks.some(
+        (sub) => pathname === sub.href || pathname.startsWith(sub.href),
+      );
+    }
+
+    return false;
+  };
   const NavbarContent = ({ isFixed }) => {
     const showDark = !isFixed && isBlackRoute;
 
@@ -79,12 +102,7 @@ export default function Header() {
         <Link
           href="/"
           className="flex-shrink-0"
-          onClick={(e) => {
-            e.preventDefault();
-            setActiveLink("Home");
-            setIsMenuOpen(false);
-            router.push("/");
-          }}
+        
         >
           <Image
             src={lightLogo}
@@ -97,41 +115,61 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="nav-link-container hidden md:flex">
-          {header.navLinks.map((link, i) => (
-            <Link
-              key={i}
-              href={link.href}
-              onClick={(e) => handleLinkClick(link.name, link.href, e)}
-              className={`nav-link ${
-                isFixed
-                  ? activeLink === link.name
-                    ? "fixed-active"
-                    : ""
-                  : showDark
-                    ? activeLink === link.name
-                      ? "static-active"
-                      : ""
-                    : activeLink === link.name
-                      ? "static-black-active"
-                      : ""
-              }`}
-            >
-              <Typography
-                className={`!text-[var(--color-para-2)] transition-colors ${
-                  !isFixed
-                    ? showDark
-                      ? "static-nav-link-white"
-                      : "static-nav-link"
-                    : "fixed-nav-link"
-                }`}
-                variant="linkText"
-                style={{ lineHeight: "150%" }}
-                animate={false}
-              >
-                {link.name}
-              </Typography>
-            </Link>
-          ))}
+          {header.navLinks.map((link, i) => {
+            const hasSub = link.subLinks;
+
+            return (
+              <div key={i} className="relative group">
+                {/* Main Link */}
+                <Link
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(link.name, link.href, e)}
+                  className="nav-link"
+                >
+                  <Typography
+                    className={`transition-colors ${
+                      isParentActive(link)
+                        ? "!text-[#C3A771]"
+                        : "!text-white/90"
+                    }`}
+                    variant="linkText"
+                    animate={false}
+                  >
+                    {link.name}
+                  </Typography>
+                </Link>
+
+                {/* Dropdown */}
+                {hasSub && (
+                  <div
+                    className="absolute -left-[10px] top-full mt-2 min-w-[181px]
+            bg-[#0A193AF2] shadow-[1px_0px_8px_1px_#00000033]
+            opacity-0 invisible group-hover:opacity-100 group-hover:visible
+            transition-all duration-300 z-50"
+                  >
+                    {link.subLinks.map((sub, idx) => (
+                      <Link
+                        key={idx}
+                        href={sub.href}
+                        onClick={(e) => handleLinkClick(sub.name, sub.href, e)}
+                        className="block px-[10px] py-[16px] hover:bg-white/10"
+                      >
+                        <p
+                          className={`transition-colors sublistphone  ${
+                            isActive(sub.href)
+                              ? "!text-[#C3A771]"
+                              : "!text-white/90"
+                          }`}
+                        >
+                          {sub.name}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
 
         {/* Hamburger - Mobile Only */}
@@ -144,10 +182,12 @@ export default function Header() {
           <span className="w-6 h-[2px] bg-white" />
           <span className="w-6 h-[2px] bg-white" />
         </button>
-      </> 
+      </>
     );
   };
-
+const isActive = (href) => {
+  return pathname === href || pathname.startsWith(href);
+};
   return (
     <>
       {/* STATIC NAVBAR */}
@@ -284,19 +324,59 @@ export default function Header() {
             className="flex flex-col gap-[46px] justify-center"
           >
             {HEADER_DATA.navLinks.map((link, i) => (
-              <Link
-                key={i}
-                href={link.href}
-                onClick={(e) => handleLinkClick(link.name, link.href, e)}
-              >
-                <Typography
-                  variant="header-1"
-                  className="!text-white transition-all"
-                  animate={false}
-                >
-                  {link.name}
-                </Typography>
-              </Link>
+              <div key={i}>
+                {!link.subLinks ? (
+                  <Link
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(link.name, link.href, e)}
+                  >
+                    <Typography
+                      variant="header-1"
+                      className={`${
+                        isParentActive(link)
+                          ? "!text-black"
+                          : "!text-[var(--color-para-2)]"
+                      }`}
+                    >
+                      {link.name}
+                    </Typography>
+                  </Link>
+                ) : (
+                  <details className="group">
+                    <summary className="cursor-pointer list-none">
+                      <Typography
+                        variant="header-1"
+                        className={`${
+                          isActive(link.href)
+                            ? "!text-[#C3A771]"
+                            : "!text-white/80"
+                        }`}
+                      >
+                        {link.name}
+                      </Typography>
+                    </summary>
+
+                    <div className="mt-4 ml-4 flex flex-col gap-4">
+                      {link.subLinks.map((sub, idx) => (
+                        <Link
+                          key={idx}
+                          href={sub.href}
+                          onClick={(e) =>
+                            handleLinkClick(sub.name, sub.href, e)
+                          }
+                        >
+                          <Typography
+                            variant="para-2"
+                            className="!text-white/80"
+                          >
+                            {sub.name}
+                          </Typography>
+                        </Link>
+                      ))}
+                    </div>
+                  </details>
+                )}
+              </div>
             ))}
           </Container>
 

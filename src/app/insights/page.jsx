@@ -30,20 +30,26 @@ export default function Insights() {
   
     const handleSubmit = (e) => {
       e.preventDefault();
+
       if (!email) {
         alert("Please enter email");
         return;
       }
-      setEmail(""); 
+
+      console.log("Submitted Email:", email); // 👈 now it will log properly
+
+      setEmail("");
     };
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState("");
+    const [showEmail, setShowEmail] = useState(false);
 
     const toggleDropdown = () => setIsOpen(!isOpen);
 
     const selectIndustry = (industry) => {
       setSelected(industry);
       setIsOpen(false);
+      setShowEmail(true);
     };
   return (
     <div className=" bg-[var(--color-background-1)] ">
@@ -146,11 +152,11 @@ export default function Insights() {
       </Container>
 
       <BlogGridSection variant="stack" posts={insight.blogs} />
-      <div className="hidden md:block">
+      {/* <div className="hidden md:block">
         <LetsConnectSection />
       </div>
 
-      {/* Mobile only */}
+    
       <div className="block md:hidden px-[28px] py-[220px] bg-[var(--color-background-2)]">
         <form
           onSubmit={handleSubmit}
@@ -182,27 +188,28 @@ export default function Insights() {
             </Typography>
           </button>
         </form>
-      </div>
-      <Container variant="primarySpacing" className=" privateEquityHeroCopy">
+      </div> */}
+      <Container
+        variant="primarySpacing"
+        className="relative w-full h-full min-h-[700px]"
+      >
         {/* Background Image */}
-        <Image
-          src={privateEquityHero.bgImage}
-          alt="Kaizen Hero"
-          fill
-          className="hero-background"
-          priority
-        />
-
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={privateEquityHero.bgImage}
+            alt="Kaizen Hero"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
         {/* Overlay */}
         <div className="hero-overlay"></div>
 
         {/* Content */}
         <>
-          <Container
-            variant="sectionSp1"
-            className=" absolute inset-0  flex justify-center  "
-          >
-            <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
+          <div className=" relative flex justify-center z-10 ">
+            <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
               <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography
                   variant="header-5"
@@ -217,7 +224,7 @@ export default function Insights() {
                   {privateEquityHero.description}
                 </Typography>
 
-                <div className="mt-[57px] mb-[32px] flex flex-col gap-[16px]">
+                <div className="mt-[57px] flex flex-col gap-[16px]">
                   <Typography
                     variant="header-4"
                     className="!text-[var(--color-para-2)]"
@@ -228,7 +235,7 @@ export default function Insights() {
                     {/* Dropdown container when open */}
                     {isOpen ? (
                       <div
-                        className="absolute  w-full shadow-md px-[8px]"
+                        className="absolute top-full left-0 w-full shadow-md px-[8px]"
                         style={{
                           boxShadow: "1px 0px 8px 1px #00000033",
                           backgroundColor: "#B6996A",
@@ -308,13 +315,29 @@ export default function Insights() {
                     )}
                   </div>
                 </div>
-                <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white md:text-[24px] text-[18px]">
+                {showEmail && (
+                  <div className="mt-[24px] w-full">
+                    <Typography variant="para-2" className="!text-white">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter your email"
+                        className="w-full h-[40px] px-2 border-b border-white bg-transparent text-white outline-none placeholder:text-white"
+                      />
+                    </Typography>
+                  </div>
+                )}
+                <button
+                  onClick={handleSubmit}
+                  className=" md:px-[36px] px-[24px] mt-[32px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]"
+                >
                   {privateEquityHero.button.label}
                 </button>
               </div>
               <div></div>
             </div>
-          </Container>
+          </div>
         </>
       </Container>
       <Footer />

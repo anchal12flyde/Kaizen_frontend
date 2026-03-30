@@ -69,16 +69,18 @@ export default function Careers() {
               </div>
             </div>
             {/* Icons */}
-            <div className="w-full overflow-x-auto md:overflow-hidden mt-[86px] md:mt-[156px] md:pr-[200px] pr-[24px]">
-              <div className="flex w-max md:w-full gap-[48px] md:gap-0 md:justify-between">
-                {careerHero.logos.map((logo, index) => (
-                  <img
-                    key={index}
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="w-[152px] h-[58px] object-contain flex-shrink-0"
-                  />
-                ))}
+            <div className="md:pr-[200px] pr-[24px]">
+              <div className="w-full overflow-x-auto md:overflow-hidden mt-[86px] md:mt-[100px]  border-t border-t-[#F7F4EB80]  pt-[30px]">
+                <div className="flex w-max md:w-full gap-[48px] md:gap-0 md:justify-between">
+                  {careerHero.logos.map((logo, index) => (
+                    <img
+                      key={index}
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="w-[152px] h-[58px] object-contain flex-shrink-0"
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>

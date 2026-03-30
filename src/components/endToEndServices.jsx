@@ -9,32 +9,7 @@ import Typography from "./ui-kit/typography";
 import { getSiteContent } from "@/lib/siteContent";
 import Link from "next/link";
 
-const services = [
-  {
-    title: "Startups & Emerging Companies",
-    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208.png",
-  },
-  {
-    title: "Financial Services & Fintech",
-    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(1).png",
-  },
-  {
-    title: "Renewable Energy & Infrastructure",
-    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(2).png",
-  },
-  {
-    title: "Digital Businesses",
-    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(3).png",
-  },
-  {
-    title: "Consumer & Retail",
-    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%209%20(1).png",
-  },
-  {
-    title: "Education & EdTech",
-    img: "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(4).png",
-  },
-];
+
 
 const gridVariants = {
   hidden: {},
@@ -124,7 +99,7 @@ function ServiceCard({ title, img, isMobile,link }) {
           </div>
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+          <div className="absolute inset-0 " />
 
           {/* Content wrapper */}
           <div className="relative h-full flex items-start">

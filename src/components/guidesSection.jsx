@@ -22,8 +22,12 @@ export default function GuidesSection({ data }) {
               className="flex flex-col md:flex-row md:items-center md:justify-between border-t border-white/30 py-[38px] gap-[41px] md:gap-0"
             >
               {/* Icon */}
-              <div className="w-16 h-16 border border-white rounded-full flex items-center justify-center order-1 md:order-2">
-                {/* Placeholder Icon */}
+              <div className="w-[100px] h-[100px]  flex items-center justify-center order-1 md:order-2">
+                <img
+                  src={item.icon}
+                  alt="image"
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               {/* Content */}

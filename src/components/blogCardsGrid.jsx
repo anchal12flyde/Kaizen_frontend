@@ -4,6 +4,7 @@ import Image from "next/image";
 import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
 import Button from "./ui-kit/button";
+import Link from "next/link";
 
 export default function BlogGridSection({
   posts = [],
@@ -36,7 +37,9 @@ export default function BlogGridSection({
               h-full
             `}
           >
-            <BlogCard buttonShow={buttonShow} data={item} />
+            <Link href={`/insights/${item.slug}`}>
+              <BlogCard buttonShow={buttonShow} data={item} />
+            </Link>
           </div>
         ))}
       </div>

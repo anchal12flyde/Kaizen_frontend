@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Typography from "./ui-kit/typography";
 import Button from "./ui-kit/button";
+import Link from "next/link";
 
 export default function AboutHeroSection({
   bgImage,
@@ -54,18 +55,21 @@ export default function AboutHeroSection({
             )}
           </div>
 
-          {buttons.length > 0 && (
+          {buttons?.length > 0 && (
             <div className="mt-[26px] flex md:flex-row flex-col items-center gap-[16px]">
-              {buttons.map((btn, index) => (
-                <Button
-                  key={index}
-                  variant={btn.variant || "primary"}
-                  className="w-full md:w-auto"
-                  onClick={btn.onClick}
-                >
-                  {btn.label}
-                </Button>
-              ))}
+              {buttons.map((btn, index) => {
+              
+
+                return (
+                  <Button
+                    asChild
+                    variant={btn.variant || "primary"}
+                    className="w-full md:w-auto"
+                  >
+                    <Link href={btn.href || "#"}>{btn.label}</Link>
+                  </Button>
+                );
+              })}
             </div>
           )}
         </div>

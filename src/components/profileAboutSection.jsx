@@ -88,7 +88,13 @@ export default function ProfileAboutSection() {
                   }`}
                 >
                   <Typography variant="para-2">{item.content}</Typography>
-                  <img src={item.icon} className="w-[132px] h-[149px] object-cover mt-[26px]"/>
+                  {index === 0 && item.icon && (
+                    <img
+                      src={item.icon}
+                      className="w-[132px] h-[149px] object-cover mt-[26px]"
+                      alt="icon"
+                    />
+                  )}
                 </div>
               </div>
             );

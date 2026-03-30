@@ -129,6 +129,15 @@
   align-items: center;
   gap: 12px;
 }
+.dt-familiar__title-col{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 400px;
+ height: 100%;
+margin-top: 160px;
+
+}
 
 .dt-video-section__subheading {
   color: var(--stone, #e2e2e2) !important;
@@ -209,13 +218,13 @@
 }
 
 .dt-familiar__card {
-  background-color: var(--color-accent);
+  background-color: var(--color-background-2);
   padding: 36px 80px 36px 26px;
   width: 100%;
 }
 
 .dt-familiar__card-text {
-  color: var(--secondary-color) !important;
+  color: var(--color-background-1) !important;
   line-height: 1.4 !important;
 }
 

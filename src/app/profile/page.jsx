@@ -18,7 +18,7 @@ export default function ProfilePage() {
   const { profile } = sitecontent;
   const {recognition,cta}=profile;
   return (
-    <div className="bg-[#F7F4EB]">
+    <div className="bg-white">
       <Header />
       <ProfileHeader />
       <ProfileAboutSection />
