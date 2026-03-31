@@ -83,7 +83,7 @@
         {
           "label": "Meet Our Team",
           "variant": "white",
-          "href": "/about#leadership-team"
+          "href": "#leadership-team"
         }
       ]
     },

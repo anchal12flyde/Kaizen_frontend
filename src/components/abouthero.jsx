@@ -12,6 +12,22 @@ export default function AboutHeroSection({
   buttons = [],
   align = "left", 
 }) {
+
+  const handleScrollToTeam = (e) => {
+    e.preventDefault();
+
+    const el = document.getElementById("leadership-team");
+
+    if (el) {
+      const yOffset = -120; // header height adjust karo
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <section className="hero-section relative">
       {/* Background Image */}
@@ -58,15 +74,39 @@ export default function AboutHeroSection({
           {buttons?.length > 0 && (
             <div className="mt-[26px] flex md:flex-row flex-col items-center gap-[16px]">
               {buttons.map((btn, index) => {
-              
+                const isTeamBtn = btn.href === "#leadership-team";
+
+                const handleScroll = (e) => {
+                  if (!isTeamBtn) return;
+
+                  e.preventDefault();
+
+                  const el = document.getElementById("leadership-team");
+
+                  if (el) {
+                    const yOffset = -120; // header height adjust karo
+                    const y =
+                      el.getBoundingClientRect().top +
+                      window.pageYOffset +
+                      yOffset;
+
+                    window.scrollTo({
+                      top: y,
+                      behavior: "smooth",
+                    });
+                  }
+                };
 
                 return (
                   <Button
+                    key={index}
                     asChild
                     variant={btn.variant || "primary"}
                     className="w-full md:w-auto"
                   >
-                    <Link href={btn.href || "#"}>{btn.label}</Link>
+                    <Link href={btn.href || "#"} onClick={handleScroll}>
+                      {btn.label}
+                    </Link>
                   </Button>
                 );
               })}
