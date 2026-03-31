@@ -8,7 +8,7 @@ import Typography from "./ui-kit/typography";
 export default function OurApproachSection() {
   return (
     <Container variant="primarySpacing" className=" bg-[var(--color-background-1)] " >
-      <div
+      <div className="py-[140px]"
         style={{
           display: "flex",
           justifyContent: "center",
