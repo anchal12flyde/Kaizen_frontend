@@ -60,14 +60,15 @@ export default function AboutHeroSection({
           {buttons?.length > 0 && (
             <div className="mt-[26px] flex md:flex-row flex-col items-center gap-[16px]">
               {buttons.map((btn, index) => {
-                const isTeamBtn = btn.href === "#leadership-team";
+                const isHashLink = btn.href?.startsWith("#");
 
                 const handleScroll = (e) => {
-                  if (!isTeamBtn) return;
+                  if (!isHashLink) return;
 
                   e.preventDefault();
 
-                  const el = document.getElementById("leadership-team");
+                  const targetId = btn.href.replace("#", "");
+                  const el = document.getElementById(targetId);
 
                   if (el) {
                     const headerOffset = 120;

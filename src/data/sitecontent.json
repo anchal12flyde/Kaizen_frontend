@@ -739,14 +739,14 @@
       "align": "left",
       "buttons": [
         {
-          "label": "Explore Our Practise",
+          "label": "Explore Capabilties",
           "variant": "primary",
-          "href": ""
+          "href": "#End-to-End-Services"
         },
         {
-          "label": "Meet Our Team",
+          "label": "Connect",
           "variant": "white",
-          "href": ""
+          "href": "/contact-us"
         }
       ]
     },
