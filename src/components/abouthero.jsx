@@ -13,21 +13,7 @@ export default function AboutHeroSection({
   align = "left", 
 }) {
 
-  const handleScrollToTeam = (e) => {
-    e.preventDefault();
 
-    const el = document.getElementById("leadership-team");
-
-    if (el) {
-      const yOffset = -120; // header height adjust karo
-      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-      window.scrollTo({
-        top: y,
-        behavior: "smooth",
-      });
-    }
-  };
   return (
     <section className="hero-section relative">
       {/* Background Image */}
@@ -84,14 +70,14 @@ export default function AboutHeroSection({
                   const el = document.getElementById("leadership-team");
 
                   if (el) {
-                    const yOffset = -120; // header height adjust karo
-                    const y =
-                      el.getBoundingClientRect().top +
-                      window.pageYOffset +
-                      yOffset;
+                    const headerOffset = 120;
+
+                    const elementPosition = el.getBoundingClientRect().top;
+                    const offsetPosition =
+                      elementPosition + window.scrollY - headerOffset;
 
                     window.scrollTo({
-                      top: y,
+                      top: offsetPosition,
                       behavior: "smooth",
                     });
                   }
