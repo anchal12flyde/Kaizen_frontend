@@ -73,7 +73,9 @@ export default function About() {
       <WhyChooseSection data={about.whyClients} />
       <SectorExperience />
       <Recognization />
-      <LeadershipTeam />
+      <section id="leadership-team">
+        <LeadershipTeam />
+      </section>
       <Container
         variant="primarySpacing"
         className="relative w-full h-full min-h-[700px]"

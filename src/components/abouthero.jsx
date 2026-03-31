@@ -10,7 +10,7 @@ export default function AboutHeroSection({
   title,
   description,
   buttons = [],
-  align = "left", // "left" | "center" | "right"
+  align = "left", 
 }) {
   return (
     <section className="hero-section relative">
