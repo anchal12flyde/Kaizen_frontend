@@ -495,7 +495,7 @@
           "placeholder": "Description"
         },
         "button": {
-          "label": "View Representative Transactions →"
+          "label": "Submit →"
         }
       },
 
@@ -798,6 +798,11 @@
         "subtitle": "Advisory for Investors and Growth-Stage Companies Across the Investment Lifecycle",
         "image": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/4fb831ab65e327bafe1408a5fbfeb1f455746981.jpg?updatedAt=1774854267386"
       },
+      "ourApproach": {
+        "title": "Our Approach",
+        "highlight": "Our approach reflects the Kaizen philosophy — disciplined preparation, incremental refinement, and focused execution.",
+        "description": "We prioritise early identification of deal-critical issues, clear articulation of rights and obligations, and practical support during negotiations. Senior team members remain closely involved throughout each mandate to ensure continuity and informed judgment."
+      },
       "overview": {
         "title": "Overview",
         "paragraphs": [
@@ -805,7 +810,7 @@
           "We work on transactions from early-stage financings to structured growth investments and exits, aligning legal strategy with commercial objectives while ensuring clarity on rights, governance, and long-term value creation."
         ]
       },
-     
+
       "pevcPractice": {
         "topContent": {
           "title": "Our PE & VC Practice",
@@ -894,12 +899,7 @@
           }
         ]
       },
-      
-      "ourApproach": {
-        "title": "Our Approach",
-        "highlight": "Our approach reflects the Kaizen philosophy — disciplined preparation, incremental refinement, and focused execution.",
-        "description": "We prioritise early identification of deal-critical issues, clear articulation of rights and obligations, and practical support during negotiations. Senior team members remain closely involved throughout each mandate to ensure continuity and informed judgment."
-      },
+
       "privateEquityHero": {
         "bgImage": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/7bc45fa26651d3dfae1ff61022fe1b12be28c045.jpg",
         "title": " Representative Experience",
@@ -952,9 +952,9 @@
         "button": "View More ↓",
         "items": [
           {
-            "slug":"refining-strategy-mandate",
+            "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image1.jpg",
-          "category":"Category",
+            "category": "Category",
             "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "4 min",
             "date": "14/09/2024"
@@ -962,7 +962,7 @@
           {
             "slug": "blogs",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
-          "category":"Category",
+            "category": "Category",
             "title": "How we ensure maximum value creation across investment portfolios.",
             "readTime": "5 min",
             "date": "20/09/2024"
@@ -970,7 +970,7 @@
           {
             "slug": "blogs",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
-          "category":"Category",
+            "category": "Category",
             "title": "Key considerations when advising on cross-border transactions.",
             "readTime": "6 min",
             "date": "25/09/2024"
@@ -1111,7 +1111,7 @@
         "description": "We have advised on transactions across technology, financial services, infrastructure, energy, healthcare, and consumer sectors, including acquisitions, growth investments, strategic partnerships, and exits.",
 
         "button": {
-          "label": "View Representative Transactions"
+          "label": "View Representative Transactions →"
         }
       },
       "recognition": {

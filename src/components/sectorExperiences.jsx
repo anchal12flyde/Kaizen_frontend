@@ -9,43 +9,7 @@ import sitecontent from "@/data/sitecontent.json";
 import { useSiteContent } from "@/context/SiteContentProvider";
 gsap.registerPlugin(ScrollTrigger);
 
-const sectorsData = [
-  {
-    title: "Technology & Digital Businesses",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=40",
-  },
-  {
-    title: "Financial Services & Fintech",
-    image:
-      "https://images.unsplash.com/photo-1559526324-593bc073d938?w=400&q=40",
-  },
-  {
-    title: "Consumer & Retail",
-    image:
-      "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&q=40",
-  },
-  {
-    title: "Education & EdTech",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=40",
-  },
-  {
-    title: "E-commerce & Platforms",
-    image:
-      "https://images.unsplash.com/photo-1515165562835-c4c8c7c1adcc?w=400&q=40",
-  },
-  {
-    title: "Renewable Energy",
-    image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=40",
-  },
-  {
-    title: "IT & Technology Services",
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&q=40",
-  },
-];
+
 
 export default function SectorExperience({ data }) {
   const [isMobile, setIsMobile] = useState(null);
@@ -152,12 +116,10 @@ export default function SectorExperience({ data }) {
                     >
                       <Typography
                         variant="header-2"
-                        className={`text-center transition-colors duration-300 ${
-                          hoveredIndex === null
-                            ? "text-[#0A193A]" // default
-                            : isActive
-                              ? "text-[#0A193A]" // hovered
-                              : "text-[#0A193A80]" // faded others
+                        className={`text-center transition-all duration-300 ${
+                          isActive
+                            ? "!text-[#0A193A] opacity-100"
+                            : "text-[#0A193A] opacity-50"
                         }`}
                       >
                         {item.title}

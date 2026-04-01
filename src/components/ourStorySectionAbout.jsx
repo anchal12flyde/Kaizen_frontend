@@ -33,7 +33,7 @@ export default function OurStorySection({
           ))}
         </div>
 
-        <Button className="inprovementSectionBtn">{ourStory.buttonText}</Button>
+       
       </div>
     </Container>
   );

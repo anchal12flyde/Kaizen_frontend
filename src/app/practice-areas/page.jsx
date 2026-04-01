@@ -125,7 +125,7 @@ const { cardsData } = pevcPractice;
                   </Link>
                 ))}
 
-                <div className="border-t border-white/30"></div>
+               
               </div>
             </div>
           </Container>

@@ -46,11 +46,16 @@ export default function Contact() {
                   {contactSection.form.fields.map((field, i) => (
                     <div key={i}>
                       <div className="inputBorderContact flex flex-col">
-                        <input
-                          type={field.type}
-                          placeholder={field.placeholder}
-                          className="bg-transparent outline-none pb-[26px]"
-                        />
+                        <label className="text-[#231F20] opacity-[50%]">
+                          {field.placeholder}
+                        </label>
+                        <Typography variant="para-2" className="pt-[8px]">
+                          <input
+                            type={field.type}
+                            placeholder=""
+                            className="bg-transparent outline-none w-full"
+                          />
+                        </Typography>
                       </div>
                     </div>
                   ))}
@@ -136,12 +141,10 @@ export default function Contact() {
             )}
 
             {item.type === "email" && (
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M11.6714 12.2536C11.1739 12.5853 10.5959 12.7606 10 12.7606C9.40414 12.7606 8.82617 12.5853 8.32859 12.2536L0.133164 6.78977C0.087922 6.75952 0.0435173 6.72803 0 6.69535V15.6484C0 16.6748 0.833008 17.4895 1.84113 17.4895H18.1588C19.1853 17.4895 20 16.6565 20 15.6484V6.69531C19.9564 6.72808 19.9119 6.75963 19.8665 6.78992L11.6714 12.2536Z"
-                  fill="white"
-                />
-              </svg>
+              <img
+                src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Group%20(21).png"
+                className="w-[20px] h-[15px]"
+              />
             )}
 
             {/* TEXT */}

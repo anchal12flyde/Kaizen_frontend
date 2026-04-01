@@ -55,7 +55,7 @@ export default async function privateEquity({ params }) {
     advisorySections,
     blogs,
     digitalTransformation,
-    servicepages,
+    ourApproach,
   } = data;
   
   return (
@@ -156,7 +156,7 @@ export default async function privateEquity({ params }) {
           cardsData={digitalTransformation?.cardsData || []}
         />
       )}
-      <OurApproachSection />
+      <OurApproachSection data={ourApproach} />
 
       <Container variant="primarySpacing" className=" privateEquityHeroCopy">
         {/* Background Image */}

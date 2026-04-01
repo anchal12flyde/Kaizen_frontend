@@ -2,7 +2,7 @@
 
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
-import { useSiteContent } from "@/context/SiteContentProvider";
+
 
 
 export default function OurApproachSection({ data }) {
