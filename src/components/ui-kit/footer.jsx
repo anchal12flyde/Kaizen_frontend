@@ -72,7 +72,7 @@ export default function Footer() {
                         <img src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(19).png" />
                       </div>
                     </summary>
-                    <ul className="mt-[12px]  space-y-[8px]  list-disc list-outside pl-4">
+                    <ul className="mt-[12px]  space-y-[12px]  list-disc list-outside pl-4">
                       <li
                         className={`sublist cursor-pointer ${
                           isActive("/private-equity") ? "!text-[#9D7D49]" : ""
@@ -121,7 +121,7 @@ export default function Footer() {
                         <img src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(19).png" />
                       </div>
                     </summary>
-                    <ul className="mt-[12px]  space-y-[8px]  list-disc list-outside pl-4">
+                    <ul className="mt-[12px]  space-y-[12px]  list-disc list-outside pl-4">
                       <li
                         className={`sublist cursor-pointer ${
                           isActive("/sectors/startup") ? "!text-[#9D7D49]" : ""

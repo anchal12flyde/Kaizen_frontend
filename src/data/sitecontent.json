@@ -134,7 +134,7 @@
     },
     "whyClients": {
       "title": "Why Clients Choose Kaizen Law",
-      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "subtitle": "We deliver high-quality, partner-led advice with agility and a strong focus on client outcomes.",
       "cards": [
         {
           "title": "Big-Firm Quality, Boutique Agility",
@@ -296,7 +296,7 @@
     "privateEquityHero": {
       "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
       "title": "Ready To Talk?",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "description": "Connect with our team for practical, business-aligned legal guidance across transactions, investments, and ongoing advisory matters.",
       "subText": "I want to talk to your experts in:",
       "selectIndustryText": "Select an Industry",
       "industries": ["Fintech", "Healthcare", "E-commerce"],
