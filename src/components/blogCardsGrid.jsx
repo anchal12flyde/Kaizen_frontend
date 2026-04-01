@@ -46,9 +46,12 @@ export default function BlogGridSection({
 
       {buttonShow && (
         <div className="flex justify-center md:pr-0 !pr-[24px]">
-          <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-[#31110F] md:w-fit w-full text-[#31110F]  text-[18px]">
+          <Button
+            variant="primary"
+            className="mt-[36px] "
+          >
             {buttonText}
-          </button>
+          </Button>
         </div>
       )}
     </Container>
@@ -58,7 +61,7 @@ export default function BlogGridSection({
 /* Card Component */
 function BlogCard({ data, buttonShow }) {
   return (
-    <div className=" px-[14px] py-[16px] cursor-pointer flex flex-col gap-[16px] border border-[#D7C7AB]  blogCard group ">
+    <div className=" px-[14px] py-[16px] cursor-pointer flex flex-col gap-[16px] border-[0.5px] border-[#D7C7AB]  blogCard group ">
       {/* Image */}
       <div className=" h-[217px] !w-full  ">
         <Image

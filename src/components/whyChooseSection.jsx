@@ -182,7 +182,7 @@ export default function WhyChooseSection({ data = { title: "", subtitle: "", car
   return (
     <section
       ref={sectionRef}
-      className="w-full !h-fit bg-[#f7f4eb] overflow-x-hidden "
+      className="w-full !h-fit bg-[var(--color-background-1)] overflow-x-hidden "
     >
       {isMobile ? (
         /* MOBILE VERSION */

@@ -58,24 +58,7 @@ const DigitalTransformationFamiliarSection = ({
         .to({}, { duration: 0.2 })
 
         // --- PHASE 2: EXIT ---
-        .to(leftColRef.current, {
-          xPercent: -120,
-          opacity: 0,
-          duration: 1.5,
-          ease: "none",
-        })
-        .to(
-          cards,
-          {
-            xPercent: 120,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.1,
-            ease: "power2.in",
-          },
-          "<",
-        )
-        .to(familiarContainerRef.current, { opacity: 0, duration: 1 }, ">-0.5");
+      
     }, containerRef);
 
     return () => ctx.revert();

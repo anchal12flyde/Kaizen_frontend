@@ -95,11 +95,11 @@ export default function page() {
               {representativeMandates.description}
             </Typography>
           </div>
-          <div className="top-border"></div>
+          
           {/* 2 Column Layout */}
           <div className="grid-root">
             {representativeMandates.items.map((item, index) => (
-              <div key={index} className="footprint">
+              <div key={index} className="footprint top-border">
                 <div className="footprint-left">
                   <Typography variant="header-3" colorVariant="white">
                     {item.title}

@@ -145,7 +145,7 @@ export default function Insights() {
 
           {/* Content */}
           <div className="hero-content right-[50px]">
-            <div className="flex flex-col gap-[16px]">
+            <div className="flex flex-col gap-[16px] md:w-[642px] w-full">
               <div className=" px-[36px] py-[8px] border border-white !w-fit rounded-[500px]  ">
                 <Typography variant="para-3" className=" !text-white  ">
                   {insightDetailHero.category}
@@ -160,7 +160,7 @@ export default function Insights() {
                 delay={0.6}
                 variant="para-2"
                 colorVariant="white"
-                className="lg:w-[370px] w-full flex-shrink-0"
+                className="w-full flex-shrink-0"
               >
                 {insightDetailHero.description}
               </Typography>
@@ -217,7 +217,7 @@ export default function Insights() {
         className="relative w-full h-full min-h-[700px]"
       >
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 ">
           <Image
             src={privateEquityHero.bgImage}
             alt="Kaizen Hero"

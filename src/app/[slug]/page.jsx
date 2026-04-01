@@ -199,7 +199,7 @@ export default async function privateEquity({ params }) {
       </Container>
       <Container
         variant="primarySpacing"
-        className="flex flex-col items-center text-center overflow-hidden w-full"
+        className="flex flex-col items-center text-center overflow-hidden w-full "
       >
         <Typography variant="header-6">{title}</Typography>
         <div className="flex flex-col gap-[56px] items-center text-center">
