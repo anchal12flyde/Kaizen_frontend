@@ -9,10 +9,17 @@ import sitecontent from "@/data/sitecontent.json";
 
 
 export default function ProfileAboutSection() {
-  const [activeIndex, setActiveIndex] = useState(0);   const { profile } = sitecontent;
+  const [activeIndex, setActiveIndex] = useState([0]);
+    const { profile } = sitecontent;
   const accordionData = profile.accordionData;
   const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    if (activeIndex.includes(index)) {
+      // remove (close)
+      setActiveIndex(activeIndex.filter((i) => i !== index));
+    } else {
+      // add (open)
+      setActiveIndex([...activeIndex, index]);
+    }
   };
 
   return (
@@ -56,7 +63,7 @@ export default function ProfileAboutSection() {
         {/* RIGHT SIDE - ACCORDION */}
         <div className="  ">
           {accordionData.map((item, index) => {
-            const isOpen = activeIndex === index;
+           const isOpen = activeIndex.includes(index);
 
             return (
               <div

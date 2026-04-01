@@ -669,10 +669,21 @@
           "date": "Last Updated: November 15, 2025",
           "sections": [
             {
-              "heading": "Overview",
+              "heading": "1. Information We Collect",
               "content": [
-                "This is disclosure overview.",
-                "Second paragraph for disclosure."
+                "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+              ]
+            },
+            {
+              "heading": "1. Information We Collect",
+              "content": [
+                "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+              ]
+            },
+            {
+              "heading": "1. Information We Collect",
+              "content": [
+                "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
               ]
             }
           ]
@@ -688,6 +699,18 @@
               "content": [
                 "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
               ]
+            },
+            {
+              "heading": "1. Information We Collect",
+              "content": [
+                "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+              ]
+            },
+            {
+              "heading": "1. Information We Collect",
+              "content": [
+                "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+              ]
             }
           ]
         },
@@ -698,8 +721,16 @@
           "date": "Last Updated: November 15, 2025",
           "sections": [
             {
-              "heading": "Terms",
-              "content": ["Terms content here."]
+              "heading": "1. Information We Collect",
+              "content": [
+                "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+              ]
+            },
+            {
+              "heading": "1. Information We Collect",
+              "content": [
+                "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+              ]
             }
           ]
         },
@@ -710,8 +741,16 @@
           "date": "Last Updated: November 15, 2025",
           "sections": [
             {
-              "heading": "Privacy",
-              "content": ["Privacy content here."]
+              "heading": "1. Information We Collect",
+              "content": [
+                "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+              ]
+            },
+            {
+              "heading": "1. Information We Collect",
+              "content": [
+                "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+              ]
             }
           ]
         }
@@ -963,7 +1002,7 @@
             "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
             "category": "Category",
-            "title": "How we ensure maximum value creation across investment portfolios.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity..",
             "readTime": "5 min",
             "date": "20/09/2024"
           },
@@ -971,7 +1010,7 @@
             "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
             "category": "Category",
-            "title": "Key considerations when advising on cross-border transactions.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "6 min",
             "date": "25/09/2024"
           }
@@ -1168,7 +1207,7 @@
             "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
           "category":"Category",
-            "title": "How we ensure maximum value creation across investment portfolios.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "5 min",
             "date": "20/09/2024"
           },
@@ -1176,7 +1215,7 @@
             "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
           "category":"Category",
-            "title": "Key considerations when advising on cross-border transactions.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "6 min",
             "date": "25/09/2024"
           }
@@ -1378,7 +1417,7 @@
             "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
           "category":"Category",
-            "title": "How we ensure maximum value creation across investment portfolios.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "5 min",
             "date": "20/09/2024"
           },
@@ -1386,7 +1425,7 @@
             "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
           "category":"Category",
-            "title": "Key considerations when advising on cross-border transactions.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "6 min",
             "date": "25/09/2024"
           }
@@ -1587,7 +1626,7 @@
             "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
             "category": "Category",
-            "title": "How we ensure maximum value creation across investment portfolios.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "5 min",
             "date": "20/09/2024"
           },
@@ -1595,7 +1634,7 @@
             "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
             "category": "Category",
-            "title": "Key considerations when advising on cross-border transactions.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "6 min",
             "date": "25/09/2024"
           }
@@ -2144,7 +2183,7 @@
             "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
           "category":"Category",
-            "title": "How we ensure maximum value creation across investment portfolios.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "5 min",
             "date": "20/09/2024"
           },
@@ -2152,7 +2191,7 @@
             "slug": "refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
           "category":"Category",
-            "title": "Key considerations when advising on cross-border transactions.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "6 min",
             "date": "25/09/2024"
           }
@@ -2279,7 +2318,7 @@
             "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
           "category":"Category",
-            "title": "How we ensure maximum value creation across investment portfolios.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "5 min",
             "date": "20/09/2024"
           },
@@ -2287,7 +2326,7 @@
             "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
           "category":"Category",
-            "title": "Key considerations when advising on cross-border transactions.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "6 min",
             "date": "25/09/2024"
           }
@@ -2413,7 +2452,7 @@
             "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
           "category":"Category",
-            "title": "How we ensure maximum value creation across investment portfolios.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "5 min",
             "date": "20/09/2024"
           },
@@ -2421,7 +2460,7 @@
             "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
           "category":"Category",
-            "title": "Key considerations when advising on cross-border transactions.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "6 min",
             "date": "25/09/2024"
           }
@@ -2549,7 +2588,7 @@
             "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image2.jpg",
           "category":"Category",
-            "title": "How we ensure maximum value creation across investment portfolios.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "5 min",
             "date": "20/09/2024"
           },
@@ -2557,7 +2596,7 @@
             "slug":"refining-strategy-mandate",
             "image": "https://ik.imagekit.io/demo/img/image3.jpg",
           "category":"Category",
-            "title": "Key considerations when advising on cross-border transactions.",
+            "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "6 min",
             "date": "25/09/2024"
           }
@@ -2690,7 +2729,7 @@
         "overlay": true,
         "content": {
           "category": "Category",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
           "meta": {
             "readTime": "4 min",
             "date": "14/09/2024"
@@ -2824,7 +2863,7 @@
         "overlay": true,
         "content": {
           "category": "Category",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
           "meta": {
             "readTime": "4 min",
             "date": "14/09/2024"
@@ -2958,7 +2997,7 @@
         "overlay": true,
         "content": {
           "category": "Category",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
           "meta": {
             "readTime": "4 min",
             "date": "14/09/2024"
@@ -3092,7 +3131,7 @@
         "overlay": true,
         "content": {
           "category": "Category",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
           "meta": {
             "readTime": "4 min",
             "date": "14/09/2024"
@@ -3186,6 +3225,7 @@
           "category":"Category",
             "title": "Our philosophy focuses on refining strategy at every stage of a mandate to achieve clarity.",
             "readTime": "4 min",
+            
             "date": "14/09/2024"
           },
           {

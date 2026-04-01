@@ -35,7 +35,7 @@ const { legal } = sitecontent;
         {/* Header */}
         <Container
           variant="sectionSp3"
-          className="md:!pt-[156px] !pt-[160px] flex md:flex-row flex-col items-start gap-[16px] md:justify-between border-b border-[#D9D4CC]"
+          className="md:!pt-[156px] !pt-[160px] flex md:flex-row flex-col items-start gap-[16px] md:justify-between border-b border-[#D9D4CC] relative"
         >
           <Typography variant="display-3">{title}</Typography>
 
@@ -45,33 +45,34 @@ const { legal } = sitecontent;
         </Container>
 
         {/* Content */}
-        <Container className="policy-desc ">
+        <Container className="policy-desc flex flex-col md:flex-row gap-[40px] h-full">
           {/* Sidebar */}
-          <div className="md:w-[307px] w-full md:h-[263px] h-full  bg-[#F7F4EB] md:px-[26px]  px-[16px] md:py-[26] py-[20px] flex flex-col md:gap-[32px] gap-[16px]">
-            <Typography variant={isMobile ? "para-2" : "para-1"}>
-              List
-            </Typography>
+          <div className="h-full">
+            <div className="md:w-[307px] w-full  h-[263px]  bg-[#F7F4EB] md:px-[26px]  px-[16px] md:py-[26] py-[20px] flex flex-col md:gap-[32px] gap-[16px]">
+              <Typography variant={isMobile ? "para-2" : "para-1"}>
+                List
+              </Typography>
 
-            <ul className="grid grid-cols-2 gap-4 md:flex md:flex-col md:gap-[16px]">
-              {tabs.map((item, index) => (
-                <Typography
-                  key={item.key}
-                  variant={isMobile ? "para-3" : "para-2"}
-                  onClick={() => setActiveTab(item.key)}
-                  className={`cursor-pointer ${
-                    activeTab === item.key
-                      ? "text-[#231F20]"
-                      : "!text-[#231F20]/50"
-                  }`}
-                >
-                  {item.label}
-                </Typography>
-              ))}
-            </ul>
+              <ul className="grid grid-cols-2 gap-4 md:flex md:flex-col md:gap-[16px]">
+                {tabs.map((item, index) => (
+                  <Typography
+                    key={item.key}
+                    variant={isMobile ? "para-3" : "para-2"}
+                    onClick={() => setActiveTab(item.key)}
+                    className={`cursor-pointer ${
+                      activeTab === item.key
+                        ? "text-[#231F20]"
+                        : "!text-[#231F20]/50"
+                    }`}
+                  >
+                    {item.label}
+                  </Typography>
+                ))}
+              </ul>
+            </div>
           </div>
-
           {/* Main Content */}
-          <div className="flex-1 max-w-[700px]">
+          <div className="flex-1 max-w-[700px] h-full">
             <Typography
               variant={isMobile ? "display-3" : "header-hero"}
               className=" mb-[16px] "
