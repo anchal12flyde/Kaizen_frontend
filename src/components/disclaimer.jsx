@@ -4,12 +4,24 @@ import { X } from "lucide-react";
 import Typography from "./ui-kit/typography";
 
 export default function DisclaimerModal() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Optional: prevent scroll when modal open
+  useEffect(() => {
+    const hasAccepted = localStorage.getItem("disclaimerAccepted");
+
+    if (!hasAccepted) {
+      setIsOpen(true);
+    }
+  }, []);
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
+
+  const handleClose = () => {
+    localStorage.setItem("disclaimerAccepted", "true");
+    setIsOpen(false);
+  };
 
   if (!isOpen) return null;
 
@@ -60,7 +72,7 @@ export default function DisclaimerModal() {
 
           {/* Button */}
           <button
-            onClick={() => setIsOpen(false)}
+            onClick={handleClose}
             className="md:mt-[32px] mt-[24px] px-[24px] py-[18px] bg-[var(--color-accent)] text-white rounded-full"
           >
             I Agree

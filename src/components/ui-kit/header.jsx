@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Typography from "./typography";
-import Button from "./button";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./spacing";
@@ -22,7 +21,21 @@ const HEADER_DATA = {
         { name: "General Counsel Services", href: "/general-counsel" },
       ],
     },
-    { name: "Sectors", href: "/sectors" },
+    {
+      name: "Sectors",
+      href: "/sectors",
+      subLinks: [
+        { name: " Startups & Emerging Companies", href: "/sectors/startup" },
+        { name: "Financial Services & Fintech", href: "/sectors/financial" },
+        {
+          name: " Renewable Energy & Infrastructure",
+          href: "/sectors/renewable",
+        },
+        { name: " Digital Businesses", href: "/sectors/digital" },
+        { name: " Consumer & Retail", href: "/sectors/consumer" },
+        { name: " Education & EdTech", href: "/sectors/education" },
+      ],
+    },
     { name: "Transaction Footprint", href: "/footprint" },
     { name: "Insights", href: "/insights" },
     { name: "Careers", href: "/careers" },
@@ -127,7 +140,7 @@ export default function Header() {
                   className="nav-link"
                 >
                   <Typography
-                    className={`transition-colors ${
+                    className={`transition-colors hover:!text-[#C3A771] ${
                       isParentActive(link)
                         ? "!text-[#C3A771]"
                         : "!text-white/90"
@@ -152,7 +165,7 @@ export default function Header() {
                         key={idx}
                         href={sub.href}
                         onClick={(e) => handleLinkClick(sub.name, sub.href, e)}
-                        className="block px-[10px] py-[16px] hover:bg-white/10"
+                        className="block px-[10px] py-[16px] hover:bg-white/10 "
                       >
                         <p
                           className={`transition-colors sublistphone  ${
@@ -218,7 +231,7 @@ const isActive = (href) => {
 
       {/* MOBILE FULLSCREEN MENU */}
       <div
-        className={`fixed inset-0 !z-[100] bg-[var(--color-accent)]
+        className={`fixed inset-0 !z-[1000] bg-[var(--color-accent)]
         transition-all duration-700 ease-in-out flex flex-col overflow-y-auto
         ${
           isMenuOpen
