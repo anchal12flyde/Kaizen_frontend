@@ -55,8 +55,9 @@ export default async function privateEquity({ params }) {
     advisorySections,
     blogs,
     digitalTransformation,
+    servicepages,
   } = data;
-
+  
   return (
     <div className="!overflow-x-none">
       <Header />
@@ -137,10 +138,10 @@ export default async function privateEquity({ params }) {
 
       <Container
         variant="sectionSp3"
-        className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] "
+        className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] text-center"
       >
         <Typography variant="header-6">{investmentLifecycle.title}</Typography>
-        <Typography variant="para-2">
+        <Typography variant="para-2" className="md:w-[624px] w-full">
           {investmentLifecycle.description}
         </Typography>
       </Container>

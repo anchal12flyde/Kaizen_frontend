@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import BlogGridSection from "@/components/blogCardsGrid";
 import LetsConnectSection from "@/components/LetsConnectSection";
 import OurApproachSection from "@/components/ourApproachSection";
@@ -36,10 +36,25 @@ export default function Insights() {
         return;
       }
 
-      console.log("Submitted Email:", email); // 👈 now it will log properly
-
+      console.log("Submitted Email:", email);
       setEmail("");
     };
+
+    const [open, setOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    // close on outside click
+    useEffect(() => {
+      function handleClickOutside(e) {
+        if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+          setOpen(false);
+        }
+      }
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+  
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState("");
     const [showEmail, setShowEmail] = useState(false);
@@ -64,46 +79,54 @@ export default function Insights() {
         </Typography>
       </Container>
 
-      <div className="md:py-[12px] py-0 md:px-[100px] px-0 w-full borderInsightFilter border">
+      <div className="md:py-[12px] py-[12px] md:px-[100px] px-[21px] w-full borderInsightFilter border">
         {/* Desktop Layout (unchanged) */}
-        <div className="hidden md:flex items-center justify-between w-full">
-          <Button variant="primary" className="!px-[36px] !py-[12px]">
-            {insightsFilter.buttons[0].label}
-          </Button>
-
-          <div className="!px-[36px] !py-[12px] border border-[var(--color-accent)] rounded-[500px] !w-[463px]">
+        <div className=" flex items-center justify-between w-full md:gap-0 gap-[16px]">
+          <div className="px-[16px] py-[12px] border border-[var(--color-accent)] rounded-[500px] w-[463px] flex items-center justify-between ">
             <input
               type="text"
-              className="text-[var(--color-accent)] focus:outline-none text-center w-full"
+              className="text-[var(--color-accent)] focus:outline-none w-full"
               placeholder={insightsFilter.searchPlaceholder}
             />
+
+            <img
+              src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(21).png"
+              alt="search"
+              className="w-[16px] h-[16px] ml-[10px] object-contain cursor-pointer"
+            />
           </div>
+          <div className="relative" ref={dropdownRef}>
+            <Button
+              variant="primary"
+              className="!px-[36px] !py-[12px]"
+              onClick={() => setOpen(!open)}
+            >
+              {insightsFilter.buttons}
+            </Button>
 
-          <Button variant="primary" className="!px-[36px] !py-[12px]">
-            {insightsFilter.buttons[1].label}
-          </Button>
-        </div>
+            {/* Dropdown */}
+            {open && (
+              <div className="absolute right-0 mt-[10px] w-[172px] bg-[#F7F4EB] shadow-[0px_4px_14px_0px_#00000040] py-[12px] overflow-hidden z-50">
+                {/* Header */}
 
-        {/* Mobile Layout */}
-        <div className="md:hidden w-full flex flex-col">
-          {/* Row 1 - Search */}
-          <div className="px-[24px] py-[12px] border-b border-[var(--color-accent)]">
-            <div className="border border-[var(--color-accent)] rounded-[500px] px-[16px] py-[10px]">
-              <input
-                type="text"
-                className="text-[var(--color-accent)] focus:outline-none text-center w-full"
-                placeholder={insightsFilter.searchPlaceholder}
-              />
-            </div>
-          </div>
-
-          {/* Row 2 - Filters */}
-          <div className="px-[24px] py-[12px] flex gap-[12px]">
-            {insightsFilter.buttons.map((btn, i) => (
-              <Button key={i} variant="primary" className="w-full !py-[12px]">
-                {btn.label}
-              </Button>
-            ))}
+                {/* List */}
+                <div className="bg-[#F5F5F5]">
+                  {[
+                    "Private Equity",
+                    "Private Equity",
+                    "Private Equity",
+                    "Private Equity",
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="px-[20px] py-[16px] text-[16px] cursor-pointer hover:bg-[var(--color-accent)] transition"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -235,11 +258,13 @@ export default function Insights() {
                     {/* Dropdown container when open */}
                     {isOpen ? (
                       <div
-                        className="absolute top-full left-0 w-full shadow-md px-[8px]"
+                        className="dropdown-scroll absolute top-full left-0 w-full shadow-md px-[8px]"
                         style={{
                           boxShadow: "1px 0px 8px 1px #00000033",
                           backgroundColor: "#B6996A",
                           zIndex: 10,
+                          maxHeight: "none",
+                          overflowY: "visible",
                         }}
                       >
                         {/* Trigger inside dropdown */}

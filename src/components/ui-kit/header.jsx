@@ -218,7 +218,7 @@ const isActive = (href) => {
 
       {/* MOBILE FULLSCREEN MENU */}
       <div
-        className={`fixed inset-0 !z-[1000] bg-[var(--color-accent)]
+        className={`fixed inset-0 !z-[100] bg-[var(--color-accent)]
         transition-all duration-700 ease-in-out flex flex-col overflow-y-auto
         ${
           isMenuOpen

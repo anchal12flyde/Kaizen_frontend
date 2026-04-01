@@ -228,7 +228,7 @@ export default function WhyChooseSection({ data = { title: "", subtitle: "", car
               className="!h-fit flex items-center gap-0 px-[100px] border-b-[0.5px] border-[#31110F] "
             >
               {/* LEFT TEXT */}
-              <div className="min-w-[520px] max-w-[520px] pr-16 mr-[200px] flex flex-col !gap-[96px] ">
+              <div className="w-full md:w-[300px] pr-16 mr-[200px] flex flex-col !gap-[16px] ">
                 <Typography variant="para-1">{data.title}</Typography>
                 <Typography variant="para-2">{data.subtitle}</Typography>
               </div>

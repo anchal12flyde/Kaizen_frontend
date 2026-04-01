@@ -87,7 +87,7 @@ export default function AboutHeroSection({
                 return (
                   <Button
                     key={index}
-                    asChild
+                    aschild
                     variant={btn.variant || "primary"}
                     className="w-full md:w-auto"
                   >

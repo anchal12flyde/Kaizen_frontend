@@ -1,4 +1,5 @@
 "use client";
+import { useRef } from "react";
 import AboutHeroSection from "@/components/abouthero";
 import JobCard from "@/components/jobCard";
 import PEVCPracticeSection from "@/components/PEVCPractiseSection";
@@ -10,6 +11,7 @@ import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 import sitecontent from "@/data/sitecontent.json";
 import { useSiteContent } from "@/context/SiteContentProvider";
+import Link from "next/link";
 
 export default function Careers() {
   const sitecontent = useSiteContent();
@@ -23,6 +25,13 @@ export default function Careers() {
      quote,
      jobsData,
    } = career;
+
+   const sectionRef = useRef(null);
+   const handleScroll = () => {
+     sectionRef.current?.scrollIntoView({
+       behavior: "smooth",
+     });
+   };
   return (
     <div className="overflow-x-hidden">
       <Header />
@@ -59,13 +68,19 @@ export default function Careers() {
               </Typography>
 
               <div className="mt-[26px] flex flex-col md:flex-row items-center gap-[16px]">
-                <Button variant="primary" className="w-full md:w-auto">
+                <Button
+                  variant="primary"
+                  onClick={handleScroll}
+                  className="w-full md:w-auto"
+                >
                   {careerHero.buttons[0].label}
                 </Button>
 
-                <Button variant="white" className="w-full md:w-auto">
-                  {careerHero.buttons[1].label}
-                </Button>
+                <Link href={careerHero.buttons[1].link}>
+                  <Button variant="white" className="w-full md:w-auto">
+                    {careerHero.buttons[1].label}
+                  </Button>
+                </Link>
               </div>
             </div>
             {/* Icons */}
@@ -92,66 +107,67 @@ export default function Careers() {
         careersPage={false}
         startupPage={true}
       />
-      <Container
-        variant="primarySpacing"
-        className="bg-[var(--color-background-1)] flex md:flex-row flex-col items-start md:gap-[303px] gap-[16px]"
-      >
-        <Typography variant="para-1" className=" shrink-0 ">
-          {insightsHero.title}
-        </Typography>
-        <Typography variant="para-2">{insightsHero.description}</Typography>
-      </Container>
+      <section ref={sectionRef}>
+        <Container
+          variant="primarySpacing"
+          className="bg-[var(--color-background-1)] flex md:flex-row flex-col items-start md:gap-[303px] gap-[16px]"
+        >
+          <Typography variant="para-1" className=" shrink-0 ">
+            {insightsHero.title}
+          </Typography>
+          <Typography variant="para-2">{insightsHero.description}</Typography>
+        </Container>
 
-      <div className="md:py-[12px] py-0 md:px-[100px] px-0 w-full borderInsightFilter border bg-[var(--color-background-1)]">
-        {/* Desktop Layout (unchanged) */}
-        <div className="hidden md:flex items-center justify-between w-full">
-          <Button variant="primary" className="!px-[36px] !py-[12px]">
-            {insightsFilter.buttons[0].label}
-          </Button>
+        <div className="md:py-[12px] py-0 md:px-[100px] px-0 w-full borderInsightFilter border bg-[var(--color-background-1)]">
+          {/* Desktop Layout (unchanged) */}
+          <div className="hidden md:flex items-center justify-between w-full">
+            <Button variant="primary" className="!px-[36px] !py-[12px]">
+              {insightsFilter.buttons[0].label}
+            </Button>
 
-          <div className="!px-[36px] !py-[12px] border border-[var(--color-accent)] rounded-[500px] !w-[463px]">
-            <input
-              type="text"
-              className="text-[var(--color-accent)] focus:outline-none text-center w-full"
-              placeholder={insightsFilter.searchPlaceholder}
-            />
-          </div>
-
-          <Button variant="primary" className="!px-[36px] !py-[12px]">
-            {insightsFilter.buttons[1].label}
-          </Button>
-        </div>
-
-        {/* Mobile Layout */}
-        <div className="md:hidden w-full flex flex-col">
-          {/* Row 1 - Search */}
-          <div className="px-[24px] py-[12px] border-b border-[var(--color-accent)]">
-            <div className="border border-[var(--color-accent)] rounded-[500px] px-[16px] py-[10px]">
+            <div className="!px-[36px] !py-[12px] border border-[var(--color-accent)] rounded-[500px] !w-[463px]">
               <input
                 type="text"
                 className="text-[var(--color-accent)] focus:outline-none text-center w-full"
                 placeholder={insightsFilter.searchPlaceholder}
               />
             </div>
+
+            <Button variant="primary" className="!px-[36px] !py-[12px]">
+              {insightsFilter.buttons[1].label}
+            </Button>
           </div>
 
-          {/* Row 2 - Filters */}
-          <div className="px-[24px] py-[12px] flex gap-[12px]">
-            {insightsFilter.buttons.map((btn, i) => (
-              <Button key={i} variant="primary" className="w-full !py-[12px]">
-                {btn.label}
-              </Button>
-            ))}
+          {/* Mobile Layout */}
+          <div className="md:hidden w-full flex flex-col">
+            {/* Row 1 - Search */}
+            <div className="px-[24px] py-[12px] border-b border-[var(--color-accent)]">
+              <div className="border border-[var(--color-accent)] rounded-[500px] px-[16px] py-[10px]">
+                <input
+                  type="text"
+                  className="text-[var(--color-accent)] focus:outline-none text-center w-full"
+                  placeholder={insightsFilter.searchPlaceholder}
+                />
+              </div>
+            </div>
+
+            {/* Row 2 - Filters */}
+            <div className="px-[24px] py-[12px] flex gap-[12px]">
+              {insightsFilter.buttons.map((btn, i) => (
+                <Button key={i} variant="primary" className="w-full !py-[12px]">
+                  {btn.label}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="md:px-[100px] px-[24px] md:pt-[40px] pt-[32px] md:pb-[100px] pb-[64px] bg-[var(--color-background-1)] flex flex-col gap-[16px] ">
-        {jobsData.map((job) => (
-          <JobCard key={job.id} job={job} />
-        ))}
-      </div>
-
+        <div className="md:px-[100px] px-[24px] md:pt-[40px] pt-[32px] md:pb-[100px] pb-[64px] bg-[var(--color-background-1)] flex flex-col gap-[16px] ">
+          {jobsData.map((job) => (
+            <JobCard key={job.id} job={job} />
+          ))}
+        </div>
+      </section>
       <div className="md:px-[100px] px-[24px] py-[60px] flex justify-center !bg-[var(--color-background-2)]">
         <Typography
           variant="para-2"

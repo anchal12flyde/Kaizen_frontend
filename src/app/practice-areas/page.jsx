@@ -62,75 +62,74 @@ const { cardsData } = pevcPractice;
           }
           description={<>{practiceHero.description}</>}
         />
+        <section id="End-to-End-Services">
+          <Container variant="primarySpacing" className=" bg-[#0A193A]  ">
+            <div className=" flex flex-col md:gap-[100px] gap-[80px] ">
+              {/* Heading */}
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-[96px] gap-[36px]">
+                <Typography
+                  variant="header-6"
+                  className="!text-white w-[250px]"
+                >
+                  {pevcPractice.topContent.title}
+                </Typography>
 
-        <Container
-          variant="primarySpacing"
-          className=" bg-[#0A193A]  "
-          id="End-to-End-Services"
-        >
-          <div className=" flex flex-col md:gap-[100px] gap-[80px] ">
-            {/* Heading */}
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-[96px] gap-[36px]">
-              <Typography variant="header-6" className="!text-white w-[250px]">
-                {pevcPractice.topContent.title}
-              </Typography>
+                <Typography variant="para-2" className="!text-white">
+                  {pevcPractice.topContent.subtitle}
+                </Typography>
+              </div>
 
-              <Typography variant="para-2" className="!text-white">
-                {pevcPractice.topContent.subtitle}
-              </Typography>
-            </div>
+              {/* List */}
+              <div className="flex md:gap-[16px] gap-[2px] flex-col">
+                {pevcPractice.cardsData.map((item, index) => (
+                  <Link href={item.link} className="cursor-pointer">
+                    <div
+                      key={index}
+                      className="flex md:flex-row flex-col md:items-center md:justify-between border-t border-white/30 py-[38px]"
+                    >
+                      {/* Content */}
+                      <div className="flex md:flex-row flex-col md:gap-[96px] gap-[16px]">
+                        <div className="flex justify-between items-center md:block md:w-auto w-full">
+                          <Typography
+                            variant="header-1"
+                            className="!text-white w-[250px]"
+                          >
+                            {item.title}
+                          </Typography>
 
-            {/* List */}
-            <div className="flex md:gap-[16px] gap-[2px] flex-col">
-              {pevcPractice.cardsData.map((item, index) => (
-                <Link href={item.link} className="cursor-pointer">
-                  <div
-                    key={index}
-                    className="flex md:flex-row flex-col md:items-center md:justify-between border-t border-white/30 py-[38px]"
-                  >
-                    {/* Content */}
-                    <div className="flex md:flex-row flex-col md:gap-[96px] gap-[16px]">
-                      <div className="flex justify-between items-center md:block md:w-auto w-full">
-                        <Typography
-                          variant="header-1"
-                          className="!text-white w-[250px]"
-                        >
-                          {item.title}
-                        </Typography>
-
-                        <div className="md:hidden w-[30px] h-[30px] cursor-pointer">
-                          <img
-                            src={item.icon}
-                            className="h-full w-full object-contain"
-                            alt={item.title}
-                          />
+                          <div className="md:hidden w-[30px] h-[30px] cursor-pointer">
+                            <img
+                              src={item.icon}
+                              className="h-full w-full object-contain"
+                              alt={item.title}
+                            />
+                          </div>
                         </div>
+
+                        {/* Description */}
+                        <Typography
+                          variant="para-2"
+                          className="!text-white w-[316px]"
+                        >
+                          {item.desc}
+                        </Typography>
                       </div>
 
-                      {/* Description */}
-                      <Typography
-                        variant="para-2"
-                        className="!text-white w-[316px]"
-                      >
-                        {item.desc}
-                      </Typography>
+                      <div className="hidden md:block md:w-[45px] md:h-[45px]">
+                        <img
+                          src={item.icon}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
                     </div>
+                  </Link>
+                ))}
 
-                    <div className="hidden md:block md:w-[45px] md:h-[45px]">
-                      <img
-                        src={item.icon}
-                        className="h-full w-full object-contain"
-                      />
-                    </div>
-                  </div>
-                </Link>
-              ))}
-
-              <div className="border-t border-white/30"></div>
+                <div className="border-t border-white/30"></div>
+              </div>
             </div>
-          </div>
-        </Container>
-
+          </Container>
+        </section>
         <Container
           variant="primarySpacing"
           className="relative w-full h-full min-h-[700px]"
@@ -150,7 +149,7 @@ const { cardsData } = pevcPractice;
 
           {/* Content */}
           <>
-            <div className=" relative flex justify-center z-10 ">
+            <div className=" relative flex items-center justify-center z-10 ">
               <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
                 <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
                   <Typography
@@ -177,17 +176,19 @@ const { cardsData } = pevcPractice;
                       {/* Dropdown container when open */}
                       {isOpen ? (
                         <div
-                          className="absolute top-full left-0 w-full shadow-md px-[8px]"
+                          className="dropdown-scroll absolute top-full left-0 w-full shadow-md px-[8px]"
                           style={{
                             boxShadow: "1px 0px 8px 1px #00000033",
                             backgroundColor: "#B6996A",
                             zIndex: 10,
+                            maxHeight: "none",
+                            overflowY: "visible",
                           }}
                         >
                           {/* Trigger inside dropdown */}
                           <div
                             onClick={toggleDropdown}
-                            className="w-full h-[32px] border-b border-white flex items-center justify-between cursor-pointer"
+                            className="w-full h-[32px] border-b border-white flex items-center justify-between cursor-pointer sticky top-0 bg-[#B6996A] "
                           >
                             <Typography
                               variant="para-2"
@@ -215,12 +216,12 @@ const { cardsData } = pevcPractice;
                           </div>
 
                           {/* Options */}
-                          <div className="mt-2">
+                          <div className="mt-2 max-h-[68px] overflow-y-auto">
                             {industries.map((industry) => (
                               <div
                                 key={industry}
                                 onClick={() => selectIndustry(industry)}
-                                className="px-[12px] py-[6px] hover:bg-white/20 cursor-pointer text-white "
+                                className="px-[12px] py-[6px] hover:bg-white/20 cursor-pointer text-white"
                               >
                                 {industry}
                               </div>
@@ -231,7 +232,7 @@ const { cardsData } = pevcPractice;
                         // Trigger when closed
                         <div
                           onClick={toggleDropdown}
-                          className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0 cursor-pointer px-2"
+                          className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0 cursor-pointer px-2 "
                         >
                           <Typography variant="para-2" className="!text-white">
                             {selected || privateEquityHero.selectIndustryText}

@@ -60,8 +60,9 @@ export default function Sectors() {
         }
         description={<>{sectorHero.description}</>}
       />
-
-      <EndToEndServices />
+      <section id="sectors-we-work">
+        <EndToEndServices />
+      </section>
       <Container
         variant="primarySpacing"
         className="relative w-full h-full min-h-[700px]"

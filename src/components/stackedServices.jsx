@@ -29,7 +29,6 @@ export default function StackedServicesSection({ items = [] }) {
 }
 
 
-/* ---------------- CARD ---------------- */
 
 function ServiceCard({ item }) {
   return (
@@ -38,9 +37,15 @@ function ServiceCard({ item }) {
       className="stack-card bg-[var(--color-background-1)]   "
     >
       <div className="py-[60px] flex md:flex-row flex-col md:gap-[120px] gap-[178px] items-start">
-        {item.icon && (
-          <Image src={item.icon} alt={item.title} width={150} height={150} />
-        )}
+        <div className="h-[150px] w-auto">
+          {item.icon && (
+            <img
+              src={item.icon}
+              alt={item.title}
+              className="h-full w-full object-contain"
+            />
+          )}
+        </div>
 
         <div className="flex flex-col gap-[16px]">
           <Typography

@@ -122,11 +122,13 @@ export default function About() {
                     {/* Dropdown container when open */}
                     {isOpen ? (
                       <div
-                        className="absolute top-full left-0 w-full shadow-md px-[8px]"
+                        className="dropdown-scroll absolute top-full left-0 w-full shadow-md px-[8px]"
                         style={{
                           boxShadow: "1px 0px 8px 1px #00000033",
                           backgroundColor: "#B6996A",
                           zIndex: 10,
+                          maxHeight: "none",
+                          overflowY: "visible",
                         }}
                       >
                         {/* Trigger inside dropdown */}
