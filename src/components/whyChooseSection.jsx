@@ -221,14 +221,14 @@ export default function WhyChooseSection({ data = { title: "", subtitle: "", car
       ) : (
         <>
           <div className="hidden md:block">
-            <div className="h-[1.3cm] bg-transparent "></div>
+            <div className=" bg-transparent "></div>
 
             <div
               ref={trackRef}
               className="!h-fit flex items-center gap-0 px-[100px] border-b-[0.5px] border-[#31110F] "
             >
               {/* LEFT TEXT */}
-              <div className="w-full md:w-[300px] pr-16 mr-[200px] flex flex-col !gap-[16px] ">
+              <div className="w-full md:w-[300px] pr-16 mr-[600px] flex flex-col !gap-[16px] ">
                 <Typography variant="para-1">{data.title}</Typography>
                 <Typography variant="para-2">{data.subtitle}</Typography>
               </div>
@@ -240,7 +240,7 @@ export default function WhyChooseSection({ data = { title: "", subtitle: "", car
                   className={`
             why-card
             w-[330px]
-            h-[calc(100vh-1.3cm)]
+            h-[100vh]
             
             p-[16px]
             flex
@@ -255,7 +255,7 @@ export default function WhyChooseSection({ data = { title: "", subtitle: "", car
                 >
                   {/* TOP */}
                   <div className="flex items-start gap-6">
-                    <h3 className="text-[64px] font-serif text-gray-800 leading-none">
+                    <h3 className="text-[64px] font-serif text-gray-800 leading-none mt-[1.3cm]">
                       {i + 1}
                     </h3>
                   </div>

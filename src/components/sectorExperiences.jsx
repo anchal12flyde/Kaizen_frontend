@@ -50,7 +50,7 @@ const sectorsData = [
 export default function SectorExperience({ data }) {
   const [isMobile, setIsMobile] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
- 
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   const sitecontent = useSiteContent(); 
   const { about } = sitecontent;
   const { sectorExperience } = about;
@@ -120,7 +120,7 @@ export default function SectorExperience({ data }) {
   }, [activeIndex]);
 
   if (isMobile === null) return null;
-
+ 
   return (
     <>
       <section>
@@ -137,24 +137,34 @@ export default function SectorExperience({ data }) {
               <div className="w-full">
                 {sectors.map((item, index) => {
                   const isRight = index % 2 === 0;
+                  const isActive = hoveredIndex === index;
 
                   return (
                     <div
                       key={index}
+                      onMouseEnter={() => setHoveredIndex(index)}
+                      onMouseLeave={() => setHoveredIndex(null)}
                       className={`${
                         index === sectors.length - 1
                           ? "borderBottomSec"
                           : "borderTopSec"
                       } py-[20px] sector-item`}
                     >
-                      <Typography variant="header-2" className="text-center">
+                      <Typography
+                        variant="header-2"
+                        className={`text-center transition-colors duration-300 ${
+                          hoveredIndex === null
+                            ? "text-[#0A193A]" // default
+                            : isActive
+                              ? "text-[#0A193A]" // hovered
+                              : "text-[#0A193A80]" // faded others
+                        }`}
+                      >
                         {item.title}
                       </Typography>
 
                       <div
-                        className={`tooltip ${
-                          isRight ? "right" : "left"
-                        } !rounded-none`}
+                        className={`tooltip ${isRight ? "right" : "left"} !rounded-none`}
                       >
                         <img src={item.image} alt={item.title} />
                       </div>

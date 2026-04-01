@@ -42,8 +42,7 @@ export default function GuidesSection({ data }) {
             </div>
           ))}
 
-          {/* Bottom Border */}
-          <div className="border-t border-white/30 "></div>
+      
         </div>
       </div>
     </Container>

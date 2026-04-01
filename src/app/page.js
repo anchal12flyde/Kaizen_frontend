@@ -123,16 +123,13 @@ export default function Home() {
             </div>
 
             <div className="group flex flex-col md:gap-0 gap-[8px]">
-              <Typography
-                colorVariant="white"
-                variant="display-3"
-                delay={0.4}
-                className="group-hover:!text-[var(--color-accent)]"
-              >
+              <Typography colorVariant="white" variant="display-3" delay={0.4}>
                 {evaluation.steps.map((step, i) => (
-                  <span key={i}>
+                  <span
+                    key={i}
+                    className="block transition-colors duration-300 hover:!text-[var(--color-accent)] cursor-pointer"
+                  >
                     {step}
-                    <br />
                   </span>
                 ))}
               </Typography>
@@ -140,7 +137,7 @@ export default function Home() {
               <Typography
                 variant="punctuation"
                 delay={0.6}
-                className="group-hover:!text-[var(--color-accent)]"
+                className="hover:!text-[var(--color-accent)]"
               >
                 {evaluation.highlight}
               </Typography>
