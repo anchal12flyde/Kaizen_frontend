@@ -66,7 +66,7 @@ export default function Home() {
                   delay={0.6}
                   variant="para-2"
                   colorVariant="white"
-                  className="lg:w-[370px] w-full flex-shrink-0"
+                  className="md:w-[370px] w-full flex-shrink-0"
                 >
                   {hero.description}
                 </Typography>
