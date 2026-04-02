@@ -155,7 +155,7 @@ export default function Header() {
                 {/* Dropdown */}
                 {hasSub && (
                   <div
-                    className="absolute -left-[10px] top-full mt-2 min-w-[181px]
+                    className="absolute -left-[10px] top-full mt-2 min-w-[200px] w-full
             bg-[#0A193AF2] shadow-[1px_0px_8px_1px_#00000033]
             opacity-0 invisible group-hover:opacity-100 group-hover:visible
             transition-all duration-300 z-50"
@@ -165,7 +165,7 @@ export default function Header() {
                         key={idx}
                         href={sub.href}
                         onClick={(e) => handleLinkClick(sub.name, sub.href, e)}
-                        className="block px-[10px] py-[16px] hover:bg-white/10 "
+                        className="block flex px-[10px] py-[12px] "
                       >
                         <p
                           className={`transition-colors sublistphone  ${
