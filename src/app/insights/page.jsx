@@ -106,17 +106,12 @@ export default function Insights() {
 
             {/* Dropdown */}
             {open && (
-              <div className="absolute right-0 mt-[10px] w-[172px] bg-[#F7F4EB] shadow-[0px_4px_14px_0px_#00000040] py-[12px] overflow-hidden z-50">
+              <div className="absolute right-0 mt-[10px] min-w-[172px] w-[250px] bg-[#F7F4EB] shadow-[0px_4px_14px_0px_#00000040] py-[12px] overflow-hidden z-50">
                 {/* Header */}
 
                 {/* List */}
-                <div className="bg-[#F5F5F5]">
-                  {[
-                    "Private Equity",
-                    "Private Equity",
-                    "Private Equity",
-                    "Private Equity",
-                  ].map((item, i) => (
+                <div className="">
+                  {insightsFilter.options?.map((item, i) => (
                     <div
                       key={i}
                       className="px-[20px] py-[16px] text-[16px] cursor-pointer hover:bg-[var(--color-accent)] transition"

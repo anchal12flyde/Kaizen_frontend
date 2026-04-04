@@ -2,11 +2,11 @@ import Typography from "./typography";
 import { motion } from "framer-motion";
 
 export default function TransactionCard({
-  labelText = "Capital Markets",
-  mainText = "Advised a strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
-  roleText = "Advisor to acquirer",
-  sectorText = "Technology",
-  transactionValue = "305cr INR",
+  labelText = "",
+  mainText = "",
+  roleText = "",
+  sectorText = "",
+  transactionValue = "",
 }) {
   const fadeInUp = {
     hidden: {

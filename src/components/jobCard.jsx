@@ -3,20 +3,62 @@ import { useEffect, useState } from "react";
 import { Download, Share2, MapPin, Briefcase } from "lucide-react";
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
+import { jsPDF } from "jspdf";
 
 export default function JobCard({ job }) {
   const [isMobile, setIsMobile] = useState(false);
-   
-  
-    useEffect(() => {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth < 768);
-      };
-  
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // 📥 DOWNLOAD PDF
+  const handleDownload = () => {
+    const doc = new jsPDF();
+
+    doc.setFontSize(16);
+    doc.text(job.title, 10, 20);
+
+    doc.setFontSize(12);
+    doc.text(`Company: ${job.company}`, 10, 35);
+    doc.text(`Location: ${job.location}`, 10, 45);
+    doc.text(`Type: ${job.type}`, 10, 55);
+    doc.text(`Mode: ${job.mode}`, 10, 65);
+
+    doc.text("Preferred Qualifications:", 10, 80);
+
+    job.qualifications?.forEach((q, i) => {
+      doc.text(`• ${q}`, 10, 90 + i * 10);
+    });
+
+    doc.save(`${job.title}.pdf`);
+  };
+
+  // 🔗 SHARE
+  const handleShare = async () => {
+    const shareData = {
+      title: job.title,
+      text: `Check out this job: ${job.title}`,
+      url: window.location.href, // or dynamic job URL
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData); // mobile native share
+      } else {
+        await navigator.clipboard.writeText(shareData.url);
+        alert("Link copied to clipboard!");
+      }
+    } catch (err) {
+      console.error("Share failed:", err);
+    }
+  };
   return (
     <div className="borderCareersCard py-[36px] md:px-[36px] px-[12px]">
       {/* Header */}
@@ -63,7 +105,7 @@ export default function JobCard({ job }) {
                 variant={isMobile ? "para-3" : "para-2"}
                 className="!text-[#231F20] w-[80px]"
               >
-                {job.type?.[0]}
+                {job.type}
               </Typography>
             </div>
 
@@ -76,7 +118,7 @@ export default function JobCard({ job }) {
                 variant={isMobile ? "para-3" : "para-2"}
                 className="!text-[#231F20] "
               >
-                {job.type?.[1]}
+                {job.mode}
               </Typography>
             </div>
           </div>
@@ -84,8 +126,13 @@ export default function JobCard({ job }) {
 
         {/* Actions */}
         <div className="flex items-center gap-4 opacity-70">
-          <Download size={18} className="cursor-pointer" />
-          <Share2 size={18} className="cursor-pointer" />
+          <Download
+            size={18}
+            className="cursor-pointer"
+            onClick={handleDownload}
+          />
+
+          <Share2 size={18} className="cursor-pointer" onClick={handleShare} />
         </div>
       </div>
 

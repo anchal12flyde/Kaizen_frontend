@@ -23,7 +23,8 @@ export default function Home() {
     bannerImage,
     overlayImage,
   } = home;
-
+  console.log("recognition:", recognition);
+  console.log("link:", recognition?.buttonLink);
   return (
     <>
       <div>
@@ -186,8 +187,13 @@ export default function Home() {
                   alt={recognition.award.alt}
                 />
               </div>
-
-              <Button variant="primary" delay={0.4}>
+              <Button
+                variant="primary"
+                onClick={(e) => {
+                  e.stopPropagation(); // stop parent interference
+                  window.location.assign(recognition.buttonLink);
+                }}
+              >
                 {recognition.buttonText}
               </Button>
             </div>

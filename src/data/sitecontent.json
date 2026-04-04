@@ -62,7 +62,8 @@
         "alt": "Chambers and Partners Award"
       },
 
-      "buttonText": "View on Chambers and Partners"
+      "buttonText": "View on Chambers and Partners",
+      "buttonLink": "https://chambers.com/law-firm/kaizen-law-asia-pacific-8:23482703"
     },
     "overlayImage": {
       "src": "https://ik.imagekit.io/a9uxeuyhx/c187c8de4a3719b0bf6fce2d5297411e54a28f20.png"
@@ -393,15 +394,12 @@
       "description": "Explore opportunities to grow your career with us. We are always looking for driven individuals who are passionate about delivering excellence and making an impact."
     },
     "insightsFilter": {
-      "searchPlaceholder": "Search",
-      "buttons": [
-        {
-          "label": "Filter"
-        },
-        {
-          "label": "Filter"
-        }
-      ]
+      "searchPlaceholder": "Search Your Job",
+      "buttons": "Category",
+      "filters": {
+        "mode": ["Remote", "In Office", "Hybrid"],
+        "time": ["Full Time", "Part-Time", "Freelance"]
+      }
     },
     "jobsData": [
       {
@@ -409,7 +407,8 @@
         "title": "UI / Graphic Designer",
         "company": "Kaizen Law",
         "location": "Gurugram",
-        "type": ["Full Time", "Part Time"],
+        "type": "Full Time",
+        "mode": "Remote",
         "qualifications": [
           "1+ year of experience partnering with stakeholders (clients, partners, users).",
           "Strong knowledge of design systems and branding guidelines.",
@@ -422,8 +421,9 @@
         "id": "frontend-developer",
         "title": "Frontend Developer",
         "company": "Kaizen Law",
-        "location": "Remote / Gurugram",
-        "type": ["Full Time", "Part Time"],
+        "location": " Gurugram",
+        "type":  "Part-Time",
+        "mode": "In Office",
         "qualifications": [
           "2+ years of experience with React and Next.js.",
           "Strong understanding of HTML, CSS, and JavaScript.",
@@ -437,7 +437,8 @@
         "title": "Digital Marketing Executive",
         "company": "Kaizen Law",
         "location": "Gurugram",
-        "type": ["Full Time", "Part Time"],
+        "type": "Freelance",
+        "mode": "Hybrid",
         "qualifications": [
           "Experience in SEO, SEM, and social media marketing.",
           "Knowledge of Google Ads and Meta Ads Manager.",
@@ -451,7 +452,8 @@
         "title": "HR Recruiter",
         "company": "Kaizen Law",
         "location": "Delhi NCR",
-        "type": ["Full Time", "Part Time"],
+        "type": "Full Time",
+        "mode": "Remote",
         "qualifications": [
           "Experience in end-to-end recruitment process.",
           "Strong interviewing and candidate screening skills.",
@@ -612,7 +614,24 @@
     "fullTransactionList": {
       "heading": "Full Transaction List",
       "description": "A comprehensive list of representative transactions advised by Kaizen Law, presented in an anonymised format and subject to confidentiality and regulatory considerations.",
-      "buttonLabel": "Filters",
+      "buttonLabel": "Filter ",
+      "filters": {
+        "role": [
+          "Capital Markets",
+          "Mergers & Acquisitions",
+          "Banking & Finance",
+          "Projects & Infrastructure"
+        ],
+        "sector": [
+          "Technology",
+          "Financial Services",
+          "Healthcare",
+          "Infrastructure",
+          "Energy",
+          "Consumer & Retail"
+         
+        ]
+      },
       "transactions": [
         {
           "labelText": "Capital Markets",
@@ -623,31 +642,31 @@
         },
         {
           "labelText": "Capital Markets",
-          "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+          "mainText": "Advised a strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
           "roleText": "Advisor to Acquirer",
           "sectorText": "Technology",
-          "transactionValue": "150cr INR"
+          "transactionValue": "305cr INR"
         },
         {
           "labelText": "Capital Markets",
-          "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+          "mainText": "Advised a strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
           "roleText": "Advisor to Acquirer",
           "sectorText": "Technology",
-          "transactionValue": "150cr INR"
+          "transactionValue": "305cr INR"
         },
         {
           "labelText": "Capital Markets",
-          "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+          "mainText": "Advised a strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
           "roleText": "Advisor to Acquirer",
           "sectorText": "Technology",
-          "transactionValue": "150cr INR"
+          "transactionValue": "305cr INR"
         },
         {
           "labelText": "Capital Markets",
-          "mainText": "Advised another strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
+          "mainText": "Advised a strategic acquirer on the acquisition of a controlling stake in a technology-enabled services company, including legal due diligence and negotiation of transaction documentation.",
           "roleText": "Advisor to Acquirer",
           "sectorText": "Technology",
-          "transactionValue": "150cr INR"
+          "transactionValue": "305cr INR"
         }
       ]
     }
@@ -2606,9 +2625,13 @@
     },
     "insightsFilter": {
       "searchPlaceholder": "Search",
-      "buttons": "Category"
-        
-      
+      "buttons": "Category",
+      "options": [
+        "Private Equity",
+        "Mergers & Acquisitions",
+        "Technology Law",
+        "General Counsel"
+      ]
     },
     "insightDetailHero": {
       "bgImage": "https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg",
@@ -2720,6 +2743,13 @@
             "title": "Regulatory Disclosures",
             "date": "Last Updated: November 15, 2025",
             "sections": [
+              {
+                "heading": "1. Information We Collect",
+                "content": [
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide.",
+                  "We collect information you provide directly to us, such as when you create an account, post job listings, submit applications, or communicate with us. This includes your name, email address, phone number, company information, and any other information you choose to provide."
+                ]
+              },
               {
                 "heading": "1. Information We Collect",
                 "content": [
@@ -3100,7 +3130,7 @@
       }
     },
     {
-      "slug": "refining-strategy-mandate",
+      "slug": "philosophy-strategy-mandate",
       "heroSection": {
         "image": "https://ik.imagekit.io/75zj3bigp/704f19265420153f1b75a259bc7d4eee30ad5a7b.jpg",
 

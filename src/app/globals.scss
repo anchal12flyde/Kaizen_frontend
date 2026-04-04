@@ -17,7 +17,9 @@ body {
  
   overflow-x: hidden;
 }
-
+:root {
+  color-scheme: light;
+}
 ::-webkit-scrollbar {
   height: 0px;
   width: 0px;
@@ -32,7 +34,22 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+/* Detect autofill start */
+@keyframes onAutoFillStart {}
 
+input:-webkit-autofill {
+  animation-name: onAutoFillStart;
+  animation-duration: 0.01s;
+}
+
+/* Force final styles */
+input:-webkit-autofill {
+  -webkit-text-fill-color: #000 !important;
+  color: #000 !important;
+  caret-color: #000 !important;
+
+  -webkit-box-shadow: 0 0 0px 1000px #000000 inset !important;
+}
 .arrowImg {
   width: 24px;
   height: 24px;

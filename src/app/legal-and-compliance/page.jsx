@@ -31,7 +31,7 @@ const { legal } = sitecontent;
   return (
     <>
       <Header />
-      <div className="bg-[#fffff] h-full text-[#1A1A1A]">
+      <div className="bg-[#fffff]  text-[#1A1A1A]">
         {/* Header */}
         <Container
           variant="sectionSp3"
@@ -45,34 +45,34 @@ const { legal } = sitecontent;
         </Container>
 
         {/* Content */}
-        <Container className="policy-desc flex flex-col md:flex-row gap-[40px] h-full">
+        <Container className="policy-desc flex flex-col md:flex-row gap-[40px] items-start">
           {/* Sidebar */}
-          <div className="h-full">
-            <div className="md:w-[307px] w-full  h-[263px]  bg-[#F7F4EB] md:px-[26px]  px-[16px] md:py-[26] py-[20px] flex flex-col md:gap-[32px] gap-[16px]">
-              <Typography variant={isMobile ? "para-2" : "para-1"}>
-                List
-              </Typography>
 
-              <ul className="grid grid-cols-2 gap-4 md:flex md:flex-col md:gap-[16px]">
-                {tabs.map((item, index) => (
-                  <Typography
-                    key={item.key}
-                    variant={isMobile ? "para-3" : "para-2"}
-                    onClick={() => setActiveTab(item.key)}
-                    className={`cursor-pointer ${
-                      activeTab === item.key
-                        ? "text-[#231F20]"
-                        : "!text-[#231F20]/50"
-                    }`}
-                  >
-                    {item.label}
-                  </Typography>
-                ))}
-              </ul>
-            </div>
+          <div className="md:w-[307px] w-full  md:h-[263px]   bg-[#F7F4EB] md:px-[26px]  px-[16px] md:py-[26] py-[20px] flex flex-col md:gap-[32px] gap-[16px]">
+            <Typography variant={isMobile ? "para-2" : "para-1"}>
+              List
+            </Typography>
+
+            <ul className="grid grid-cols-2 gap-4 md:flex md:flex-col md:gap-[16px]">
+              {tabs.map((item, index) => (
+                <Typography
+                  key={item.key}
+                  variant={isMobile ? "para-3" : "para-2"}
+                  onClick={() => setActiveTab(item.key)}
+                  className={`cursor-pointer ${
+                    activeTab === item.key
+                      ? "text-[#231F20]"
+                      : "!text-[#231F20]/50"
+                  }`}
+                >
+                  {item.label}
+                </Typography>
+              ))}
+            </ul>
           </div>
+
           {/* Main Content */}
-          <div className="flex-1 max-w-[700px] h-full">
+          <div className="flex-1 max-w-[700px] ">
             <Typography
               variant={isMobile ? "display-3" : "header-hero"}
               className=" mb-[16px] "

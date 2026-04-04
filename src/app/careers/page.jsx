@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef,useState,useEffect } from "react";
 import AboutHeroSection from "@/components/abouthero";
 import JobCard from "@/components/jobCard";
 import PEVCPracticeSection from "@/components/PEVCPractiseSection";
@@ -32,6 +32,40 @@ export default function Careers() {
        behavior: "smooth",
      });
    };
+    const [open, setOpen] = useState(false);
+    const [selectedMode, setSelectedMode] = useState(null);
+    const [selectedTime, setSelectedTime] = useState(null);
+    const [searchTerm, setSearchTerm] = useState("");
+   const dropdownRef = useRef(null);
+   const [openSection, setOpenSection] = useState({
+     mode: false, 
+     time: false,
+   });
+   const toggleSection = (key) => {
+     setOpenSection((prev) => ({
+       ...prev,
+       [key]: !prev[key],
+     }));
+   };
+   const filteredJobs = jobsData.filter((job) => {
+     const modeMatch = selectedMode ? job.mode === selectedMode : true;
+     const timeMatch = selectedTime ? job.type === selectedTime : true;
+
+     const searchMatch = searchTerm
+       ? job.title.toLowerCase().includes(searchTerm.toLowerCase())
+       : true;
+
+     return modeMatch && timeMatch && searchMatch;
+   });
+   useEffect(() => {
+     function handleClickOutside(e) {
+       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+         setOpen(false);
+       }
+     }
+     document.addEventListener("mousedown", handleClickOutside);
+     return () => document.removeEventListener("mousedown", handleClickOutside);
+   }, []);
   return (
     <div className="overflow-x-hidden">
       <Header />
@@ -75,12 +109,6 @@ export default function Careers() {
                 >
                   {careerHero.buttons[0].label}
                 </Button>
-
-                <Link href={careerHero.buttons[1].link}>
-                  <Button variant="white" className="w-full md:w-auto">
-                    {careerHero.buttons[1].label}
-                  </Button>
-                </Link>
               </div>
             </div>
             {/* Icons */}
@@ -120,50 +148,153 @@ export default function Careers() {
 
         <div className="md:py-[12px] py-0 md:px-[100px] px-0 w-full borderInsightFilter border bg-[var(--color-background-1)]">
           {/* Desktop Layout (unchanged) */}
-          <div className="hidden md:flex items-center justify-between w-full">
-            <Button variant="primary" className="!px-[36px] !py-[12px]">
-              {insightsFilter.buttons[0].label}
-            </Button>
-
-            <div className="!px-[36px] !py-[12px] border border-[var(--color-accent)] rounded-[500px] !w-[463px]">
+          <div className=" flex items-center justify-between w-full md:gap-0 gap-[16px]">
+            <div className="px-[16px] py-[12px] border border-[var(--color-accent)] rounded-[500px] w-[463px] flex items-center justify-between ">
               <input
                 type="text"
-                className="text-[var(--color-accent)] focus:outline-none text-center w-full"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="text-[var(--color-accent)] focus:outline-none w-full"
                 placeholder={insightsFilter.searchPlaceholder}
+              />
+
+              <img
+                src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(21).png"
+                alt="search"
+                className="w-[16px] h-[16px] ml-[10px] object-contain cursor-pointer"
               />
             </div>
 
-            <Button variant="primary" className="!px-[36px] !py-[12px]">
-              {insightsFilter.buttons[1].label}
-            </Button>
-          </div>
+            <div className="relative" ref={dropdownRef}>
+              <Button
+                variant="primary"
+                className="!px-[36px] !py-[14px] "
+                onClick={() => setOpen(!open)}
+              >
+                {insightsFilter.buttons}
+              </Button>
 
-          {/* Mobile Layout */}
-          <div className="md:hidden w-full flex flex-col">
-            {/* Row 1 - Search */}
-            <div className="px-[24px] py-[12px] border-b border-[var(--color-accent)]">
-              <div className="border border-[var(--color-accent)] rounded-[500px] px-[16px] py-[10px]">
-                <input
-                  type="text"
-                  className="text-[var(--color-accent)] focus:outline-none text-center w-full"
-                  placeholder={insightsFilter.searchPlaceholder}
-                />
-              </div>
-            </div>
+              {/* Dropdown */}
+              {open && (
+                <div className="absolute right-0 mt-[10px] w-[250px] bg-[#F7F4EB] shadow-[0px_4px_14px_0px_#00000040] pb-[12px] z-50">
+                  {/* MODE SECTION */}
+                  <div className="border-b border-black/10">
+                    {/* Header */}
+                    <div
+                      onClick={() => {
+                        setSelectedMode(null);
+                        setSelectedTime(null);
+                      }}
+                      className="flex items-center justify-between px-[20px] py-[12px] cursor-pointer"
+                    >
+                      <div className="flex items-center gap-[8px]">
+                        <span>
+                          {" "}
+                          <img
+                            src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/cross-small%201.png"
+                            className="w-[12px] h-[12px] object-contain"
+                          />
+                        </span>
+                        <span className="text-[16px] text-[#231F20] opacity-[80%]">
+                          Clear
+                        </span>
+                      </div>
+                    </div>
 
-            {/* Row 2 - Filters */}
-            <div className="px-[24px] py-[12px] flex gap-[12px]">
-              {insightsFilter.buttons.map((btn, i) => (
-                <Button key={i} variant="primary" className="w-full !py-[12px]">
-                  {btn.label}
-                </Button>
-              ))}
+                    <div
+                      onClick={() => toggleSection("mode")}
+                      className="flex items-center justify-between px-[20px] py-[12px] cursor-pointer"
+                    >
+                      <div className="flex items-center gap-[8px]">
+                        <span>
+                          {" "}
+                          <img
+                            src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Frame%20(7).png"
+                            className="w-[14px] h-[14px] object-contain"
+                          />
+                        </span>
+                        <Typography variant="para-3">Mode</Typography>
+                      </div>
+
+                      {/* Arrow */}
+                      <span
+                        className={`transition-transform duration-300 -rotate-90 ${
+                          openSection.mode ? "rotate-0" : ""
+                        }`}
+                      >
+                        <img
+                          src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(25).png"
+                          className=" w-[10px] h-[5px] object-contain"
+                        />
+                      </span>
+                    </div>
+
+                    {/* Options */}
+                    {openSection.mode &&
+                      insightsFilter.filters.mode.map((item, i) => (
+                        <div
+                          key={i}
+                          onClick={() => setSelectedMode(item)}
+                          className={`px-[20px] py-[14px] text-[16px] cursor-pointer hover:bg-[var(--color-accent)]
+                          ${selectedMode === item ? "bg-[var(--color-accent)]" : ""}
+                        `}
+                        >
+                          {item}
+                        </div>
+                      ))}
+                  </div>
+
+                  {/* TIME SECTION */}
+                  <div>
+                    {/* Header */}
+                    <div
+                      onClick={() => toggleSection("time")}
+                      className="flex items-center justify-between px-[20px] py-[12px] cursor-pointer"
+                    >
+                      <div className="flex items-center gap-[8px]">
+                        <span>
+                          {" "}
+                          <img
+                            src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Group%207%20(1).png"
+                            className="w-[14px] h-[14px] object-contain"
+                          />
+                        </span>
+                        <span className="text-[16px]">Time</span>
+                      </div>
+
+                      <span
+                        className={`transition-transform duration-300 -rotate-90 ${
+                          openSection.time ? "rotate-0" : ""
+                        }`}
+                      >
+                        <img
+                          src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(25).png"
+                          className=" w-[10px] h-[5px] object-contain"
+                        />
+                      </span>
+                    </div>
+
+                    {/* Options */}
+                    {openSection.time &&
+                      insightsFilter.filters.time.map((item, i) => (
+                        <div
+                          onClick={() => setSelectedTime(item)}
+                          className={`px-[20px] py-[14px] text-[16px] cursor-pointer hover:bg-[var(--color-accent)]
+                          ${selectedTime === item ? "bg-[var(--color-accent)]" : ""}
+                        `}
+                        >
+                          {item}
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
         <div className="md:px-[100px] px-[24px] md:pt-[40px] pt-[32px] md:pb-[100px] pb-[64px] bg-[var(--color-background-1)] flex flex-col gap-[16px] ">
-          {jobsData.map((job) => (
+          {filteredJobs.map((job) => (
             <JobCard key={job.id} job={job} />
           ))}
         </div>

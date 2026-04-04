@@ -320,7 +320,7 @@ export default function Footer() {
                       className="w-[12px] h-[12px]"
                     />
                   </span>
-                  <Typography variant="para-3">(555) 123-4567</Typography>
+                  <Typography variant="para-3">+91-124-4389533</Typography>
                 </li>
                 <li className="flex  gap-2">
                   <span className="h-full  items-center">

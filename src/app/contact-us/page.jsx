@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import Button from "@/components/ui-kit/button";
 import Footer from "@/components/ui-kit/footer";
 import Header from "@/components/ui-kit/header";
@@ -12,6 +13,17 @@ export default function Contact() {
   const sitecontent = useSiteContent(); 
   const {contact} =sitecontent;
   const {contactSection, contactInfo,contactCTA} = contact;
+  useEffect(() => {
+    const inputs = document.querySelectorAll("input");
+
+    inputs.forEach((input) => {
+      input.addEventListener("animationstart", (e) => {
+        if (e.animationName === "onAutoFillStart") {
+          input.style.webkitTextFillColor = "#000";
+        }
+      });
+    });
+  }, []);
   
   return (
     <div>
@@ -49,23 +61,30 @@ export default function Contact() {
                         <label className="text-[#231F20] opacity-[50%]">
                           {field.placeholder}
                         </label>
-                        <Typography variant="para-2" className="pt-[8px]">
+                        <div className="pt-[8px] !text-black">
                           <input
                             type={field.type}
-                            placeholder=""
-                            className="bg-transparent outline-none w-full"
+                            autoComplete="on"
+                            style={{ WebkitTextFillColor: "#000" }}
+                            className="outline-none w-full bg-transparent text-black"
                           />
-                        </Typography>
+                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
-
-                <textarea
-                  placeholder={contactSection.form.textarea.placeholder}
-                  className="inputBorderContact outline-none w-full mt-[32px]"
-                  rows={3}
-                />
+                <div className="inputBorderContact flex flex-col !mt-[36px]">
+                  <label className="text-[#231F20] opacity-[50%]">
+                    {contactSection.form.textarea.placeholder}
+                  </label>
+                  <Typography variant="para-2" className="pt-[8px]">
+                    <textarea
+                      type="text"
+                      placeholder=""
+                      className="bg-transparent outline-none w-full  text-black autofill:!text-black bg-transparent"
+                    />
+                  </Typography>
+                </div>
 
                 <button className="mt-[40px] md:px-[32px] px-[24px] md:py-[16px] py-[16px] border border-[#231F20] md:w-fit w-full  hover:bg-black hover:text-white transition">
                   {contactSection.form.button.label}

@@ -17,7 +17,8 @@ const Button = ({
 
   return (
     <Tag
-      disabled={disabled}
+      {...(Tag === "button" ? { disabled } : {})}
+      {...(Tag === "a" ? { href: props.href } : {})}
       className={clsx(
         "btn",
         `btn--${variant}`,
