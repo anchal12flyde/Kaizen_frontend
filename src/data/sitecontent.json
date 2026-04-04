@@ -220,7 +220,8 @@
       "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
       "continent": "  Asia Pacific 2026",
       "button": {
-        "label": "View on Chambers and Partners"
+        "label": "View on Chambers and Partners",
+        "buttonLink": "https://chambers.com/law-firm/kaizen-law-asia-pacific-8:23482703"
       },
       "testimonialUI": {
         "bg": "bg-[#B6996A]",
@@ -967,7 +968,8 @@
         "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
         "continent": "  Asia Pacific 2026",
         "button": {
-          "label": "View on Chambers and Partners"
+          "label": "View on Chambers and Partners",
+          "buttonLink": "https://chambers.com/law-firm/kaizen-law-asia-pacific-8:23482703"
         },
         "testimonialUI": {
           "bg": "bg-[#B6996A]",
@@ -1172,7 +1174,8 @@
         "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
         "continent": "  Asia Pacific 2026",
         "button": {
-          "label": "View on Chambers and Partners"
+          "label": "View on Chambers and Partners",
+          "buttonLink": "https://chambers.com/law-firm/kaizen-law-asia-pacific-8:23482703"
         },
         "testimonialUI": {
           "bg": "bg-[#B6996A]",
@@ -1382,7 +1385,8 @@
         "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
         "continent": "  Asia Pacific 2026",
         "button": {
-          "label": "View on Chambers and Partners"
+          "label": "View on Chambers and Partners",
+          "buttonLink": "https://chambers.com/law-firm/kaizen-law-asia-pacific-8:23482703"
         },
         "testimonialUI": {
           "bg": "bg-[#B6996A]",
@@ -1591,7 +1595,8 @@
         "image": "https://ik.imagekit.io/a9uxeuyhx/51e8e6fb1012d3b763accee0c80f79cfcfc874c4.jpg",
         "continent": "  Asia Pacific 2026",
         "button": {
-          "label": "View on Chambers and Partners"
+          "label": "View on Chambers and Partners",
+          "buttonLink": "https://chambers.com/law-firm/kaizen-law-asia-pacific-8:23482703"
         },
         "testimonialUI": {
           "bg": "bg-[#B6996A]",
@@ -1722,7 +1727,8 @@
         "alt": "Chambers and Partners Award"
       },
 
-      "buttonText": "View on Chambers and Partners"
+      "buttonText": "View on Chambers and Partners",
+      "buttonLink": "https://chambers.com/law-firm/kaizen-law-asia-pacific-8:23482703"
     },
     "cta": {
       "title": "Speak With Our Team",

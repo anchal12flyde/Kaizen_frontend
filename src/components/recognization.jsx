@@ -53,7 +53,15 @@ export default function Recognization({ data }) {
             />
           </div>
 
-          <Button variant="primary" delay={0.4}>
+          
+     
+          <Button
+            variant="primary"
+            onClick={(e) => {
+              e.stopPropagation();
+              window.location.assign(button.buttonLink);
+            }}
+          >
             {button.label}
           </Button>
         </div>

@@ -235,10 +235,16 @@ export default async function privateEquity({ params }) {
                 alt=""
               />
             </div>
-
-            <Button variant="primary" delay={0.4}>
+            <Button
+              variant="primary"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.location.assign(recognition.buttonLink);
+              }}
+            >
               {button.label}
             </Button>
+            
           </div>
         </div>
       </Container>

@@ -60,10 +60,16 @@ export default function ProfilePage() {
                 alt=""
               />
             </div>
-
-            <Button variant="primary" delay={0.4}>
+            <Button
+              variant="primary"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.location.assign(recognition.buttonLink);
+              }}
+            >
               {recognition.buttonText}
             </Button>
+            
           </div>
         </div>
       </Container>
