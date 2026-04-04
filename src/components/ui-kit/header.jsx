@@ -168,7 +168,7 @@ export default function Header() {
                         className="block flex px-[10px] py-[12px] "
                       >
                         <p
-                          className={`transition-colors sublistphone  ${
+                          className={`transition-colors sublistphone hover:!text-[#C3A771] ${
                             isActive(sub.href)
                               ? "!text-[#C3A771]"
                               : "!text-white/90"

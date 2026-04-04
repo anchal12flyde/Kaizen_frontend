@@ -88,7 +88,7 @@ function BlogCard({ data, buttonShow }) {
         {/* Title */}
         <Typography
           variant="header-2"
-          className=" text-[var(--color-background-2)] group-hover:text-white hover:!underline mt-[16px] blogCardTitle "
+          className=" text-[var(--color-background-2)] group-hover:text-white group-hover:!underline mt-[16px] blogCardTitle "
         >
           {data.title}
         </Typography>

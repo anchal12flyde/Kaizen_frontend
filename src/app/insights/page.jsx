@@ -130,7 +130,7 @@ export default function Insights() {
           </div>
         </div>
       </div>
-      <Container variant="header" className=" !py-[20px] ">
+      <Container variant="header" className=" !py-[20px] group">
         <section className="hero-section  !h-[558px]">
           <Image
             src={insightDetailHero.bgImage}
@@ -152,7 +152,11 @@ export default function Insights() {
                 </Typography>
               </div>
 
-              <Typography variant="header-hero" colorVariant="white">
+              <Typography
+                variant="header-hero"
+                colorVariant="white"
+                className="group-hover:!underline "
+              >
                 {insightDetailHero.title}
               </Typography>
 
