@@ -1,4 +1,4 @@
-"use client";
+
 import React from "react";
 import AdvisorySection from "@/components/advisorySection";
 import BlogGridSection from "@/components/blogCardsGrid";
@@ -18,6 +18,7 @@ import Testimonials from "@/components/ui-kit/testimonials";
 import { notFound } from "next/navigation";
 import { getSiteContent } from "@/lib/siteContent";
 import DigitalTransformationFamiliarSection from "@/components/DigitalTransformationFamiliarSection";
+import Link from "next/link";
 
 export default async function privateEquity({ params }) {
   const sitecontent = getSiteContent();
@@ -89,12 +90,7 @@ export default async function privateEquity({ params }) {
                 colorVariant="white"
                 className="lg:w-[623px] w-full flex-shrink-0 "
               >
-                {privateEquity.subtitle.split("<br />").map((line, idx) => (
-                  <span key={idx}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
+                {privateEquity.subtitle}
               </Typography>
 
               <Typography
@@ -187,9 +183,11 @@ export default async function privateEquity({ params }) {
                 >
                   {privateEquityHero.description}
                 </Typography>
-                <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
-                  {privateEquityHero.button.label}
-                </button>
+                <Link href={privateEquityHero.button.link}>
+                  <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
+                    {privateEquityHero.button.label}
+                  </button>
+                </Link>
               </div>
               <div></div>
             </div>
@@ -235,13 +233,13 @@ export default async function privateEquity({ params }) {
               />
             </div>
             <Button
+              as="a"
+              href={recognition.button.buttonLink}
+              target="_blank"
+              rel="noopener noreferrer"
               variant="primary"
-              onClick={(e) => {
-                e.stopPropagation();
-                window.location.assign(recognition.buttonLink);
-              }}
             >
-              {button.label}
+              {recognition.button.label}
             </Button>
           </div>
         </div>

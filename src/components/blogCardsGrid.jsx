@@ -1,5 +1,5 @@
 "use client";
-
+import { useState } from "react";
 import Image from "next/image";
 import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
@@ -12,6 +12,7 @@ export default function BlogGridSection({
   buttonShow = false,
   variant = "scroll",
 }) {
+  const [visibleCount, setVisibleCount] = useState(3); 
   return (
     <Container
       variant="primarySpacing"
@@ -29,7 +30,7 @@ export default function BlogGridSection({
            md:gap-0 gap-[16px] scrollbar-hide
         `}
       >
-        {posts.map((item, index) => (
+        {posts.slice(0, visibleCount).map((item, index) => (
           <div
             key={index}
             className={`
@@ -43,12 +44,12 @@ export default function BlogGridSection({
           </div>
         ))}
       </div>
-
-      {buttonShow && (
+      {buttonShow && visibleCount < posts.length && (
         <div className="flex justify-center md:pr-0 !pr-[24px]">
           <Button
             variant="primary"
-            className="mt-[36px] "
+            className="mt-[36px]"
+            onClick={() => setVisibleCount((prev) => prev + 2)}
           >
             {buttonText}
           </Button>
