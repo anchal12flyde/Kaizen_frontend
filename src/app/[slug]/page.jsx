@@ -1,4 +1,4 @@
-
+"use client";
 import React from "react";
 import AdvisorySection from "@/components/advisorySection";
 import BlogGridSection from "@/components/blogCardsGrid";
@@ -85,16 +85,15 @@ export default async function privateEquity({ params }) {
 
             <div className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]">
               <Typography
-                delay={0.4}
                 variant="header-hero"
                 colorVariant="white"
                 className="lg:w-[623px] w-full flex-shrink-0 "
               >
                 {privateEquity.subtitle.split("<br />").map((line, idx) => (
-                  <>
+                  <span key={idx}>
                     {line}
                     <br />
-                  </>
+                  </span>
                 ))}
               </Typography>
 
@@ -244,7 +243,6 @@ export default async function privateEquity({ params }) {
             >
               {button.label}
             </Button>
-            
           </div>
         </div>
       </Container>
