@@ -8,6 +8,7 @@ import { fetchSiteContent } from "@/lib/api";
 import { SiteContentProvider } from "@/context/SiteContentProvider";
 import { setSiteContent } from "@/lib/siteContent";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,7 +19,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
+export const metadata = {
+  title: "Kaizen | Leading Law Firm for Businesses & Startups",
+  description:
+    "Kaizen is a forward-thinking law firm offering expert legal counsel in private equity, M&A, technology law, and general counsel services across key sectors.",
+};
 export default async function RootLayout({ children }) {
   const apiData = await fetchSiteContent();
 
@@ -40,7 +45,7 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body className={``}>
         <SiteContentProvider value={siteContent}>
-          {children}
+        {children}
         </SiteContentProvider>
       </body>
     </html>

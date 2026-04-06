@@ -34,21 +34,43 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-text-fill-color: #ffffff !important; /* text color */
-  transition: background-color 5000s ease-in-out 0s; /* prevents yellow flash */
-  box-shadow: 0 0 0px 1000px transparent inset !important; /* remove bg */
+.input:-webkit-autofill{
+  -webkit-text-fill-color: rgb(0, 0, 0) !important;
+  opacity: 1 !important;
 }
-input:-webkit-autofill {
-  -webkit-text-fill-color: #ffffff !important;
-  box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0.2) inset !important;
+.input:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(0, 0, 0) !important;
+  opacity: 1 !important;
+}
+.input:-webkit-autofill:hover {
+  -webkit-text-fill-color: rgb(0, 0, 0) !important;
+  opacity: 1 !important;
 }
 input {
-  color: #fff;
-  caret-color: #fff; /* cursor color */
+  color: #000000;
+  caret-color: #000000; /* cursor color */
+}
+.inputs:-webkit-autofill{
+  -webkit-text-fill-color: rgb(255, 255, 255) !important;
+  opacity: 1 !important;
+}
+.inputs:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(255, 255, 255) !important;
+  opacity: 1 !important;
+}
+.inputs:-webkit-autofill:hover {
+  -webkit-text-fill-color: rgb(255, 255, 255) !important;
+  opacity: 1 !important;
+}
+inputs {
+  color: #ffffff;
+  caret-color: #ffffff; /* cursor color */
+}
+
+.borderCardPerk {
+  position: sticky;
+  top: 140px; /* adjust based on header */
+  z-index: 10;
 }
 .arrowImg {
   width: 24px;

@@ -210,7 +210,7 @@ export default function About() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email"
-                        className="w-full h-[40px] px-2 border-b border-white bg-transparent text-white outline-none placeholder:text-white"
+                        className="inputs w-full h-[40px] px-2 border-b border-white bg-transparent text-white outline-none placeholder:text-white"
                       />
                     </Typography>
                   </div>

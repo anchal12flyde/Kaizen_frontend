@@ -66,7 +66,7 @@ export default function Contact() {
                             type={field.type}
                             autoComplete="on"
                             style={{ WebkitTextFillColor: "#000" }}
-                            className="outline-none w-full bg-transparent text-black"
+                            className=" input  outline-none w-full bg-transparent !text-black"
                           />
                         </div>
                       </div>

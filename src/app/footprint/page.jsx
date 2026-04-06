@@ -357,17 +357,17 @@ function FootprintItem({ item }) {
       {/* 🔥 Custom Border */}
       <div className="absolute top-0 left-0 w-full h-[0.5px]">
         {/* Static 40% */}
-        <div className="h-full bg-white/50 w-[15%]" />
+        <div className="h-full bg-white/50 w-[35%]" />
 
-        {/* Animated 60% */}
         <motion.div
-          className="absolute top-0 left-[15%] h-full bg-white/50 origin-left"
-          style={{ width: "85%" }}
+          className="absolute top-0 left-[35%] h-full bg-white/50 origin-left will-change-transform"
+          style={{ width: "65%" }}
           initial={{ scaleX: 0 }}
-          animate={isInView ? { scaleX: 1 } : {}}
+          animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
           transition={{
-            duration: 1,
-            ease: "easeOut",
+            duration: 1.2,
+            ease: [0.25, 0.1, 0.25, 1], // smoother cubic-bezier
+            delay: 0.1,
           }}
         />
       </div>

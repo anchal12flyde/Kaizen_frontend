@@ -243,7 +243,7 @@ export default function Footer() {
                 >
                   <Typography
                     variant="para-3"
-                    className={` hover:!text-[#9D7D49]${isActive("/footprint") ? "!text-[#9D7D49]" : ""}`}
+                    className={` hover:!text-[#9D7D49] ${isActive("/footprint") ? "!text-[#9D7D49]" : ""}`}
                   >
                     Transaction Footprint
                   </Typography>
@@ -260,7 +260,7 @@ export default function Footer() {
                 >
                   <Typography
                     variant="para-3"
-                    className={` hover:!text-[#9D7D49]${isActive("/insights") ? "!text-[#9D7D49]" : ""}`}
+                    className={` hover:!text-[#9D7D49] ${isActive("/insights") ? "!text-[#9D7D49]" : ""}`}
                   >
                     Insights{" "}
                   </Typography>
@@ -271,7 +271,7 @@ export default function Footer() {
                 >
                   <Typography
                     variant="para-3"
-                    className={`hover:!text-[#9D7D49]${isActive("/careers") ? "!text-[#9D7D49]" : ""}`}
+                    className={`hover:!text-[#9D7D49] ${isActive("/careers") ? "!text-[#9D7D49]" : ""}`}
                   >
                     Careers{" "}
                   </Typography>
@@ -282,7 +282,7 @@ export default function Footer() {
                 >
                   <Typography
                     variant="para-3"
-                    className={`  hover:!text-[#9D7D49]${isActive("/contact-us") ? "!text-[#9D7D49]" : ""}`}
+                    className={`  hover:!text-[#9D7D49] ${isActive("/contact-us") ? "!text-[#9D7D49]" : ""}`}
                   >
                     Contact Us
                   </Typography>
