@@ -82,7 +82,7 @@ const { cardsData } = pevcPractice;
               {/* List */}
               <div className="flex md:gap-[16px] gap-[2px] flex-col">
                 {pevcPractice.cardsData.map((item, index) => (
-                  <Link href={item.link} className="cursor-pointer">
+                  <Link href={item.link} className="cursor-pointer group">
                     <div
                       key={index}
                       className="flex md:flex-row flex-col md:items-center md:justify-between border-t border-white/30 py-[38px]"
@@ -100,7 +100,7 @@ const { cardsData } = pevcPractice;
                           <div className="md:hidden w-[30px] h-[30px] cursor-pointer">
                             <img
                               src={item.icon}
-                              className="h-full w-full object-contain"
+                              className="h-full w-full object-contain transition-transform duration-300 group-hover:rotate-[45deg]"
                               alt={item.title}
                             />
                           </div>
@@ -118,14 +118,12 @@ const { cardsData } = pevcPractice;
                       <div className="hidden md:block md:w-[45px] md:h-[45px]">
                         <img
                           src={item.icon}
-                          className="h-full w-full object-contain"
+                          className="h-full w-full object-contain transform-gpu will-change-transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-[45deg] "
                         />
                       </div>
                     </div>
                   </Link>
                 ))}
-
-               
               </div>
             </div>
           </Container>
