@@ -195,9 +195,12 @@ export default function Careers() {
                             className="w-[12px] h-[12px] object-contain"
                           />
                         </span>
-                        <span className="text-[16px] text-[#231F20] opacity-[80%]">
+                        <Typography
+                          variant="para-3"
+                          className=" !text-[#231F20] !opacity-[80%]"
+                        >
                           Clear
-                        </span>
+                        </Typography>
                       </div>
                     </div>
 
@@ -235,11 +238,11 @@ export default function Careers() {
                         <div
                           key={i}
                           onClick={() => setSelectedMode(item)}
-                          className={`px-[20px] py-[14px] text-[16px] cursor-pointer hover:bg-[var(--color-accent)]
+                          className={`px-[20px] py-[14px]  cursor-pointer hover:bg-[var(--color-accent)]
                           ${selectedMode === item ? "bg-[var(--color-accent)]" : ""}
                         `}
                         >
-                          {item}
+                          <Typography variant="para-3">{item}</Typography>
                         </div>
                       ))}
                   </div>
@@ -259,7 +262,7 @@ export default function Careers() {
                             className="w-[14px] h-[14px] object-contain"
                           />
                         </span>
-                        <span className="text-[16px]">Time</span>
+                        <Typography variant="para-3">Time</Typography>
                       </div>
 
                       <span
@@ -279,11 +282,11 @@ export default function Careers() {
                       insightsFilter.filters.time.map((item, i) => (
                         <div
                           onClick={() => setSelectedTime(item)}
-                          className={`px-[20px] py-[14px] text-[16px] cursor-pointer hover:bg-[var(--color-accent)]
+                          className={`px-[20px] py-[14px] cursor-pointer hover:bg-[var(--color-accent)]
                           ${selectedTime === item ? "bg-[var(--color-accent)]" : ""}
                         `}
                         >
-                          {item}
+                          <Typography variant="para-3">{item}</Typography>
                         </div>
                       ))}
                   </div>

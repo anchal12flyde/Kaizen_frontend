@@ -322,31 +322,34 @@ export default function Footer() {
                   </span>
                   <Typography variant="para-3">+91-124-4389533</Typography>
                 </li>
-                <li className="flex flex-col  gap-[6px]">
-                  <div className="flex gap-2">
+                <li >
+                  <div className="flex gap-[10px]">
                     <span className="h-full  items-center">
                       <img
                         src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(20).png"
                         className="w-[9px] h-[13px] mt-[4px]"
                       />
                     </span>
-                    <Typography variant="para-3">Gurgaon Office</Typography>
+                    <div className="flex flex-col gap-[12px]">
+                    <div className="flex flex-col gap-[6px]">
+                      <Typography variant="para-3">Gurgaon Office</Typography>
+                      <p className="sublist">
+                        1st Floor, DLF Centre Court, Golf <br /> Course Road,
+                        DLF Phase 5, Sector-42,
+                        <br /> Gurugram, Haryana – 122002
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-[6px]">
+                      <Typography variant="para-3">Bengaluru Office</Typography>
+
+                      <p className="sublist">
+                        KustomWork, 1st Floor, No. 129, 5th <br />
+                        Main Rd, 3rd Phase, J.P. Nagar, <br /> Bengaluru,
+                        Karnataka – 560078
+                      </p>
+                    </div>
+                    </div>
                   </div>
-                  <p className="sublist">
-                    1st Floor, DLF Centre Court, Golf <br /> Course Road, DLF
-                    Phase 5, Sector-42,
-                    <br /> Gurugram, Haryana – 122002
-                  </p>
-                </li>
-                <li className="flex   flex-col  gap-[6px]">
-                  <div className="flex gap-2">
-                    <Typography variant="para-3">Bengaluru Office</Typography>
-                  </div>
-                  <p className="sublist">
-                    KustomWork, 1st Floor, No. 129, 5th <br />
-                    Main Rd, 3rd Phase, J.P. Nagar, <br /> Bengaluru, Karnataka
-                    – 560078
-                  </p>
                 </li>
               </ul>
             </div>

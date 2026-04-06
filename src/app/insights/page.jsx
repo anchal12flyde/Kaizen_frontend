@@ -114,9 +114,9 @@ export default function Insights() {
                   {insightsFilter.options?.map((item, i) => (
                     <div
                       key={i}
-                      className="px-[20px] py-[16px] text-[16px] cursor-pointer hover:bg-[var(--color-accent)] transition"
+                      className="px-[20px] py-[16px]  cursor-pointer hover:bg-[var(--color-accent)] transition"
                     >
-                      {item}
+                      <Typography variant="para-3">{item}</Typography>
                     </div>
                   ))}
                 </div>
