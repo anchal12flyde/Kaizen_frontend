@@ -173,7 +173,7 @@ export default function Insights() {
         </section>
       </Container>
 
-      <BlogGridSection variant="stack" posts={insight.blogs} />
+      <BlogGridSection variant="stack" posts={insight.blogs} initialCount={5} />
       {/* <div className="hidden md:block">
         <LetsConnectSection />
       </div>

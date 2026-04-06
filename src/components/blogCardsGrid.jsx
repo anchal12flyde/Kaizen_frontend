@@ -8,11 +8,12 @@ import Link from "next/link";
 
 export default function BlogGridSection({
   posts = [],
-  buttonText ,
+  buttonText,
   buttonShow = false,
   variant = "scroll",
+  initialCount = 3,
 }) {
-  const [visibleCount, setVisibleCount] = useState(3); 
+  const [visibleCount, setVisibleCount] = useState(initialCount);
   return (
     <Container
       variant="primarySpacing"
