@@ -60,13 +60,15 @@ export default function page() {
     );
   }
 
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const digitRef = useRef(null);
+  const digitInView = useInView(digitRef, { once: true });
+  const borderRef = useRef(null);
+  const borderInView = useInView(borderRef, { once: true, margin: "-50px" });
   const [start, setStart] = useState(false);
 
   useEffect(() => {
-    if (isInView) setStart(true);
-  }, [isInView]);
+    if (digitInView) setStart(true);
+  }, [digitInView]);
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -130,7 +132,7 @@ export default function page() {
       </section>
 
       <Container variant="primarySpacing" className="section-bg">
-        <div className="stats-section" ref={ref}>
+        <div className="stats-section" ref={digitRef}>
           {stats.map((item, index) => (
             <div key={index} className="stats-card">
               <Typography variant="display-2" colorVariant="accent">
@@ -161,9 +163,22 @@ export default function page() {
           </div>
 
           {/* 2 Column Layout */}
-          <div className="grid-root">
+          <div className="grid-root" ref={borderRef}>
             {representativeMandates.items.map((item, index) => (
-              <div key={index} className="footprint top-border">
+              <div key={index} className="footprint relative overflow-hidden">
+                {/* Animated Top Border */}
+                <motion.div
+                  className="absolute top-0 left-0 h-[0.5px] w-full bg-white origin-left"
+                  initial={{ scaleX: 0 }}
+                  animate={borderInView ? { scaleX: 1 } : {}}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                    delay: index * 0.4, // 👈 stagger like your video
+                  }}
+                />
+
+                {/* Existing Content */}
                 <div className="footprint-left">
                   <Typography variant="header-3" colorVariant="white">
                     {item.title}

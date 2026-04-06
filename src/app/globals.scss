@@ -528,7 +528,18 @@ input:-webkit-autofill {
   }
 }
 .top-border {
-  border-top: 0.5px solid #ffffff;
+  position: relative;
+}
+
+.top-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.5px;
+  width: 0%;
+  background-color: #ffffff;
+  transition: width 0.6s ease;
 }
 /* Mobile — upto 768px */
 @media (max-width: 768px) {
