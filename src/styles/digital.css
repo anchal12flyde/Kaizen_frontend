@@ -185,6 +185,9 @@ margin-top: 160px;
   .dt-video-section__claim {
     max-width: 345px;
   }
+  .dt-familiar__title-col{
+    width: 100%;
+  }
 }
 
 /* Sound Familiar Section */

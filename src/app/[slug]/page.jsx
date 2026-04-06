@@ -168,12 +168,12 @@ export default async function privateEquity({ params }) {
           >
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
               <div className="w-full md:w-[500px] h-full md:px-[36px] px-[16px] pt-[36px] md:pb-[113px] pb-[48px] bg-[var(--color-accent)]  flex flex-col">
-                <Typography variant="header-5" className=" !text-white ">
+                <Typography variant="header-5" className=" !text-[#F2F2F2] ">
                   {privateEquityHero.title}
                 </Typography>
                 <Typography
                   variant="para-2"
-                  className=" !text-white mt-[26px] "
+                  className=" !text-[#F7F4EB] mt-[26px] "
                 >
                   {privateEquityHero.description}
                 </Typography>
@@ -262,12 +262,12 @@ export default async function privateEquity({ params }) {
           </Typography>
           <Typography
             variant="para-2"
-            className="!text-white w-full md:w-[486px]"
+            className="!text-[#F7F4EB] w-full md:w-[486px]"
           >
             {cta.description}
           </Typography>
         </div>
-     
+
         <button className=" md:px-[36px] px-[24px] md:py-[12px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[18px] text-[18px]">
           {cta.buttonText}
         </button>

@@ -133,7 +133,10 @@ export default function PEVCPracticeSection({
                   {item.title}
                 </Typography>
 
-                <Typography variant="para-2" className="!text-white mt-[20px] ">
+                <Typography
+                  variant="para-2"
+                  className="!text-[#F7F4EB] mt-[20px] "
+                >
                   {item.desc}
                 </Typography>
               </motion.div>
@@ -195,7 +198,7 @@ export default function PEVCPracticeSection({
 
                   <Typography
                     variant="para-2"
-                    className="!text-white mt-[16px] "
+                    className="!text-[#F7F4EB] mt-[16px] "
                   >
                     {item.desc}
                   </Typography>
@@ -265,7 +268,10 @@ export default function PEVCPracticeSection({
                   {item.title}
                 </Typography>
 
-                <Typography variant="para-2" className="!text-white mt-[20px]">
+                <Typography
+                  variant="para-2"
+                  className="!text-[#F7F4EB] mt-[20px]"
+                >
                   {item.desc}
                 </Typography>
               </motion.div>

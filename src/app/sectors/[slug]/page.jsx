@@ -69,8 +69,7 @@ export default function Startups({ params }) {
               <Typography
                 delay={0.4}
                 variant="header-hero"
-                colorVariant="white"
-                className="lg:w-[623px] w-full flex-shrink-0 "
+                className="lg:w-[623px] w-full flex-shrink-0 !text-[#F2F2F2]"
               >
                 {startupHero.description}
               </Typography>
@@ -88,7 +87,7 @@ export default function Startups({ params }) {
             {ourStory.paragraphs.map((text, index) => (
               <Typography
                 key={index}
-                className="text-block !text-white"
+                className="text-block !text-[#F7F4EB]"
                 variant="para-2"
                 delay={0.4 + index * 0.2}
               >
@@ -160,12 +159,12 @@ export default function Startups({ params }) {
           >
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
               <div className="w-full md:w-[500px] h-full md:px-[36px] px-[16px]  pt-[36px] md:pb-[63px] pb-[48px] bg-[var(--color-accent)]  flex flex-col">
-                <Typography variant="header-5" className=" !text-white ">
+                <Typography variant="header-5" className=" !text-[#F2F2F2] ">
                   {privateEquityHero.title}
                 </Typography>
                 <Typography
                   variant="para-2"
-                  className=" !text-white mt-[26px] "
+                  className=" !text-[#F7F4EB] mt-[26px] "
                 >
                   {privateEquityHero.description}
                 </Typography>
@@ -205,7 +204,7 @@ export default function Startups({ params }) {
           </Typography>
           <Typography
             variant="para-2"
-            className="!text-white w-full md:w-[486px]"
+            className="!text-[#F7F4EB] w-full md:w-[486px]"
           >
             {cta.description}
           </Typography>

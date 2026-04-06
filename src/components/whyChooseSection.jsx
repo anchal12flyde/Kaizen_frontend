@@ -199,9 +199,13 @@ export default function WhyChooseSection({ data = { title: "", subtitle: "", car
                   key={i}
                   className="border-[0.5px] border-[#31110F] p-[16px] flex flex-col gap-[85px]"
                 >
-                  <Typography variant="display-2">{i + 1}</Typography>
+                  <Typography variant="display-2" className="!text-[#31110F]">
+                    {i + 1}
+                  </Typography>
                   <div className="flex flex-col gap-[16px]">
-                    <Typography variant="big-firm">{card.title}</Typography>
+                    <Typography variant="big-firm" className="!text-[#31110F]">
+                      {card.title}
+                    </Typography>
 
                     <Typography variant="para-2">{card.desc}</Typography>
 
@@ -255,16 +259,21 @@ export default function WhyChooseSection({ data = { title: "", subtitle: "", car
                 >
                   {/* TOP */}
                   <div className="flex items-start gap-6">
-                    <h3 className="text-[64px] font-serif text-gray-800 leading-none mt-[1.3cm]">
+                    <Typography variant="display-3" className=" !text-[#31110F]   mt-[1.3cm]">
                       {i + 1}
-                    </h3>
+                    </Typography>
                   </div>
 
                   {/* BOTTOM */}
                   <div>
                     {/* Title + Description */}
                     <div className="flex items-start mb-[36px] justify-between">
-                      <Typography variant="big-firm">{card.title}</Typography>
+                      <Typography
+                        variant="big-firm"
+                        className="!text-[#31110F]"
+                      >
+                        {card.title}
+                      </Typography>
 
                       <p className="card-desc text-sm text-gray-600 max-w-[260px] ml-4 leading-relaxed">
                         {card.desc}

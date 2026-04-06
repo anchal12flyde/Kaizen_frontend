@@ -1349,27 +1349,27 @@
           {
             "title": "Technology Transactions & Commercial Contracts",
             "desc": "Advisory on technology-focused commercial arrangements, including SaaS agreements, licensing arrangements, development contracts, and strategic technology partnerships.",
-            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+            "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/3f1b3ba0ea64cc54fb8a205c8ffe4c6eeaa80358.jpg"
           },
           {
             "title": "Data Protection & Privacy Advisory",
             "desc": "Guidance on data protection frameworks, privacy policies, data-sharing arrangements, and regulatory compliance under applicable data protection laws.",
-            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+            "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/0b26148e4fee13bc3afa22fd4d0d1071a658f6d1.jpg"
           },
           {
             "title": "Platform & Digital Business Advisory",
             "desc": "Advisory for digital platforms and marketplaces on contractual structures, user terms, and regulatory considerations relevant to platform-based models.",
-            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+            "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/354e7566f1bb1a7ac7ce3cbbad4cec0243adead1.jpg"
           },
           {
             "title": "Technology Due Diligence",
             "desc": "Legal due diligence on technology assets in the context of investments, acquisitions, and strategic transactions, including review of IP ownership, licensing, and data practices.            ",
-            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+            "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/0ea31879be6cf607a642afbb4f80d5fc72be6455.jpg"
           },
           {
             "title": "IP Advisory for Technology Businesses            ",
             "desc": "Transaction-focused intellectual property advisory, including IP ownership structuring, assignment frameworks, and IP risk assessment (excluding prosecution and filings).",
-            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+            "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/414cc200c261935d6ab54e042246d43d663ed4a4.jpg"
           }
         ]
       },
@@ -1803,17 +1803,17 @@
       },
       "services": [
         {
-          "title": "Startups & Emerging Companies",
+          "title": "Startups & Emerging \nCompanies",
           "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208.png",
           "link": "/sectors/startup"
         },
         {
-          "title": "Financial Services & Fintech",
+          "title": "Financial Services & \nFintech",
           "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/58ce4d387d4b185a8bef1783d3fb562f9d2a8254.png",
           "link": "/sectors/financial"
         },
         {
-          "title": "Renewable Energy & Infrastructure",
+          "title": "Renewable Energy &\n Infrastructure",
           "img": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/Rectangle%208%20(2).png",
           "link": "/sectors/renewable"
         },
@@ -1898,7 +1898,7 @@
         }
       ],
       "whyClients": {
-        "title": "Key Areas of PE & VC Advisory",
+        "title": "Key Areas of Advisory for Startups        ",
         "subtitle": "We support startups with end-to-end legal advisory, helping them build strong foundations, raise capital, manage risk, and scale with confidence.",
         "cards": [
           {
@@ -1933,14 +1933,13 @@
         "subtitle": "We understand that founders often engage with legal advisors for the first time while building their businesses. Our approach focuses on:",
         "cardsData": [
           "Clear, practical advice that supports decision-making",
-          "Work that used to flow now stalls at handoffs nobody owns.",
-          "The same information lives in multiple places and none of them agree.",
+          "Early identification of risks that may affect valuation or control          ",
+          "Structuring arrangements that scale with the business",
           "Partner-level involvement throughout critical phases"
         ]
       },
       "relatedInsights": {
-        "title": "Related Insights",
-        "description": "We advise clients at each stage of the investment journey"
+        "title": "Related Insights"
       },
       "blogs": {
         "button": "View More ↓",
@@ -2042,7 +2041,7 @@
         {
           "id": 3,
           "title": "Broad Sector Experience",
-          "desc": "We align legal strategy with commercial objectives, ensuring clarity on rights, governance, and risk. Our approach is centered on long-term value creation, helping clients make informed decisions at every stage of the transaction.",
+          "desc": "Our experience spans listed entities, regulated intermediaries, growth-stage fintech platforms, and institutional investors deploying capital into the sector.",
           "image": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/cc5a98ae0f0d907627bac4d0827745ad3f0b80eb.jpg",
           "reverse": false
         }
@@ -2089,8 +2088,7 @@
         ]
       },
       "relatedInsights": {
-        "title": "Related Insights",
-        "description": "We advise clients at each stage of the investment journey"
+        "title": "Related Insights"
       },
       "blogs": {
         "button": "View More ↓",
@@ -2239,8 +2237,7 @@
         ]
       },
       "relatedInsights": {
-        "title": "Related Insights",
-        "description": "We advise clients at each stage of the investment journey"
+        "title": "Related Insights"
       },
       "blogs": {
         "button": "View More ↓",
@@ -2391,8 +2388,7 @@
         ]
       },
       "relatedInsights": {
-        "title": "Related Insights",
-        "description": "We advise clients at each stage of the investment journey"
+        "title": "Related Insights"
       },
       "blogs": {
         "button": "View More ↓",
@@ -2541,8 +2537,7 @@
         ]
       },
       "relatedInsights": {
-        "title": "Related Insights",
-        "description": "We advise clients at each stage of the investment journey"
+        "title": "Related Insights"
       },
       "blogs": {
         "button": "View More ↓",
@@ -2693,8 +2688,7 @@
         ]
       },
       "relatedInsights": {
-        "title": "Related Insights",
-        "description": "We advise clients at each stage of the investment journey"
+        "title": "Related Insights"
       },
       "blogs": {
         "button": "View More ↓",
@@ -2962,8 +2956,7 @@
         ]
       },
       "relatedInsights": {
-        "title": "Related Insights",
-        "description": "We advise clients at each stage of the investment journey"
+        "title": "Related Insights"
       },
       "blogs": {
         "button": "View More ↓",
@@ -3096,8 +3089,7 @@
         ]
       },
       "relatedInsights": {
-        "title": "Related Insights",
-        "description": "We advise clients at each stage of the investment journey"
+        "title": "Related Insights"
       },
       "blogs": {
         "button": "View More ↓",
@@ -3230,8 +3222,7 @@
         ]
       },
       "relatedInsights": {
-        "title": "Related Insights",
-        "description": "We advise clients at each stage of the investment journey"
+        "title": "Related Insights"
       },
       "blogs": {
         "button": "View More ↓",
@@ -3364,8 +3355,7 @@
         ]
       },
       "relatedInsights": {
-        "title": "Related Insights",
-        "description": "We advise clients at each stage of the investment journey"
+        "title": "Related Insights"
       },
       "blogs": {
         "button": "View More ↓",
