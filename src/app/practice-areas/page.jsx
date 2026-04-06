@@ -100,7 +100,7 @@ const { cardsData } = pevcPractice;
                           <div className="md:hidden w-[30px] h-[30px] cursor-pointer">
                             <img
                               src={item.icon}
-                              className="h-full w-full object-contain transition-transform duration-300 group-hover:rotate-[45deg]"
+                              className="h-full w-full object-contain transition-transform duration-300 group-hover:rotate-[-45deg]"
                               alt={item.title}
                             />
                           </div>
@@ -118,7 +118,10 @@ const { cardsData } = pevcPractice;
                       <div className="hidden md:block md:w-[45px] md:h-[45px]">
                         <img
                           src={item.icon}
-                          className="h-full w-full object-contain transform-gpu will-change-transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-[45deg] "
+                          className="h-full w-full object-contain transform-gpu will-change-transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] 
+                            opacity-70 group-hover:opacity-100 
+                            group-hover:brightness-[3] group-hover:contrast-500 
+                            group-hover:rotate-[-45deg]"
                         />
                       </div>
                     </div>
@@ -174,13 +177,13 @@ const { cardsData } = pevcPractice;
                       {/* Dropdown container when open */}
                       {isOpen ? (
                         <div
-                          className="dropdown-scroll absolute top-full left-0 w-full shadow-md px-[8px]"
+                          className=" absolute top-full left-0 w-full shadow-md px-[8px]"
                           style={{
                             boxShadow: "1px 0px 8px 1px #00000033",
                             backgroundColor: "#B6996A",
                             zIndex: 10,
-                            maxHeight: "none",
-                            overflowY: "visible",
+                            
+                            
                           }}
                         >
                           {/* Trigger inside dropdown */}

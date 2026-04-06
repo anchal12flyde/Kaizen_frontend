@@ -776,28 +776,28 @@
           "id": 1,
           "title": "Private Equity & Venture Capital",
           "desc": "Advising on fundraises, investments, and shareholder arrangements, with a focus on structuring, governance, and value protection.",
-          "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%2015.png",
           "link": "/private-equity"
         },
         {
           "id": 2,
-          "title": "Mergers-acquisition",
+          "title": "Mergers & Acquisitions",
           "desc": "Supporting acquisitions, exits, and strategic transactions with disciplined execution, risk management, and commercial alignment.",
-          "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%2015.png",
           "link": "/mergers-acquisitions"
         },
         {
           "id": 3,
           "title": "General Counsel Services",
           "desc": "Ongoing legal advisory for growing businesses, covering corporate, commercial, regulatory, and strategic matters.",
-          "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%2015.png",
           "link": "/general-counsel"
         },
         {
           "id": 4,
           "title": "Technology Law",
           "desc": "Advising technology-driven businesses on transactions, regulatory matters, and commercial arrangements in evolving digital environments.",
-          "icon": "https://ik.imagekit.io/a9uxeuyhx/Vector%206.png",
+          "icon": "https://ik.imagekit.io/a9uxeuyhx/Group%2015.png",
           "link": "/technology-law"
         }
       ]

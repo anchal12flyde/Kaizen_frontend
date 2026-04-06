@@ -55,13 +55,13 @@ export default function Recognization({ data }) {
 
           
      
-         <Button
-                      variant="primary"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(recognition.buttonLink, "_blank");
-                      }}
-                    >
+            <Button
+                       as="a"
+                       href={recognition.button.buttonLink}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       variant="primary"
+                     >
             {button.label}
           </Button>
         </div>
