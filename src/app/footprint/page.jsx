@@ -97,7 +97,7 @@ export default function page() {
         </div>
       </section>
 
-      <Container variant="metricSpacing" className="section-bg">
+      <Container variant="primarySpacing" className="section-bg">
         <div className="stats-section">
           {stats.map((item, index) => (
             <div key={index} className="stats-card">
@@ -118,7 +118,7 @@ export default function page() {
       </Container>
 
       <section className="bg-[#0A193A] w-full flex justify-center">
-        <Container variant="sectionSp1">
+        <Container variant="primarySpacing">
           {/* Heading */}
           <div className="md:mb-[60] mb-[18px] flex flex-col gap-[18px]">
             <Typography variant="header-1" colorVariant="white">
@@ -171,7 +171,7 @@ export default function page() {
         </Container>
       </section>
 
-      <Container variant="sectionSp1" className="section-bg">
+      <Container variant="primarySpacing" className="section-bg">
         <Typography variant="header-1">
           {" "}
           {fullTransactionList.heading}
