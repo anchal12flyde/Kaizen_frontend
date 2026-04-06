@@ -6,25 +6,35 @@ import { Container } from "./ui-kit/spacing";
 import "./stacked-services.scss";
 import Image from "next/image";
 
-export default function StackedServicesSection({ items = [] }) {
+export default function StackedServicesSection({ items = [], investmentLifecycle }) {
   const cardRefs = useRef([]);
-  
 
   return (
-    <section className="stack-section  ">
-      <div className="stack-inner">
-        {items.map((item, i) => (
-          <div
-            key={i}
-            ref={(el) => (cardRefs.current[i] = el)}
-            className="stack-card-wrapper"
-            // style={{ zIndex: items.length - i }}
-          >
-            <ServiceCard item={item} />
-          </div>
-        ))}
-      </div>
-    </section>
+    <>
+      <Container
+        variant="sectionSp3"
+        className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] text-center"
+      >
+        <Typography variant="header-6">{investmentLifecycle?.title}</Typography>
+        <Typography variant="para-2" className="md:w-[624px] w-full">
+          {investmentLifecycle?.description}
+        </Typography>
+      </Container>
+      <section className="stack-section  ">
+        <div className="stack-inner">
+          {items.map((item, i) => (
+            <div
+              key={i}
+              ref={(el) => (cardRefs.current[i] = el)}
+              className="stack-card-wrapper"
+              // style={{ zIndex: items.length - i }}
+            >
+              <ServiceCard item={item} />
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
 

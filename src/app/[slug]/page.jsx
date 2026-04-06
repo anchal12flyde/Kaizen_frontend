@@ -131,17 +131,12 @@ export default async function privateEquity({ params }) {
         topContent={pevcPractice.topContent}
       />
 
-      <Container
-        variant="sectionSp3"
-        className=" !pb-[60px] flex flex-col gap-[16px] items-center bg-[var(--color-background-1)] text-center"
-      >
-        <Typography variant="header-6">{investmentLifecycle.title}</Typography>
-        <Typography variant="para-2" className="md:w-[624px] w-full">
-          {investmentLifecycle.description}
-        </Typography>
-      </Container>
+  
       {showPEVC && pevcPractice && (
-        <StackedServicesSection items={stackedServices} />
+        <StackedServicesSection
+          items={stackedServices}
+          investmentLifecycle={investmentLifecycle}
+        />
       )}
       <WhyChooseSection data={whyClients} />
       {showDigital && (
