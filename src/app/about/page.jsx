@@ -25,7 +25,7 @@ export default function About() {
     e.preventDefault();
 
     if (!email) {
-      alert("Please enter email");
+     
       return;
     }
 

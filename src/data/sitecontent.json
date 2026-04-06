@@ -300,7 +300,12 @@
       "description": "Connect with our team for practical, business-aligned legal guidance across transactions, investments, and ongoing advisory matters.",
       "subText": "I want to talk to your experts in:",
       "selectIndustryText": "Select an Industry",
-      "industries": ["Fintech", "Healthcare", "E-commerce"],
+      "industries": [
+        "Private Equity & Venture Capital",
+        "Mergers & Acquisitions",
+        "General Counsel Services",
+        "Technology Law"
+      ],
       "button": {
         "label": "Submit →"
       }
