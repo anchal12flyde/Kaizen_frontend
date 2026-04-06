@@ -53,16 +53,13 @@ function ServiceCard({ item }) {
         className="stack-card bg-[var(--color-background-1)]   "
       >
         <div className="py-[60px] flex md:flex-row flex-col md:gap-[120px] gap-[178px] items-start">
-          <div className="h-[150px] w-auto">
-            {item.icon && (
-              <img
-                src={item.icon}
-                alt={item.title}
-                className="h-full w-full object-contain"
-              />
-            )}
-          </div>
-
+         
+            <img
+              src={item.icon}
+              alt={item.title}
+              className="h-[150px] w-[266px] object-fill"
+            />
+         
           <div className="flex flex-col gap-[16px]">
             <Typography
               variant="header-2"

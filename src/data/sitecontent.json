@@ -1121,33 +1121,33 @@
         }
       ],
       "whyClients": {
-        "title": "Startup & Early-Stage Fundraising",
+        "title": "Key Areas of M&A Advisory",
         "subtitle": "We advise on structuring and executing M&A transactions with clarity and efficiency.",
         "cards": [
           {
-            "title": "Startup & Early-Stage Fundraising",
-            "desc": "Advisory on institutional and private equity investments, including structured instruments and investor protection rights.",
-            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+            "title": "Domestic M&A",
+            "desc": "Advisory on acquisitions, divestitures, internal restructurings, and shareholder exits across sectors.",
+            "img": "https://ik.imagekit.io/a9uxeuyhx/88a436bc8a54e906917991dc4877689831457c10.jpg"
           },
           {
-            "title": "Growth-Stage & Late-Stage Investments",
-            "desc": "Advisory on institutional and private equity investments, including structured instruments and investor protection rights.",
-            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+            "title": "Cross-Border M&A",
+            "desc": "Inbound and outbound transactions, including coordination with international counsel and regulatory compliance.",
+            "img": "https://ik.imagekit.io/a9uxeuyhx/873ab63c2f698a1f05e57f864484ef2c884f709e.jpg"
           },
           {
             "title": "Fund Structuring & Formation",
             "desc": "Advisory to fund sponsors on investment vehicles and structural considerations, in coordination with tax and regulatory advisors.",
+            "img": "https://ik.imagekit.io/a9uxeuyhx/c63a3c80157345a4b2f1745603ec3e115a652da5.jpg"
+          },
+          {
+            "title": "Listed Company M&A",
+            "desc": "Advisory on acquisitions and strategic transactions involving listed entities, including securities law and disclosure considerations.",
             "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
           },
           {
-            "title": "Investor-Side IP Advisory",
-            "desc": "Transaction-focused intellectual property advisory, including IP due diligence, ownership assessment, and IP risk allocation in investment documentation.",
-            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
-          },
-          {
-            "title": "Secondary Transactions & Exits",
-            "desc": "Advisory on secondary share sales, sponsor exits, promoter buybacks, and strategic exit transactions.",
-            "img": "https://ik.imagekit.io/flyde/cascade-boat-clean-china-natural-rural%20(1).jpg"
+            "title": "Joint Ventures & Strategic Alliances",
+            "desc": "Structuring and negotiating joint ventures and long-term partnerships with a focus on governance, control, and exit mechanisms.",
+            "img": "https://ik.imagekit.io/a9uxeuyhx/346ecc4b09c8e48774fefe29cd6869fc4517c026.jpg"
           }
         ]
       },
