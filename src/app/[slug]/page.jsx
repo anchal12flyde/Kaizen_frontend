@@ -131,7 +131,6 @@ export default async function privateEquity({ params }) {
         topContent={pevcPractice.topContent}
       />
 
-  
       {showPEVC && pevcPractice && (
         <StackedServicesSection
           items={stackedServices}
@@ -268,7 +267,8 @@ export default async function privateEquity({ params }) {
             {cta.description}
           </Typography>
         </div>
-        <button className=" md:px-[36px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[24px] text-[18px]">
+     
+        <button className=" md:px-[36px] px-[24px] md:py-[12px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[18px] text-[18px]">
           {cta.buttonText}
         </button>
       </Container>
