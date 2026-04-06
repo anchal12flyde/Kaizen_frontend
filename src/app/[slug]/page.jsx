@@ -178,7 +178,7 @@ export default async function privateEquity({ params }) {
                 >
                   {privateEquityHero.description}
                 </Typography>
-                <Link href={privateEquityHero.button.link}>
+                <Link href="/footprint">
                   <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
                     {privateEquityHero.button.label}
                   </button>

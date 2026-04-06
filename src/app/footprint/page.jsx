@@ -62,8 +62,7 @@ export default function page() {
 
   const digitRef = useRef(null);
   const digitInView = useInView(digitRef, { once: true });
-  const borderRef = useRef(null);
-  const borderInView = useInView(borderRef, { once: true, margin: "-50px" });
+
   const [start, setStart] = useState(false);
 
   useEffect(() => {
@@ -163,55 +162,9 @@ export default function page() {
           </div>
 
           {/* 2 Column Layout */}
-          <div className="grid-root" ref={borderRef}>
+          <div className="grid-root">
             {representativeMandates.items.map((item, index) => (
-              <div key={index} className="footprint relative overflow-hidden">
-                {/* Animated Top Border */}
-                <motion.div
-                  className="absolute top-0 left-0 h-[0.5px] w-full bg-white origin-left"
-                  initial={{ scaleX: 0 }}
-                  animate={borderInView ? { scaleX: 1 } : {}}
-                  transition={{
-                    duration: 0.8,
-                    ease: "easeOut",
-                    delay: index * 0.4, // 👈 stagger like your video
-                  }}
-                />
-
-                {/* Existing Content */}
-                <div className="footprint-left">
-                  <Typography variant="header-3" colorVariant="white">
-                    {item.title}
-                  </Typography>
-
-                  <div className="meta-col">
-                    <Typography variant="para-3">
-                      <span className="accent-text">Sector :</span>{" "}
-                      <span className="para-text">{item.sector}</span>
-                    </Typography>
-
-                    <Typography variant="para-3">
-                      <span className="accent-text">Year :</span>{" "}
-                      <span className="para-text">{item.year}</span>
-                    </Typography>
-
-                    <Typography variant="para-3">
-                      <span className="accent-text">Role :</span>{" "}
-                      <span className="para-text">{item.role}</span>
-                    </Typography>
-                  </div>
-                </div>
-
-                <div className="desc-wrap">
-                  <Typography
-                    variant="para-2"
-                    colorVariant="white"
-                    className="desc-width"
-                  >
-                    {item.desc}
-                  </Typography>
-                </div>
-              </div>
+              <FootprintItem key={index} item={item} />
             ))}
           </div>
         </Container>
@@ -354,16 +307,16 @@ function RollingDigit({ target, duration = 1, start }) {
     if (!height && ref.current) setHeight(ref.current.clientHeight);
   }, [height]);
 
-useEffect(() => {
-  if (start && height > 0 && Number.isFinite(target)) {
-    y.set(0);
-    const controls = animate(y, -target * height, {
-      duration,
-      ease: [0.2, 0.8, 0.2, 1],
-    });
-    return () => controls.stop();
-  }
-}, [height, target, start]);
+  useEffect(() => {
+    if (start && height > 0 && Number.isFinite(target)) {
+      y.set(0);
+      const controls = animate(y, -target * height, {
+        duration,
+        ease: [0.2, 0.8, 0.2, 1],
+      });
+      return () => controls.stop();
+    }
+  }, [height, target, start]);
   return (
     <div
       style={{
@@ -389,6 +342,69 @@ useEffect(() => {
           </div>
         ))}
       </motion.div>
+    </div>
+  );
+}
+function FootprintItem({ item }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.05,
+  });
+
+  return (
+    <div ref={ref} className="footprint relative overflow-hidden">
+      {/* 🔥 Custom Border */}
+      <div className="absolute top-0 left-0 w-full h-[0.5px]">
+        {/* Static 40% */}
+        <div className="h-full bg-white/50 w-[15%]" />
+
+        {/* Animated 60% */}
+        <motion.div
+          className="absolute top-0 left-[15%] h-full bg-white/50 origin-left"
+          style={{ width: "85%" }}
+          initial={{ scaleX: 0 }}
+          animate={isInView ? { scaleX: 1 } : {}}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+          }}
+        />
+      </div>
+
+      {/* Existing Content (UNCHANGED) */}
+      <div className="footprint-left">
+        <Typography variant="header-3" colorVariant="white">
+          {item.title}
+        </Typography>
+
+        <div className="meta-col">
+          <Typography variant="para-3">
+            <span className="accent-text">Sector :</span>{" "}
+            <span className="para-text">{item.sector}</span>
+          </Typography>
+
+          <Typography variant="para-3">
+            <span className="accent-text">Year :</span>{" "}
+            <span className="para-text">{item.year}</span>
+          </Typography>
+
+          <Typography variant="para-3">
+            <span className="accent-text">Role :</span>{" "}
+            <span className="para-text">{item.role}</span>
+          </Typography>
+        </div>
+      </div>
+
+      <div className="desc-wrap">
+        <Typography
+          variant="para-2"
+          colorVariant="white"
+          className="desc-width"
+        >
+          {item.desc}
+        </Typography>
+      </div>
     </div>
   );
 }

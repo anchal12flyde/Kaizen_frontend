@@ -98,7 +98,7 @@ export default function Insights() {
           <div className="relative" ref={dropdownRef}>
             <Button
               variant="primary"
-              className="!px-[36px] !py-[12px]"
+              className="!px-[36px] !py-[14px] "
               onClick={() => setOpen(!open)}
             >
               {insightsFilter.buttons}
