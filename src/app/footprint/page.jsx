@@ -102,7 +102,7 @@ export default function page() {
         <div className="hero-content right-[50px]">
           <div>
             <div className="mb-[42px]">
-              <Typography variant="hero-display" colorVariant="white">
+              <Typography variant="display-3" colorVariant="white">
                 {hero.title}
               </Typography>
             </div>

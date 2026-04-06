@@ -5,27 +5,40 @@ import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
 import Image from "next/image";
 
-// const cards = [
-//   {
-//     id: 1,
-//     title: "Transaction Structuring & Risk Allocation",
-//     desc: `Private equity and venture capital transactions demand careful structuring, commercial sensitivity, and a clear approach to risk allocation. We help design deal frameworks that protect value while remaining practical to execute.`,
-//     icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(18).png",
-//   },
-//   {
-//     id: 2,
-//     title: "Working Across the Investment Table",
-//     desc: `We work closely with investment teams, founders, boards, and management to structure transactions that balance investor protection with operational flexibility and long-term business needs.`,
-//     icon: "https://ik.imagekit.io/a9uxeuyhx/Ebene%201.png",
-//   },
-//   {
-//     id: 3,
-//     title: "Advising Across the Capital Lifecycle",
-//     desc: `We regularly advise startups and emerging companies on institutional capital raises, while also supporting investors deploying capital across diverse sectors.`,
-//     icon: "https://ik.imagekit.io/a9uxeuyhx/Group%20(17).png",
-//   },
-// ];
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.3, 
+    },
+  },
+};
+const fadeUps = {
+  hidden: () => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+     
+      return {
+        opacity: 0,
+        y: 60,
+      };
+    }
 
+    return {
+      opacity: 0,
+      x: -40,
+    };
+  },
+
+  show: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 const fadeUp = {
   hidden: {
     opacity: 0,
@@ -170,7 +183,9 @@ export default function PEVCPracticeSection({
                 {/* Icon Placeholder */}
                 <div className="flex items-center h-[72px] w-[72px]">
                   <img
-                 src={item.icon} className="h-full w-full object-contain"/>
+                    src={item.icon}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
 
                 <div>
@@ -220,18 +235,20 @@ export default function PEVCPracticeSection({
           </div>
 
           {/* Cards */}
-          <div className="grid md:grid-cols-3 gap-[15px] ">
-            {cardsData.map((item, i) => (
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-5%" }} // 5% viewport trigger
+            className="grid md:grid-cols-3 grid-cols-1 gap-[15px]"
+          >
+            {cardsData.map((item) => (
               <motion.div
                 key={item.id}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className=" px-[16px] py-[26px] "
+                variants={fadeUps}
+                className="px-[16px] py-[26px]"
               >
-                {/* Icon Placeholder */}
+                {/* Icon */}
                 <div className="w-[89px] h-[89px] relative">
                   <Image
                     src={item.icon}
@@ -248,12 +265,12 @@ export default function PEVCPracticeSection({
                   {item.title}
                 </Typography>
 
-                <Typography variant="para-2" className="!text-white mt-[20px] ">
+                <Typography variant="para-2" className="!text-white mt-[20px]">
                   {item.desc}
                 </Typography>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       )}
     </Container>

@@ -759,19 +759,7 @@
       "title": " Legal Advisory Across \n Transactions & Growth",
 
       "description": "We advise founders, investors, and businesses on transactions, investments, and ongoing legal matters combining strategic insight with practical execution.",
-      "align": "left",
-      "buttons": [
-        {
-          "label": "Explore Capabilties",
-          "variant": "primary",
-          "href": "#End-to-End-Services"
-        },
-        {
-          "label": "Connect",
-          "variant": "white",
-          "href": "/contact-us"
-        }
-      ]
+      "align": "left"
     },
     "pevcPractice": {
       "topContent": {
@@ -1052,7 +1040,7 @@
     "mergers-acquisitions": {
       "privateEquity": {
         "title": "Mergers-acquisition",
-        "subtitle": "Advisory for Investors and Growth-Stage Companies Across the Investment Lifecycle",
+        "subtitle": "Strategic Legal Advisory for Complex and High-Value Transactions",
        
         "image": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/14fdd4663ed3b4d05e4a9e91643ddf5fadedf086.jpg?updatedAt=1774854266078"
       },
@@ -1809,19 +1797,7 @@
       "bgImage": "https://ik.imagekit.io/a9uxeuyhx/Kaizen/248b18531a6fa63ce3562eb1af32a7f9f038550f.jpg",
       "title": "Industry-Focused Legal \n Solutions for Modern \n Businesses",
       "description": "From emerging startups to established enterprises, we provide strategic legal counsel across key industries—helping clients navigate complexity, mitigate risk, and unlock growth opportunities.",
-      "align": "left",
-      "buttons": [
-        {
-          "label": "Explore Sectors",
-          "variant": "primary",
-          "href":"#sectors-we-work"
-        },
-        {
-          "label": "Connect",
-          "variant": "white",
-          "href":"/contact-us"
-        }
-      ]
+      "align": "left"
     },
     "servicesSection": {
       "heading": {

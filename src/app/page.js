@@ -42,7 +42,7 @@ export default function Home() {
           <div className="hero-content md:right-[100px]">
             <div>
               <div className="mb-[42px]">
-                <Typography variant="hero-display" colorVariant="white">
+                <Typography variant="display-3" colorVariant="white">
                   {hero.title}
                 </Typography>
               </div>
@@ -189,8 +189,8 @@ export default function Home() {
               <Button
                 variant="primary"
                 onClick={(e) => {
-                  e.stopPropagation(); 
-                  window.location.assign(recognition.buttonLink);
+                  e.stopPropagation();
+                  window.open(recognition.buttonLink, "_blank");
                 }}
               >
                 {recognition.buttonText}
