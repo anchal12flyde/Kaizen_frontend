@@ -1,5 +1,6 @@
 "use client";
-import { useState,useRef,useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
+import { motion, animate, useMotionValue, useInView } from "framer-motion";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
@@ -11,44 +12,75 @@ import sitecontent from "@/data/sitecontent.json";
 import { useSiteContent } from "@/context/SiteContentProvider";
 
 export default function page() {
-    const sitecontent = useSiteContent(); 
-  const {footprint} =sitecontent;
+  const sitecontent = useSiteContent();
+  const { footprint } = sitecontent;
   const { hero, stats, representativeMandates, fullTransactionList } =
     footprint;
- 
-    const [openTransactionDropdown, setOpenTransactionDropdown] =
-      useState(false);
 
-    const [openTransactionSection, setOpenTransactionSection] = useState({
-      role: false,
-      sector: false,
-    });
+  const [openTransactionDropdown, setOpenTransactionDropdown] = useState(false);
 
-    const [selectedRole, setSelectedRole] = useState(null);
-    const [selectedSector, setSelectedSector] = useState(null);
+  const [openTransactionSection, setOpenTransactionSection] = useState({
+    role: false,
+    sector: false,
+  });
 
-    const transactionDropdownRef = useRef(null);
-    const toggleTransactionSection = (section) => {
-      setOpenTransactionSection((prev) => ({
-        ...prev,
-        [section]: !prev[section],
-      }));
-    };
-    
-    useEffect(() => {
-      function handleClickOutside(e) {
-        if (
-          transactionDropdownRef.current &&
-          !transactionDropdownRef.current.contains(e.target)
-        ) {
-          setOpenTransactionDropdown(false);
-        }
+  const [selectedRole, setSelectedRole] = useState(null);
+  const [selectedSector, setSelectedSector] = useState(null);
+
+  const transactionDropdownRef = useRef(null);
+  const toggleTransactionSection = (section) => {
+    setOpenTransactionSection((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+  function RollingNumber({ value = "0", duration = 1, start }) {
+    const number = start ? value : value.replace(/[0-9]/g, "0");
+
+    return (
+      <span style={{ fontVariantNumeric: "tabular-nums" }}>
+        {number.split("").map((char, i) => {
+          // if it's NOT a number → render as is
+          if (isNaN(char)) {
+            return <span key={i}>{char}</span>;
+          }
+
+          // if it's a digit → animate
+          return (
+            <RollingDigit
+              key={i}
+              target={parseInt(char, 10)}
+              duration={duration}
+              start={start}
+              delay={i * 0.05}
+            />
+          );
+        })}
+      </span>
+    );
+  }
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [start, setStart] = useState(false);
+
+  useEffect(() => {
+    if (isInView) setStart(true);
+  }, [isInView]);
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (
+        transactionDropdownRef.current &&
+        !transactionDropdownRef.current.contains(e.target)
+      ) {
+        setOpenTransactionDropdown(false);
       }
+    }
 
-      document.addEventListener("mousedown", handleClickOutside);
-      return () =>
-        document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   return (
     <>
       <Header />
@@ -98,13 +130,12 @@ export default function page() {
       </section>
 
       <Container variant="primarySpacing" className="section-bg">
-        <div className="stats-section">
+        <div className="stats-section" ref={ref}>
           {stats.map((item, index) => (
             <div key={index} className="stats-card">
               <Typography variant="display-2" colorVariant="accent">
-                {item.number}
+                <RollingNumber value={item.number.toString()} start={start} />
               </Typography>
-
               <Typography
                 variant="header-2"
                 colorVariant="accent"
@@ -293,5 +324,56 @@ export default function page() {
       </Container>
       <Footer />
     </>
+  );
+}
+function RollingDigit({ target, duration = 1, start }) {
+  const ref = useRef(null);
+  const [height, setHeight] = useState(0);
+  const y = useMotionValue(0);
+
+  useEffect(() => {
+    if (ref.current) setHeight(ref.current.clientHeight);
+  }, []);
+
+  useEffect(() => {
+    if (!height && ref.current) setHeight(ref.current.clientHeight);
+  }, [height]);
+
+useEffect(() => {
+  if (start && height > 0 && Number.isFinite(target)) {
+    y.set(0);
+    const controls = animate(y, -target * height, {
+      duration,
+      ease: [0.2, 0.8, 0.2, 1],
+    });
+    return () => controls.stop();
+  }
+}, [height, target, start]);
+  return (
+    <div
+      style={{
+        overflow: "hidden",
+        height: "1em",
+        display: "inline-block",
+        verticalAlign: "bottom",
+      }}
+    >
+      <motion.div style={{ y }}>
+        {Array.from({ length: 10 }, (_, digit) => (
+          <div
+            key={digit}
+            ref={digit === 0 ? ref : null}
+            style={{
+              height: "1em",
+              lineHeight: 1.06,
+              display: "block",
+              textAlign: "center",
+            }}
+          >
+            {digit}
+          </div>
+        ))}
+      </motion.div>
+    </div>
   );
 }
