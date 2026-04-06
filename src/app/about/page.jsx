@@ -78,7 +78,7 @@ export default function About() {
       </section>
       <Container
         variant="primarySpacing"
-        className="relative w-full h-full min-h-[700px]"
+        className="relative w-full h-[700px] overflow-hidden"
       >
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
@@ -97,7 +97,7 @@ export default function About() {
         <>
           <div className=" relative flex justify-center z-10 ">
             <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
-              <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
+              <div className="w-full md:w-[500px] h-[500px]  p-[36px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography
                   variant="header-5"
                   className=" !text-[var(--color-para-2)] "
@@ -122,13 +122,11 @@ export default function About() {
                     {/* Dropdown container when open */}
                     {isOpen ? (
                       <div
-                        className="dropdown-scroll absolute top-full left-0 w-full shadow-md px-[8px]"
+                        className="absolute top-full left-0 w-full shadow-md px-[8px]"
                         style={{
                           boxShadow: "1px 0px 8px 1px #00000033",
                           backgroundColor: "#B6996A",
                           zIndex: 10,
-                          maxHeight: "none",
-                          overflowY: "visible",
                         }}
                       >
                         {/* Trigger inside dropdown */}

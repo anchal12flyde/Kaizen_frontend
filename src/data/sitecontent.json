@@ -299,7 +299,7 @@
       "title": "Ready To Talk?",
       "description": "Connect with our team for practical, business-aligned legal guidance across transactions, investments, and ongoing advisory matters.",
       "subText": "I want to talk to your experts in:",
-      "selectIndustryText": "Select an Industry",
+      "selectIndustryText": "Select an Service",
       "industries": [
         "Private Equity & Venture Capital",
         "Mergers & Acquisitions",
@@ -2859,11 +2859,12 @@
       "title": "Ready To Talk?",
       "description": "Connect with our team for practical, business-aligned legal guidance across transactions, investments, and ongoing advisory matters.",
       "subText": "I want to talk to your experts in:",
-      "selectIndustryText": "Select an Industry",
+      "selectIndustryText": "Select an Service",
       "industries": [
-        "Select an Industry",
-        "Select an Industry",
-        "Select an Industry"
+        "Private Equity & Venture Capital",
+        "Mergers & Acquisitions",
+        "General Counsel Services",
+        "Technology Law"
       ],
       "button": {
         "label": "Submit →"

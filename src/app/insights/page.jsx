@@ -32,7 +32,7 @@ export default function Insights() {
       e.preventDefault();
 
       if (!email) {
-        alert("Please enter email");
+     
         return;
       }
 
@@ -213,7 +213,7 @@ export default function Insights() {
       </div> */}
       <Container
         variant="primarySpacing"
-        className="relative w-full h-full min-h-[700px]"
+        className="relative w-full h-[700px] overflow-hidden"
       >
         {/* Background Image */}
         <div className="absolute inset-0 z-0 ">
@@ -232,7 +232,7 @@ export default function Insights() {
         <>
           <div className=" relative flex justify-center z-10 ">
             <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
-              <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
+              <div className="w-full md:w-[500px] h-[500px] p-[36px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography
                   variant="header-5"
                   className=" !text-[var(--color-para-2)] "
