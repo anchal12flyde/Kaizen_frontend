@@ -1,11 +1,9 @@
 .header-spacing {
   padding: var(--sp-20) var(--sp-100);
 }
-
 .primary-spacing {
   padding: var(--sp-100) var(--sp-100);
 }
-
 .secondary-spacing {
   padding: var(--sp-106) var(--sp-150) var(--sp-220) var(--sp-150);
 }
@@ -42,13 +40,16 @@
   }
 
   .primary-spacing {
-    padding: var(--sp-116) var(--sp-84);
+    padding: var(--sp-100) var(--sp-40);
   }
   .section-sp-1 {
-    padding: var(--sp-126) var(--sp-64);
+    padding: var(--sp-126) var(--sp-40);
   }
   .section-sp-2{
-    padding: var(--sp-97) var(--64) var(--sp-126) var(--sp-64);
+    padding: var(--sp-97) var(--sp-40) var(--sp-126) var(--sp-40);
+  }
+  .section-sp-3{
+    padding: var(--sp-100) var(--sp-40) var(--sp-60) var(--sp-40);
   }
   .footer-spacing {
     padding: var(--sp-100) var(--sp-64) var(--sp-32) var(--sp-64);
@@ -60,11 +61,9 @@
   .secondary-spacing {
     padding: 0 var(--sp-64) var(--sp-114) var(--sp-64);
   }
-  .primary-spacing {
-    padding: var(--sp-116) var(--sp-84);
-  }
+ 
   .metric-spacing{
-    padding: var(--sp-96) var(--sp-64);
+    padding: var(--sp-96) var(--sp-40);
   }
 }
 

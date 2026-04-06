@@ -22,7 +22,7 @@ export default function Recognization({ data }) {
       <div className="flex flex-col gap-[56px] items-center text-center">
         <Typography
           variant="para-2"
-          className="mt-[32px] lg:w-[480px] w-full"
+          className="mt-[32px] md:w-[480px] w-full"
           delay={0.4}
         >
           {description}
