@@ -64,12 +64,11 @@ export default function ProfilePage() {
               variant="primary"
               onClick={(e) => {
                 e.stopPropagation();
-                window.location.assign(recognition.buttonLink);
+                window.open(recognition.buttonLink, "_blank");
               }}
             >
               {recognition.buttonText}
             </Button>
-            
           </div>
         </div>
       </Container>

@@ -16,7 +16,7 @@ export default function OurStorySection({
   const { about } = sitecontent;
   const { ourStory } = about;
   return (
-    <Container className="section-bg" variant="primarySpacing">
+    <section className="section-bg">
       <div>
         <Typography variant="header-6">{ourStory.title}</Typography>
 
@@ -32,9 +32,7 @@ export default function OurStorySection({
             </Typography>
           ))}
         </div>
-
-       
       </div>
-    </Container>
+    </section>
   );
 }

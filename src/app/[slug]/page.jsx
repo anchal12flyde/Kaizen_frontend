@@ -228,12 +228,13 @@ export default async function privateEquity({ params }) {
               />
             </div>
             <Button
-              as="a"
-              href={recognition.button.buttonLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="primary"
-            >
+                variant="primary"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(recognition.button.buttonLink, "_blank");
+                }}
+              >
+           
               {recognition.button.label}
             </Button>
           </div>
