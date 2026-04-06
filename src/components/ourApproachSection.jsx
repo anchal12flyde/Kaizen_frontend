@@ -10,7 +10,7 @@ export default function OurApproachSection({ data }) {
   return (
     <Container
       variant="primarySpacing"
-      className=" bg-[var(--color-background-1)] "
+      className=" "
     >
       <div
         className="py-[140px]"

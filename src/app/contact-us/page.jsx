@@ -176,13 +176,13 @@ export default function Contact() {
 
       <Container
         variant="sectionSp1"
-        className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between "
+        className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between  md:items-center"
       >
         <Typography variant="header-5" className="!text-white">
           {contactCTA.title}
         </Typography>
 
-        <button className=" md:px-[32px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[24px] text-[18px]">
+        <button className=" md:px-[36px] px-[24px] md:py-[12px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[18px] text-[18px]">
           {contactCTA.button.label}
         </button>
       </Container>

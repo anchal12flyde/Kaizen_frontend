@@ -75,7 +75,7 @@ export default function ProfilePage() {
 
       <Container
         variant="sectionSp1"
-        className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between md:items-start"
+        className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between md:items-center"
       >
         <div className="flex flex-col gap-[16px] md:gap-[12px]">
           <Typography variant="header-5" className="!text-white">
@@ -88,7 +88,7 @@ export default function ProfilePage() {
             {cta.description}
           </Typography>
         </div>
-        <button className=" md:px-[36px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[24px] text-[18px]">
+        <button className=" md:px-[36px] px-[24px] md:py-[12px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white md:text-[18px] text-[18px]">
           {cta.buttonText}
         </button>
       </Container>

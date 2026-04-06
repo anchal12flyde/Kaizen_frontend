@@ -254,7 +254,7 @@ export default async function privateEquity({ params }) {
       />
       <Container
         variant="sectionSp1"
-        className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between md:items-start"
+        className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between md:items-center"
       >
         <div className="flex flex-col gap-[16px] md:gap-[12px]">
           <Typography variant="header-5" className="!text-white">
