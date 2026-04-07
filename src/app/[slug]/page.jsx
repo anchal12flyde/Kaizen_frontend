@@ -171,34 +171,39 @@ export default async function privateEquity({ params }) {
 
         {/* Content */}
         <>
-          <Container
-            variant="sectionSp1"
-            className=" absolute inset-0  flex items-center justify-center  "
-          >
-            <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
-              <div className="w-full md:w-[500px] h-full md:px-[36px] px-[16px] pt-[36px] md:pb-[113px] pb-[48px] bg-[var(--color-accent)]  flex flex-col">
-                <AnimatedFadeUp>
-                  <Typography variant="header-5" className=" !text-[#F2F2F2] ">
-                    {privateEquityHero.title}
-                  </Typography>
-                </AnimatedFadeUp>
-                <AnimatedFadeUp delay={0.15}>
-                  <Typography
-                    variant="para-2"
-                    className=" !text-[#F7F4EB] mt-[26px] "
-                  >
-                    {privateEquityHero.description}
-                  </Typography>
-                </AnimatedFadeUp>
-                <Link href="/footprint">
-                  <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
-                    {privateEquityHero.button.label}
-                  </button>
-                </Link>
+          <AnimatedFadeUp>
+            <Container
+              variant="sectionSp1"
+              className=" absolute inset-0  flex items-center justify-center  "
+            >
+              <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
+                <div className="w-full md:w-[500px] h-full md:px-[36px] px-[16px] pt-[36px] md:pb-[113px] pb-[48px] bg-[var(--color-accent)]  flex flex-col">
+                  <AnimatedFadeUp>
+                    <Typography
+                      variant="header-5"
+                      className=" !text-[#F2F2F2] "
+                    >
+                      {privateEquityHero.title}
+                    </Typography>
+                  </AnimatedFadeUp>
+                  <AnimatedFadeUp delay={0.15}>
+                    <Typography
+                      variant="para-2"
+                      className=" !text-[#F7F4EB] mt-[26px] "
+                    >
+                      {privateEquityHero.description}
+                    </Typography>
+                  </AnimatedFadeUp>
+                  <Link href="/footprint">
+                    <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
+                      {privateEquityHero.button.label}
+                    </button>
+                  </Link>
+                </div>
+                <div></div>
               </div>
-              <div></div>
-            </div>
-          </Container>
+            </Container>
+          </AnimatedFadeUp>
         </>
       </Container>
       <Container

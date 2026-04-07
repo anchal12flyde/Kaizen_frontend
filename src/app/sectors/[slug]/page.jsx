@@ -168,48 +168,54 @@ export default function Startups({ params }) {
 
         {/* Content */}
         <>
-          <Container
-            variant="sectionSp1"
-            className=" absolute inset-0  flex items-center justify-center  "
-          >
-            <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
-              <div className="w-full md:w-[500px] h-full md:px-[36px] px-[16px]  pt-[36px] md:pb-[63px] pb-[48px] bg-[var(--color-accent)]  flex flex-col">
-                <AnimatedFadeUp >
-                  <Typography variant="header-5" className=" !text-[#F2F2F2] ">
-                    {privateEquityHero.title}
-                  </Typography>
-                </AnimatedFadeUp>
-                <AnimatedFadeUp  delay={0.15}>
-                <Typography
-                  variant="para-2"
-                  className=" !text-[#F7F4EB] mt-[26px] "
-                >
-                  {privateEquityHero.description}
-                </Typography></AnimatedFadeUp>
+          <AnimatedFadeUp>
+            <Container
+              variant="sectionSp1"
+              className=" absolute inset-0  flex items-center justify-center  "
+            >
+              <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
+                <div className="w-full md:w-[500px] h-full md:px-[36px] px-[16px]  pt-[36px] md:pb-[63px] pb-[48px] bg-[var(--color-accent)]  flex flex-col">
+                  <AnimatedFadeUp>
+                    <Typography
+                      variant="header-5"
+                      className=" !text-[#F2F2F2] "
+                    >
+                      {privateEquityHero.title}
+                    </Typography>
+                  </AnimatedFadeUp>
+                  <AnimatedFadeUp delay={0.15}>
+                    <Typography
+                      variant="para-2"
+                      className=" !text-[#F7F4EB] mt-[26px] "
+                    >
+                      {privateEquityHero.description}
+                    </Typography>
+                  </AnimatedFadeUp>
 
-                <div className="mt-[36px] mb-[26px] flex flex-col gap-[16px]">
-                  <Typography variant="para-2" className="!text-white">
-                    {privateEquityHero.subText.text}
-                    <Link href="/footprint">
-                      <span
-                        style={{
-                          textDecoration: "underline",
-                          textDecorationStyle: "solid",
-                          textDecorationSkipInk: "auto",
-                        }}
-                      >
-                        {privateEquityHero.subText.highlight}
-                      </span>
-                    </Link>
-                  </Typography>
+                  <div className="mt-[36px] mb-[26px] flex flex-col gap-[16px]">
+                    <Typography variant="para-2" className="!text-white">
+                      {privateEquityHero.subText.text}
+                      <Link href="/footprint">
+                        <span
+                          style={{
+                            textDecoration: "underline",
+                            textDecorationStyle: "solid",
+                            textDecorationSkipInk: "auto",
+                          }}
+                        >
+                          {privateEquityHero.subText.highlight}
+                        </span>
+                      </Link>
+                    </Typography>
+                  </div>
+                  <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
+                    {privateEquityHero.button.label}
+                  </button>
                 </div>
-                <button className="mt-auto md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
-                  {privateEquityHero.button.label}
-                </button>
+                <div></div>
               </div>
-              <div></div>
-            </div>
-          </Container>
+            </Container>
+          </AnimatedFadeUp>
         </>
       </Container>
       <Container
