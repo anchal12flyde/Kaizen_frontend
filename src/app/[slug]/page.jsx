@@ -156,7 +156,7 @@ export default async function privateEquity({ params }) {
       )}
       <OurApproachSection data={ourApproach} />
 
-      <Container variant="primarySpacing" className=" privateEquityHeroCopy">
+      <Container variant="primarySpacing" className="privateEquityHeroCopy">
         {/* Background Image */}
         <Image
           src={privateEquityHero.bgImage}

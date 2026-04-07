@@ -27,8 +27,8 @@ export default function Footer() {
         {/* Top Section */}
         <div className="flex lg:flex-row md:flex-row flex-col md:justify-between gap-[40px] lg:mb-[84px] md:mb-[76px] mb-[56px]">
           {/* Brand */}
-          <div className="w-full md:w-[141px] lg:w-[251px] ">
-            <div className="items-start lg:w-[192px] md:w-[141px] w-[191px] lg:h-[38px] md:h-[191px] h-[38px]">
+          <div className="w-full lg:w-[141px] lg:w-[251px] ">
+            <div className="items-start lg:w-[192px] lg:w-[141px] w-[191px] lg:h-[38px] lg:h-[191px] h-[38px]">
               <img
                 src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Footer%20header.png"
                 className="h-full w-full object-contain"
@@ -327,7 +327,7 @@ export default function Footer() {
                     <span className="h-full  items-center">
                       <img
                         src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(20).png"
-                        className="w-[9px] h-[13px] mt-[4px]"
+                        className="w-[10px] h-[13px] mt-[4px]"
                       />
                     </span>
                     <div className="flex flex-col gap-[12px]">

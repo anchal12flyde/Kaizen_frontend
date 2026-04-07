@@ -13,41 +13,58 @@ export default function LeadershipTeam() {
   const cardRefs = useRef([]);  
   const scrollRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isDown, setIsDown] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+ 
   const sitecontent = useSiteContent();
   const { about } = sitecontent;
   const { leadershipTeam } = about;
   const { title, description, members } = leadershipTeam;
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+  const hasDragged = useRef(false);
 
-  /* Mouse Drag Scroll */
   const handleMouseDown = (e) => {
-    setIsDown(true);
+    isDragging.current = true;
+    hasDragged.current = false;
 
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
+    scrollRef.current.classList.add("dragging");
+
+    startX.current = e.pageX - scrollRef.current.offsetLeft;
+    scrollLeft.current = scrollRef.current.scrollLeft;
   };
 
   const handleMouseLeave = () => {
-    setIsDown(false);
+    isDragging.current = false;
+    scrollRef.current.classList.remove("dragging");
   };
 
   const handleMouseUp = () => {
-    setIsDown(false);
+    isDragging.current = false;
+    scrollRef.current.classList.remove("dragging");
   };
 
   const handleMouseMove = (e) => {
-    if (!isDown) return;
+    if (!isDragging.current) return;
 
     e.preventDefault();
 
     const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
+    const walk = x - startX.current;
 
-    scrollRef.current.scrollLeft = scrollLeft - walk;
+    // ✅ threshold to avoid accidental scroll
+    if (Math.abs(walk) > 5) {
+      hasDragged.current = true;
+    }
+
+    if (!hasDragged.current) return;
+
+    scrollRef.current.scrollLeft = scrollLeft.current - walk * 1.5;
   };
-
+  const handleClick = (e) => {
+    if (hasDragged.current) {
+      e.preventDefault();
+    }
+  };
   return (
     <Container
       variant="primarySpacing"
@@ -78,7 +95,7 @@ export default function LeadershipTeam() {
         onMouseMove={handleMouseMove}
       >
         {members.map((item, index) => (
-          <Link key={item.name || index} href={item.link}>
+          <Link key={item.name || index} href={item.link} onClick={handleClick}>
             <div className="team-card">
               <img src={item.img} alt={item.name} />
 
@@ -156,7 +173,10 @@ export default function LeadershipTeam() {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
-
+        .team-track.dragging {
+          cursor: grabbing;
+          user-select: none;
+        }
         /* Card */
         .team-card {
           position: relative;

@@ -125,18 +125,20 @@ export default function Careers() {
             </div>
             {/* Icons */}
             <div className="md:pr-[200px] pr-[24px]">
-              <div className="w-full overflow-x-auto md:overflow-hidden mt-[86px] md:mt-[100px]  border-t border-t-[#F7F4EB80]  pt-[30px]">
-                <div className="flex w-max md:w-full gap-[48px] md:gap-0 md:justify-between">
-                  {careerHero.logos.map((logo, index) => (
-                    <img
-                      key={index}
-                      src={logo.src}
-                      alt={logo.alt}
-                      className="w-[152px] h-[58px] object-contain flex-shrink-0"
-                    />
-                  ))}
+              <AnimatedFadeUp delay={0.15}>
+                <div className="w-full overflow-x-auto md:overflow-hidden mt-[86px] md:mt-[100px]  border-t border-t-[#F7F4EB80]  pt-[30px]">
+                  <div className="flex w-max md:w-full gap-[48px] md:gap-0 md:justify-between">
+                    {careerHero.logos.map((logo, index) => (
+                      <img
+                        key={index}
+                        src={logo.src}
+                        alt={logo.alt}
+                        className="w-[152px] h-[58px] object-contain flex-shrink-0"
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </AnimatedFadeUp>
             </div>
           </div>
         </div>
@@ -160,7 +162,7 @@ export default function Careers() {
 
         <div
           ref={ref}
-          className="md:py-[12px] py-0 md:px-[100px] px-0 w-full borderInsightFilter  bg-[var(--color-background-1)]"
+          className="md:py-[12px] py-[12px] md:px-[100px] px-[21px] w-full borderInsightFilter  bg-[var(--color-background-1)]"
         >
           {/* 🔥 TOP BORDER */}
           <div className="absolute top-0 left-0 w-full h-[0.5px]">
@@ -363,7 +365,7 @@ export default function Careers() {
         {/* LEFT */}
         <Container
           variant="sectionSp1"
-          className="flex items-center justify-center gap-[16px]"
+          className="flex items-center justify-center gap-[16px] w-full"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path
@@ -380,7 +382,7 @@ export default function Careers() {
         {/* RIGHT */}
         <Container
           variant="sectionSp1"
-          className="flex items-center justify-center gap-[16px]"
+          className="flex items-center justify-center gap-[16px] w-full"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path
@@ -400,22 +402,29 @@ export default function Careers() {
 
         {/* 🔥 TOP LINE */}
         <motion.div
-          className="absolute top-0 left-0 w-full h-[1px] bg-white origin-center"
+          className="absolute top-0 left-0 w-full h-[0.5px] bg-white/50 origin-center"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+        />
+
+        {/* 🔥 BOTTOM LINE */}
+        <motion.div
+          className="block md:hidden absolute top-1/2 left-0 w-full h-[0.5px] bg-white/50 origin-center -translate-y-1/2"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         />
 
-        
-
         {/* 🔥 CENTER VERTICAL LINE */}
         <motion.div
-          className="hidden md:block absolute top-0 left-1/2 w-[1px] h-full bg-white origin-center"
+          className="hidden md:block absolute top-0 left-1/2 w-[0.5px] h-full bg-white/50 origin-center"
           initial={{ scaleY: 0 }}
           whileInView={{ scaleY: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
         />
       </div>
       <Footer />

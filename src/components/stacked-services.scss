@@ -4,11 +4,14 @@
 }
 
 /* This gives scroll space */
-
+.stack-inner {
+  min-height: 200vh; 
+  
+}
 .heading-wrapper {
   position: sticky;
   top: 0;
-  z-index: 50; /* 👈 always above cards */
+ /* 👈 always above cards */
 }
 .heading-content {
   background: #f8f3ea;
@@ -16,7 +19,7 @@
 }
 .stack-card-wrapper {
   position: sticky;
-  top: 160px; /* 👈 IMPORTANT: heading height ke niche */
+  top: 220px; /* 👈 IMPORTANT: heading height ke niche */
   display: flex;
   justify-content: center;
   z-index: 10;
@@ -30,7 +33,4 @@
   transition: all 0.3s ease;
 }
 
-/* ✅ STACK EFFECT (cards override each other only) */
-.stack-card-wrapper:not(:first-child) {
-  margin-top: -120px; /* 👈 overlap ONLY between cards */
-}
+
