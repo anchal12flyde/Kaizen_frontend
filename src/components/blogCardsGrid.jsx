@@ -19,7 +19,7 @@ export default function BlogGridSection({
     <AnimatedFadeUp>
       <Container
         variant="primarySpacing"
-        className={`md:!pr-[100px] ${
+        className={`md:!pr-[100px] !pt-[40px] ${
           variant === "scroll" ? "!pr-0" : "!pr-[24px]"
         }`}
       >

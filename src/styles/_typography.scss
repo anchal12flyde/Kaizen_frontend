@@ -238,11 +238,11 @@ $tablet: 1024px;
   letter-spacing: -2%;
 
   @media (max-width: $tablet) {
-    font-size:18px;
+    font-size:16px;
     line-height: 135%;
   }
   @media (max-width: $mobile) {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 135%;
   }
 }

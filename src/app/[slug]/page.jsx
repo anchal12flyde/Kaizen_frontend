@@ -171,7 +171,7 @@ export default async function privateEquity({ params }) {
 
         {/* Content */}
         <>
-          <AnimatedFadeUp>
+         
             <Container
               variant="sectionSp1"
               className=" absolute inset-0  flex items-center justify-center  "
@@ -203,7 +203,7 @@ export default async function privateEquity({ params }) {
                 <div></div>
               </div>
             </Container>
-          </AnimatedFadeUp>
+         
         </>
       </Container>
       <Container
@@ -235,10 +235,7 @@ export default async function privateEquity({ params }) {
           />
 
           <div className="flex flex-col gap-[74px]">
-            <Typography variant="para-2" delay={0.6}>
-              {" "}
-              {continent}
-            </Typography>
+           
             <AnimatedFadeUp delay={0.25}>
               <div className="relative w-full h-full hidden md:block">
                 <Image
@@ -264,7 +261,7 @@ export default async function privateEquity({ params }) {
       </Container>
       <Container
         variant="primarySpacing"
-        className=" flex flex-col items-center gap-[16px] !pb-[20px] "
+        className=" flex flex-col items-center gap-[16px] !pb-[0] !pt-[56px] "
       >
         <AnimatedFadeUp>
           <Typography variant="header-6">{relatedInsights.title}</Typography>

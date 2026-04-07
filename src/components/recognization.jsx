@@ -44,12 +44,7 @@ export default function Recognization({ data }) {
         />
 
         <div className="flex flex-col gap-[74px]">
-          <AnimatedFadeUp>
-            <Typography variant="para-2" delay={0.6}>
-              {" "}
-              {continent}
-            </Typography>
-          </AnimatedFadeUp>
+        
           <AnimatedFadeUp delay={0.15}>
             <div className="relative w-full h-full hidden md:block">
               <Image

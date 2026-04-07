@@ -55,7 +55,7 @@ function ServiceCard({ item }) {
         variant="sectionSp1"
         className="stack-card bg-[var(--color-background-1)]   "
       >
-        <div className="py-[60px] flex md:flex-row flex-col md:gap-[120px] gap-[178px] items-start">
+        <div className="py-[60px] flex md:flex-row flex-col md:gap-[120px] gap-[36px] items-start">
          
             <img
               src={item.icon}

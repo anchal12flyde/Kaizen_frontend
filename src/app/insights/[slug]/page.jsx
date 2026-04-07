@@ -241,10 +241,10 @@ export default function Page({ params }) {
         </div>
       </Container>
 
-      <div className="bg-[#F7F4EB]">
+      <div className="">
         <Container
           variant="sectionSp1"
-          className=" flex flex-col items-center  text-center gap-[16px] !pb-[20px]  "
+          className=" flex flex-col items-center  text-center gap-[16px] !pb-[0]  "
         >
           <Typography variant="header-6">{relatedInsights.title}</Typography>
           <Typography variant="para-2">
@@ -278,7 +278,7 @@ export default function Page({ params }) {
 
         {/* Content */}
         <>
-          <AnimatedFadeUp>
+         
             <div className=" relative flex justify-center z-10 ">
               <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
                 <div className="w-full md:w-[500px] md:h-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
@@ -409,7 +409,7 @@ export default function Page({ params }) {
                 <div></div>
               </div>
             </div>
-          </AnimatedFadeUp>
+      
         </>
       </Container>
 

@@ -49,7 +49,7 @@ export default function EndToEndServices() {
     >
       <div>
         {/* Heading */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[96px]">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-[96px] gap-[36px]">
           <AnimatedFadeUp>
             <Typography variant="header-6" className="!text-white w-[250px]">
               {heading.title}

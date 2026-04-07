@@ -194,10 +194,10 @@ export default function Home() {
 
             <Testimonials data={recognition.testimonials} />
 
-            <div className="flex flex-col md:gap-[74px] gap-[36px]">
-              <Typography variant="para-2" delay={0.6}>
+            <div className="flex flex-col md:gap-[56px] gap-[36px]">
+              {/* <Typography variant="para-2" delay={0.6}>
                 {recognition.award.year}
-              </Typography>
+              </Typography> */}
               <AnimatedFadeUp delay={0.25}>
               <div className="relative w-full h-full">
                 <Image

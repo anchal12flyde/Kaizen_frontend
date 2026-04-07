@@ -4,6 +4,7 @@ import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import AnimatedFadeUp from "./AnimatedFadeUp";
 
 function GuideItem({ item }) {
   const ref = useRef(null);
@@ -41,14 +42,16 @@ function GuideItem({ item }) {
       </div>
 
       {/* Content */}
-      <div className="flex flex-col gap-[12px] order-2 md:order-1">
-        <Typography variant="header-4" className="!text-white">
-          {item.title}
-        </Typography>
-        <Typography variant="para-2" className="!text-white">
-          {item.desc}
-        </Typography>
-      </div>
+      <AnimatedFadeUp>
+        <div className="flex flex-col gap-[12px] order-2 md:order-1">
+          <Typography variant="header-4" className="!text-white">
+            {item.title}
+          </Typography>
+          <Typography variant="para-2" className="!text-white">
+            {item.desc}
+          </Typography>
+        </div>
+      </AnimatedFadeUp>
     </div>
   );
 }

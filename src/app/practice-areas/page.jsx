@@ -185,7 +185,7 @@ const { cardsData } = pevcPractice;
           <div className="hero-overlay"></div>
 
           {/* Content */}
-          <> <AnimatedFadeUp>
+          <> 
             <div className=" relative flex justify-center z-10 ">
               <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
                 <div className="w-full md:w-[500px] md:h-[500px] h-full  p-[36px] bg-[var(--color-accent)]  flex flex-col">
@@ -335,7 +335,7 @@ const { cardsData } = pevcPractice;
                 <div></div>
               </div>
             </div>
-            </AnimatedFadeUp>
+           
           </>
           
         </Container>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState,useEffect } from "react";
+import { useRef, useState } from "react";
 import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
 import { useSiteContent } from "@/context/SiteContentProvider";
@@ -13,60 +13,41 @@ export default function LeadershipTeam() {
   const cardRefs = useRef([]);  
   const scrollRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const isDown = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
+  const [isDown, setIsDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
   const sitecontent = useSiteContent();
   const { about } = sitecontent;
   const { leadershipTeam } = about;
   const { title, description, members } = leadershipTeam;
 
-  useEffect(() => {
-    const slider = scrollRef.current;
-    if (!slider) return;
+  /* Mouse Drag Scroll */
+  const handleMouseDown = (e) => {
+    setIsDown(true);
 
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
 
-    const handleMouseDown = (e) => {
-      isDown = true;
-      slider.classList.add("dragging");
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    };
+  const handleMouseLeave = () => {
+    setIsDown(false);
+  };
 
-    const handleMouseLeave = () => {
-      isDown = false;
-      slider.classList.remove("dragging");
-    };
+  const handleMouseUp = () => {
+    setIsDown(false);
+  };
 
-    const handleMouseUp = () => {
-      isDown = false;
-      slider.classList.remove("dragging");
-    };
+  const handleMouseMove = (e) => {
+    if (!isDown) return;
 
-    const handleMouseMove = (e) => {
-      if (!isDown) return;
-      e.preventDefault();
+    e.preventDefault();
 
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1.5; // 👈 speed control
-      slider.scrollLeft = scrollLeft - walk;
-    };
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
 
-    slider.addEventListener("mousedown", handleMouseDown);
-    slider.addEventListener("mouseleave", handleMouseLeave);
-    slider.addEventListener("mouseup", handleMouseUp);
-    slider.addEventListener("mousemove", handleMouseMove);
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
 
-    return () => {
-      slider.removeEventListener("mousedown", handleMouseDown);
-      slider.removeEventListener("mouseleave", handleMouseLeave);
-      slider.removeEventListener("mouseup", handleMouseUp);
-      slider.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
   return (
     <Container
       variant="primarySpacing"
@@ -88,7 +69,14 @@ export default function LeadershipTeam() {
       </div>
 
       {/* Scroll Area */}
-      <div className="team-track" ref={scrollRef}>
+      <div
+        className="team-track"
+        ref={scrollRef}
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+      >
         {members.map((item, index) => (
           <Link key={item.name || index} href={item.link}>
             <div className="team-card">
@@ -129,10 +117,7 @@ export default function LeadershipTeam() {
           color: white;
           gap: 40px;
         }
-      
-        .team-track.dragging {
-          cursor: grabbing;
-        }
+
         .team-header h2 {
           font-size: 36px;
           font-weight: 500;
@@ -148,18 +133,16 @@ export default function LeadershipTeam() {
         /* Scroll Track */
         .team-track {
           display: flex;
-          flex-direction: row;
           gap: 25px;
-          user-select: none;
+
           overflow-x: auto;
-          overflow-y: hidden;
           scroll-behavior: smooth;
 
           cursor: grab;
 
           padding-bottom: 15px;
         }
-      
+
         .team-track:active {
           cursor: grabbing;
         }
@@ -177,7 +160,7 @@ export default function LeadershipTeam() {
         /* Card */
         .team-card {
           position: relative;
-          pointer-events: none;
+
           min-width: 280px;
           height: 400px;
 
@@ -196,9 +179,7 @@ export default function LeadershipTeam() {
 
           transition: transform 0.6s ease;
         }
-        .team-card a {
-          pointer-events: auto; /* 👈 link still clickable */
-        }
+
         /* Zoom Effect */
         .team-card:hover img {
           transform: scale(1.1);
