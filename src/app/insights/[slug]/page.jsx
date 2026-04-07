@@ -258,7 +258,11 @@ export default function Page({ params }) {
           buttonText={blogs.button}
         />
       </div>
-      <Container variant="primarySpacing" className=" privateEquityHeroCopy">
+      <Container
+        variant="primarySpacing"
+        cl
+        className="relative w-full h-[700px] overflow-hidden"
+      >
         {/* Background Image */}
         <Image
           src="https://ik.imagekit.io/flyde/092602fd4efb882635be1804e4931e7091fb5303.jpg"
@@ -275,7 +279,7 @@ export default function Page({ params }) {
         <>
           <div className=" relative flex justify-center z-10 ">
             <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
-              <div className="w-full md:w-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
+              <div className="w-full md:w-[500px] md:h-[500px] h-full p-[36px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography
                   variant="header-5"
                   className=" !text-[var(--color-para-2)] "

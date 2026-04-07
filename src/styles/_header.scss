@@ -102,9 +102,9 @@
   position: relative;
 }
 
-@media (max-width: 834px) {
+@media (max-width: 1000px) {
   .nav-link-container {
-    gap: var(--sp-40);
+    display: none;
   }
 
   .header-fixed-content {

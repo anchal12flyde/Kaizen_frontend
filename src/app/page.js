@@ -144,7 +144,7 @@ export default function Home() {
 
               <Link href="/practice-areas">
                 <Button
-                  className="evaluationBtn !w-fit group-hover:!bg-[var(--color-accent)]"
+                  className="evaluationBtn !w-fit "
                   variant="white"
                   delay={0.8}
                 >

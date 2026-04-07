@@ -97,7 +97,7 @@ export default function About() {
         <>
           <div className=" relative flex justify-center z-10 ">
             <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
-              <div className="w-full md:w-[500px] h-[500px]  p-[36px] bg-[var(--color-accent)]  flex flex-col">
+              <div className="w-full md:w-[500px] md:h-[500px] h-full  p-[36px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography
                   variant="header-5"
                   className=" !text-[var(--color-para-2)] "
@@ -134,12 +134,17 @@ export default function About() {
                           onClick={toggleDropdown}
                           className="w-full h-[32px] border-b border-white flex items-center justify-between cursor-pointer"
                         >
-                          <Typography
-                            variant="para-2"
-                            className="!text-[var(--color-para-2)]"
-                          >
-                            {selected || privateEquityHero.selectIndustryText}
-                          </Typography>
+                          <div className="min-w-0 flex-1">
+                            <Typography
+                              variant="para-2"
+                              className="!text-white"
+                            >
+                              <span className="block w-full truncate">
+                                {selected ||
+                                  privateEquityHero.selectIndustryText}
+                              </span>
+                            </Typography>
+                          </div>
 
                           <svg
                             width="20"
@@ -178,9 +183,13 @@ export default function About() {
                         onClick={toggleDropdown}
                         className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0 cursor-pointer px-2"
                       >
-                        <Typography variant="para-2" className="!text-white">
-                          {selected || privateEquityHero.selectIndustryText}
-                        </Typography>
+                        <div className="min-w-0 flex-1">
+                          <Typography variant="para-2" className="!text-white">
+                            <span className="block w-full truncate">
+                              {selected || privateEquityHero.selectIndustryText}
+                            </span>
+                          </Typography>
+                        </div>
 
                         <svg
                           width="20"

@@ -216,7 +216,7 @@ export default function Insights() {
         className="relative w-full h-[700px] overflow-hidden"
       >
         {/* Background Image */}
-        <div className="absolute inset-0 z-0 ">
+        <div className="absolute inset-0 z-0">
           <Image
             src={privateEquityHero.bgImage}
             alt="Kaizen Hero"
@@ -232,7 +232,7 @@ export default function Insights() {
         <>
           <div className=" relative flex justify-center z-10 ">
             <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
-              <div className="w-full md:w-[500px] h-[500px] p-[36px] bg-[var(--color-accent)]  flex flex-col">
+              <div className="w-full md:w-[500px] md:h-[500px] h-full  p-[36px] bg-[var(--color-accent)]  flex flex-col">
                 <Typography
                   variant="header-5"
                   className=" !text-[var(--color-para-2)] "
@@ -257,13 +257,11 @@ export default function Insights() {
                     {/* Dropdown container when open */}
                     {isOpen ? (
                       <div
-                        className="dropdown-scroll absolute top-full left-0 w-full shadow-md px-[8px]"
+                        className="absolute top-full left-0 w-full shadow-md px-[8px]"
                         style={{
                           boxShadow: "1px 0px 8px 1px #00000033",
                           backgroundColor: "#B6996A",
                           zIndex: 10,
-                          maxHeight: "none",
-                          overflowY: "visible",
                         }}
                       >
                         {/* Trigger inside dropdown */}
@@ -271,13 +269,17 @@ export default function Insights() {
                           onClick={toggleDropdown}
                           className="w-full h-[32px] border-b border-white flex items-center justify-between cursor-pointer"
                         >
-                          <Typography
-                            variant="para-2"
-                            className="!text-[var(--color-para-2)]"
-                          >
-                            {selected || privateEquityHero.selectIndustryText}
-                          </Typography>
-
+                          <div className="min-w-0 flex-1">
+                            <Typography
+                              variant="para-2"
+                              className="!text-white"
+                            >
+                              <span className="block w-full truncate">
+                                {selected ||
+                                  privateEquityHero.selectIndustryText}
+                              </span>
+                            </Typography>
+                          </div>
                           <svg
                             width="20"
                             height="20"
@@ -315,9 +317,13 @@ export default function Insights() {
                         onClick={toggleDropdown}
                         className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0 cursor-pointer px-2"
                       >
-                        <Typography variant="para-2" className="!text-white">
-                          {selected || privateEquityHero.selectIndustryText}
-                        </Typography>
+                        <div className="min-w-0 flex-1">
+                          <Typography variant="para-2" className="!text-white">
+                            <span className="block w-full truncate">
+                              {selected || privateEquityHero.selectIndustryText}
+                            </span>
+                          </Typography>
+                        </div>
 
                         <svg
                           width="20"
@@ -347,7 +353,7 @@ export default function Insights() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email"
-                        className="w-full h-[40px] px-2 border-b border-white bg-transparent text-white outline-none placeholder:text-white"
+                        className="inputs w-full h-[40px] px-2 border-b border-white bg-transparent text-white outline-none placeholder:text-white"
                       />
                     </Typography>
                   </div>
