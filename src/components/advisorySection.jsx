@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Typography from "./ui-kit/typography"
-
+import AnimatedFadeUp from "./AnimatedFadeUp";
 
 const slideVariant = (from) => ({
   hidden: {
@@ -63,8 +63,12 @@ export default function AdvisorySection({ sections = [] }) {
               }`}
             >
               <div className="flex flex-col gap-[16px]">
-                <Typography variant="header-4">{item.title}</Typography>
-                <Typography variant="para-2">{item.desc}</Typography>
+                <AnimatedFadeUp>
+                  <Typography variant="header-4">{item.title}</Typography>
+                </AnimatedFadeUp>
+                <AnimatedFadeUp delay={0.15}>
+                  <Typography variant="para-2">{item.desc}</Typography>{" "}
+                </AnimatedFadeUp>
               </div>
             </div>
           </motion.div>

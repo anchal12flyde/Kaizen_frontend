@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
+import AnimatedFadeUp from "./AnimatedFadeUp";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -190,8 +191,10 @@ export default function WhyChooseSection({ data = { title: "", subtitle: "", car
           <Container variant="primarySpacing">
             <div className=" flex flex-col gap-[40px]">
               <div className="flex flex-col gap-[16px] ">
-                <Typography variant="header-6">{data.title}</Typography>
-                <Typography variant="para-2">{data.subtitle}</Typography>
+                <AnimatedFadeUp >
+                <Typography variant="header-6">{data.title}</Typography></AnimatedFadeUp>
+                <AnimatedFadeUp delay={0.15}>
+                <Typography variant="para-2">{data.subtitle}</Typography></AnimatedFadeUp>
               </div>
 
               {data.cards.map((card, i) => (

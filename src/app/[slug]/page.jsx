@@ -19,6 +19,7 @@ import { notFound } from "next/navigation";
 import { getSiteContent } from "@/lib/siteContent";
 import DigitalTransformationFamiliarSection from "@/components/DigitalTransformationFamiliarSection";
 import Link from "next/link";
+import AnimatedFadeUp from "@/components/AnimatedFadeUp";
 
 export default async function privateEquity({ params }) {
   const sitecontent = getSiteContent();
@@ -79,48 +80,56 @@ export default async function privateEquity({ params }) {
         <div className="hero-content md:!right-[100px]">
           <div>
             <div className="md:mb-[26px] mb-[42px]">
-              <Typography variant="display-3" colorVariant="white">
-                {privateEquity.title}
-              </Typography>
+              <AnimatedFadeUp>
+                <Typography variant="display-3" colorVariant="white">
+                  {privateEquity.title}
+                </Typography>
+              </AnimatedFadeUp>
             </div>
 
             <div className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]">
-              <Typography
-                variant="header-hero"
-                colorVariant="white"
-                className="lg:w-[623px] w-full flex-shrink-0 "
-              >
-                {privateEquity.subtitle}
-              </Typography>
-
-              <Typography
-                delay={0.6}
-                variant="para-2"
-                colorVariant="white"
-                className="lg:w-[370px] w-full flex-shrink-0"
-              >
-                {privateEquity.description}
-              </Typography>
+              <AnimatedFadeUp delay={0.15}>
+                <Typography
+                  variant="header-hero"
+                  colorVariant="white"
+                  className="lg:w-[623px] w-full flex-shrink-0 "
+                >
+                  {privateEquity.subtitle}
+                </Typography>
+              </AnimatedFadeUp>
+              <AnimatedFadeUp delay={0.25}>
+                <Typography
+                  delay={0.6}
+                  variant="para-2"
+                  colorVariant="white"
+                  className="lg:w-[370px] w-full flex-shrink-0"
+                >
+                  {privateEquity.description}
+                </Typography>
+              </AnimatedFadeUp>
             </div>
           </div>
         </div>
       </section>
       <Container className="section-bg " variant="primarySpacing">
         <div>
-          <Typography variant="header-6" className="">
-            {overview.title}
-          </Typography>
-
+          <AnimatedFadeUp>
+            <Typography variant="header-6" className="">
+              {overview.title}
+            </Typography>
+          </AnimatedFadeUp>
           <div className="inprovementSection">
             {overview?.paragraphs?.map((text, index) => (
-              <Typography
-                key={index}
-                className="text-block "
-                variant="para-2"
-                delay={0.4 + index * 0.2}
-              >
-                {text}
-              </Typography>
+              <AnimatedFadeUp delay={0.15}>
+                <Typography
+                  key={index}
+                  className="text-block "
+                  variant="para-2"
+                  delay={0.4 + index * 0.2}
+                >
+                  {text}
+                </Typography>
+              </AnimatedFadeUp>
             ))}
           </div>
         </div>
@@ -168,15 +177,19 @@ export default async function privateEquity({ params }) {
           >
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
               <div className="w-full md:w-[500px] h-full md:px-[36px] px-[16px] pt-[36px] md:pb-[113px] pb-[48px] bg-[var(--color-accent)]  flex flex-col">
-                <Typography variant="header-5" className=" !text-[#F2F2F2] ">
-                  {privateEquityHero.title}
-                </Typography>
-                <Typography
-                  variant="para-2"
-                  className=" !text-[#F7F4EB] mt-[26px] "
-                >
-                  {privateEquityHero.description}
-                </Typography>
+                <AnimatedFadeUp>
+                  <Typography variant="header-5" className=" !text-[#F2F2F2] ">
+                    {privateEquityHero.title}
+                  </Typography>
+                </AnimatedFadeUp>
+                <AnimatedFadeUp delay={0.15}>
+                  <Typography
+                    variant="para-2"
+                    className=" !text-[#F7F4EB] mt-[26px] "
+                  >
+                    {privateEquityHero.description}
+                  </Typography>
+                </AnimatedFadeUp>
                 <Link href="/footprint">
                   <button className="mt-[36px] md:px-[36px] px-[24px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]">
                     {privateEquityHero.button.label}
@@ -192,15 +205,19 @@ export default async function privateEquity({ params }) {
         variant="primarySpacing"
         className="flex flex-col items-center text-center overflow-hidden w-full "
       >
-        <Typography variant="header-6">{title}</Typography>
+        <AnimatedFadeUp>
+          <Typography variant="header-6">{title}</Typography>
+        </AnimatedFadeUp>
         <div className="flex flex-col gap-[56px] items-center text-center">
-          <Typography
-            variant="para-2"
-            className="mt-[32px] lg:w-[480px] w-full"
-            delay={0.4}
-          >
-            {description}
-          </Typography>
+          <AnimatedFadeUp delay={0.15}>
+            <Typography
+              variant="para-2"
+              className="mt-[32px] lg:w-[480px] w-full"
+              delay={0.4}
+            >
+              {description}
+            </Typography>
+          </AnimatedFadeUp>
 
           <Testimonials
             bg={testimonialUI.bg}
@@ -217,15 +234,17 @@ export default async function privateEquity({ params }) {
               {" "}
               {continent}
             </Typography>
-            <div className="relative w-full h-full hidden md:block">
-              <Image
-                src={image}
-                width={183}
-                height={154}
-                className="object-cover w-full h-full"
-                alt=""
-              />
-            </div>
+            <AnimatedFadeUp delay={0.25}>
+              <div className="relative w-full h-full hidden md:block">
+                <Image
+                  src={image}
+                  width={183}
+                  height={154}
+                  className="object-cover w-full h-full"
+                  alt=""
+                />
+              </div>
+            </AnimatedFadeUp>
             <Button
               as="a"
               href={recognition.button.buttonLink}
@@ -242,7 +261,9 @@ export default async function privateEquity({ params }) {
         variant="primarySpacing"
         className=" flex flex-col items-center gap-[16px] !pb-[20px] "
       >
-        <Typography variant="header-6">{relatedInsights.title}</Typography>
+        <AnimatedFadeUp>
+          <Typography variant="header-6">{relatedInsights.title}</Typography>
+        </AnimatedFadeUp>
         <Typography variant="para-2">{relatedInsights.description}</Typography>
       </Container>
 

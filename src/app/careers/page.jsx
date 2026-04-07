@@ -12,6 +12,9 @@ import Image from "next/image";
 import sitecontent from "@/data/sitecontent.json";
 import { useSiteContent } from "@/context/SiteContentProvider";
 import Link from "next/link";
+import { motion, useInView } from "framer-motion";
+import AnimatedFadeUp from "@/components/AnimatedFadeUp";
+
 
 export default function Careers() {
   const sitecontent = useSiteContent();
@@ -32,6 +35,11 @@ export default function Careers() {
        behavior: "smooth",
      });
    };
+   const ref = useRef(null);
+   const isInView = useInView(ref, {
+     once: true,
+     amount: 0.2, 
+   });
     const [open, setOpen] = useState(false);
     const [selectedMode, setSelectedMode] = useState(null);
     const [selectedTime, setSelectedTime] = useState(null);
@@ -86,30 +94,34 @@ export default function Careers() {
         <div className="hero-content  text-left w-full overflow-hidden">
           <div className="flex flex-col">
             <div className="flex flex-col !pr-[48px] w-full  ">
-              <Typography
-                variant="display-3"
-                colorVariant="white"
-                className="w-full"
-              >
-                {careerHero.title}
-              </Typography>
-
-              <Typography
-                variant="para-2"
-                className="!text-white md:mt-[15px] mt-[12px] md:!w-[668px] !w-full max-w-full "
-              >
-                {careerHero.description}
-              </Typography>
-
-              <div className="mt-[26px] flex flex-col md:flex-row items-center gap-[16px]">
-                <Button
-                  variant="primary"
-                  onClick={handleScroll}
-                  className="w-full md:w-auto"
+              <AnimatedFadeUp>
+                <Typography
+                  variant="display-3"
+                  colorVariant="white"
+                  className="w-full"
                 >
-                  {careerHero.buttons[0].label}
-                </Button>
-              </div>
+                  {careerHero.title}
+                </Typography>
+              </AnimatedFadeUp>
+              <AnimatedFadeUp delay={0.15}>
+                <Typography
+                  variant="para-2"
+                  className="!text-white md:mt-[15px] mt-[12px] md:!w-[668px] !w-full max-w-full "
+                >
+                  {careerHero.description}
+                </Typography>
+              </AnimatedFadeUp>
+              <AnimatedFadeUp delay={0.15}>
+                <div className="mt-[26px] flex flex-col md:flex-row items-center gap-[16px]">
+                  <Button
+                    variant="primary"
+                    onClick={handleScroll}
+                    className="w-full md:w-auto"
+                  >
+                    {careerHero.buttons[0].label}
+                  </Button>
+                </div>
+              </AnimatedFadeUp>{" "}
             </div>
             {/* Icons */}
             <div className="md:pr-[200px] pr-[24px]">
@@ -146,7 +158,43 @@ export default function Careers() {
           <Typography variant="para-2">{insightsHero.description}</Typography>
         </Container>
 
-        <div className="md:py-[12px] py-0 md:px-[100px] px-0 w-full borderInsightFilter border bg-[var(--color-background-1)]">
+        <div
+          ref={ref}
+          className="md:py-[12px] py-0 md:px-[100px] px-0 w-full borderInsightFilter  bg-[var(--color-background-1)]"
+        >
+          {/* 🔥 TOP BORDER */}
+          <div className="absolute top-0 left-0 w-full h-[0.5px]">
+            <div className="h-full bg-[rgba(182,153,106,0.5)] w-[25%]" />
+
+            <motion.div
+              className="absolute top-0 left-[25%] h-full origin-left bg-[rgba(182,153,106,0.5)]"
+              style={{ width: "75%" }}
+              initial={{ scaleX: 0 }}
+              animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+              transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1],
+                delay: 0,
+              }}
+            />
+          </div>
+
+          {/* 🔥 BOTTOM BORDER */}
+          <div className="absolute bottom-0 left-0 w-full h-[1px]">
+            <div className="h-full bg-[rgba(182,153,106,0.5)] w-[25%]" />
+
+            <motion.div
+              className="absolute bottom-0 left-[25%] h-full origin-left bg-[rgba(182,153,106,0.5)]"
+              style={{ width: "75%" }}
+              initial={{ scaleX: 0 }}
+              animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+              transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1],
+                delay: 0,
+              }}
+            />
+          </div>
           {/* Desktop Layout (unchanged) */}
           <div className=" flex items-center justify-between w-full md:gap-0 gap-[16px]">
             <div className="px-[16px] py-[12px] border border-[var(--color-accent)] rounded-[500px] w-[463px] flex items-center justify-between ">
@@ -154,7 +202,7 @@ export default function Careers() {
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="text-[var(--color-accent)] focus:outline-none w-full"
+                className="w-full focus:outline-none opacity-[80%] placeholder:!text-[#B6996A] !text-[#B6996A]"
                 placeholder={insightsFilter.searchPlaceholder}
               />
 
@@ -311,68 +359,65 @@ export default function Careers() {
         </Typography>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 bg-[var(--color-background-2)] border-t border-white  ">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 bg-[var(--color-background-2)] overflow-hidden">
+        {/* LEFT */}
         <Container
           variant="sectionSp1"
-          className=" border-b md:border-b-0 md:border-r border-white flex items-center justify-center gap-[16px]"
+          className="flex items-center justify-center gap-[16px]"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-          >
-            <g clipPath="url(#clip0_119_49793)">
-              <path
-                d="M18.3952 13.1277C17.1707 13.1277 15.9684 12.9362 14.8291 12.5597C14.2708 12.3693 13.5845 12.544 13.2438 12.8939L10.995 14.5915C8.38703 13.1994 6.78057 11.5934 5.40745 9.00505L7.0551 6.81484C7.48318 6.38734 7.63672 5.76286 7.45276 5.17693C7.07464 4.03161 6.88255 2.8299 6.88255 1.6049C6.8826 0.719948 6.16266 0 5.27776 0H1.60484C0.719948 0 0 0.719948 0 1.60484C0 11.7481 8.25198 20 18.3952 20C19.2801 20 20.0001 19.2801 20.0001 18.3952V14.7325C20 13.8477 19.2801 13.1277 18.3952 13.1277Z"
-                fill="white"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_119_49793">
-                <rect width="20" height="20" fill="white" />
-              </clipPath>
-            </defs>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M18.3952 13.1277C17.1707 13.1277 15.9684 12.9362 14.8291 12.5597C14.2708 12.3693 13.5845 12.544 13.2438 12.8939L10.995 14.5915C8.38703 13.1994 6.78057 11.5934 5.40745 9.00505L7.0551 6.81484C7.48318 6.38734 7.63672 5.76286 7.45276 5.17693C7.07464 4.03161 6.88255 2.8299 6.88255 1.6049C6.8826 0.719948 6.16266 0 5.27776 0H1.60484C0.719948 0 0 0.719948 0 1.60484C0 11.7481 8.25198 20 18.3952 20C19.2801 20 20.0001 19.2801 20.0001 18.3952V14.7325C20 13.8477 19.2801 13.1277 18.3952 13.1277Z"
+              fill="white"
+            />
           </svg>
+
           <Typography variant="header-2" className="!text-white">
             {contactInfo.items[0].value}
           </Typography>
         </Container>
 
+        {/* RIGHT */}
         <Container
           variant="sectionSp1"
-          className=" flex items-center justify-center gap-[16px]  "
+          className="flex items-center justify-center gap-[16px]"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-          >
-            <g clipPath="url(#clip0_119_49800)">
-              <path
-                d="M11.6714 12.2536C11.1739 12.5853 10.5959 12.7606 10 12.7606C9.40414 12.7606 8.82617 12.5853 8.32859 12.2536L0.133164 6.78977C0.087922 6.75952 0.0435173 6.72803 0 6.69535L0 15.6484C0 16.6748 0.833008 17.4895 1.84113 17.4895H18.1588C19.1853 17.4895 20 16.6565 20 15.6484V6.69531C19.9564 6.72808 19.9119 6.75963 19.8665 6.78992L11.6714 12.2536Z"
-                fill="white"
-              />
-              <path
-                d="M0.783204 5.81487L8.97863 11.2787C9.28887 11.4855 9.64441 11.5889 9.99996 11.5889C10.3555 11.5889 10.7111 11.4855 11.0214 11.2787L19.2168 5.81487C19.7072 5.48812 20 4.94124 20 4.35101C20 3.33612 19.1743 2.5105 18.1595 2.5105H1.84051C0.825665 2.51054 9.68791e-07 3.33616 9.68791e-07 4.35198C-0.000303273 4.64152 0.0710559 4.92662 0.207714 5.18188C0.344372 5.43713 0.54208 5.6546 0.783204 5.81487Z"
-                fill="white"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_119_49800">
-                <rect width="20" height="20" fill="white" />
-              </clipPath>
-            </defs>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M11.6714 12.2536C11.1739 12.5853 10.5959 12.7606 10 12.7606C9.40414 12.7606 8.82617 12.5853 8.32859 12.2536L0.133164 6.78977C0.087922 6.75952 0.0435173 6.72803 0 6.69535L0 15.6484C0 16.6748 0.833008 17.4895 1.84113 17.4895H18.1588C19.1853 17.4895 20 16.6565 20 15.6484V6.69531C19.9564 6.72808 19.9119 6.75963 19.8665 6.78992L11.6714 12.2536Z"
+              fill="white"
+            />
+            <path
+              d="M0.783204 5.81487L8.97863 11.2787C9.28887 11.4855 9.64441 11.5889 9.99996 11.5889C10.3555 11.5889 10.7111 11.4855 11.0214 11.2787L19.2168 5.81487C19.7072 5.48812 20 4.94124 20 4.35101C20 3.33612 19.1743 2.5105 18.1595 2.5105H1.84051C0.825665 2.51054 0 3.33616 0 4.35198C0 4.92662 0.344372 5.43713 0.783204 5.81487Z"
+              fill="white"
+            />
           </svg>
+
           <Typography variant="header-2" className="!text-white">
             {contactInfo.items[1].value}
           </Typography>
         </Container>
-      </div>
 
+        {/* 🔥 TOP LINE */}
+        <motion.div
+          className="absolute top-0 left-0 w-full h-[1px] bg-white origin-center"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        />
+
+        
+
+        {/* 🔥 CENTER VERTICAL LINE */}
+        <motion.div
+          className="hidden md:block absolute top-0 left-1/2 w-[1px] h-full bg-white origin-center"
+          initial={{ scaleY: 0 }}
+          whileInView={{ scaleY: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        />
+      </div>
       <Footer />
     </div>
   );

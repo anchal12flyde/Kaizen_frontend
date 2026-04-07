@@ -395,29 +395,30 @@ function FootprintItem({ item }) {
             {item.title}
           </Typography>
         </AnimatedFadeUp>
-
+        <AnimatedFadeUp >
         <div className="meta-col">
-          <AnimatedFadeUp delay={0.1}>
+         
             <Typography variant="para-3">
               <span className="accent-text">Sector :</span>{" "}
               <span className="para-text">{item.sector}</span>
             </Typography>
-          </AnimatedFadeUp>
+         
 
-          <AnimatedFadeUp delay={0.2}>
+          
             <Typography variant="para-3">
               <span className="accent-text">Year :</span>{" "}
               <span className="para-text">{item.year}</span>
             </Typography>
-          </AnimatedFadeUp>
+         
 
-          <AnimatedFadeUp delay={0.3}>
+         
             <Typography variant="para-3">
               <span className="accent-text">Role :</span>{" "}
               <span className="para-text">{item.role}</span>
             </Typography>
-          </AnimatedFadeUp>
+          
         </div>
+        </AnimatedFadeUp>
       </div>
 
       <div className="desc-wrap">

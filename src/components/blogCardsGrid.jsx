@@ -5,6 +5,7 @@ import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
 import Button from "./ui-kit/button";
 import Link from "next/link";
+import AnimatedFadeUp from "./AnimatedFadeUp";
 
 export default function BlogGridSection({
   posts = [],
@@ -15,14 +16,15 @@ export default function BlogGridSection({
 }) {
   const [visibleCount, setVisibleCount] = useState(initialCount);
   return (
-    <Container
-      variant="primarySpacing"
-      className={`md:!pr-[100px] ${
-        variant === "scroll" ? "!pr-0" : "!pr-[24px]"
-      }`}
-    >
-      <div
-        className={`
+    <AnimatedFadeUp>
+      <Container
+        variant="primarySpacing"
+        className={`md:!pr-[100px] ${
+          variant === "scroll" ? "!pr-0" : "!pr-[24px]"
+        }`}
+      >
+        <div
+          className={`
           ${
             variant === "scroll"
               ? "flex md:grid md:grid-cols-3 overflow-x-auto overflow-y-hidden md:overflow-visible"
@@ -30,33 +32,34 @@ export default function BlogGridSection({
           }
            md:gap-0 gap-[16px] scrollbar-hide
         `}
-      >
-        {posts.slice(0, visibleCount).map((item, index) => (
-          <div
-            key={index}
-            className={`
+        >
+          {posts.slice(0, visibleCount).map((item, index) => (
+            <div
+              key={index}
+              className={`
               ${variant === "scroll" ? "min-w-[90%] md:min-w-0" : "w-full"}
               h-full
             `}
-          >
-            <Link href={`/insights/${item.slug}`}>
-              <BlogCard buttonShow={buttonShow} data={item} />
-            </Link>
-          </div>
-        ))}
-      </div>
-      {buttonShow && visibleCount < posts.length && (
-        <div className="flex justify-center md:pr-0 !pr-[24px]">
-          <Button
-            variant="primary"
-            className="mt-[36px]"
-            onClick={() => setVisibleCount((prev) => prev + 2)}
-          >
-            {buttonText}
-          </Button>
+            >
+              <Link href={`/insights/${item.slug}`}>
+                <BlogCard buttonShow={buttonShow} data={item} />
+              </Link>
+            </div>
+          ))}
         </div>
-      )}
-    </Container>
+        {buttonShow && visibleCount < posts.length && (
+          <div className="flex justify-center md:pr-0 !pr-[24px]">
+            <Button
+              variant="primary"
+              className="mt-[36px]"
+              onClick={() => setVisibleCount((prev) => prev + 2)}
+            >
+              {buttonText}
+            </Button>
+          </div>
+        )}
+      </Container>
+    </AnimatedFadeUp>
   );
 }
 

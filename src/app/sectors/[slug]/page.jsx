@@ -17,6 +17,7 @@ import { useSiteContent } from "@/context/SiteContentProvider";
 import { notFound } from "next/navigation";
 import DigitalTransformationFamiliarSection from "@/components/DigitalTransformationFamiliarSection";
 import Link from "next/link";
+import AnimatedFadeUp from "@/components/AnimatedFadeUp";
 
 export default function Startups({ params }) {
   const { slug } = use(params);
@@ -60,39 +61,47 @@ export default function Startups({ params }) {
         <div className="hero-content md:!right-[100px]">
           <div>
             <div className="md:mb-[26px] mb-[42px]">
-              <Typography variant="display-3" colorVariant="white">
-                {startupHero.title}
-              </Typography>
+              <AnimatedFadeUp>
+                <Typography variant="display-3" colorVariant="white">
+                  {startupHero.title}
+                </Typography>
+              </AnimatedFadeUp>
             </div>
 
             <div className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]">
-              <Typography
-                delay={0.4}
-                variant="header-hero"
-                className="lg:w-[623px] w-full flex-shrink-0 !text-[#F2F2F2]"
-              >
-                {startupHero.description}
-              </Typography>
+              <AnimatedFadeUp delay={0.15}>
+                <Typography
+                  delay={0.4}
+                  variant="header-hero"
+                  className="lg:w-[623px] w-full flex-shrink-0 !text-[#F2F2F2]"
+                >
+                  {startupHero.description}
+                </Typography>
+              </AnimatedFadeUp>
             </div>
           </div>
         </div>
       </section>
       <Container className="section-bg !bg-[#B6996A]" variant="primarySpacing">
         <div>
-          <Typography variant="header-6" className="!text-white">
-            {ourStory.title}
-          </Typography>
+          <AnimatedFadeUp>
+            <Typography variant="header-6" className="!text-white">
+              {ourStory.title}
+            </Typography>
+          </AnimatedFadeUp>
 
           <div className="inprovementSection">
             {ourStory.paragraphs.map((text, index) => (
-              <Typography
-                key={index}
-                className="text-block !text-[#F7F4EB]"
-                variant="para-2"
-                delay={0.4 + index * 0.2}
-              >
-                {text}
-              </Typography>
+              <AnimatedFadeUp delay={0.15}>
+                <Typography
+                  key={index}
+                  className="text-block !text-[#F7F4EB]"
+                  variant="para-2"
+                  delay={0.4 + index * 0.2}
+                >
+                  {text}
+                </Typography>
+              </AnimatedFadeUp>
             ))}
           </div>
         </div>
@@ -101,13 +110,17 @@ export default function Startups({ params }) {
         variant="primarySpacing"
         className=" flex flex-col md:gap-[16px] gap-[36px] items-center bg-[#F7F4EB]    "
       >
-        <Typography variant="header-6">{overview.title}</Typography>
-        <Typography
-          variant="para-2"
-          className="md:w-[716px] w-full text-center "
-        >
-          {overview.description}
-        </Typography>
+        <AnimatedFadeUp>
+          <Typography variant="header-6">{overview.title}</Typography>
+        </AnimatedFadeUp>
+        <AnimatedFadeUp delay={0.15}>
+          <Typography
+            variant="para-2"
+            className="md:w-[716px] w-full text-center "
+          >
+            {overview.description}
+          </Typography>
+        </AnimatedFadeUp>
       </Container>
 
       <AdvisorySection sections={advisorySections} />
@@ -128,7 +141,9 @@ export default function Startups({ params }) {
         variant="sectionSp1"
         className=" flex flex-col items-center  text-center gap-[16px] !pb-[20px] "
       >
-        <Typography variant="header-6">{relatedInsights.title}</Typography>
+        <AnimatedFadeUp>
+          <Typography variant="header-6">{relatedInsights.title}</Typography>
+        </AnimatedFadeUp>
         <Typography variant="para-2">{relatedInsights.description}</Typography>
       </Container>
 
@@ -159,15 +174,18 @@ export default function Startups({ params }) {
           >
             <div className=" !w-full border border-[var(--color-accent)] p-[8px]  ">
               <div className="w-full md:w-[500px] h-full md:px-[36px] px-[16px]  pt-[36px] md:pb-[63px] pb-[48px] bg-[var(--color-accent)]  flex flex-col">
-                <Typography variant="header-5" className=" !text-[#F2F2F2] ">
-                  {privateEquityHero.title}
-                </Typography>
+                <AnimatedFadeUp >
+                  <Typography variant="header-5" className=" !text-[#F2F2F2] ">
+                    {privateEquityHero.title}
+                  </Typography>
+                </AnimatedFadeUp>
+                <AnimatedFadeUp  delay={0.15}>
                 <Typography
                   variant="para-2"
                   className=" !text-[#F7F4EB] mt-[26px] "
                 >
                   {privateEquityHero.description}
-                </Typography>
+                </Typography></AnimatedFadeUp>
 
                 <div className="mt-[36px] mb-[26px] flex flex-col gap-[16px]">
                   <Typography variant="para-2" className="!text-white">

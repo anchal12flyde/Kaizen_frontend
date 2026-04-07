@@ -6,6 +6,7 @@ import Button from './ui-kit/button';
 import Image from 'next/image';
 import Testimonials from './ui-kit/testimonials';
 import { useSiteContent } from "@/context/SiteContentProvider";
+import AnimatedFadeUp from './AnimatedFadeUp';
 
 export default function Recognization({ data }) {
   const sitecontent = useSiteContent(); 
@@ -18,15 +19,19 @@ export default function Recognization({ data }) {
       variant="primarySpacing"
       className="flex flex-col items-center text-center overflow-hidden w-full"
     >
-      <Typography variant="header-6">{title}</Typography>
+      <AnimatedFadeUp>
+        <Typography variant="header-6">{title}</Typography>
+      </AnimatedFadeUp>
       <div className="flex flex-col gap-[56px] items-center text-center">
-        <Typography
-          variant="para-2"
-          className="mt-[32px] md:w-[480px] w-full"
-          delay={0.4}
-        >
-          {description}
-        </Typography>
+        <AnimatedFadeUp delay={0.15}>
+          <Typography
+            variant="para-2"
+            className="mt-[32px] md:w-[480px] w-full"
+            delay={0.4}
+          >
+            {description}
+          </Typography>
+        </AnimatedFadeUp>
 
         <Testimonials
           bg={testimonialUI.bg}
@@ -39,31 +44,34 @@ export default function Recognization({ data }) {
         />
 
         <div className="flex flex-col gap-[74px]">
-          <Typography variant="para-2" delay={0.6}>
-            {" "}
-            {continent}
-          </Typography>
-          <div className="relative w-full h-full hidden md:block">
-            <Image
-              src={image}
-              width={183}
-              height={154}
-              className="object-cover w-full h-full"
-              alt=""
-            />
-          </div>
-
-          
-     
-            <Button
-                       as="a"
-                       href={recognition.button.buttonLink}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       variant="primary"
-                     >
+          <AnimatedFadeUp>
+            <Typography variant="para-2" delay={0.6}>
+              {" "}
+              {continent}
+            </Typography>
+          </AnimatedFadeUp>
+          <AnimatedFadeUp delay={0.15}>
+            <div className="relative w-full h-full hidden md:block">
+              <Image
+                src={image}
+                width={183}
+                height={154}
+                className="object-cover w-full h-full"
+                alt=""
+              />
+            </div>
+          </AnimatedFadeUp>
+          <AnimatedFadeUp delay={0.25}>
+          <Button
+            as="a"
+            href={recognition.button.buttonLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="primary"
+          >
             {button.label}
           </Button>
+          </AnimatedFadeUp>
         </div>
       </div>
     </Container>

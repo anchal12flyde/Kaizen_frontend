@@ -4,6 +4,7 @@ import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
 import sitecontent from "@/data/sitecontent.json";
 import { useSiteContent } from "@/context/SiteContentProvider";
+import AnimatedFadeUp from "./AnimatedFadeUp";
 
 export default function KaizenPhilosophySection() {
 
@@ -17,25 +18,31 @@ export default function KaizenPhilosophySection() {
     >
       {/* Left */}
       <div className="shrink-0">
-        <Typography variant="header-6" className="!text-white">
-          {philosophy.leftTitle.split("\n").map((line, i) => (
-            <span key={i}>
-              {line}
-              <br />
-            </span>
-          ))}
-        </Typography>
+        <AnimatedFadeUp>
+          <Typography variant="header-6" className="!text-white">
+            {philosophy.leftTitle.split("\n").map((line, i) => (
+              <span key={i}>
+                {line}
+                <br />
+              </span>
+            ))}
+          </Typography>
+        </AnimatedFadeUp>
       </div>
 
       {/* Right */}
       <div className="flex flex-col md:gap-[26px] gap-[16px]">
-        <Typography variant="header-1" className="!text-white">
-          {philosophy.right.heading}
-        </Typography>
+        <AnimatedFadeUp delay={0.2}>
+          <Typography variant="header-1" className="!text-white">
+            {philosophy.right.heading}
+          </Typography>
+        </AnimatedFadeUp>
 
-        <Typography variant="para-2" className="!text-white">
-          {philosophy.right.description}
-        </Typography>
+        <AnimatedFadeUp delay={0.4}>
+          <Typography variant="para-2" className="!text-white">
+            {philosophy.right.description}
+          </Typography>
+        </AnimatedFadeUp>
       </div>
     </Container>
   );

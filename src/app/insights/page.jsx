@@ -11,7 +11,8 @@ import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 import sitecontent from "@/data/sitecontent.json";
 import { useSiteContent } from "@/context/SiteContentProvider";
-
+import { motion, useInView } from "framer-motion";
+import AnimatedFadeUp from "@/components/AnimatedFadeUp";
 
 
 export default function Insights() {
@@ -27,7 +28,9 @@ export default function Insights() {
   const { title, enter, form } = letsConnect;
   const { industries } = privateEquityHero;
     const [email, setEmail] = useState("");
-  
+    const ref = useRef(null);
+
+   
     const handleSubmit = (e) => {
       e.preventDefault();
 
@@ -73,13 +76,53 @@ export default function Insights() {
         variant="sectionSp3"
         className="md:!pt-[156px] !pt-[160px] flex md:flex-row flex-col items-start gap-[16px] md:justify-between "
       >
-        <Typography variant="display-3">{insightsHero.title}</Typography>
-        <Typography variant="para-2" className="w-full md:w-[533px]">
-          {insightsHero.description}
-        </Typography>
+        <AnimatedFadeUp>
+          <Typography variant="display-3">{insightsHero.title}</Typography>
+        </AnimatedFadeUp>
+        <AnimatedFadeUp delay={0.15}>
+          <Typography variant="para-2" className="w-full md:w-[533px]">
+            {insightsHero.description}
+          </Typography>
+        </AnimatedFadeUp>
       </Container>
 
-      <div className="md:py-[12px] py-[12px] md:px-[100px] px-[21px] w-full borderInsightFilter border">
+      <div
+        ref={ref}
+        className="md:py-[12px] py-[12px] md:px-[100px] px-[21px] w-full borderInsightFilter "
+      >
+        {/* 🔥 TOP BORDER */}
+        <div className="absolute top-0 left-0 w-full h-[1px]">
+          <div className="h-full bg-[rgba(182,153,106,0.5)] w-[25%]" />
+
+          <motion.div
+            className="absolute top-0 left-[25%] h-full origin-left bg-[rgba(182,153,106,0.5)]"
+            style={{ width: "75%" }}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{
+              duration: 1.2,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0,
+            }}
+          />
+        </div>
+
+        {/* 🔥 BOTTOM BORDER */}
+        <div className="absolute bottom-0 left-0 w-full h-[1px]">
+          <div className="h-full bg-[rgba(182,153,106,0.5)] w-[25%]" />
+
+          <motion.div
+            className="absolute bottom-0 left-[25%] h-full origin-left bg-[rgba(182,153,106,0.5)]"
+            style={{ width: "75%" }}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{
+              duration: 1.2,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0,
+            }}
+          />
+        </div>
         {/* Desktop Layout (unchanged) */}
         <div className=" flex items-center justify-between w-full md:gap-0 gap-[16px]">
           <div className="px-[16px] py-[12px] border border-[var(--color-accent)] rounded-[500px] w-[463px] flex items-center justify-between ">
@@ -230,44 +273,97 @@ export default function Insights() {
 
         {/* Content */}
         <>
-          <div className=" relative flex justify-center z-10 ">
-            <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
-              <div className="w-full md:w-[500px] md:h-[500px] h-full  p-[36px] bg-[var(--color-accent)]  flex flex-col">
-                <Typography
-                  variant="header-5"
-                  className=" !text-[var(--color-para-2)] "
-                >
-                  {privateEquityHero.title}
-                </Typography>
-                <Typography
-                  variant="para-2"
-                  className=" !text-[var(--color-para-2)] mt-[26px] "
-                >
-                  {privateEquityHero.description}
-                </Typography>
+          <AnimatedFadeUp>
+            <div className=" relative flex justify-center z-10 ">
+              <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
+                <div className="w-full md:w-[500px] md:h-[500px] h-full  p-[36px] bg-[var(--color-accent)]  flex flex-col">
+                  <AnimatedFadeUp>
+                    <Typography
+                      variant="header-5"
+                      className=" !text-[var(--color-para-2)] "
+                    >
+                      {privateEquityHero.title}
+                    </Typography>
+                  </AnimatedFadeUp>
+                  <AnimatedFadeUp delay={0.15}>
+                    <Typography
+                      variant="para-2"
+                      className=" !text-[var(--color-para-2)] mt-[26px] "
+                    >
+                      {privateEquityHero.description}
+                    </Typography>
+                  </AnimatedFadeUp>
 
-                <div className="mt-[57px] flex flex-col gap-[16px]">
-                  <Typography
-                    variant="header-4"
-                    className="!text-[var(--color-para-2)]"
-                  >
-                    {privateEquityHero.subText}
-                  </Typography>
-                  <div className="relative w-full">
-                    {/* Dropdown container when open */}
-                    {isOpen ? (
-                      <div
-                        className="absolute top-full left-0 w-full shadow-md px-[8px]"
-                        style={{
-                          boxShadow: "1px 0px 8px 1px #00000033",
-                          backgroundColor: "#B6996A",
-                          zIndex: 10,
-                        }}
-                      >
-                        {/* Trigger inside dropdown */}
+                  <div className="mt-[57px] flex flex-col gap-[16px]">
+                    <Typography
+                      variant="header-4"
+                      className="!text-[var(--color-para-2)]"
+                    >
+                      {privateEquityHero.subText}
+                    </Typography>
+                    <div className="relative w-full">
+                      {/* Dropdown container when open */}
+                      {isOpen ? (
+                        <div
+                          className="absolute top-full left-0 w-full shadow-md px-[8px]"
+                          style={{
+                            boxShadow: "1px 0px 8px 1px #00000033",
+                            backgroundColor: "#B6996A",
+                            zIndex: 10,
+                          }}
+                        >
+                          {/* Trigger inside dropdown */}
+                          <div
+                            onClick={toggleDropdown}
+                            className="w-full h-[32px] border-b border-white flex items-center justify-between cursor-pointer"
+                          >
+                            <div className="min-w-0 flex-1">
+                              <Typography
+                                variant="para-2"
+                                className="!text-white"
+                              >
+                                <span className="block w-full truncate">
+                                  {selected ||
+                                    privateEquityHero.selectIndustryText}
+                                </span>
+                              </Typography>
+                            </div>
+                            <svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              className="text-[var(--color-para-2)] transition-transform duration-300"
+                              style={{ transform: "rotate(180deg)" }} // Arrow flips when open
+                            >
+                              <path
+                                d="M6 9L12 15L18 9"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </div>
+
+                          {/* Options */}
+                          <div className="mt-2">
+                            {industries.map((industry) => (
+                              <div
+                                key={industry}
+                                onClick={() => selectIndustry(industry)}
+                                className="px-[12px] py-[6px] hover:bg-white/20 cursor-pointer text-white "
+                              >
+                                {industry}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        // Trigger when closed
                         <div
                           onClick={toggleDropdown}
-                          className="w-full h-[32px] border-b border-white flex items-center justify-between cursor-pointer"
+                          className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0 cursor-pointer px-2"
                         >
                           <div className="min-w-0 flex-1">
                             <Typography
@@ -280,13 +376,14 @@ export default function Insights() {
                               </span>
                             </Typography>
                           </div>
+
                           <svg
                             width="20"
                             height="20"
                             viewBox="0 0 24 24"
                             fill="none"
-                            className="text-[var(--color-para-2)] transition-transform duration-300"
-                            style={{ transform: "rotate(180deg)" }} // Arrow flips when open
+                            className="text-white transition-transform duration-300"
+                            style={{ transform: "rotate(0deg)" }}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -297,77 +394,33 @@ export default function Insights() {
                             />
                           </svg>
                         </div>
-
-                        {/* Options */}
-                        <div className="mt-2">
-                          {industries.map((industry) => (
-                            <div
-                              key={industry}
-                              onClick={() => selectIndustry(industry)}
-                              className="px-[12px] py-[6px] hover:bg-white/20 cursor-pointer text-white "
-                            >
-                              {industry}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      // Trigger when closed
-                      <div
-                        onClick={toggleDropdown}
-                        className="w-full h-[32px] border-b border-white flex items-center justify-between md:pr-[16px] pr-0 cursor-pointer px-2"
-                      >
-                        <div className="min-w-0 flex-1">
-                          <Typography variant="para-2" className="!text-white">
-                            <span className="block w-full truncate">
-                              {selected || privateEquityHero.selectIndustryText}
-                            </span>
-                          </Typography>
-                        </div>
-
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          className="text-white transition-transform duration-300"
-                          style={{ transform: "rotate(0deg)" }}
-                        >
-                          <path
-                            d="M6 9L12 15L18 9"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
+                  {showEmail && (
+                    <div className="mt-[24px] w-full">
+                      <Typography variant="para-2" className="!text-white">
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="Enter your email"
+                          className="inputs w-full h-[40px] px-2 border-b border-white bg-transparent text-white outline-none placeholder:text-white"
+                        />
+                      </Typography>
+                    </div>
+                  )}
+                  <button
+                    onClick={handleSubmit}
+                    className=" md:px-[36px] px-[24px] mt-[32px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]"
+                  >
+                    {privateEquityHero.button.label}
+                  </button>
                 </div>
-                {showEmail && (
-                  <div className="mt-[24px] w-full">
-                    <Typography variant="para-2" className="!text-white">
-                      <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter your email"
-                        className="inputs w-full h-[40px] px-2 border-b border-white bg-transparent text-white outline-none placeholder:text-white"
-                      />
-                    </Typography>
-                  </div>
-                )}
-                <button
-                  onClick={handleSubmit}
-                  className=" md:px-[36px] px-[24px] mt-[32px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]"
-                >
-                  {privateEquityHero.button.label}
-                </button>
+                <div></div>
               </div>
-              <div></div>
             </div>
-          </div>
+          </AnimatedFadeUp>
         </>
       </Container>
       <Footer />

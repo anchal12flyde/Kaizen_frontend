@@ -4,6 +4,7 @@ import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import AnimatedFadeUp from "./AnimatedFadeUp";
 
 function GuideItem({ item }) {
   const ref = useRef(null);
@@ -31,24 +32,27 @@ function GuideItem({ item }) {
         />
       </div>
 
-      {/* Icon */}
-      <div className="w-[100px] h-[100px] flex items-center justify-center order-1 md:order-2">
-        <img
-          src={item.icon}
-          alt="image"
-          className="w-full h-full object-contain"
-        />
-      </div>
+      <AnimatedFadeUp>
+        <div className="w-[100px] h-[100px] flex items-center justify-center order-1 md:order-2">
+          <img
+            src={item.icon}
+            alt="image"
+            className="w-full h-full object-contain"
+          />
+        </div>
+      </AnimatedFadeUp>
 
       {/* Content */}
-      <div className="flex flex-col gap-[12px] order-2 md:order-1">
-        <Typography variant="header-4" className="!text-white">
-          {item.title}
-        </Typography>
-        <Typography variant="para-2" className="!text-white">
-          {item.desc}
-        </Typography>
-      </div>
+      <AnimatedFadeUp delay={ 0.15}>
+        <div className="flex flex-col gap-[12px] order-2 md:order-1">
+          <Typography variant="header-4" className="!text-white">
+            {item.title}
+          </Typography>
+          <Typography variant="para-2" className="!text-white">
+            {item.desc}
+          </Typography>
+        </div>
+      </AnimatedFadeUp> 
     </div>
   );
 }
@@ -60,9 +64,11 @@ export default function GuidesSection({ data }) {
     <Container variant="primarySpacing" className="bg-[#0A193A]">
       <div className="flex flex-col md:gap-[96px] gap-[56px]">
         {/* Heading */}
-        <Typography variant="header-6" className="!text-white">
-          {title}
-        </Typography>
+        <AnimatedFadeUp>
+          <Typography variant="header-6" className="!text-white">
+            {title}
+          </Typography>
+        </AnimatedFadeUp>
 
         {/* List */}
         <div className="flex md:gap-[16px] gap-[2px] flex-col">

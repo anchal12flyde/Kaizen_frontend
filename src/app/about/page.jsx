@@ -15,6 +15,7 @@ import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
 import { useSiteContent } from "@/context/SiteContentProvider";
+import AnimatedFadeUp from "@/components/AnimatedFadeUp";
 
 export default function About() {
   const sitecontent = useSiteContent(); 
@@ -81,6 +82,7 @@ export default function About() {
         className="relative w-full h-[700px] overflow-hidden"
       >
         {/* Background Image */}
+
         <div className="absolute inset-0 z-0">
           <Image
             src={privateEquityHero.bgImage}
@@ -98,26 +100,31 @@ export default function About() {
           <div className=" relative flex justify-center z-10 ">
             <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
               <div className="w-full md:w-[500px] md:h-[500px] h-full  p-[36px] bg-[var(--color-accent)]  flex flex-col">
-                <Typography
-                  variant="header-5"
-                  className=" !text-[var(--color-para-2)] "
-                >
-                  {privateEquityHero.title}
-                </Typography>
-                <Typography
-                  variant="para-2"
-                  className=" !text-[var(--color-para-2)] mt-[26px] "
-                >
-                  {privateEquityHero.description}
-                </Typography>
-
+                <AnimatedFadeUp>
+                  <Typography
+                    variant="header-5"
+                    className=" !text-[var(--color-para-2)] "
+                  >
+                    {privateEquityHero.title}
+                  </Typography>
+                </AnimatedFadeUp>
+                <AnimatedFadeUp delay={0.15}>
+                  <Typography
+                    variant="para-2"
+                    className=" !text-[var(--color-para-2)] mt-[26px] "
+                  >
+                    {privateEquityHero.description}
+                  </Typography>
+                </AnimatedFadeUp>
                 <div className="mt-[57px] flex flex-col gap-[16px]">
+                <AnimatedFadeUp delay={0.15}>
                   <Typography
                     variant="header-4"
                     className="!text-[var(--color-para-2)]"
                   >
                     {privateEquityHero.subText}
                   </Typography>
+                  </AnimatedFadeUp>
                   <div className="relative w-full">
                     {/* Dropdown container when open */}
                     {isOpen ? (

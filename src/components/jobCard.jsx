@@ -4,7 +4,23 @@ import { Download, Share2, MapPin, Briefcase } from "lucide-react";
 import { Container } from "./ui-kit/spacing";
 import Typography from "./ui-kit/typography";
 import { jsPDF } from "jspdf";
+import { motion } from "framer-motion";
 
+
+const fadeInUp = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 export default function JobCard({ job }) {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -60,7 +76,13 @@ export default function JobCard({ job }) {
     }
   };
   return (
-    <div className="borderCareersCard py-[36px] md:px-[36px] px-[12px]">
+    <motion.div
+    variants={fadeInUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+    className="borderCareersCard py-[36px] md:px-[36px] px-[12px]"
+  >
       {/* Header */}
       <div className="flex justify-between items-start">
         <div className=" flex flex-col gap-[16px] ">
@@ -160,6 +182,6 @@ export default function JobCard({ job }) {
           {job.ctaText}
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }

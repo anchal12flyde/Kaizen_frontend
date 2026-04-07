@@ -8,6 +8,7 @@ import Typography from "./ui-kit/typography";
 
 import { getSiteContent } from "@/lib/siteContent";
 import Link from "next/link";
+import AnimatedFadeUp from "./AnimatedFadeUp";
 
 
 
@@ -49,14 +50,16 @@ export default function EndToEndServices() {
       <div>
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[96px]">
-          <Typography variant="header-6" className="!text-white w-[250px]">
-            {heading.title}
-           
-          </Typography>
-
+          <AnimatedFadeUp>
+            <Typography variant="header-6" className="!text-white w-[250px]">
+              {heading.title}
+            </Typography>
+          </AnimatedFadeUp>
+          <AnimatedFadeUp delay={0.15}>
           <Typography variant="para-2" className="!text-white">
             {heading.description}
-          </Typography>
+            </Typography>
+          </AnimatedFadeUp>
         </div>
 
         {/* Grid */}

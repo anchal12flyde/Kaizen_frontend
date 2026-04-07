@@ -11,7 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import sitecontent from "@/data/sitecontent.json";
 import { useSiteContent } from "@/context/SiteContentProvider";
-
+import AnimatedFadeUp from "@/components/AnimatedFadeUp";
 
 export default function ServicesListing () {
   const sitecontent = useSiteContent(); 
@@ -68,16 +68,19 @@ const { cardsData } = pevcPractice;
             <div className=" flex flex-col md:gap-[100px] gap-[80px] ">
               {/* Heading */}
               <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-[96px] gap-[36px]">
-                <Typography
-                  variant="header-6"
-                  className="!text-white w-[250px]"
-                >
-                  {pevcPractice.topContent.title}
-                </Typography>
-
-                <Typography variant="para-2" className="!text-white">
-                  {pevcPractice.topContent.subtitle}
-                </Typography>
+                <AnimatedFadeUp>
+                  <Typography
+                    variant="header-6"
+                    className="!text-white w-[250px]"
+                  >
+                    {pevcPractice.topContent.title}
+                  </Typography>
+                </AnimatedFadeUp>
+                <AnimatedFadeUp delay={0.15}>
+                  <Typography variant="para-2" className="!text-white">
+                    {pevcPractice.topContent.subtitle}
+                  </Typography>
+                </AnimatedFadeUp>
               </div>
 
               {/* List */}
@@ -116,29 +119,34 @@ const { cardsData } = pevcPractice;
                         {/* Content */}
                         <div className="flex md:flex-row flex-col md:gap-[96px] gap-[16px]">
                           <div className="flex justify-between items-center md:block md:w-auto w-full">
-                            <Typography
-                              variant="header-1"
-                              className="!text-white w-[250px]"
-                            >
-                              {item.title}
-                            </Typography>
-
-                            <div className="md:hidden w-[30px] h-[30px] cursor-pointer">
-                              <img
-                                src={item.icon}
-                                className="h-full w-full object-contain transition-transform duration-300 group-hover:rotate-[-45deg]"
-                                alt={item.title}
-                              />
-                            </div>
+                            <AnimatedFadeUp>
+                              <Typography
+                                variant="header-1"
+                                className="!text-white w-[250px]"
+                              >
+                                {item.title}
+                              </Typography>
+                            </AnimatedFadeUp>
+                            <AnimatedFadeUp delay={0.15}>
+                              <div className="md:hidden w-[30px] h-[30px] cursor-pointer">
+                                <img
+                                  src={item.icon}
+                                  className="h-full w-full object-contain transition-transform duration-300 group-hover:rotate-[-45deg]"
+                                  alt={item.title}
+                                />
+                              </div>
+                            </AnimatedFadeUp>
                           </div>
 
                           {/* Description */}
-                          <Typography
-                            variant="para-2"
-                            className="!text-white w-[316px]"
-                          >
-                            {item.desc}
-                          </Typography>
+                          <AnimatedFadeUp delay={0.25}>
+                            <Typography
+                              variant="para-2"
+                              className="!text-white w-[316px]"
+                            >
+                              {item.desc}
+                            </Typography>
+                          </AnimatedFadeUp>
                         </div>
 
                         {/* Right Icon */}
@@ -177,30 +185,36 @@ const { cardsData } = pevcPractice;
           <div className="hero-overlay"></div>
 
           {/* Content */}
-          <>
+          <> <AnimatedFadeUp>
             <div className=" relative flex justify-center z-10 ">
               <div className=" !w-full border border-[var(--color-accent)] p-[8px] h-full  ">
                 <div className="w-full md:w-[500px] md:h-[500px] h-full  p-[36px] bg-[var(--color-accent)]  flex flex-col">
-                  <Typography
-                    variant="header-5"
-                    className=" !text-[var(--color-para-2)] "
-                  >
-                    {privateEquityHero.title}
-                  </Typography>
-                  <Typography
-                    variant="para-2"
-                    className=" !text-[var(--color-background-1)] mt-[26px] "
-                  >
-                    {privateEquityHero.description}
-                  </Typography>
+                  <AnimatedFadeUp>
+                    <Typography
+                      variant="header-5"
+                      className=" !text-[var(--color-para-2)] "
+                    >
+                      {privateEquityHero.title}
+                    </Typography>
+                  </AnimatedFadeUp>
+                  <AnimatedFadeUp delay={0.15}>
+                    <Typography
+                      variant="para-2"
+                      className=" !text-[var(--color-background-1)] mt-[26px] "
+                    >
+                      {privateEquityHero.description}
+                    </Typography>
+                  </AnimatedFadeUp>
 
                   <div className="mt-[57px] flex flex-col gap-[16px]">
-                    <Typography
-                      variant="header-4"
-                      className="!text-[var(--color-para-2)]"
-                    >
-                      {privateEquityHero.subText}
-                    </Typography>
+                 
+                      <Typography
+                        variant="header-4"
+                        className="!text-[var(--color-para-2)]"
+                      >
+                        {privateEquityHero.subText}
+                      </Typography>
+                   
                     <div className="relative w-full">
                       {/* Dropdown container when open */}
                       {isOpen ? (
@@ -321,7 +335,9 @@ const { cardsData } = pevcPractice;
                 <div></div>
               </div>
             </div>
+            </AnimatedFadeUp>
           </>
+          
         </Container>
         <Footer />
       </div>

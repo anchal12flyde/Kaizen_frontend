@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Typography from "./ui-kit/typography";
 import { Container } from "./ui-kit/spacing";
 import Image from "next/image";
+import AnimatedFadeUp from "./AnimatedFadeUp";
 
 const container = {
   hidden: {},
@@ -66,28 +67,16 @@ export default function PEVCPracticeSection({
         <div className="flex  gap-[126px] ">
           {/* Top Content */}
           <div className="flex flex-col gap-[16px] md:px-0 px-[24px]">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="shrink-0"
-            >
+            <AnimatedFadeUp>
               <Typography variant="header-6" className="!text-white  ">
                 {topContent?.title}
               </Typography>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-            >
+            </AnimatedFadeUp>
+            <AnimatedFadeUp delay={0.15}>
               <Typography variant="para-2" className="!text-white">
                 {topContent?.subtitle}
               </Typography>
-            </motion.div>
+            </AnimatedFadeUp>
           </div>
 
           {/* Cards */}
@@ -147,28 +136,16 @@ export default function PEVCPracticeSection({
         <div className="flex md:flex-row flex-col md:gap-[126px] gap-[84px] ">
           {/* Top Content */}
           <div className="flex flex-col gap-[16px] md:px-0 px-[24px] ">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="shrink-0"
-            >
+            <AnimatedFadeUp>
               <Typography variant="header-6" className="!text-white  ">
                 {topContent?.title}
               </Typography>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-            >
+            </AnimatedFadeUp>
+            <AnimatedFadeUp delay={0.15}>
               <Typography variant="para-2" className="!text-white">
                 {topContent?.subtitle}
               </Typography>
-            </motion.div>
+            </AnimatedFadeUp>
           </div>
 
           {/* Cards */}
@@ -211,30 +188,16 @@ export default function PEVCPracticeSection({
         <div className="flex flex-col md:gap-[96px] gap-[56px]">
           {/* Top Content */}
           <div className="flex md:flex-row flex-col justify-between gap-[36px] md:px-0 px-[24px] ">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="shrink-0"
-            >
+            <AnimatedFadeUp >
               <Typography variant="header-6" className="!text-white  ">
                 {topContent?.title}
               </Typography>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="md:w-[716px] 
-              w-full"
-            >
-              <Typography variant="para-2" className="!text-white">
-                {topContent?.subtitle}
-              </Typography>
-            </motion.div>
+            </AnimatedFadeUp>
+<AnimatedFadeUp delay={0.15}>
+            <Typography variant="para-2" className="!text-white">
+              {topContent?.subtitle}
+            </Typography>
+            </AnimatedFadeUp>
           </div>
 
           {/* Cards */}
