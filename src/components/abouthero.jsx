@@ -4,6 +4,7 @@ import Image from "next/image";
 import Typography from "./ui-kit/typography";
 import Button from "./ui-kit/button";
 import Link from "next/link";
+import AnimatedFadeUp from "./AnimatedFadeUp";
 
 export default function AboutHeroSection({
   bgImage,
@@ -39,65 +40,75 @@ export default function AboutHeroSection({
         }`}
       >
         <div className="flex flex-col">
-          <Typography
-            variant="display-3"
-            colorVariant="white"
-            className="w-full"
-          >
-            {title}
-          </Typography>
-          <div className="md:w-[668px] w-full">
-            {description && (
-              <Typography
-                variant="para-2"
-                className="!text-white md:mt-[15px] mt-[12px]"
-              >
-                {description}
-              </Typography>
-            )}
-          </div>
+          {/* Title */}
+          <AnimatedFadeUp>
+            <Typography
+              variant="display-3"
+              colorVariant="white"
+              className="w-full"
+            >
+              {title}
+            </Typography>
+          </AnimatedFadeUp>
 
+          {/* Description */}
+          {description && (
+            <AnimatedFadeUp delay={0.2}>
+              <div className="md:w-[668px] w-full">
+                <Typography
+                  variant="para-2"
+                  className="!text-white md:mt-[15px] mt-[12px]"
+                >
+                  {description}
+                </Typography>
+              </div>
+            </AnimatedFadeUp>
+          )}
+
+          {/* Buttons */}
           {buttons?.length > 0 && (
-            <div className="mt-[26px] flex md:flex-row flex-col items-center gap-[16px]">
-              {buttons.map((btn, index) => {
-                const isHashLink = btn.href?.startsWith("#");
+            <AnimatedFadeUp delay={0.4}>
+              <div className="mt-[26px] flex md:flex-row flex-col items-center gap-[16px]">
+                {buttons.map((btn, index) => {
+                  const isHashLink = btn.href?.startsWith("#");
 
-                const handleScroll = (e) => {
-                  if (!isHashLink) return;
+                  const handleScroll = (e) => {
+                    if (!isHashLink) return;
 
-                  e.preventDefault();
+                    e.preventDefault();
 
-                  const targetId = btn.href.replace("#", "");
-                  const el = document.getElementById(targetId);
+                    const targetId = btn.href.replace("#", "");
+                    const el = document.getElementById(targetId);
 
-                  if (el) {
-                    const headerOffset = 120;
+                    if (el) {
+                      const headerOffset = 120;
 
-                    const elementPosition = el.getBoundingClientRect().top;
-                    const offsetPosition =
-                      elementPosition + window.scrollY - headerOffset;
+                      const elementPosition = el.getBoundingClientRect().top;
+                      const offsetPosition =
+                        elementPosition + window.scrollY - headerOffset;
 
-                    window.scrollTo({
-                      top: offsetPosition,
-                      behavior: "smooth",
-                    });
-                  }
-                };
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth",
+                      });
+                    }
+                  };
 
-                return (
-                  <Button
-                    key={index}
-                    aschild
-                    variant={btn.variant || "primary"}
-                    className="w-full md:w-auto"
-                  >
-                    <Link href={btn.href || "#"} onClick={handleScroll}>
-                      {btn.label}
-                    </Link>
-                  </Button>
-                );
-              })}
-            </div>
+                  return (
+                    <Button
+                      key={index}
+                      aschild
+                      variant={btn.variant || "primary"}
+                      className="w-full md:w-auto"
+                    >
+                      <Link href={btn.href || "#"} onClick={handleScroll}>
+                        {btn.label}
+                      </Link>
+                    </Button>
+                  );
+                })}
+              </div>
+            </AnimatedFadeUp>
           )}
         </div>
       </div>

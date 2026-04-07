@@ -10,6 +10,8 @@ import Button from "@/components/ui-kit/button";
 import TransactionCard from "@/components/ui-kit/transactionCard";
 import sitecontent from "@/data/sitecontent.json";
 import { useSiteContent } from "@/context/SiteContentProvider";
+import AnimatedFadeUp from "@/components/AnimatedFadeUp";
+
 
 export default function page() {
   const sitecontent = useSiteContent();
@@ -101,30 +103,32 @@ export default function page() {
         {/* Content */}
         <div className="hero-content right-[50px]">
           <div>
-            <div className="mb-[42px]">
+            <AnimatedFadeUp className="mb-[42px]">
               <Typography variant="display-3" colorVariant="white">
                 {hero.title}
               </Typography>
-            </div>
+            </AnimatedFadeUp>
 
             <div className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]">
-              <Typography
-                variant="header-hero"
-                colorVariant="white"
-                className="lg:w-[623px] w-full flex-shrink-0"
-                delay={0.4}
-              >
-                {hero.heading}
-              </Typography>
+              <AnimatedFadeUp delay={0.15}>
+                <Typography
+                  variant="header-hero"
+                  colorVariant="white"
+                  className="lg:w-[623px] w-full flex-shrink-0"
+                >
+                  {hero.heading}
+                </Typography>
+              </AnimatedFadeUp>
 
-              <Typography
-                variant="para-2"
-                colorVariant="white"
-                className="lg:w-[370px] w-full flex-shrink-0 "
-                delay={0.6}
-              >
-                {hero.description}
-              </Typography>
+              <AnimatedFadeUp delay={0.3}>
+                <Typography
+                  variant="para-2"
+                  colorVariant="white"
+                  className="lg:w-[370px] w-full flex-shrink-0"
+                >
+                  {hero.description}
+                </Typography>
+              </AnimatedFadeUp>
             </div>
           </div>
         </div>
@@ -137,13 +141,15 @@ export default function page() {
               <Typography variant="display-2" colorVariant="accent">
                 <RollingNumber value={item.number.toString()} start={start} />
               </Typography>
-              <Typography
-                variant="header-2"
-                colorVariant="accent"
-                className="stats-card-text"
-              >
-                {item.label}
-              </Typography>
+              <AnimatedFadeUp>
+                <Typography
+                  variant="header-2"
+                  colorVariant="accent"
+                  className="stats-card-text"
+                >
+                  {item.label}
+                </Typography>
+              </AnimatedFadeUp>
             </div>
           ))}
         </div>
@@ -153,33 +159,43 @@ export default function page() {
         <Container variant="primarySpacing">
           {/* Heading */}
           <div className="md:mb-[60] mb-[18px] flex flex-col gap-[18px]">
-            <Typography variant="header-1" colorVariant="white">
-              {representativeMandates.heading}
-            </Typography>
-            <Typography variant="para-2" colorVariant="white">
-              {representativeMandates.description}
-            </Typography>
+            <AnimatedFadeUp>
+              <Typography variant="header-1" colorVariant="white">
+                {representativeMandates.heading}
+              </Typography>
+            </AnimatedFadeUp>
+            <AnimatedFadeUp delay={0.15}>
+              <Typography variant="para-2" colorVariant="white">
+                {representativeMandates.description}
+              </Typography>
+            </AnimatedFadeUp>
           </div>
 
           {/* 2 Column Layout */}
           <div className="grid-root">
-            {representativeMandates.items.map((item, index) => (
-              <FootprintItem key={index} item={item} />
-            ))}
+            <AnimatedFadeUp>
+              {representativeMandates.items.map((item, index) => (
+                <FootprintItem key={index} item={item} />
+              ))}
+            </AnimatedFadeUp>
           </div>
         </Container>
       </section>
 
       <Container variant="primarySpacing" className="section-bg">
-        <Typography variant="header-1">
-          {" "}
-          {fullTransactionList.heading}
-        </Typography>
-        <div className="flex flex-col gap-[50px] md:mt-[60px] mt-[40px]">
-          <Typography variant="para-2">
+        <AnimatedFadeUp>
+          <Typography variant="header-1">
             {" "}
-            {fullTransactionList.description}
+            {fullTransactionList.heading}
           </Typography>
+        </AnimatedFadeUp>
+        <div className="flex flex-col gap-[50px] md:mt-[60px] mt-[40px]">
+          <AnimatedFadeUp delay={0.15}>
+            <Typography variant="para-2">
+              {" "}
+              {fullTransactionList.description}
+            </Typography>
+          </AnimatedFadeUp>
           {/* <div className="relative" ref={transactionDropdownRef}>
             <Button
               variant="primary"
@@ -374,36 +390,46 @@ function FootprintItem({ item }) {
 
       {/* Existing Content (UNCHANGED) */}
       <div className="footprint-left">
-        <Typography variant="header-3" colorVariant="white">
-          {item.title}
-        </Typography>
+        <AnimatedFadeUp>
+          <Typography variant="header-3" colorVariant="white">
+            {item.title}
+          </Typography>
+        </AnimatedFadeUp>
 
         <div className="meta-col">
-          <Typography variant="para-3">
-            <span className="accent-text">Sector :</span>{" "}
-            <span className="para-text">{item.sector}</span>
-          </Typography>
+          <AnimatedFadeUp delay={0.1}>
+            <Typography variant="para-3">
+              <span className="accent-text">Sector :</span>{" "}
+              <span className="para-text">{item.sector}</span>
+            </Typography>
+          </AnimatedFadeUp>
 
-          <Typography variant="para-3">
-            <span className="accent-text">Year :</span>{" "}
-            <span className="para-text">{item.year}</span>
-          </Typography>
+          <AnimatedFadeUp delay={0.2}>
+            <Typography variant="para-3">
+              <span className="accent-text">Year :</span>{" "}
+              <span className="para-text">{item.year}</span>
+            </Typography>
+          </AnimatedFadeUp>
 
-          <Typography variant="para-3">
-            <span className="accent-text">Role :</span>{" "}
-            <span className="para-text">{item.role}</span>
-          </Typography>
+          <AnimatedFadeUp delay={0.3}>
+            <Typography variant="para-3">
+              <span className="accent-text">Role :</span>{" "}
+              <span className="para-text">{item.role}</span>
+            </Typography>
+          </AnimatedFadeUp>
         </div>
       </div>
 
       <div className="desc-wrap">
-        <Typography
-          variant="para-2"
-          colorVariant="white"
-          className="desc-width"
-        >
-          {item.desc}
-        </Typography>
+        <AnimatedFadeUp delay={0.25}>
+          <Typography
+            variant="para-2"
+            colorVariant="white"
+            className="desc-width"
+          >
+            {item.desc}
+          </Typography>
+        </AnimatedFadeUp>
       </div>
     </div>
   );

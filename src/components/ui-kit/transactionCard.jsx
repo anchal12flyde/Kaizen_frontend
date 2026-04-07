@@ -11,14 +11,16 @@ export default function TransactionCard({
   const fadeInUp = {
     hidden: {
       opacity: 0,
-      y: 40,
+      y: 40, 
+      scale: 0.97, 
     },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
-        duration: 0.8,
-        ease: "easeOut",
+        duration: 3.1, 
+        ease: [0.16, 1, 0.3, 1], 
       },
     },
   };

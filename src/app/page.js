@@ -10,7 +10,9 @@ import Testimonials from "@/components/ui-kit/testimonials";
 import { useSiteContent } from "@/context/SiteContentProvider";
 import Link from "next/link";
 import DisclaimerModal from "@/components/disclaimer";
+import AnimatedFadeUp from "@/components/AnimatedFadeUp";
 
+import { motion } from "framer-motion";
 
 export default function Home() {
   const { home } = useSiteContent();
@@ -41,35 +43,40 @@ export default function Home() {
 
           <div className="hero-content md:right-[100px]">
             <div>
-              <div className="mb-[42px]">
+              {/* Title */}
+              <AnimatedFadeUp className="mb-[42px]">
                 <Typography variant="display-3" colorVariant="white">
                   {hero.title}
                 </Typography>
-              </div>
+              </AnimatedFadeUp>
 
               <div className="w-full flex lg:flex-row flex-col lg:justify-between gap-[16px]">
-                <Typography
-                  delay={0.4}
-                  variant="header-hero"
-                  colorVariant="white"
-                  className="lg:w-[623px] w-full flex-shrink-0"
-                >
-                  {hero.heading.split("\n").map((line, i) => (
-                    <span key={i}>
-                      {line}
-                      <br />
-                    </span>
-                  ))}
-                </Typography>
+                {/* Heading with line breaks */}
+                <AnimatedFadeUp delay={0.4}>
+                  <Typography
+                    variant="header-hero"
+                    colorVariant="white"
+                    className="lg:w-[623px] w-full flex-shrink-0"
+                  >
+                    {hero.heading.split("\n").map((line, i) => (
+                      <span key={i}>
+                        {line}
+                        <br />
+                      </span>
+                    ))}
+                  </Typography>
+                </AnimatedFadeUp>
 
-                <Typography
-                  delay={0.6}
-                  variant="para-2"
-                  colorVariant="white"
-                  className="md:w-[370px] w-full flex-shrink-0"
-                >
-                  {hero.description}
-                </Typography>
+                {/* Description */}
+                <AnimatedFadeUp delay={0.6}>
+                  <Typography
+                    variant="para-2"
+                    colorVariant="white"
+                    className="md:w-[370px] w-full flex-shrink-0"
+                  >
+                    {hero.description}
+                  </Typography>
+                </AnimatedFadeUp>
               </div>
             </div>
           </div>
@@ -77,25 +84,29 @@ export default function Home() {
         {/* Second Section */}
         <Container className="section-bg" variant="primarySpacing">
           <div>
-            <Typography variant="header-1">{improvement.title}</Typography>
+            {/* Title */}
+            <AnimatedFadeUp>
+              <Typography variant="header-1">{improvement.title}</Typography>
+            </AnimatedFadeUp>
 
             <div className="inprovementSection">
               {improvement.paragraphs.map((text, index) => (
-                <Typography
-                  key={index}
-                  className="text-block"
-                  variant="para-2"
-                  delay={0.4 + index * 0.2}
-                >
-                  {text}
-                </Typography>
+                <AnimatedFadeUp key={index} delay={0.4 + index * 0.2}>
+                  <Typography className="text-block" variant="para-2">
+                    {text}
+                  </Typography>
+                </AnimatedFadeUp>
               ))}
             </div>
-            <Link href="/about">
-              <Button className="inprovementSectionBtn">
-                {improvement.buttonText}
-              </Button>
-            </Link>
+
+            {/* Button */}
+            <AnimatedFadeUp delay={0.4 + improvement.paragraphs.length * 0.2}>
+              <Link href="/about">
+                <Button className="inprovementSectionBtn">
+                  {improvement.buttonText}
+                </Button>
+              </Link>
+            </AnimatedFadeUp>
           </div>
         </Container>
 
@@ -111,46 +122,53 @@ export default function Home() {
 
         <div className="evaluation">
           <Container className="evaluationSection" variant="primarySpacing">
-            <div>
-              <Typography colorVariant="white" variant="header-1">
-                {evaluation.title.split("\n").map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
-              </Typography>
-            </div>
+            {/* Title */}
+            <AnimatedFadeUp>
+              <div>
+                <Typography colorVariant="white" variant="header-1">
+                  {evaluation.title.split("\n").map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+                </Typography>
+              </div>
+            </AnimatedFadeUp>
 
             <div className="group flex flex-col md:gap-0 gap-[8px]">
-              <Typography colorVariant="white" variant="display-3" delay={0.4}>
-                {evaluation.steps.map((step, i) => (
-                  <span
-                    key={i}
-                    className="block transition-colors duration-300 hover:!text-[var(--color-accent)] cursor-pointer"
-                  >
-                    {step}
-                  </span>
-                ))}
-              </Typography>
+              {/* Steps */}
+              <AnimatedFadeUp delay={0.4}>
+                <Typography colorVariant="white" variant="display-3">
+                  {evaluation.steps.map((step, i) => (
+                    <span
+                      key={i}
+                      className="block transition-colors duration-300 hover:!text-[var(--color-accent)] cursor-pointer"
+                    >
+                      {step}
+                    </span>
+                  ))}
+                </Typography>
+              </AnimatedFadeUp>
 
-              <Typography
-                variant="punctuation"
-                delay={0.6}
-                className="hover:!text-[var(--color-accent)]"
-              >
-                {evaluation.highlight}
-              </Typography>
-
-              <Link href="/practice-areas">
-                <Button
-                  className="evaluationBtn !w-fit "
-                  variant="white"
-                  delay={0.8}
+              {/* Highlight */}
+              <AnimatedFadeUp delay={0.6}>
+                <Typography
+                  variant="punctuation"
+                  className="hover:!text-[var(--color-accent)]"
                 >
-                  {evaluation.buttonText}
-                </Button>
-              </Link>
+                  {evaluation.highlight}
+                </Typography>
+              </AnimatedFadeUp>
+
+              {/* Button */}
+              <AnimatedFadeUp delay={0.8}>
+                <Link href="/practice-areas">
+                  <Button className="evaluationBtn !w-fit" variant="white">
+                    {evaluation.buttonText}
+                  </Button>
+                </Link>
+              </AnimatedFadeUp>
             </div>
           </Container>
         </div>
@@ -159,16 +177,20 @@ export default function Home() {
           variant="primarySpacing"
           className="flex flex-col items-center overflow-hidden w-full"
         >
-          <Typography variant="header-1">{recognition.title}</Typography>
+          <AnimatedFadeUp>
+            <Typography variant="header-1">{recognition.title}</Typography>{" "}
+          </AnimatedFadeUp>
 
           <div className="flex flex-col gap-[56px] items-center text-center">
-            <Typography
-              variant="para-2"
-              className="mt-[32px] lg:w-[480px] w-full"
-              delay={0.4}
-            >
-              {recognition.description}
-            </Typography>
+            <AnimatedFadeUp delay={0.15}>
+              <Typography
+                variant="para-2"
+                className="mt-[32px] lg:w-[480px] w-full"
+                delay={0.4}
+              >
+                {recognition.description}
+              </Typography>
+            </AnimatedFadeUp>
 
             <Testimonials data={recognition.testimonials} />
 
@@ -176,7 +198,7 @@ export default function Home() {
               <Typography variant="para-2" delay={0.6}>
                 {recognition.award.year}
               </Typography>
-
+              <AnimatedFadeUp delay={0.25}>
               <div className="relative w-full h-full">
                 <Image
                   src={recognition.award.image}
@@ -186,6 +208,7 @@ export default function Home() {
                   alt={recognition.award.alt}
                 />
               </div>
+              </AnimatedFadeUp>
               <Button
                 variant="primary"
                 onClick={(e) => {
