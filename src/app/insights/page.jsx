@@ -13,7 +13,7 @@ import sitecontent from "@/data/sitecontent.json";
 import { useSiteContent } from "@/context/SiteContentProvider";
 import { motion, useInView } from "framer-motion";
 import AnimatedFadeUp from "@/components/AnimatedFadeUp";
-
+import Link from "next/link";
 
 export default function Insights() {
   const sitecontent = useSiteContent(); 
@@ -168,54 +168,55 @@ export default function Insights() {
           </div>
         </div>
       </div>
-      <Container variant="header" className=" !py-[20px] group">
-        <section className="hero-section  !h-[558px]">
-          <Image
-            src={insightDetailHero.bgImage}
-            alt="Kaizen Hero"
-            fill
-            className="hero-background"
-            priority
-          />
+      <Link href="/insights/refining-strategy-mandate">
+        <Container variant="header" className=" !py-[20px] group">
+          <section className="hero-section  !h-[558px]">
+            <Image
+              src={insightDetailHero.bgImage}
+              alt="Kaizen Hero"
+              fill
+              className="hero-background"
+              priority
+            />
 
-          {/* Overlay */}
-          <div className="hero-overlay"></div>
+            {/* Overlay */}
+            <div className="hero-overlay"></div>
 
-          {/* Content */}
-          <div className="hero-content right-[50px]">
-            <div className="flex flex-col gap-[16px] md:w-[642px] w-full">
-              <div className=" px-[36px] py-[8px] border border-white !w-fit rounded-[500px]  ">
-                <Typography variant="para-3" className=" !text-white  ">
-                  {insightDetailHero.category}
+            {/* Content */}
+            <div className="hero-content right-[50px]">
+              <div className="flex flex-col gap-[16px] md:w-[642px] w-full">
+                <div className=" px-[36px] py-[8px] border border-white !w-fit rounded-[500px]  ">
+                  <Typography variant="para-3" className=" !text-white  ">
+                    {insightDetailHero.category}
+                  </Typography>
+                </div>
+
+                <Typography
+                  variant="header-hero"
+                  colorVariant="white"
+                  className="group-hover:!underline "
+                >
+                  {insightDetailHero.title}
+                </Typography>
+
+                <Typography
+                  delay={0.6}
+                  variant="para-2"
+                  colorVariant="white"
+                  className="w-full flex-shrink-0"
+                >
+                  {insightDetailHero.description}
+                </Typography>
+
+                <Typography variant="button" className=" dateHeroIn  ">
+                  {insightDetailHero.meta.readTime} |{" "}
+                  {insightDetailHero.meta.date}
                 </Typography>
               </div>
-
-              <Typography
-                variant="header-hero"
-                colorVariant="white"
-                className="group-hover:!underline "
-              >
-                {insightDetailHero.title}
-              </Typography>
-
-              <Typography
-                delay={0.6}
-                variant="para-2"
-                colorVariant="white"
-                className="w-full flex-shrink-0"
-              >
-                {insightDetailHero.description}
-              </Typography>
-
-              <Typography variant="button" className=" dateHeroIn  ">
-                {insightDetailHero.meta.readTime} |{" "}
-                {insightDetailHero.meta.date}
-              </Typography>
             </div>
-          </div>
-        </section>
-      </Container>
-
+          </section>
+        </Container>
+      </Link>
       <BlogGridSection variant="stack" posts={insight.blogs} initialCount={5} />
       {/* <div className="hidden md:block">
         <LetsConnectSection />

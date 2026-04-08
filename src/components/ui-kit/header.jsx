@@ -331,7 +331,7 @@ const isActive = (href) => {
                             }
                           >
                             <p
-                              p
+                              
                               className={`sublink ${
                                 isActive(sub.href)
                                   ? "!text-[#C3A771]"
