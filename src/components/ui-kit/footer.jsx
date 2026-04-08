@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="flex lg:flex-row md:flex-row flex-col md:justify-between gap-[40px] lg:mb-[84px] md:mb-[76px] mb-[56px]">
           {/* Brand */}
           <div className="w-full lg:w-[141px] lg:w-[251px] ">
-            <div className="items-start lg:w-[192px] lg:w-[141px] w-[191px] lg:h-[38px] lg:h-[191px] h-[38px]">
+            <div className="items-start lg:w-[192px] lg:w-[141px] w-[191px]   h-[38px]">
               <img
                 src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Footer%20header.png"
                 className="h-full w-full object-contain"

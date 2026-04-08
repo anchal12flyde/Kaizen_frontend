@@ -168,7 +168,7 @@ export default function Startups({ params }) {
 
         {/* Content */}
         <>
-          <AnimatedFadeUp>
+        
             <Container
               variant="sectionSp1"
               className=" absolute inset-0  flex items-center justify-center  "
@@ -215,7 +215,7 @@ export default function Startups({ params }) {
                 <div></div>
               </div>
             </Container>
-          </AnimatedFadeUp>
+        
         </>
       </Container>
       <Container
