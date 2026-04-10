@@ -1,5 +1,7 @@
 "use client";
-import { useRef,useState,useEffect } from "react";
+
+import { useRef, useState, useEffect } from "react";
+import axios from "axios";
 import AboutHeroSection from "@/components/abouthero";
 import JobCard from "@/components/jobCard";
 import PEVCPracticeSection from "@/components/PEVCPractiseSection";
@@ -9,71 +11,183 @@ import Header from "@/components/ui-kit/header";
 import { Container } from "@/components/ui-kit/spacing";
 import Typography from "@/components/ui-kit/typography";
 import Image from "next/image";
-import sitecontent from "@/data/sitecontent.json";
-import { useSiteContent } from "@/context/SiteContentProvider";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import AnimatedFadeUp from "@/components/AnimatedFadeUp";
 
-
 export default function Careers() {
-  const sitecontent = useSiteContent();
-    const { career } = sitecontent;
-   const {
-     careerHero,
-     pevcPractice,
-     insightsHero,
-     insightsFilter,
-     contactInfo,
-     quote,
-     jobsData,
-   } = career;
+  const [pageData, setPageData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-   const sectionRef = useRef(null);
-   const handleScroll = () => {
-     sectionRef.current?.scrollIntoView({
-       behavior: "smooth",
-     });
-   };
-   const ref = useRef(null);
-   const isInView = useInView(ref, {
-     once: true,
-     amount: 0.2, 
-   });
-    const [open, setOpen] = useState(false);
-    const [selectedMode, setSelectedMode] = useState(null);
-    const [selectedTime, setSelectedTime] = useState(null);
-    const [searchTerm, setSearchTerm] = useState("");
-   const dropdownRef = useRef(null);
-   const [openSection, setOpenSection] = useState({
-     mode: false, 
-     time: false,
-   });
-   const toggleSection = (key) => {
-     setOpenSection((prev) => ({
-       ...prev,
-       [key]: !prev[key],
-     }));
-   };
-   const filteredJobs = jobsData.filter((job) => {
-     const modeMatch = selectedMode ? job.mode === selectedMode : true;
-     const timeMatch = selectedTime ? job.type === selectedTime : true;
+  const sectionRef = useRef(null);
+  const handleScroll = () => {
+    sectionRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
-     const searchMatch = searchTerm
-       ? job.title.toLowerCase().includes(searchTerm.toLowerCase())
-       : true;
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.2,
+  });
 
-     return modeMatch && timeMatch && searchMatch;
-   });
-   useEffect(() => {
-     function handleClickOutside(e) {
-       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-         setOpen(false);
-       }
-     }
-     document.addEventListener("mousedown", handleClickOutside);
-     return () => document.removeEventListener("mousedown", handleClickOutside);
-   }, []);
+  const [open, setOpen] = useState(false);
+  const [selectedMode, setSelectedMode] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const dropdownRef = useRef(null);
+  const [openSection, setOpenSection] = useState({
+    mode: false,
+    time: false,
+  });
+
+  const toggleSection = (key) => {
+    setOpenSection((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
+  // Fetch careers data from API
+  useEffect(() => {
+    const fetchCareersData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get('http://localhost:5000/api/pages/careers');
+
+        if (response.data.success && response.data.data) {
+          const apiData = response.data.data;
+          const transformedData = transformCareersData(apiData);
+          setPageData(transformedData);
+        } else {
+          setError("Failed to load careers data");
+        }
+      } catch (err) {
+        console.error("Error fetching careers page:", err);
+        setError(err.message || "Failed to load page");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCareersData();
+  }, []);
+
+  const transformCareersData = (apiData) => {
+    // Hero Section
+    const heroSection = apiData.sections?.find(s => s.sectionId === 'careers_hero');
+    const careerHero = {
+      bgImage: heroSection?.fields?.find(f => f.key === 'bgImage')?.value || '',
+      title: heroSection?.fields?.find(f => f.key === 'title')?.value || '',
+      description: heroSection?.fields?.find(f => f.key === 'description')?.value || '',
+      align: heroSection?.fields?.find(f => f.key === 'align')?.value || 'left',
+      buttons: heroSection?.fields?.find(f => f.key === 'buttons')?.value || [],
+      logos: heroSection?.fields?.find(f => f.key === 'logos')?.value || [],
+    };
+
+    // Benefits Section
+    const benefitsSection = apiData.sections?.find(s => s.sectionId === 'careers_benefits');
+    const pevcPractice = {
+      topContent: benefitsSection?.fields?.find(f => f.key === 'topContent')?.value || { title: '', subtitle: '' },
+      cardsData: benefitsSection?.fields?.find(f => f.key === 'cardsData')?.value || [],
+    };
+
+    // Jobs Section
+    const jobsSection = apiData.sections?.find(s => s.sectionId === 'careers_jobs');
+    const insightsHero = {
+      title: jobsSection?.fields?.find(f => f.key === 'title')?.value || '',
+      description: jobsSection?.fields?.find(f => f.key === 'description')?.value || '',
+    };
+    const insightsFilter = {
+      searchPlaceholder: jobsSection?.fields?.find(f => f.key === 'searchPlaceholder')?.value || '',
+      buttons: jobsSection?.fields?.find(f => f.key === 'filterButton')?.value || '',
+      filters: jobsSection?.fields?.find(f => f.key === 'filters')?.value || { mode: [], time: [] },
+    };
+    const jobsData = jobsSection?.fields?.find(f => f.key === 'jobsData')?.value || [];
+
+    // Quote Section
+    const quoteSection = apiData.sections?.find(s => s.sectionId === 'careers_quote');
+    const quote = {
+      title: quoteSection?.fields?.find(f => f.key === 'title')?.value || '',
+    };
+
+    // Contact Section
+    const contactSection = apiData.sections?.find(s => s.sectionId === 'careers_contact');
+    const contactInfo = {
+      items: contactSection?.fields?.find(f => f.key === 'items')?.value || [],
+    };
+
+    return {
+      careerHero,
+      pevcPractice,
+      insightsHero,
+      insightsFilter,
+      jobsData,
+      quote,
+      contactInfo,
+    };
+  };
+
+  // Filter jobs based on selected filters
+  const filteredJobs = pageData?.jobsData?.filter((job) => {
+    const modeMatch = selectedMode ? job.mode === selectedMode : true;
+    const timeMatch = selectedTime ? job.type === selectedTime : true;
+    const searchMatch = searchTerm
+      ? job.title.toLowerCase().includes(searchTerm.toLowerCase())
+      : true;
+    return modeMatch && timeMatch && searchMatch;
+  }) || [];
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Loading state
+  if (loading) {
+    return (
+      <>
+        <Header />
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading careers page...</p>
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
+  // Error state
+  if (error || !pageData) {
+    return (
+      <>
+        <Header />
+        <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center m-8">
+          <h3 className="text-lg font-semibold text-red-800">Error Loading Data</h3>
+          <p className="text-red-600">{error || "Failed to load careers page"}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+          >
+            Try Again
+          </button>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
+  const { careerHero, pevcPractice, insightsHero, insightsFilter, jobsData, quote, contactInfo } = pageData;
+
   return (
     <div className="overflow-x-hidden">
       <Header />
@@ -118,7 +232,7 @@ export default function Careers() {
                     onClick={handleScroll}
                     className="w-full md:w-auto"
                   >
-                    {careerHero.buttons[0].label}
+                    {careerHero.buttons[0]?.label}
                   </Button>
                 </div>
               </AnimatedFadeUp>{" "}
@@ -128,7 +242,7 @@ export default function Careers() {
               <AnimatedFadeUp delay={0.15}>
                 <div className="w-full overflow-x-auto md:overflow-hidden mt-[86px] md:mt-[100px]  border-t border-t-[#F7F4EB80]  pt-[30px]">
                   <div className="flex w-max md:w-full gap-[48px] md:gap-0 md:justify-between">
-                    {careerHero.logos.map((logo, index) => (
+                    {careerHero.logos?.map((logo, index) => (
                       <img
                         key={index}
                         src={logo.src}
@@ -271,9 +385,8 @@ export default function Careers() {
 
                       {/* Arrow */}
                       <span
-                        className={`transition-transform duration-300 -rotate-90 ${
-                          openSection.mode ? "rotate-0" : ""
-                        }`}
+                        className={`transition-transform duration-300 -rotate-90 ${openSection.mode ? "rotate-0" : ""
+                          }`}
                       >
                         <img
                           src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(25).png"
@@ -284,7 +397,7 @@ export default function Careers() {
 
                     {/* Options */}
                     {openSection.mode &&
-                      insightsFilter.filters.mode.map((item, i) => (
+                      insightsFilter.filters?.mode?.map((item, i) => (
                         <div
                           key={i}
                           onClick={() => setSelectedMode(item)}
@@ -316,9 +429,8 @@ export default function Careers() {
                       </div>
 
                       <span
-                        className={`transition-transform duration-300 -rotate-90 ${
-                          openSection.time ? "rotate-0" : ""
-                        }`}
+                        className={`transition-transform duration-300 -rotate-90 ${openSection.time ? "rotate-0" : ""
+                          }`}
                       >
                         <img
                           src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(25).png"
@@ -329,8 +441,9 @@ export default function Careers() {
 
                     {/* Options */}
                     {openSection.time &&
-                      insightsFilter.filters.time.map((item, i) => (
+                      insightsFilter.filters?.time?.map((item, i) => (
                         <div
+                          key={i}
                           onClick={() => setSelectedTime(item)}
                           className={`px-[20px] py-[14px] cursor-pointer hover:bg-[var(--color-accent)]
                           ${selectedTime === item ? "bg-[var(--color-accent)]" : ""}
@@ -375,7 +488,7 @@ export default function Careers() {
           </svg>
 
           <Typography variant="header-2" className="!text-white">
-            {contactInfo.items[0].value}
+            {contactInfo.items?.[0]?.value}
           </Typography>
         </Container>
 
@@ -396,7 +509,7 @@ export default function Careers() {
           </svg>
 
           <Typography variant="header-2" className="!text-white">
-            {contactInfo.items[1].value}
+            {contactInfo.items?.[1]?.value}
           </Typography>
         </Container>
 

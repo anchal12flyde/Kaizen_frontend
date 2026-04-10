@@ -1,5 +1,7 @@
 "use client";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
+import axios from "axios";
 import AboutHeroSection from "@/components/abouthero";
 import GuidesSection from "@/components/guidesSection";
 import KaizenPhilosophySection from "@/components/KaizenPhilosphy";
@@ -18,37 +20,226 @@ import { useSiteContent } from "@/context/SiteContentProvider";
 import AnimatedFadeUp from "@/components/AnimatedFadeUp";
 
 export default function About() {
-  const sitecontent = useSiteContent(); 
-  const { about } = sitecontent;
+  const [aboutData, setAboutData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
-    
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState("");
+  const [showEmail, setShowEmail] = useState(false);
+
+  // Fetch about page data from API
+  useEffect(() => {
+    const fetchAboutData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get('http://localhost:5000/api/pages/about');
+
+        if (response.data.success && response.data.data) {
+          const apiData = response.data.data;
+
+          // Transform the data from API sections
+          let aboutHero = {};
+          let ourStory = {};
+          let philosophy = {};
+          let guides = {};
+          let whyClients = {};
+          let sectorExperience = {};
+          let recognition = {};
+          let leadershipTeam = {};
+          let privateEquityHero = {};
+          let letsConnect = {};
+
+          // Find and transform hero section
+          const heroSection = apiData.sections?.find(s => s.sectionId === 'about_hero');
+          if (heroSection) {
+            aboutHero = {
+              bgImage: heroSection.fields?.find(f => f.key === 'bgImage')?.value || '',
+              title: heroSection.fields?.find(f => f.key === 'title')?.value || '',
+              description: heroSection.fields?.find(f => f.key === 'description')?.value || '',
+              align: heroSection.fields?.find(f => f.key === 'align')?.value || 'left',
+              buttons: heroSection.fields?.find(f => f.key === 'buttons')?.value || [],
+            };
+          }
+
+          // Find and transform our story section
+          const storySection = apiData.sections?.find(s => s.sectionId === 'about_story');
+          if (storySection) {
+            ourStory = {
+              title: storySection.fields?.find(f => f.key === 'title')?.value || '',
+              paragraphs: storySection.fields?.find(f => f.key === 'paragraphs')?.value || [],
+            };
+          }
+
+          // Find and transform philosophy section
+          const philosophySection = apiData.sections?.find(s => s.sectionId === 'about_philosophy');
+          if (philosophySection) {
+            philosophy = {
+              leftTitle: philosophySection.fields?.find(f => f.key === 'leftTitle')?.value || '',
+              right: philosophySection.fields?.find(f => f.key === 'right')?.value || { heading: '', description: '' },
+            };
+          }
+
+          // Find and transform guides section
+          const guidesSection = apiData.sections?.find(s => s.sectionId === 'about_guides');
+          if (guidesSection) {
+            guides = {
+              title: guidesSection.fields?.find(f => f.key === 'title')?.value || '',
+              items: guidesSection.fields?.find(f => f.key === 'items')?.value || [],
+            };
+          }
+
+          // Find and transform why clients section
+          const whyClientsSection = apiData.sections?.find(s => s.sectionId === 'about_why_clients');
+          if (whyClientsSection) {
+            whyClients = {
+              title: whyClientsSection.fields?.find(f => f.key === 'title')?.value || '',
+              subtitle: whyClientsSection.fields?.find(f => f.key === 'subtitle')?.value || '',
+              cards: whyClientsSection.fields?.find(f => f.key === 'cards')?.value || [],
+            };
+          }
+
+          // Find and transform sector experience section
+          const sectorSection = apiData.sections?.find(s => s.sectionId === 'about_sector_experience');
+          if (sectorSection) {
+            sectorExperience = {
+              title: sectorSection.fields?.find(f => f.key === 'title')?.value || '',
+              sectors: sectorSection.fields?.find(f => f.key === 'sectors')?.value || [],
+            };
+          }
+
+          // Find and transform recognition section
+          const recognitionSection = apiData.sections?.find(s => s.sectionId === 'about_recognition');
+          if (recognitionSection) {
+            recognition = {
+              title: recognitionSection.fields?.find(f => f.key === 'title')?.value || '',
+              description: recognitionSection.fields?.find(f => f.key === 'description')?.value || '',
+              testimonials: recognitionSection.fields?.find(f => f.key === 'testimonials')?.value || [],
+              image: recognitionSection.fields?.find(f => f.key === 'image')?.value || '',
+              continent: recognitionSection.fields?.find(f => f.key === 'continent')?.value || '',
+              button: recognitionSection.fields?.find(f => f.key === 'button')?.value || { label: '', buttonLink: '' },
+              testimonialUI: recognitionSection.fields?.find(f => f.key === 'testimonialUI')?.value || {},
+            };
+          }
+
+          // Find and transform leadership team section
+          const leadershipSection = apiData.sections?.find(s => s.sectionId === 'about_leadership');
+          if (leadershipSection) {
+            leadershipTeam = {
+              title: leadershipSection.fields?.find(f => f.key === 'title')?.value || '',
+              description: leadershipSection.fields?.find(f => f.key === 'description')?.value || '',
+              members: leadershipSection.fields?.find(f => f.key === 'members')?.value || [],
+            };
+          }
+
+          // Find and transform private equity hero section
+          const peHeroSection = apiData.sections?.find(s => s.sectionId === 'about_pe_hero');
+          if (peHeroSection) {
+            privateEquityHero = {
+              bgImage: peHeroSection.fields?.find(f => f.key === 'bgImage')?.value || '',
+              title: peHeroSection.fields?.find(f => f.key === 'title')?.value || '',
+              description: peHeroSection.fields?.find(f => f.key === 'description')?.value || '',
+              subText: peHeroSection.fields?.find(f => f.key === 'subText')?.value || '',
+              selectIndustryText: peHeroSection.fields?.find(f => f.key === 'selectIndustryText')?.value || '',
+              industries: peHeroSection.fields?.find(f => f.key === 'industries')?.value || [],
+              button: peHeroSection.fields?.find(f => f.key === 'button')?.value || { label: '' },
+            };
+          }
+
+          // Find and transform lets connect section
+          const letsConnectSection = apiData.sections?.find(s => s.sectionId === 'about_lets_connect');
+          if (letsConnectSection) {
+            letsConnect = {
+              title: letsConnectSection.fields?.find(f => f.key === 'title')?.value || [],
+              enter: letsConnectSection.fields?.find(f => f.key === 'enter')?.value || '',
+              form: letsConnectSection.fields?.find(f => f.key === 'form')?.value || { newsletterText: '', placeholder: '', submitLabel: '' },
+              thankYou: letsConnectSection.fields?.find(f => f.key === 'thankYou')?.value || { heading: '', message: '' },
+            };
+          }
+
+          setAboutData({
+            aboutHero,
+            ourStory,
+            philosophy,
+            guides,
+            whyClients,
+            sectorExperience,
+            recognition,
+            leadershipTeam,
+            privateEquityHero,
+            letsConnect
+          });
+        } else {
+          setError('Failed to load about page data');
+        }
+      } catch (err) {
+        console.error('Error fetching about page:', err);
+        setError(err.message || 'Failed to load about page data');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAboutData();
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!email) {
-     
       return;
     }
 
-    console.log("Submitted Email:", email); // 👈 now it will log properly
-
+    console.log("Submitted Email:", email);
     setEmail("");
   };
-      const [isOpen, setIsOpen] = useState(false);
-      const [selected, setSelected] = useState("");
-      const [showEmail, setShowEmail] = useState(false);
-  
-      const toggleDropdown = () => setIsOpen(!isOpen);
-  
-      const selectIndustry = (industry) => {
-        setSelected(industry);
-        setIsOpen(false);
-        setShowEmail(true);
-      };
-  const { aboutHero, privateEquityHero, letsConnect, whyClients } = about;
 
-  const { title, form, thankYou } = letsConnect;
-  const { industries } = privateEquityHero;
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+  const selectIndustry = (industry) => {
+    setSelected(industry);
+    setIsOpen(false);
+    setShowEmail(true);
+  };
+
+  // Loading state
+  if (loading) {
+    return (
+      <>
+        <Header />
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading about page...</p>
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
+  // Error state
+  if (error || !aboutData) {
+    return (
+      <>
+        <Header />
+        <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center m-8">
+          <h3 className="text-lg font-semibold text-red-800">Error Loading Data</h3>
+          <p className="text-red-600">{error || 'Failed to load about page data'}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+          >
+            Try Again
+          </button>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
+  const { aboutHero, privateEquityHero, letsConnect, whyClients, ourStory, philosophy, guides, sectorExperience, recognition, leadershipTeam } = aboutData;
+
   return (
     <div>
       <Header />
@@ -58,7 +249,7 @@ export default function About() {
         buttons={aboutHero.buttons}
         title={
           <>
-            {aboutHero.title.split("\n").map((line, i) => (
+            {aboutHero.title?.split("\n").map((line, i) => (
               <span key={i}>
                 {line}
                 <br />
@@ -68,14 +259,14 @@ export default function About() {
         }
         description={<>{aboutHero.description}</>}
       />
-      <OurStorySection />
-      <KaizenPhilosophySection />
-      <GuidesSection data={about.guides} />
-      <WhyChooseSection data={about.whyClients} />
-      <SectorExperience />
-      <Recognization />
+      <OurStorySection data={ourStory} />
+      <KaizenPhilosophySection data={philosophy} />
+      <GuidesSection data={guides} />
+      <WhyChooseSection data={whyClients} />
+      <SectorExperience data={sectorExperience} />
+      <Recognization data={{ recognition }} />
       <section id="leadership-team">
-        <LeadershipTeam />
+        <LeadershipTeam data={leadershipTeam} />
       </section>
       <Container
         variant="primarySpacing"
@@ -117,13 +308,13 @@ export default function About() {
                   </Typography>
                 </AnimatedFadeUp>
                 <div className="mt-[57px] flex flex-col gap-[16px]">
-                <AnimatedFadeUp delay={0.15}>
-                  <Typography
-                    variant="header-4"
-                    className="!text-[var(--color-para-2)]"
-                  >
-                    {privateEquityHero.subText}
-                  </Typography>
+                  <AnimatedFadeUp delay={0.15}>
+                    <Typography
+                      variant="header-4"
+                      className="!text-[var(--color-para-2)]"
+                    >
+                      {privateEquityHero.subText}
+                    </Typography>
                   </AnimatedFadeUp>
                   <div className="relative w-full">
                     {/* Dropdown container when open */}
@@ -173,7 +364,7 @@ export default function About() {
 
                         {/* Options */}
                         <div className="mt-2">
-                          {industries.map((industry) => (
+                          {privateEquityHero.industries?.map((industry) => (
                             <div
                               key={industry}
                               onClick={() => selectIndustry(industry)}
@@ -235,7 +426,7 @@ export default function About() {
                   onClick={handleSubmit}
                   className=" md:px-[36px] px-[24px] mt-[32px] md:py-[12px] py-[18px] border border-white md:w-fit w-full text-white  text-[18px]"
                 >
-                  {privateEquityHero.button.label}
+                  {privateEquityHero.button?.label}
                 </button>
               </div>
               <div></div>
@@ -246,7 +437,7 @@ export default function About() {
 
       {/* Desktop only */}
       <div className="hidden md:block">
-        <LetsConnectSection />
+        <LetsConnectSection data={letsConnect} />
       </div>
 
       {/* Mobile only */}
@@ -259,14 +450,14 @@ export default function About() {
             variant="display-3"
             className="!text-[var(--color-para-2)]"
           >
-            {title[0]} {title[1]}
+            {letsConnect.title?.[0]} {letsConnect.title?.[1]}
           </Typography>
 
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder={`${letsConnect.enter} ${form.placeholder}`}
+            placeholder={`${letsConnect.enter} ${letsConnect.form?.placeholder}`}
             className="w-full bg-transparent outline-none 
                    text-[var(--color-para-2)] placeholder:text-white/50 text-center"
             required
@@ -277,32 +468,11 @@ export default function About() {
               variant="header-2"
               className="!text-[var(--color-para-2)]"
             >
-              {form.submitLabel}
+              {letsConnect.form?.submitLabel}
             </Typography>
           </button>
         </form>
       </div>
-      {/* <Container
-        variant="sectionSp1"
-        className="  bg-[var(--color-background-2)] flex md:flex-row flex-col  gap-[46px] md:justify-between md:items-start"
-      >
-        <div className="flex flex-col gap-[16px] md:gap-[12px]">
-          <Typography variant="header-5" className="!text-white">
-            Speak With Our Team
-          </Typography>
-          <Typography
-            variant="para-2"
-            className="!text-white w-full md:w-[486px]"
-          >
-            If you are evaluating an investment, planning a fundraising round,
-            or considering an exit, we would be pleased to discuss how Kaizen
-            Law can support your objectives.
-          </Typography>
-        </div>
-        <button className=" md:px-[36px] px-[24px] md:py-[26px] py-[18px] border-[1px] border-[#FFFFFF]  md:w-fit w-full text-white  text-[18px]">
-          Schedule A Consulation →
-        </button>
-      </Container> */}
       <Footer />
     </div>
   );

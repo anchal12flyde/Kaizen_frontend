@@ -8,63 +8,156 @@ import Header from "@/components/ui-kit/header";
 import Footer from "@/components/ui-kit/footer";
 import Button from "@/components/ui-kit/button";
 import TransactionCard from "@/components/ui-kit/transactionCard";
-import sitecontent from "@/data/sitecontent.json";
-import { useSiteContent } from "@/context/SiteContentProvider";
 import AnimatedFadeUp from "@/components/AnimatedFadeUp";
 
-
-export default function page() {
-  const sitecontent = useSiteContent();
-  const { footprint } = sitecontent;
-  const { hero, stats, representativeMandates, fullTransactionList } =
-    footprint;
+export default function FootprintPage() {
+  const [pageData, setPageData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const [openTransactionDropdown, setOpenTransactionDropdown] = useState(false);
-
   const [openTransactionSection, setOpenTransactionSection] = useState({
     role: false,
     sector: false,
   });
-
   const [selectedRole, setSelectedRole] = useState(null);
   const [selectedSector, setSelectedSector] = useState(null);
-
   const transactionDropdownRef = useRef(null);
+
+  // Fetch footprint data from API
+  useEffect(() => {
+    const fetchFootprintData = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('http://localhost:5000/api/pages/footprint');
+        const result = await response.json();
+
+        if (result.success && result.data) {
+          const apiData = result.data;
+          const transformedData = transformFootprintData(apiData);
+          setPageData(transformedData);
+        } else {
+          setError("Failed to load footprint data");
+        }
+      } catch (err) {
+        console.error("Error fetching footprint page:", err);
+        setError(err.message || "Failed to load page");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFootprintData();
+  }, []);
+
+  const transformFootprintData = (apiData) => {
+    // Hero Section
+    const heroSection = apiData.sections?.find(s => s.sectionId === 'footprint_hero');
+    const heroFields = heroSection?.fields || [];
+
+    const hero = {
+      heroImage: heroFields.find(f => f.key === 'heroImage')?.value || '',
+      title: heroFields.find(f => f.key === 'title')?.value || '',
+      heading: heroFields.find(f => f.key === 'heading')?.value || '',
+      description: heroFields.find(f => f.key === 'description')?.value || '',
+    };
+
+    // Stats Section
+    const statsSection = apiData.sections?.find(s => s.sectionId === 'footprint_stats');
+    const statsField = statsSection?.fields?.find(f => f.key === 'stats');
+    const stats = statsField?.value || [];
+
+    // Representative Mandates Section
+    const mandatesSection = apiData.sections?.find(s => s.sectionId === 'footprint_mandates');
+    const mandatesFields = mandatesSection?.fields || [];
+
+    const representativeMandates = {
+      heading: mandatesFields.find(f => f.key === 'heading')?.value || '',
+      description: mandatesFields.find(f => f.key === 'description')?.value || '',
+      items: mandatesFields.find(f => f.key === 'items')?.value || [],
+    };
+
+    // Full Transaction List Section
+    const transactionsSection = apiData.sections?.find(s => s.sectionId === 'footprint_transactions');
+    const transactionsFields = transactionsSection?.fields || [];
+
+    const fullTransactionList = {
+      heading: transactionsFields.find(f => f.key === 'heading')?.value || '',
+      description: transactionsFields.find(f => f.key === 'description')?.value || '',
+      buttonLabel: transactionsFields.find(f => f.key === 'buttonLabel')?.value || '',
+      filters: transactionsFields.find(f => f.key === 'filters')?.value || { role: [], sector: [] },
+      transactions: transactionsFields.find(f => f.key === 'transactions')?.value || [],
+    };
+
+    return {
+      hero,
+      stats,
+      representativeMandates,
+      fullTransactionList,
+    };
+  };
+
   const toggleTransactionSection = (section) => {
     setOpenTransactionSection((prev) => ({
       ...prev,
       [section]: !prev[section],
     }));
   };
-  function RollingNumber({ value = "0", duration = 1, start }) {
-    const number = start ? value : value.replace(/[0-9]/g, "0");
 
-    return (
-      <span style={{ fontVariantNumeric: "tabular-nums" }}>
-        {number.split("").map((char, i) => {
-          // if it's NOT a number → render as is
-          if (isNaN(char)) {
-            return <span key={i}>{char}</span>;
-          }
+function RollingNumber({ value = "0", duration = 1, start }) {
+  // Extract numeric part and symbols separately
+  const extractNumberAndSymbol = (str) => {
+    // Match numbers at the beginning or anywhere in the string
+    const match = str.match(/(\d+)(.*)/);
+    if (match) {
+      return {
+        number: match[1],
+        symbol: match[2] || ''
+      };
+    }
+    // If no numbers found, treat the whole thing as symbol
+    return {
+      number: '',
+      symbol: str
+    };
+  };
 
-          // if it's a digit → animate
-          return (
-            <RollingDigit
-              key={i}
-              target={parseInt(char, 10)}
-              duration={duration}
-              start={start}
-              delay={i * 0.05}
-            />
-          );
-        })}
-      </span>
-    );
+  const { number: numericPart, symbol } = extractNumberAndSymbol(value);
+  
+  // If there's no numeric part, just return the value as-is
+  if (!numericPart) {
+    return <span>{value}</span>;
   }
+  
+  // For animation, we only animate the numeric part
+  const displayNumber = start ? numericPart : numericPart.replace(/[0-9]/g, "0");
+
+  return (
+    <span style={{ fontVariantNumeric: "tabular-nums" }}>
+      {displayNumber.split("").map((char, i) => {
+        // if it's NOT a number → render as is
+        if (isNaN(char) || char === '') {
+          return <span key={i}>{char}</span>;
+        }
+
+        // if it's a digit → animate
+        return (
+          <RollingDigit
+            key={i}
+            target={parseInt(char, 10)}
+            duration={duration}
+            start={start}
+            delay={i * 0.05}
+          />
+        );
+      })}
+      {symbol && <span>{symbol}</span>}
+    </span>
+  );
+}
 
   const digitRef = useRef(null);
   const digitInView = useInView(digitRef, { once: true });
-
   const [start, setStart] = useState(false);
 
   useEffect(() => {
@@ -84,6 +177,47 @@ export default function page() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Loading state
+  if (loading) {
+    return (
+      <>
+        <Header />
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading footprint page...</p>
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
+  // Error state
+  if (error || !pageData) {
+    return (
+      <>
+        <Header />
+        <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center m-8">
+          <h3 className="text-lg font-semibold text-red-800">Error Loading Data</h3>
+          <p className="text-red-600">{error || "Failed to load footprint page"}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+          >
+            Try Again
+          </button>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
+  const { hero, stats, representativeMandates, fullTransactionList } = pageData;
+
+  console.log('Page Data:', pageData); // For debugging
+
   return (
     <>
       <Header />
@@ -136,10 +270,10 @@ export default function page() {
 
       <Container variant="primarySpacing" className="section-bg">
         <div className="stats-section" ref={digitRef}>
-          {stats.map((item, index) => (
+          {stats && stats.length > 0 ? stats.map((item, index) => (
             <div key={index} className="stats-card">
               <Typography variant="display-2" colorVariant="accent">
-                <RollingNumber value={item.number.toString()} start={start} />
+                <RollingNumber value={item.number?.toString() || "0"} start={start} />
               </Typography>
               <AnimatedFadeUp>
                 <Typography
@@ -151,7 +285,9 @@ export default function page() {
                 </Typography>
               </AnimatedFadeUp>
             </div>
-          ))}
+          )) : (
+            <div>No stats data available</div>
+          )}
         </div>
       </Container>
 
@@ -173,11 +309,13 @@ export default function page() {
 
           {/* 2 Column Layout */}
           <div className="grid-root">
-            <AnimatedFadeUp>
-              {representativeMandates.items.map((item, index) => (
+            {representativeMandates.items && representativeMandates.items.length > 0 ? (
+              representativeMandates.items.map((item, index) => (
                 <FootprintItem key={index} item={item} />
-              ))}
-            </AnimatedFadeUp>
+              ))
+            ) : (
+              <div>No mandate items available</div>
+            )}
           </div>
         </Container>
       </section>
@@ -185,29 +323,28 @@ export default function page() {
       <Container variant="primarySpacing" className="section-bg">
         <AnimatedFadeUp>
           <Typography variant="header-1">
-            {" "}
             {fullTransactionList.heading}
           </Typography>
         </AnimatedFadeUp>
         <div className="flex flex-col gap-[50px] md:mt-[60px] mt-[40px]">
           <AnimatedFadeUp delay={0.15}>
             <Typography variant="para-2">
-              {" "}
               {fullTransactionList.description}
             </Typography>
           </AnimatedFadeUp>
+
+          {/* Filter Dropdown - Commented out but can be enabled */}
           {/* <div className="relative" ref={transactionDropdownRef}>
             <Button
               variant="primary"
               delay={0.6}
               onClick={() => setOpenTransactionDropdown((prev) => !prev)}
             >
-              {fullTransactionList.buttonLabel}
+              {fullTransactionList.buttonLabel || "Filter"}
             </Button>
 
             {openTransactionDropdown && (
               <div className="absolute left-0 mt-[10px] w-[250px] bg-[#F7F4EB] shadow-[0px_4px_14px_0px_#00000040] pb-[12px] z-50">
-               
                 <div
                   onClick={() => {
                     setSelectedRole(null);
@@ -218,18 +355,17 @@ export default function page() {
                   <img
                     src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/cross-small%201.png"
                     className="w-[12px] h-[12px]"
+                    alt="clear"
                   />
                   <span className="text-[16px] opacity-[80%]">Clear</span>
                 </div>
 
-               
                 <div className="border-b border-black/10">
                   <div
                     onClick={() => toggleTransactionSection("role")}
                     className="flex items-center justify-between px-[20px] py-[12px] cursor-pointer"
                   >
                     <span className="text-[16px]">Role</span>
-
                     <span
                       className={`transition-transform duration-300 -rotate-90 ${
                         openTransactionSection.role ? "rotate-0" : ""
@@ -237,33 +373,32 @@ export default function page() {
                     >
                       <img
                         src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(25).png"
-                        className=" w-[10px] h-[5px] object-contain"
+                        className="w-[10px] h-[5px] object-contain"
+                        alt="arrow"
                       />
                     </span>
                   </div>
 
                   {openTransactionSection.role &&
-                    fullTransactionList.filters.role.map((item, i) => (
+                    fullTransactionList.filters?.role?.map((item, i) => (
                       <div
                         key={i}
                         onClick={() => setSelectedRole(item)}
                         className={`px-[20px] py-[14px] cursor-pointer hover:bg-[var(--color-accent)]
-              ${selectedRole === item ? "bg-[var(--color-accent)]" : ""}
-            `}
+                          ${selectedRole === item ? "bg-[var(--color-accent)]" : ""}
+                        `}
                       >
                         {item}
                       </div>
                     ))}
                 </div>
 
-              
                 <div>
                   <div
                     onClick={() => toggleTransactionSection("sector")}
                     className="flex items-center justify-between px-[20px] py-[12px] cursor-pointer"
                   >
                     <span className="text-[16px]">Sector</span>
-
                     <span
                       className={`transition-transform duration-300 -rotate-90 ${
                         openTransactionSection.sector ? "rotate-0" : ""
@@ -271,19 +406,20 @@ export default function page() {
                     >
                       <img
                         src="https://ik.imagekit.io/a9uxeuyhx/Kaizen/Vector%20(25).png"
-                        className=" w-[10px] h-[5px] object-contain"
+                        className="w-[10px] h-[5px] object-contain"
+                        alt="arrow"
                       />
                     </span>
                   </div>
 
                   {openTransactionSection.sector &&
-                    fullTransactionList.filters.sector.map((item, i) => (
+                    fullTransactionList.filters?.sector?.map((item, i) => (
                       <div
                         key={i}
                         onClick={() => setSelectedSector(item)}
                         className={`px-[20px] py-[14px] cursor-pointer hover:bg-[var(--color-accent)]
-              ${selectedSector === item ? "bg-[var(--color-accent)]" : ""}
-            `}
+                          ${selectedSector === item ? "bg-[var(--color-accent)]" : ""}
+                        `}
                       >
                         {item}
                       </div>
@@ -292,17 +428,22 @@ export default function page() {
               </div>
             )}
           </div> */}
+
           <div className="flex flex-col gap-[40px]">
-            {fullTransactionList.transactions.map((tx, index) => (
-              <TransactionCard
-                key={index}
-                labelText={tx.labelText}
-                mainText={tx.mainText}
-                roleText={tx.roleText}
-                sectorText={tx.sectorText}
-                transactionValue={tx.transactionValue}
-              />
-            ))}
+            {fullTransactionList.transactions && fullTransactionList.transactions.length > 0 ? (
+              fullTransactionList.transactions.map((tx, index) => (
+                <TransactionCard
+                  key={index}
+                  labelText={tx.labelText}
+                  mainText={tx.mainText}
+                  roleText={tx.roleText}
+                  sectorText={tx.sectorText}
+                  transactionValue={tx.transactionValue}
+                />
+              ))
+            ) : (
+              <div>No transactions available</div>
+            )}
           </div>
         </div>
       </Container>
@@ -310,6 +451,7 @@ export default function page() {
     </>
   );
 }
+
 function RollingDigit({ target, duration = 1, start }) {
   const ref = useRef(null);
   const [height, setHeight] = useState(0);
@@ -332,7 +474,8 @@ function RollingDigit({ target, duration = 1, start }) {
       });
       return () => controls.stop();
     }
-  }, [height, target, start]);
+  }, [height, target, start, y]);
+
   return (
     <div
       style={{
@@ -361,6 +504,7 @@ function RollingDigit({ target, duration = 1, start }) {
     </div>
   );
 }
+
 function FootprintItem({ item }) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -382,7 +526,7 @@ function FootprintItem({ item }) {
           animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
           transition={{
             duration: 1.2,
-            ease: [0.25, 0.1, 0.25, 1], // smoother cubic-bezier
+            ease: [0.25, 0.1, 0.25, 1],
             delay: 0.1,
           }}
         />
@@ -395,29 +539,23 @@ function FootprintItem({ item }) {
             {item.title}
           </Typography>
         </AnimatedFadeUp>
-        <AnimatedFadeUp >
-        <div className="meta-col">
-         
+        <AnimatedFadeUp>
+          <div className="meta-col">
             <Typography variant="para-3">
               <span className="accent-text">Sector :</span>{" "}
               <span className="para-text">{item.sector}</span>
             </Typography>
-         
 
-          
             <Typography variant="para-3">
               <span className="accent-text">Year :</span>{" "}
               <span className="para-text">{item.year}</span>
             </Typography>
-         
 
-         
             <Typography variant="para-3">
               <span className="accent-text">Role :</span>{" "}
               <span className="para-text">{item.role}</span>
             </Typography>
-          
-        </div>
+          </div>
         </AnimatedFadeUp>
       </div>
 
