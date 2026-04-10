@@ -1,13 +1,12 @@
-
-import { Geist, Geist_Mono, Times_New_Romanwwww } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import staticData from "@/data/sitecontent.json";
 import { fetchSiteContent } from "@/lib/api";
 import { SiteContentProvider } from "@/context/SiteContentProvider";
+import { SiteConfigProvider } from "@/context/SiteConfigProvider";
 import { setSiteContent } from "@/lib/siteContent";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,15 +20,13 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Kaizen | Leading Law Firm for Businesses & Startups",
-  description:
-    "Kaizen is a forward-thinking law firm offering expert legal counsel in private equity, M&A, technology law, and general counsel services across key sectors.",
+  description: "Kaizen is a forward-thinking law firm offering expert legal counsel in private equity, M&A, technology law, and general counsel services across key sectors.",
 };
+
 export default async function RootLayout({ children }) {
   const apiData = await fetchSiteContent();
-
   const apiContent = apiData?.data?.meta || {};
 
-  // 🔥 SIMPLE shallow merge (no recursion)
   const siteContent = {
     ...staticData,
     ...apiContent,
@@ -43,10 +40,19 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={``}>
-        <SiteContentProvider value={siteContent}>
-        {children}
-        </SiteContentProvider>
+      <head>
+        <meta name="theme-color" content="#0a193a" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <SiteConfigProvider>
+          <SiteContentProvider value={siteContent}>
+            {children}
+          </SiteContentProvider>
+        </SiteConfigProvider>
       </body>
     </html>
   );
